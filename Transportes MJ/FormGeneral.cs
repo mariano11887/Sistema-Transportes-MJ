@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public abstract class FormGeneral : Form
+    public class FormGeneral : Form
     {
         private List<Control> _controles;
         public List<Control> Controles

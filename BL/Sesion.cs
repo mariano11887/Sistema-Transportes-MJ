@@ -13,7 +13,6 @@ namespace BL
         private static Sesion _instancia;
 
         private Usuario _usuarioLogueado;
-
         public Usuario UsuarioLogueado
         {
             get { return _usuarioLogueado; }
@@ -27,6 +26,11 @@ namespace BL
                 _instancia = new Sesion();
             }
             return _instancia;
+        }
+
+        public void CerrarSesion()
+        {
+
         }
     }
 }

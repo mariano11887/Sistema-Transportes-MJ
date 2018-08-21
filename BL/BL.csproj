@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encriptador.cs" />
+    <Compile Include="Permiso.cs" />
+    <Compile Include="PermisoCompuesto.cs" />
+    <Compile Include="PermisoSimple.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class VehiculosForm : Form
+    public partial class VehiculosForm : FormGeneral
     {
         public VehiculosForm()
         {

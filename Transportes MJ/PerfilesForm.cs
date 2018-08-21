@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class PerfilesForm : Form
+    public partial class PerfilesForm : FormGeneral
     {
         public PerfilesForm()
         {

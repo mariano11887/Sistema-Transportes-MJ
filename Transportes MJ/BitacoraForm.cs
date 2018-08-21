@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class BitacoraForm : Form
+    public partial class BitacoraForm : FormGeneral
     {
         public BitacoraForm()
         {

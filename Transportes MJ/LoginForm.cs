@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : FormGeneral
     {
         public LoginForm()
         {
@@ -34,6 +34,21 @@ namespace UI
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public bool ValidarDatos()
+        {
+            return true;
+        }
+
+        public void Login()
+        {
+
+        }
+
+        public void MostrarError()
+        {
+
         }
     }
 }

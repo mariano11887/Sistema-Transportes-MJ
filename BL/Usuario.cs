@@ -31,6 +31,14 @@ namespace BL
             get { return _nombre; }
             set { _nombre = value; }
         }
+
+        private List<Permiso> _perfil;
+        public List<Permiso> Perfil
+        {
+            get { return _perfil; }
+            set { _perfil = value; }
+        }
+
         #endregion
 
         public bool Login(string nombreDeUsuario, string contrasenia)

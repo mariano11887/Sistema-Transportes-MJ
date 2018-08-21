@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class PlanillasHorariasForm : Form
+    public partial class PlanillasHorariasForm : FormGeneral
     {
         public PlanillasHorariasForm()
         {

@@ -53,5 +53,20 @@ namespace UI
                 Log.Grabar(ex);
             }
         }
+
+        public void CerrarSesion()
+        {
+
+        }
+
+        public List<FormGeneral> ObtenerFormulariosAbiertos()
+        {
+            return new List<FormGeneral>();
+        }
+
+        public void MostrarMensaje(string mensaje)
+        {
+
+        }
     }
 }

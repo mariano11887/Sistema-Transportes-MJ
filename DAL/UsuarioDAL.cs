@@ -37,7 +37,26 @@ namespace DAL
             get { return _contrasenia; }
             set { _contrasenia = value; }
         }
+
+        private int _idiomaId;
+        public int IdiomaId
+        {
+            get { return _idiomaId; }
+            set { _idiomaId = value; }
+        }
+
+        private bool _habilitado;
+        public bool Habilitado
+        {
+            get { return _habilitado; }
+            set { _habilitado = value; }
+        }
         #endregion
+
+        public void Guardar()
+        {
+
+        }
 
         public void Obtener()
         {
@@ -58,6 +77,11 @@ namespace DAL
             {
                 Log.Grabar(ex);
             }
+        }
+
+        public List<UsuarioDAL> ObtenerVarios()
+        {
+            return new List<UsuarioDAL>();
         }
 
         #region Prototipo (quitar esto después)

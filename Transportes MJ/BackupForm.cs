@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class BackupForm : Form
+    public partial class BackupForm : FormGeneral
     {
         public BackupForm()
         {
