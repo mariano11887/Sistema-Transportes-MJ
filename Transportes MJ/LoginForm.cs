@@ -20,14 +20,21 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            if(usuario.Login(txtNombreDeUsuario.Text.Trim(), txtContrasenia.Text.Trim()))
+            if (ValidarDatos())
             {
-                Close();
+                Usuario usuario = new Usuario();
+                if (usuario.Login(txtNombreDeUsuario.Text.Trim(), txtContrasenia.Text.Trim()))
+                {
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Las credenciales son erróneas");
+                }
             }
             else
             {
-                MessageBox.Show("Las credenciales son erróneas");
+                MostrarError();
             }
         }
 
@@ -38,7 +45,7 @@ namespace UI
 
         public bool ValidarDatos()
         {
-            return true;
+            return !String.IsNullOrWhiteSpace(txtNombreDeUsuario.Text) && !String.IsNullOrWhiteSpace(txtContrasenia.Text);
         }
 
         public void Login()
@@ -48,7 +55,7 @@ namespace UI
 
         public void MostrarError()
         {
-
+            MessageBox.Show("Se deben completar todos los campos");
         }
     }
 }
