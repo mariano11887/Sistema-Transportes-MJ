@@ -75,6 +75,7 @@
             this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(185, 20);
             this.txtContrasenia.TabIndex = 1;
+            this.txtContrasenia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_KeyDown);
             // 
             // txtNombreDeUsuario
             // 
@@ -82,6 +83,7 @@
             this.txtNombreDeUsuario.Name = "txtNombreDeUsuario";
             this.txtNombreDeUsuario.Size = new System.Drawing.Size(185, 20);
             this.txtNombreDeUsuario.TabIndex = 0;
+            this.txtNombreDeUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_KeyDown);
             // 
             // btnAceptar
             // 

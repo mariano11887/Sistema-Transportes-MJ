@@ -18,6 +18,7 @@ namespace UI
             InitializeComponent();
         }
 
+        #region Eventos
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (ValidarDatos())
@@ -42,6 +43,15 @@ namespace UI
         {
             Close();
         }
+
+        private void textbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAceptar_Click(this, new EventArgs());
+            }
+        }
+        #endregion
 
         public bool ValidarDatos()
         {

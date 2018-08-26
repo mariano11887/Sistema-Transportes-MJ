@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BitacoraDAL.cs" />
     <Compile Include="PermisoDAL.cs" />
+    <Compile Include="SqlHelper.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,20 +68,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BD\transportes_mj_bitacora_dev.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BD\transportes_mj_bitacora_dev_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>transportes_mj_bitacora_dev.mdf</DependentUpon>
-    </Content>
-    <Content Include="BD\transportes_mj_dev.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BD\transportes_mj_dev_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>transportes_mj_dev.mdf</DependentUpon>
-    </Content>
+    <Content Include="Database.xml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
