@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,17 +25,57 @@ namespace BL
             set { _descripcion = value; }
         }
 
+        protected bool _editable;
+        public bool Editable
+        {
+            get { return _editable; }
+            set { _editable = value; }
+        }
+
+
         public abstract void Guardar();
 
         public abstract void Borrar();
 
         public abstract List<Permiso> DevolverPerfil();
 
+        public abstract List<Permiso> ObtenerPermisosHijos();
+
         public abstract void AgregarPermisoHijo();
 
         public static Permiso ObtenerPermisoRaiz()
         {
-            return new PermisoSimple();
+            PermisoDAL permisoDAL = new PermisoDAL()
+            {
+                Nombre = "root"
+            };
+            permisoDAL.Obtener();
+            return ConvertirDesdeDAL(permisoDAL);
+        }
+
+        public override string ToString()
+        {
+            return _nombre;
+        }
+
+        protected static Permiso ConvertirDesdeDAL(PermisoDAL permisoDAL)
+        {
+            Permiso permiso;
+            if (permisoDAL.PermisosHijosIds.Count == 0)
+            {
+                permiso = new PermisoSimple();
+            }
+            else
+            {
+                permiso = new PermisoCompuesto();
+            }
+
+            permiso._id = permisoDAL.PermisoId;
+            permiso.Nombre = permisoDAL.Nombre;
+            permiso.Descripcion = permisoDAL.Descripcion;
+            permiso.Editable = permisoDAL.Editable;
+
+            return permiso;
         }
     }
 }

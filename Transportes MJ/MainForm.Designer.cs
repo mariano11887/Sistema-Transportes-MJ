@@ -31,11 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.mniSistema = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.mniOpciones = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAdministrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniPerfilesDeUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.mniGestionar = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAyuda = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,13 @@
             this.mniSistema.Size = new System.Drawing.Size(60, 20);
             this.mniSistema.Text = "Sistema";
             // 
+            // mniLogout
+            // 
+            this.mniLogout.Name = "mniLogout";
+            this.mniLogout.Size = new System.Drawing.Size(143, 22);
+            this.mniLogout.Text = "Cerrar Sesión";
+            this.mniLogout.Click += new System.EventHandler(this.mniLogout_Click);
+            // 
             // mniOpciones
             // 
             this.mniOpciones.Name = "mniOpciones";
@@ -69,9 +77,18 @@
             // 
             // mniAdministrar
             // 
+            this.mniAdministrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mniPerfilesDeUsuario});
             this.mniAdministrar.Name = "mniAdministrar";
             this.mniAdministrar.Size = new System.Drawing.Size(81, 20);
             this.mniAdministrar.Text = "Administrar";
+            // 
+            // mniPerfilesDeUsuario
+            // 
+            this.mniPerfilesDeUsuario.Name = "mniPerfilesDeUsuario";
+            this.mniPerfilesDeUsuario.Size = new System.Drawing.Size(180, 22);
+            this.mniPerfilesDeUsuario.Text = "Perfiles de usuario";
+            this.mniPerfilesDeUsuario.Click += new System.EventHandler(this.mniPerfilesDeUsuario_Click);
             // 
             // mniGestionar
             // 
@@ -84,13 +101,6 @@
             this.mniAyuda.Name = "mniAyuda";
             this.mniAyuda.Size = new System.Drawing.Size(53, 20);
             this.mniAyuda.Text = "Ayuda";
-            // 
-            // mniLogout
-            // 
-            this.mniLogout.Name = "mniLogout";
-            this.mniLogout.Size = new System.Drawing.Size(180, 22);
-            this.mniLogout.Text = "Cerrar Sesión";
-            this.mniLogout.Click += new System.EventHandler(this.mniLogout_Click);
             // 
             // MainForm
             // 
@@ -121,6 +131,7 @@
         private System.Windows.Forms.ToolStripMenuItem mniGestionar;
         private System.Windows.Forms.ToolStripMenuItem mniAyuda;
         private System.Windows.Forms.ToolStripMenuItem mniLogout;
+        private System.Windows.Forms.ToolStripMenuItem mniPerfilesDeUsuario;
     }
 }
 

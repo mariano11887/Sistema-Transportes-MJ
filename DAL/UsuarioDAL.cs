@@ -152,5 +152,6 @@ namespace DAL
             return new List<UsuarioDAL>();
         }
         #endregion
+
     }
 }

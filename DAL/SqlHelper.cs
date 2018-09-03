@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,19 +18,41 @@ namespace DAL
         private string _connStringBdPrincipal;
         private string _connStringBdBitacora;
 
-        private SqlHelper()
+        private enum Bd
         {
-            _connStringBdPrincipal = "Data Source=MARIANO-PC;Initial Catalog=transportes_mj_dev;Persist Security Info=True;User ID=sa;Password=UaiPas$w0rdDB";
-            _connStringBdBitacora = "Data Source=MARIANO-PC;Initial Catalog=transportes_mj_bitacora_dev;Persist Security Info=True;User ID=sa;Password=UaiPas$w0rdDB";
+            Principal,
+            Bitacora
         }
+
+        private SqlHelper() { }
 
         public static SqlHelper ObtenerInstancia()
         {
             if(_instancia == null)
             {
-                _instancia = new SqlHelper();
+                _instancia = new SqlHelper()
+                {
+                    _connStringBdPrincipal = LeerConnString(Bd.Principal),
+                    _connStringBdBitacora = LeerConnString(Bd.Bitacora)
+                };
             }
             return _instancia;
+        }
+
+        private static String LeerConnString(Bd bd)
+        {
+            String rutaXml = Directory.GetCurrentDirectory() + "\\ConfigDAL.xml";
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(rutaXml);
+            foreach(XmlNode n in xmlDoc.ChildNodes[1])
+            {
+                if(n.Attributes["name"].Value == "connStringBdPrincipal" && bd == Bd.Principal ||
+                    n.Attributes["name"].Value == "connStringBdBitacora" && bd == Bd.Bitacora)
+                {
+                    return n.InnerText;
+                }
+            }
+            return "";
         }
 
         public DataTable Obtener(string query, SqlParameter[] parameters)

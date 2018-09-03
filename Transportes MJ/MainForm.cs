@@ -19,6 +19,7 @@ namespace UI
             InitializeComponent();
         }
 
+        #region Eventos
         private void MainForm_Load(object sender, EventArgs e)
         {
             try
@@ -53,6 +54,14 @@ namespace UI
                 Log.Grabar(ex);
             }
         }
+
+        private void mniPerfilesDeUsuario_Click(object sender, EventArgs e)
+        {
+            PerfilesForm perfilesForm = new PerfilesForm();
+            perfilesForm.MdiParent = this;
+            perfilesForm.Show();
+        }
+        #endregion
 
         public void CerrarSesion()
         {

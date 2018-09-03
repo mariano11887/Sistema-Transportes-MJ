@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,17 @@ namespace BL
 
         public override List<Permiso> DevolverPerfil()
         {
-            throw new NotImplementedException();
+            return new List<Permiso>() { this };
         }
 
         public override void Guardar()
         {
             throw new NotImplementedException();
+        }
+
+        public override List<Permiso> ObtenerPermisosHijos()
+        {
+            return new List<Permiso>();
         }
     }
 }

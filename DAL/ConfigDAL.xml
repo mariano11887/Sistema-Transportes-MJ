@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Congifs>
+  <config name="connStringBdPrincipal">Data Source=MARIANO-PC;Initial Catalog=transportes_mj_dev;Integrated Security=True</config>
+  <config name="connStringBdBitacora">Data Source=MARIANO-PC;Initial Catalog=transportes_mj_bitacora_dev;Integrated Security=True</config>
+</Congifs>
