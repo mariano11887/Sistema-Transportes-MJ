@@ -27,7 +27,7 @@ namespace UI
                 Hide();
                 LoginForm frmLogin = new LoginForm();
                 frmLogin.ShowDialog();
-                if (Sesion.ObtenerInstancia().UsuarioLogueado != null)
+                if (Sesion.Instancia().UsuarioLogueado != null)
                 {
                     Show();
                 }
@@ -46,7 +46,7 @@ namespace UI
         {
             try
             {
-                Sesion.ObtenerInstancia().UsuarioLogueado = null;
+                Sesion.Instancia().UsuarioLogueado = null;
                 Application.Restart();
             }
             catch(Exception ex)

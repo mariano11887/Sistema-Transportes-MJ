@@ -62,6 +62,7 @@
             this.lstPerfilesActuales.Name = "lstPerfilesActuales";
             this.lstPerfilesActuales.Size = new System.Drawing.Size(120, 160);
             this.lstPerfilesActuales.TabIndex = 1;
+            this.lstPerfilesActuales.SelectedIndexChanged += new System.EventHandler(this.lstPerfilesActuales_SelectedIndexChanged);
             // 
             // grpDetalles
             // 

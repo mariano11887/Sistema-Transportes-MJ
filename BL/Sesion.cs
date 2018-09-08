@@ -19,13 +19,29 @@ namespace BL
             set { _usuarioLogueado = value; }
         }
 
-        public static Sesion ObtenerInstancia()
+        private HashSet<string> _permisos;
+
+        public static Sesion Instancia()
         {
             if(_instancia == null)
             {
                 _instancia = new Sesion();
             }
             return _instancia;
+        }
+
+        public void EstablecerPermisos(List<Permiso> permisos)
+        {
+            _permisos = new HashSet<string>();
+            foreach (Permiso p in permisos)
+            {
+                _permisos.UnionWith(p.DevolverPerfil().Select(x => x.Nombre));
+            }
+        }
+
+        public bool TienePermiso(string permiso)
+        {
+            return _permisos.Contains(permiso);
         }
 
         public void CerrarSesion()

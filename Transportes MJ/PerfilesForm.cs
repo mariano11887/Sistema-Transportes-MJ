@@ -34,21 +34,31 @@ namespace UI
             base.Abrir();
             Permiso permisoRaiz = Permiso.ObtenerPermisoRaiz();
             // Completo el listado de permisos compuestos (perfiles)
-            procesarPermiso(permisoRaiz);
+            procesarPermiso(permisoRaiz, null);
             // Agrego los perfiles al listado principal
             lstPerfilesActuales.Items.AddRange(_perfiles.ToArray());
         }
 
-        private void procesarPermiso(Permiso permiso)
+        private void procesarPermiso(Permiso permiso, TreeNode nodoPadre)
         {
+            TreeNode nodo = new TreeNode(permiso.ToString());
             List<Permiso> permisosHijos = permiso.ObtenerPermisosHijos();
             foreach (Permiso p in permisosHijos)
             {
                 if (p.ObtenerPermisosHijos().Count > 0)
                 {
                     _perfiles.Add(p);
-                    procesarPermiso(p);
                 }
+                procesarPermiso(p, nodo);
+            }
+
+            if (nodoPadre == null)
+            {
+                trvPermisosInteriores.Nodes.Add(nodo);
+            }
+            else
+            {
+                nodoPadre.Nodes.Add(nodo);
             }
         }
 
@@ -90,6 +100,32 @@ namespace UI
         private void MostrarAdvertenciaEliminar()
         {
 
+        }
+        #endregion
+
+        #region Eventos
+        private void lstPerfilesActuales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstPerfilesActuales.SelectedItem == null)
+            {
+                // Ningún ítem seleccionado, deshabilito todo
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+                grpDetalles.Enabled = false;
+                txtNombre.Text = "";
+                txtDescripcion.Text = "";
+            }
+            else
+            {
+                Permiso permisoSeleccionado = (Permiso)lstPerfilesActuales.SelectedItem;
+                if (permisoSeleccionado.Editable)
+                {
+                    btnEditar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                    txtNombre.Text = permisoSeleccionado.Nombre;
+                    txtDescripcion.Text = permisoSeleccionado.Descripcion;
+                }
+            }
         }
         #endregion
 

@@ -35,7 +35,20 @@ namespace BL
         private List<Permiso> _perfil;
         public List<Permiso> Perfil
         {
-            get { return _perfil; }
+            get
+            {
+                if(_perfil == null)
+                {
+                    _perfil = new List<Permiso>();
+                    PermisoDAL permisoDAL = new PermisoDAL();
+                    List<PermisoDAL> permisosDAL = permisoDAL.ObtenerPorUsuario(Id);
+                    foreach(PermisoDAL pDAL in permisosDAL)
+                    {
+                        _perfil.Add(Permiso.ConvertirDesdeDAL(pDAL));
+                    }
+                }
+                return _perfil;
+            }
             set { _perfil = value; }
         }
 
@@ -53,8 +66,10 @@ namespace BL
                 usuarioDAL.Obtener();
                 if (usuarioDAL.UsuarioId > 0)
                 {
-                    Sesion.ObtenerInstancia().UsuarioLogueado = ConvertirDesdeDAL(usuarioDAL);
-                    return true;
+                    ConvertirDesdeDAL(usuarioDAL);
+                    Sesion.Instancia().UsuarioLogueado = this;
+                    Sesion.Instancia().EstablecerPermisos(Perfil);
+                    return Sesion.Instancia().TienePermiso(Permisos.LOGIN);
                 }
                 else
                 {
@@ -68,13 +83,11 @@ namespace BL
             }
         }
 
-        private Usuario ConvertirDesdeDAL(UsuarioDAL usuarioDAL)
+        private void ConvertirDesdeDAL(UsuarioDAL usuarioDAL)
         {
-            Usuario usuario = new Usuario();
-            usuario._id = usuarioDAL.UsuarioId;
-            usuario._nombreDeUsuario = usuarioDAL.NombreDeUsuario;
-            usuario._nombre = usuarioDAL.Nombre;
-            return usuario;
+            _id = usuarioDAL.UsuarioId;
+            _nombreDeUsuario = usuarioDAL.NombreDeUsuario;
+            _nombre = usuarioDAL.Nombre;
         }
 
     }

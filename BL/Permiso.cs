@@ -58,7 +58,7 @@ namespace BL
             return _nombre;
         }
 
-        protected static Permiso ConvertirDesdeDAL(PermisoDAL permisoDAL)
+        public static Permiso ConvertirDesdeDAL(PermisoDAL permisoDAL)
         {
             Permiso permiso;
             if (permisoDAL.PermisosHijosIds.Count == 0)

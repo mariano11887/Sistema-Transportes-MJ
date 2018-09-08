@@ -26,7 +26,7 @@ namespace DAL
 
         private SqlHelper() { }
 
-        public static SqlHelper ObtenerInstancia()
+        public static SqlHelper Instancia()
         {
             if(_instancia == null)
             {
