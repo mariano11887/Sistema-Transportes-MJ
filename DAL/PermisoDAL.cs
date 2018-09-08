@@ -146,21 +146,19 @@ namespace DAL
 
         private void BuscarPermisosHijos()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("SELECT pp.permiso_hijo_id " +
+            string query = "SELECT pp.permiso_hijo_id " +
                 "FROM permiso_permiso pp " +
                 "INNER JOIN permiso p ON pp.permiso_hijo_id = p.id " +
                 "WHERE p.habilitado = 1 " +
-                "AND pp.permiso_padre_id = @permisoPadreId;");
+                "AND pp.permiso_padre_id = @permisoPadreId;";
             
-            List<SqlParameter>  parameters = new List<SqlParameter>();
+            List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter
             {
                 ParameterName = "@permisoPadreId",
                 Value = _permisoId
             });
 
-            string query = sb.ToString();
             DataTable table = SqlHelper.Instancia().Obtener(query, parameters.ToArray());
             _permisosHijosIds = new List<int>();
             foreach (DataRow row in table.Rows)

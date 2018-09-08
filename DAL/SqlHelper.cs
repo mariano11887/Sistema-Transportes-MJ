@@ -18,7 +18,7 @@ namespace DAL
         private string _connStringBdPrincipal;
         private string _connStringBdBitacora;
 
-        private enum Bd
+        public enum Bd
         {
             Principal,
             Bitacora
@@ -57,13 +57,19 @@ namespace DAL
 
         public DataTable Obtener(string query, SqlParameter[] parameters)
         {
+            return Obtener(query, parameters, Bd.Principal);
+        }
+
+        public DataTable Obtener(string query, SqlParameter[] parameters, Bd bd)
+        {
+            string connString = bd == Bd.Principal ? _connStringBdPrincipal : _connStringBdBitacora;
             try
             {
                 SqlCommand cmd = new SqlCommand
                 {
                     Connection = new SqlConnection
                     {
-                        ConnectionString = _connStringBdPrincipal
+                        ConnectionString = connString
                     },
                     CommandText = query,
                     CommandType = CommandType.Text,
@@ -87,6 +93,32 @@ namespace DAL
             {
                 Log.Grabar(ex);
                 return null;
+            }
+        }
+
+        public void Ejecutar(string query, SqlParameter[] parameters)
+        {
+            Ejecutar(query, parameters, Bd.Principal);
+        }
+
+        public void Ejecutar(string query, SqlParameter[] parameters, Bd bd)
+        {
+            string connString = bd == Bd.Principal ? _connStringBdPrincipal : _connStringBdBitacora;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddRange(parameters);
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Grabar(ex);
             }
         }
     }

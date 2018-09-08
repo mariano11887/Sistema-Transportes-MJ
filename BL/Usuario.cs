@@ -69,7 +69,18 @@ namespace BL
                     ConvertirDesdeDAL(usuarioDAL);
                     Sesion.Instancia().UsuarioLogueado = this;
                     Sesion.Instancia().EstablecerPermisos(Perfil);
-                    return Sesion.Instancia().TienePermiso(Permisos.LOGIN);
+                    if(Sesion.Instancia().TienePermiso(Permisos.LOGIN))
+                    {
+                        BitacoraDAL bitacora = new BitacoraDAL()
+                        {
+                            FechaHora = DateTime.Now,
+                            UsuarioId = Sesion.Instancia().UsuarioLogueado.Id,
+                            Detalle = "El usuario se logueó al sistema"
+                        };
+                        bitacora.Guardar();
+                        return true;
+                    }
+                    return false;
                 }
                 else
                 {
