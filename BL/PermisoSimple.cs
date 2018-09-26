@@ -9,14 +9,14 @@ namespace BL
 {
     class PermisoSimple : Permiso
     {
-        public override void AgregarPermisoHijo()
+        public override void AgregarPermisoHijo(Permiso permiso)
         {
-            throw new NotImplementedException();
+            // No hace nada
         }
 
         public override void Borrar()
         {
-            throw new NotImplementedException();
+            // No se borran permisos individuales
         }
 
         public override List<Permiso> DevolverPerfil()
@@ -26,7 +26,7 @@ namespace BL
 
         public override void Guardar()
         {
-            throw new NotImplementedException();
+            // No se guardan permisos individuales
         }
 
         public override List<Permiso> ObtenerPermisosHijos()

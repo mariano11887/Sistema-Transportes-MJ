@@ -73,7 +73,6 @@ namespace BL
                     {
                         BitacoraDAL bitacora = new BitacoraDAL()
                         {
-                            FechaHora = DateTime.Now,
                             UsuarioId = Sesion.Instancia().UsuarioLogueado.Id,
                             Detalle = "El usuario se logueó al sistema"
                         };

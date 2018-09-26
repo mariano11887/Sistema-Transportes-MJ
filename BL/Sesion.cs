@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,7 +47,18 @@ namespace BL
 
         public void CerrarSesion()
         {
+            if (_usuarioLogueado != null)
+            {
+                BitacoraDAL bitacora = new BitacoraDAL()
+                {
+                    UsuarioId = _usuarioLogueado.Id,
+                    Detalle = "El usuario cerró sesión"
+                };
+                bitacora.Guardar();
 
+                _usuarioLogueado = null;
+                _permisos = null;
+            }
         }
     }
 }

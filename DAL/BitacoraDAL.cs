@@ -14,7 +14,6 @@ namespace DAL
         public DateTime FechaHora
         {
             get { return _fechaHora; }
-            set { _fechaHora = value; }
         }
 
         private int _usuarioId;
@@ -30,6 +29,11 @@ namespace DAL
         {
             get { return _detalle; }
             set { _detalle = value; }
+        }
+
+        public BitacoraDAL()
+        {
+            _fechaHora = DateTime.Now;
         }
 
         public void Guardar()

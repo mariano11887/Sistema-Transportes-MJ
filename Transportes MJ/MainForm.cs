@@ -29,6 +29,7 @@ namespace UI
                 frmLogin.ShowDialog();
                 if (Sesion.Instancia().UsuarioLogueado != null)
                 {
+                    ControlarMenusConPermisos();
                     Show();
                 }
                 else
@@ -46,7 +47,7 @@ namespace UI
         {
             try
             {
-                Sesion.Instancia().UsuarioLogueado = null;
+                Sesion.Instancia().CerrarSesion();
                 Application.Restart();
             }
             catch(Exception ex)
@@ -61,12 +62,12 @@ namespace UI
             perfilesForm.MdiParent = this;
             perfilesForm.Show();
         }
-        #endregion
 
-        public void CerrarSesion()
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Sesion.Instancia().CerrarSesion();
         }
+        #endregion
 
         public List<FormGeneral> ObtenerFormulariosAbiertos()
         {
@@ -76,6 +77,13 @@ namespace UI
         public void MostrarMensaje(string mensaje)
         {
 
+        }
+
+        private void ControlarMenusConPermisos()
+        {
+            bool puedeVerPerfiles = Sesion.Instancia().TienePermiso(Permisos.VER_PERFILES);
+            mniPerfilesDeUsuario.Visible = puedeVerPerfiles;
+            mniAdministrar.Visible = puedeVerPerfiles;
         }
     }
 }

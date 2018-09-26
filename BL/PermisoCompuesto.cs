@@ -12,13 +12,20 @@ namespace BL
         private List<Permiso> _permisos;
         public List<Permiso> Permisos
         {
-            get { return _permisos; }
+            get
+            {
+                if(_permisos == null)
+                {
+                    _permisos = new List<Permiso>();
+                }
+                return _permisos;
+            }
             set { _permisos = value; }
         }
 
-        public override void AgregarPermisoHijo()
+        public override void AgregarPermisoHijo(Permiso permiso)
         {
-            throw new NotImplementedException();
+            Permisos.Add(permiso);
         }
 
         public override void Borrar()
@@ -39,16 +46,24 @@ namespace BL
 
         public override void Guardar()
         {
-            throw new NotImplementedException();
+            PermisoDAL permisoDAL = new PermisoDAL()
+            {
+                Descripcion = Descripcion,
+                Editable = true,
+                EsPerfil = true,
+                Habilitado = true,
+                Nombre = Nombre
+            };
+            foreach(Permiso hijo in Permisos)
+            {
+                permisoDAL.PermisosHijosIds.Add(hijo.Id);
+            }
+            permisoDAL.Guardar();
         }
 
         public override List<Permiso> ObtenerPermisosHijos()
         {
-            if (_permisos == null)
-            {
-                _permisos = new List<Permiso>();
-            }
-            if (_permisos.Count == 0)
+            if (Permisos.Count == 0)
             {
                 PermisoDAL permisoDAL = new PermisoDAL()
                 {
@@ -62,11 +77,11 @@ namespace BL
                         PermisoId = hijoId
                     };
                     permisoDALHijo.Obtener();
-                    _permisos.Add(ConvertirDesdeDAL(permisoDALHijo));
+                    Permisos.Add(ConvertirDesdeDAL(permisoDALHijo));
                 }
             }
 
-            return _permisos;
+            return Permisos;
         }
     }
 }

@@ -74,38 +74,43 @@
             this.grpDetalles.Controls.Add(this.lblNombre);
             this.grpDetalles.Controls.Add(this.trvPermisosInteriores);
             this.grpDetalles.Controls.Add(this.lblPermisosInteriores);
-            this.grpDetalles.Enabled = false;
             this.grpDetalles.Location = new System.Drawing.Point(152, 13);
             this.grpDetalles.Name = "grpDetalles";
-            this.grpDetalles.Size = new System.Drawing.Size(334, 363);
+            this.grpDetalles.Size = new System.Drawing.Size(334, 496);
             this.grpDetalles.TabIndex = 2;
             this.grpDetalles.TabStop = false;
             this.grpDetalles.Text = "Detalles";
             // 
             // btnDescartar
             // 
-            this.btnDescartar.Location = new System.Drawing.Point(253, 334);
+            this.btnDescartar.Enabled = false;
+            this.btnDescartar.Location = new System.Drawing.Point(253, 467);
             this.btnDescartar.Name = "btnDescartar";
             this.btnDescartar.Size = new System.Drawing.Size(75, 23);
             this.btnDescartar.TabIndex = 7;
             this.btnDescartar.Text = "Descartar";
             this.btnDescartar.UseVisualStyleBackColor = true;
+            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(6, 334);
+            this.btnGuardar.Enabled = false;
+            this.btnGuardar.Location = new System.Drawing.Point(6, 467);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(79, 45);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(240, 20);
             this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblDescripcion
             // 
@@ -118,10 +123,12 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(79, 19);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(240, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblNombre
             // 
@@ -137,8 +144,10 @@
             this.trvPermisosInteriores.CheckBoxes = true;
             this.trvPermisosInteriores.Location = new System.Drawing.Point(23, 98);
             this.trvPermisosInteriores.Name = "trvPermisosInteriores";
-            this.trvPermisosInteriores.Size = new System.Drawing.Size(296, 217);
+            this.trvPermisosInteriores.Size = new System.Drawing.Size(296, 363);
             this.trvPermisosInteriores.TabIndex = 1;
+            this.trvPermisosInteriores.BeforeCheck += new System.Windows.Forms.TreeViewCancelEventHandler(this.trvPermisosInteriores_BeforeCheck);
+            this.trvPermisosInteriores.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvPermisosInteriores_AfterCheck);
             // 
             // lblPermisosInteriores
             // 
@@ -157,6 +166,7 @@
             this.btnCrearNuevo.TabIndex = 3;
             this.btnCrearNuevo.Text = "Crear nuevo";
             this.btnCrearNuevo.UseVisualStyleBackColor = true;
+            this.btnCrearNuevo.Click += new System.EventHandler(this.btnCrearNuevo_Click);
             // 
             // btnEditar
             // 
@@ -182,7 +192,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 390);
+            this.ClientSize = new System.Drawing.Size(502, 521);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnCrearNuevo);

@@ -10,6 +10,10 @@ namespace BL
     public abstract class Permiso
     {
         protected int _id;
+        public int Id
+        {
+            get { return _id; }
+        }
 
         protected string _nombre;
         public string Nombre
@@ -29,7 +33,12 @@ namespace BL
         public bool Editable
         {
             get { return _editable; }
-            set { _editable = value; }
+        }
+
+        protected bool _esPerfil;
+        public bool EsPerfil
+        {
+            get { return _esPerfil; }
         }
 
 
@@ -41,16 +50,23 @@ namespace BL
 
         public abstract List<Permiso> ObtenerPermisosHijos();
 
-        public abstract void AgregarPermisoHijo();
+        public abstract void AgregarPermisoHijo(Permiso permiso);
 
         public static Permiso ObtenerPermisoRaiz()
         {
-            PermisoDAL permisoDAL = new PermisoDAL()
-            {
-                Nombre = "root"
-            };
-            permisoDAL.Obtener();
+            PermisoDAL permisoDAL = PermisoDAL.ObtenerPorNombre(Permisos.RAIZ);
             return ConvertirDesdeDAL(permisoDAL);
+        }
+
+        public static List<Permiso> ObtenerPerfiles()
+        {
+            List<PermisoDAL> perfilesDAL = PermisoDAL.ObtenerPerfiles();
+            List<Permiso> perfiles = new List<Permiso>();
+            foreach(PermisoDAL perfilDAL in perfilesDAL)
+            {
+                perfiles.Add(ConvertirDesdeDAL(perfilDAL));
+            }
+            return perfiles;
         }
 
         public override string ToString()
@@ -73,9 +89,15 @@ namespace BL
             permiso._id = permisoDAL.PermisoId;
             permiso.Nombre = permisoDAL.Nombre;
             permiso.Descripcion = permisoDAL.Descripcion;
-            permiso.Editable = permisoDAL.Editable;
+            permiso._editable = permisoDAL.Editable;
+            permiso._esPerfil = permisoDAL.EsPerfil;
 
             return permiso;
+        }
+
+        public static Permiso NuevoPerfil()
+        {
+            return new PermisoCompuesto();
         }
     }
 }

@@ -79,10 +79,11 @@ namespace DAL
 
                 List<SqlParameter> parameters = new List<SqlParameter>();
 
-                if(_usuarioId > 0)
+                if (_usuarioId > 0)
                 {
                     sb.Append(" AND id = @usuarioId");
-                    parameters.Add(new SqlParameter {
+                    parameters.Add(new SqlParameter
+                    {
                         ParameterName = "@usuarioId",
                         Value = _usuarioId
                     });
@@ -116,7 +117,7 @@ namespace DAL
                             Value = _contrasenia
                         });
                     }
-                    if(_idiomaId > 0)
+                    if (_idiomaId > 0)
                     {
                         sb.Append(" AND idioma_id = @idioma_id");
                         parameters.Add(new SqlParameter
@@ -127,7 +128,7 @@ namespace DAL
                     }
                 }
                 sb.Append(";");
-                
+
                 string query = sb.ToString();
                 SqlParameter[] paramsArray = parameters.ToArray();
                 DataTable table = SqlHelper.Instancia().Obtener(query, paramsArray);
@@ -141,7 +142,7 @@ namespace DAL
                     _habilitado = bool.Parse(table.Rows[0]["habilitado"].ToString());
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Grabar(ex);
             }

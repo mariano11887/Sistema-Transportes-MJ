@@ -86,7 +86,7 @@
             // mniPerfilesDeUsuario
             // 
             this.mniPerfilesDeUsuario.Name = "mniPerfilesDeUsuario";
-            this.mniPerfilesDeUsuario.Size = new System.Drawing.Size(180, 22);
+            this.mniPerfilesDeUsuario.Size = new System.Drawing.Size(170, 22);
             this.mniPerfilesDeUsuario.Text = "Perfiles de usuario";
             this.mniPerfilesDeUsuario.Click += new System.EventHandler(this.mniPerfilesDeUsuario_Click);
             // 
@@ -114,6 +114,7 @@
             this.Name = "MainForm";
             this.Text = "Transportes MJ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.mnuPrincipal.ResumeLayout(false);
             this.mnuPrincipal.PerformLayout();

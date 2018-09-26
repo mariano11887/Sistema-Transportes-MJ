@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Configuration;
 
 namespace DAL
 {
@@ -41,18 +42,17 @@ namespace DAL
 
         private static String LeerConnString(Bd bd)
         {
-            String rutaXml = Directory.GetCurrentDirectory() + "\\ConfigDAL.xml";
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(rutaXml);
-            foreach(XmlNode n in xmlDoc.ChildNodes[1])
+            string key = "";
+            if(bd == Bd.Principal)
             {
-                if(n.Attributes["name"].Value == "connStringBdPrincipal" && bd == Bd.Principal ||
-                    n.Attributes["name"].Value == "connStringBdBitacora" && bd == Bd.Bitacora)
-                {
-                    return n.InnerText;
-                }
+                key = "connStringBdPrincipal";
             }
-            return "";
+            else if(bd == Bd.Bitacora)
+            {
+                key = "connStringBdBitacora";
+            }
+
+            return ConfigurationManager.ConnectionStrings[key].ConnectionString;
         }
 
         public DataTable Obtener(string query, SqlParameter[] parameters)
@@ -119,6 +119,34 @@ namespace DAL
             catch (Exception ex)
             {
                 Log.Grabar(ex);
+            }
+        }
+
+        public int Insertar(string Query, SqlParameter[] Parameters)
+        {
+            return Insertar(Query, Parameters, Bd.Principal);
+        }
+
+        public int Insertar(string Query, SqlParameter[] Parameters, Bd Bd)
+        {
+            string connString = Bd == Bd.Principal ? _connStringBdPrincipal : _connStringBdBitacora;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    SqlCommand command = new SqlCommand(Query, connection);
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddRange(Parameters);
+                    command.Connection.Open();
+                    int idInsertado = (int)command.ExecuteScalar();
+                    command.Connection.Close();
+                    return idInsertado;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Grabar(ex);
+                return 0;
             }
         }
     }
