@@ -22,7 +22,8 @@ namespace DAL
         public enum Bd
         {
             Principal,
-            Bitacora
+            Bitacora,
+            Master
         }
 
         private SqlHelper() { }
@@ -40,16 +41,20 @@ namespace DAL
             return _instancia;
         }
 
-        private static String LeerConnString(Bd bd)
+        private static string LeerConnString(Bd bd)
         {
             string key = "";
             if(bd == Bd.Principal)
             {
-                key = "connStringBdPrincipal";
+                key = "Principal";
             }
             else if(bd == Bd.Bitacora)
             {
-                key = "connStringBdBitacora";
+                key = "Bitacora";
+            }
+            else if(bd == Bd.Master)
+            {
+                key = "Master";
             }
 
             return ConfigurationManager.ConnectionStrings[key].ConnectionString;

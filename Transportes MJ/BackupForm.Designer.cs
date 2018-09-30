@@ -34,9 +34,10 @@
             this.grpRestaurarBackup = new System.Windows.Forms.GroupBox();
             this.btnRestaurarBackup = new System.Windows.Forms.Button();
             this.btnExaminarRestaurar = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUbicacionRestaurar = new System.Windows.Forms.TextBox();
             this.lblUbicacionRestaurarBackup = new System.Windows.Forms.Label();
             this.sfdCrearBackup = new System.Windows.Forms.SaveFileDialog();
+            this.ofdRestaurarBackup = new System.Windows.Forms.OpenFileDialog();
             this.grpCrearBackup.SuspendLayout();
             this.grpRestaurarBackup.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +66,7 @@
             // 
             this.grpRestaurarBackup.Controls.Add(this.btnRestaurarBackup);
             this.grpRestaurarBackup.Controls.Add(this.btnExaminarRestaurar);
-            this.grpRestaurarBackup.Controls.Add(this.textBox2);
+            this.grpRestaurarBackup.Controls.Add(this.txtUbicacionRestaurar);
             this.grpRestaurarBackup.Controls.Add(this.lblUbicacionRestaurarBackup);
             this.grpRestaurarBackup.Location = new System.Drawing.Point(12, 105);
             this.grpRestaurarBackup.Name = "grpRestaurarBackup";
@@ -82,6 +83,7 @@
             this.btnRestaurarBackup.TabIndex = 3;
             this.btnRestaurarBackup.Text = "Restaurar copia de seguridad";
             this.btnRestaurarBackup.UseVisualStyleBackColor = true;
+            this.btnRestaurarBackup.Click += new System.EventHandler(this.btnRestaurarBackup_Click);
             // 
             // btnExaminarRestaurar
             // 
@@ -91,14 +93,16 @@
             this.btnExaminarRestaurar.TabIndex = 2;
             this.btnExaminarRestaurar.Text = "Examinar...";
             this.btnExaminarRestaurar.UseVisualStyleBackColor = true;
+            this.btnExaminarRestaurar.Click += new System.EventHandler(this.btnExaminarRestaurar_Click);
             // 
-            // textBox2
+            // txtUbicacionRestaurar
             // 
-            this.textBox2.Location = new System.Drawing.Point(7, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(298, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "C:/";
+            this.txtUbicacionRestaurar.Location = new System.Drawing.Point(7, 37);
+            this.txtUbicacionRestaurar.Name = "txtUbicacionRestaurar";
+            this.txtUbicacionRestaurar.ReadOnly = true;
+            this.txtUbicacionRestaurar.Size = new System.Drawing.Size(298, 20);
+            this.txtUbicacionRestaurar.TabIndex = 1;
+            this.txtUbicacionRestaurar.Text = "C:/";
             // 
             // lblUbicacionRestaurarBackup
             // 
@@ -112,6 +116,12 @@
             // sfdCrearBackup
             // 
             this.sfdCrearBackup.DefaultExt = "bak";
+            // 
+            // ofdRestaurarBackup
+            // 
+            this.ofdRestaurarBackup.DefaultExt = "bak";
+            this.ofdRestaurarBackup.FileName = "openFileDialog1";
+            this.ofdRestaurarBackup.Filter = "Archivos bak|*.bak";
             // 
             // BackupForm
             // 
@@ -138,8 +148,9 @@
         private System.Windows.Forms.GroupBox grpRestaurarBackup;
         private System.Windows.Forms.Button btnRestaurarBackup;
         private System.Windows.Forms.Button btnExaminarRestaurar;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUbicacionRestaurar;
         private System.Windows.Forms.Label lblUbicacionRestaurarBackup;
         private System.Windows.Forms.SaveFileDialog sfdCrearBackup;
+        private System.Windows.Forms.OpenFileDialog ofdRestaurarBackup;
     }
 }

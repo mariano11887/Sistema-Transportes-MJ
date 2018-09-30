@@ -45,15 +45,7 @@ namespace UI
 
         private void mniLogout_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Sesion.Instancia().CerrarSesion();
-                Application.Restart();
-            }
-            catch(Exception ex)
-            {
-                Log.Grabar(ex);
-            }
+            CerrarSesion();
         }
 
         private void mniPerfilesDeUsuario_Click(object sender, EventArgs e)
@@ -77,6 +69,19 @@ namespace UI
         #endregion
 
         #region Métodos
+        public void CerrarSesion()
+        {
+            try
+            {
+                Sesion.Instancia().CerrarSesion();
+                Application.Restart();
+            }
+            catch (Exception ex)
+            {
+                Log.Grabar(ex);
+            }
+        }
+
         public override void ProcesarControlesConPermisos()
         {
             mniPerfilesDeUsuario.Visible = TienePermiso(Permisos.VER_PERFILES);

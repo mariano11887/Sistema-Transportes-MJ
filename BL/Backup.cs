@@ -20,5 +20,18 @@ namespace BL
             };
             bitacoraDAL.Guardar();
         }
+
+        public static void RestaurarBackup(string Ubicacion)
+        {
+            BackupDAL.RestaurarBackup(Ubicacion);
+
+            // Guardo en la bitácora
+            BitacoraDAL bitacoraDAL = new BitacoraDAL()
+            {
+                Detalle = "Se restauró un backup de la base de datos",
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+            bitacoraDAL.Guardar();
+        }
     }
 }
