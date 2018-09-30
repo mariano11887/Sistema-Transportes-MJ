@@ -37,6 +37,7 @@
             this.mniPerfilesDeUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.mniGestionar = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAyuda = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniCopiaDeSeguridad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +72,8 @@
             // 
             // mniOpciones
             // 
+            this.mniOpciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mniCopiaDeSeguridad});
             this.mniOpciones.Name = "mniOpciones";
             this.mniOpciones.Size = new System.Drawing.Size(69, 20);
             this.mniOpciones.Text = "Opciones";
@@ -101,6 +104,13 @@
             this.mniAyuda.Name = "mniAyuda";
             this.mniAyuda.Size = new System.Drawing.Size(53, 20);
             this.mniAyuda.Text = "Ayuda";
+            // 
+            // mniCopiaDeSeguridad
+            // 
+            this.mniCopiaDeSeguridad.Name = "mniCopiaDeSeguridad";
+            this.mniCopiaDeSeguridad.Size = new System.Drawing.Size(180, 22);
+            this.mniCopiaDeSeguridad.Text = "Copia de seguridad";
+            this.mniCopiaDeSeguridad.Click += new System.EventHandler(this.mniCopiaDeSeguridad_Click);
             // 
             // MainForm
             // 
@@ -133,6 +143,7 @@
         private System.Windows.Forms.ToolStripMenuItem mniAyuda;
         private System.Windows.Forms.ToolStripMenuItem mniLogout;
         private System.Windows.Forms.ToolStripMenuItem mniPerfilesDeUsuario;
+        private System.Windows.Forms.ToolStripMenuItem mniCopiaDeSeguridad;
     }
 }
 

@@ -12,12 +12,13 @@ namespace UI
     public class FormGeneral : Form
     {
         private List<Leyenda> _leyendas;
-
+        
         public void Abrir()
         {
             Idioma idioma = Sesion.Instancia().UsuarioLogueado.Idioma;
             _leyendas = idioma.Leyendas.Where(l => l.NombreForm == Name).ToList();
             AsignarLeyenda(this);
+            ProcesarControlesConPermisos();
         }
 
         private void AsignarLeyenda(Control Control)
@@ -54,6 +55,26 @@ namespace UI
             {
                 AsignarLeyenda(item);
             }
+        }
+
+        protected string ObtenerLeyenda(string Clave)
+        {
+            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Clave);
+            if (leyenda != null)
+            {
+                return leyenda.Texto;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        public virtual void ProcesarControlesConPermisos() { }
+
+        protected bool TienePermiso(string Permiso)
+        {
+            return Sesion.Instancia().TienePermiso(Permiso);
         }
     }
 }

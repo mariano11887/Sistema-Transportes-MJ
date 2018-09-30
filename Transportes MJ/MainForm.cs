@@ -29,7 +29,6 @@ namespace UI
                 frmLogin.ShowDialog();
                 if (Sesion.Instancia().UsuarioLogueado != null)
                 {
-                    ControlarMenusConPermisos();
                     Show();
                     Abrir();
                 }
@@ -68,23 +67,24 @@ namespace UI
         {
             Sesion.Instancia().CerrarSesion();
         }
+
+        private void mniCopiaDeSeguridad_Click(object sender, EventArgs e)
+        {
+            BackupForm backupForm = new BackupForm();
+            backupForm.MdiParent = this;
+            backupForm.Show();
+        }
         #endregion
 
-        public List<FormGeneral> ObtenerFormulariosAbiertos()
+        #region Métodos
+        public override void ProcesarControlesConPermisos()
         {
-            return new List<FormGeneral>();
+            mniPerfilesDeUsuario.Visible = TienePermiso(Permisos.VER_PERFILES);
+            mniAdministrar.Visible = TienePermiso(Permisos.VER_PERFILES);
+            mniCopiaDeSeguridad.Visible = TienePermiso(Permisos.GESTIONAR_BACKUP);
         }
+        #endregion
 
-        public void MostrarMensaje(string mensaje)
-        {
-
-        }
-
-        private void ControlarMenusConPermisos()
-        {
-            bool puedeVerPerfiles = Sesion.Instancia().TienePermiso(Permisos.VER_PERFILES);
-            mniPerfilesDeUsuario.Visible = puedeVerPerfiles;
-            mniAdministrar.Visible = puedeVerPerfiles;
-        }
+        
     }
 }

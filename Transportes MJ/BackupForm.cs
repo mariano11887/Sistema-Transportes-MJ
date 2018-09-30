@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,26 @@ namespace UI
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BackupForm_Load(object sender, EventArgs e)
         {
+            Abrir();
+        }
 
+        private void btnCrearBackup_Click(object sender, EventArgs e)
+        {
+            sfdCrearBackup.ShowDialog();
+            string filePath = sfdCrearBackup.FileName;
+            if (string.IsNullOrWhiteSpace(filePath))
+            {
+                MessageBox.Show(ObtenerLeyenda("msgUbicacionVaciaCrear"), ObtenerLeyenda("msgUbicacionVaciaCrearTitulo"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Backup.HacerBackup(sfdCrearBackup.FileName);
+                MessageBox.Show(ObtenerLeyenda("msgBackupCreado"), ObtenerLeyenda("msgBackupCreadoTitulo"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

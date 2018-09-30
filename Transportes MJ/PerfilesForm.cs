@@ -91,7 +91,7 @@ namespace UI
         {
             if(_cambiosRealizados)
             {
-                DialogResult result = MessageBox.Show("Está a punto de descartar los cambios. ¿Desea continuar?", "Descartar cambios", 
+                DialogResult result = MessageBox.Show(ObtenerLeyenda("msgDescartar"), ObtenerLeyenda("msgDescartarTitulo"), 
                     MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if(result == DialogResult.Yes)
                 {
@@ -130,7 +130,7 @@ namespace UI
                     perfil.AgregarPermisoHijo(permisoTildado);
                 }
                 perfil.Guardar();
-                MessageBox.Show("Perfil guardado correctamente", "Guardado",
+                MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CompletarListadoPerfiles();
                 ResetearFormulario();
@@ -145,7 +145,7 @@ namespace UI
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar el perfil?", "Eliminar perfil",
+            DialogResult result = MessageBox.Show(ObtenerLeyenda("msgEliminar"), ObtenerLeyenda("msgEliminarTitulo"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if(result == DialogResult.Yes)
             {
@@ -237,7 +237,7 @@ namespace UI
                 string.IsNullOrWhiteSpace(txtDescripcion.Text) ||
                 ObtenerPermisosTildados().Count == 0)
             {
-                MessageBox.Show("Complete todos los datos antes de guardar", "Datos incompletos",
+                MessageBox.Show(ObtenerLeyenda("msgDatosIncompletos"), ObtenerLeyenda("msgDatosIncompletosTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
@@ -272,6 +272,13 @@ namespace UI
             lstPerfilesActuales.Items.Clear();
             List<Permiso> perfiles = Permiso.ObtenerPerfiles();
             lstPerfilesActuales.Items.AddRange(perfiles.ToArray());
+        }
+
+        public override void ProcesarControlesConPermisos()
+        {
+            btnCrearNuevo.Visible = TienePermiso(Permisos.CREAR_PERFILES);
+            btnEditar.Visible = TienePermiso(Permisos.MODIFICAR_PERFILES);
+            btnEliminar.Visible = TienePermiso(Permisos.BORRAR_PERFILES);
         }
 
         #endregion
