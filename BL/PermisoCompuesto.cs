@@ -30,7 +30,22 @@ namespace BL
 
         public override void Borrar()
         {
-            throw new NotImplementedException();
+            PermisoDAL permisoDAL = new PermisoDAL()
+            {
+                PermisoId = Id,
+                Nombre = Nombre,
+                Descripcion = Descripcion,
+                Habilitado = false
+            };
+            permisoDAL.Guardar(false);
+
+            // Guardo la bitácora
+            BitacoraDAL bitacora = new BitacoraDAL()
+            {
+                Detalle = "Se eliminó el permiso con Id " + Id,
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+            bitacora.Guardar();
         }
 
         public override List<Permiso> DevolverPerfil()
@@ -52,13 +67,31 @@ namespace BL
                 Editable = true,
                 EsPerfil = true,
                 Habilitado = true,
-                Nombre = Nombre
+                Nombre = Nombre,
+                PermisoId = Id
             };
             foreach(Permiso hijo in Permisos)
             {
                 permisoDAL.PermisosHijosIds.Add(hijo.Id);
             }
-            permisoDAL.Guardar();
+            permisoDAL.Guardar(true);
+
+            // Guardo la bitácora
+            string mensajeBitacora;
+            if(Id > 0)
+            {
+                mensajeBitacora = "Se actualizó el permiso con Id " + Id;
+            }
+            else
+            {
+                mensajeBitacora = "Se creó un nuevo permiso. Nombre: " + Nombre;
+            }
+            BitacoraDAL bitacora = new BitacoraDAL()
+            {
+                Detalle = mensajeBitacora,
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+            bitacora.Guardar();
         }
 
         public override List<Permiso> ObtenerPermisosHijos()

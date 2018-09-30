@@ -113,7 +113,15 @@ namespace UI
         {
             if(ValidarDatos())
             {
-                Permiso perfil = Permiso.NuevoPerfil();
+                Permiso perfil;
+                if (lstPerfilesActuales.SelectedItem == null)
+                {
+                    perfil = Permiso.NuevoPerfil();
+                }
+                else
+                {
+                    perfil = (Permiso)lstPerfilesActuales.SelectedItem;
+                }
                 perfil.Descripcion = txtDescripcion.Text;
                 perfil.Nombre = txtNombre.Text;
                 List<Permiso> permisosTildados = ObtenerPermisosTildados();
@@ -124,6 +132,26 @@ namespace UI
                 perfil.Guardar();
                 MessageBox.Show("Perfil guardado correctamente", "Guardado",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CompletarListadoPerfiles();
+                ResetearFormulario();
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            _edicionHabilitada = true;
+            RefrescarControlesDetalles();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar el perfil?", "Eliminar perfil",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if(result == DialogResult.Yes)
+            {
+                Permiso permiso = (Permiso)lstPerfilesActuales.SelectedItem;
+                permiso.Borrar();
+                _edicionHabilitada = true;
                 CompletarListadoPerfiles();
                 ResetearFormulario();
             }
@@ -245,8 +273,7 @@ namespace UI
             List<Permiso> perfiles = Permiso.ObtenerPerfiles();
             lstPerfilesActuales.Items.AddRange(perfiles.ToArray());
         }
+
         #endregion
-
-
     }
 }

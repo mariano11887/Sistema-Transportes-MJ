@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encriptador.cs" />
+    <Compile Include="Idioma.cs" />
+    <Compile Include="Leyenda.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="PermisoCompuesto.cs" />
     <Compile Include="Permisos.cs" />

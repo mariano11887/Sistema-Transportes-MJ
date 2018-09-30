@@ -52,6 +52,21 @@ namespace BL
             set { _perfil = value; }
         }
 
+        private int _idiomaId;
+        private Idioma _idioma;
+        public Idioma Idioma
+        {
+            get
+            {
+                if(_idioma == null)
+                {
+                    _idioma = new Idioma(_idiomaId);
+                }
+                return _idioma;
+            }
+            set { _idioma = value; }
+        }
+
         #endregion
 
         public bool Login(string nombreDeUsuario, string contrasenia)
@@ -98,6 +113,7 @@ namespace BL
             _id = usuarioDAL.UsuarioId;
             _nombreDeUsuario = usuarioDAL.NombreDeUsuario;
             _nombre = usuarioDAL.Nombre;
+            _idiomaId = usuarioDAL.IdiomaId;
         }
 
     }

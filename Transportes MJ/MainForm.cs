@@ -31,6 +31,7 @@ namespace UI
                 {
                     ControlarMenusConPermisos();
                     Show();
+                    Abrir();
                 }
                 else
                 {

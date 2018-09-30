@@ -140,7 +140,7 @@ namespace DAL
             return null;
         }
 
-        public void Guardar()
+        public void Guardar(bool ActualizarHijos)
         {
             // Primero guardo los datos del permiso en sí
             if (PermisoId > 0)
@@ -153,7 +153,7 @@ namespace DAL
             }
 
             // Luego guardo los permisos hijos
-            if (PermisoId > 0)
+            if (PermisoId > 0 && ActualizarHijos)
             {
                 // Borro permisos hijos
                 string query = "DELETE FROM permiso_permiso WHERE permiso_padre_id = @permisoPadreId";

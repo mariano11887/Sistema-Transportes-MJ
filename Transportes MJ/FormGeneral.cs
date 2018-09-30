@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BL;
+using Logger;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,39 +11,49 @@ namespace UI
 {
     public class FormGeneral : Form
     {
-        private List<Control> _controles;
-        public List<Control> Controles
-        {
-            get { return _controles; }
-            set { _controles = value; }
-        }
-
-        private string _titulo;
-        public string Titulo
-        {
-            get { return _titulo; }
-            set { _titulo = value; }
-        }
-
+        private List<Leyenda> _leyendas;
 
         public void Abrir()
         {
-
+            Idioma idioma = Sesion.Instancia().UsuarioLogueado.Idioma;
+            _leyendas = idioma.Leyendas.Where(l => l.NombreForm == Name).ToList();
+            AsignarLeyenda(this);
         }
 
-        public void Cerrar()
+        private void AsignarLeyenda(Control Control)
         {
-
+            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Control.Name);
+            if (leyenda != null)
+            {
+                Control.Text = leyenda.Texto;
+            }
+            if (Control.GetType() == typeof(MenuStrip))
+            {
+                foreach (ToolStripMenuItem item in ((MenuStrip)Control).Items)
+                {
+                    AsignarLeyenda(item);
+                }
+            }
+            else
+            {
+                foreach (Control controlHijo in Control.Controls)
+                {
+                    AsignarLeyenda(controlHijo);
+                }
+            }
         }
 
-        protected void OcultarControl()
+        private void AsignarLeyenda(ToolStripMenuItem Item)
         {
-
-        }
-
-        protected void AsignarLeyenda()
-        {
-
+            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Item.Name);
+            if (leyenda != null)
+            {
+                Item.Text = leyenda.Texto;
+            }
+            foreach(ToolStripMenuItem item in Item.DropDownItems)
+            {
+                AsignarLeyenda(item);
+            }
         }
     }
 }
