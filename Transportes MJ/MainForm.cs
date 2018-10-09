@@ -66,6 +66,13 @@ namespace UI
             backupForm.MdiParent = this;
             backupForm.Show();
         }
+
+        private void mniIdiomas_Click(object sender, EventArgs e)
+        {
+            IdiomasForm idiomasForm = new IdiomasForm();
+            idiomasForm.MdiParent = this;
+            idiomasForm.Show();
+        }
         #endregion
 
         #region Métodos
@@ -84,12 +91,17 @@ namespace UI
 
         public override void ProcesarControlesConPermisos()
         {
+            // Administrar
             mniPerfilesDeUsuario.Visible = TienePermiso(Permisos.VER_PERFILES);
-            mniAdministrar.Visible = TienePermiso(Permisos.VER_PERFILES);
+            mniIdiomas.Visible = TienePermiso(Permisos.VER_IDIOMAS);
+            mniAdministrar.Visible = TienePermiso(Permisos.VER_PERFILES) || TienePermiso(Permisos.VER_IDIOMAS);
+
+            // Opciones
             mniCopiaDeSeguridad.Visible = TienePermiso(Permisos.GESTIONAR_BACKUP);
+            mniOpciones.Visible = TienePermiso(Permisos.GESTIONAR_BACKUP);
         }
+
         #endregion
 
-        
     }
 }

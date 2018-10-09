@@ -62,9 +62,23 @@ namespace DAL
 
         }
 
-        public List<IdiomaDAL> ObtenerVarios()
+        public static List<IdiomaDAL> ObtenerTodos()
         {
-            return new List<IdiomaDAL>();
+            string query = "SELECT id, nombre, editable FROM idioma";
+            SqlParameter[] parameters = new SqlParameter[0];
+            DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+            List<IdiomaDAL> idiomasDAL = new List<IdiomaDAL>();
+            foreach(DataRow row in table.Rows)
+            {
+                IdiomaDAL idiomaDAL = new IdiomaDAL
+                {
+                    IdiomaId = int.Parse(row["id"].ToString()),
+                    Nombre = row["nombre"].ToString(),
+                    Editable = bool.Parse(row["editable"].ToString())
+                };
+                idiomasDAL.Add(idiomaDAL);
+            }
+            return idiomasDAL;
         }
         #endregion
     }

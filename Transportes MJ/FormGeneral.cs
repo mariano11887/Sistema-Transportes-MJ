@@ -35,6 +35,13 @@ namespace UI
                     AsignarLeyenda(item);
                 }
             }
+            else if(Control.GetType() == typeof(DataGridView))
+            {
+                foreach (DataGridViewColumn columna in ((DataGridView)Control).Columns)
+                {
+                    AsignarLeyenda(columna);
+                }
+            }
             else
             {
                 foreach (Control controlHijo in Control.Controls)
@@ -54,6 +61,15 @@ namespace UI
             foreach(ToolStripMenuItem item in Item.DropDownItems)
             {
                 AsignarLeyenda(item);
+            }
+        }
+
+        private void AsignarLeyenda(DataGridViewColumn columna)
+        {
+            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == columna.Name);
+            if (leyenda != null)
+            {
+                columna.HeaderText = leyenda.Texto;
             }
         }
 

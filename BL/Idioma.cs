@@ -64,7 +64,15 @@ namespace BL
 
         public static List<Idioma> ListarTodos()
         {
-            return new List<Idioma>();
+            List<Idioma> idiomas = new List<Idioma>();
+            List<IdiomaDAL> idiomasDAL = IdiomaDAL.ObtenerTodos();
+            foreach(IdiomaDAL idiomaDAL in idiomasDAL)
+            {
+                Idioma idioma = new Idioma();
+                idioma.ConvertirDesdeDAL(idiomaDAL);
+                idiomas.Add(idioma);
+            }
+            return idiomas;
         }
 
         public void Buscar()
@@ -75,6 +83,11 @@ namespace BL
         public void Eliminar()
         {
 
+        }
+
+        public override string ToString()
+        {
+            return Nombre;
         }
         #endregion
 
