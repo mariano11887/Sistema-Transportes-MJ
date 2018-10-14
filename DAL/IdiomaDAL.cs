@@ -36,7 +36,14 @@ namespace DAL
         #region Métodos públicos
         public void Guardar()
         {
-
+            if(IdiomaId > 0)
+            {
+                Actualizar();
+            }
+            else
+            {
+                Insertar();
+            }
         }
 
         public static IdiomaDAL Obtener(int Id)
@@ -79,6 +86,29 @@ namespace DAL
                 idiomasDAL.Add(idiomaDAL);
             }
             return idiomasDAL;
+        }
+        #endregion
+
+        #region Métodos privados
+        private void Insertar()
+        {
+            string query = "INSERT INTO idioma (nombre) OUTPUT INSERTED.id VALUES (@nombre)";
+            SqlParameter[] parameters = new SqlParameter[1]
+            {
+                new SqlParameter("@nombre", Nombre)
+            };
+            IdiomaId = SqlHelper.Instancia().Insertar(query, parameters);
+        }
+
+        private void Actualizar()
+        {
+            string query = "UPDATE idioma SET nombre = @nombre WHERE id = @id AND editable = 1";
+            SqlParameter[] parameters = new SqlParameter[2]
+            {
+                new SqlParameter("@nombre", Nombre),
+                new SqlParameter("@id", IdiomaId)
+            };
+            SqlHelper.Instancia().Ejecutar(query, parameters);
         }
         #endregion
     }

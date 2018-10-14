@@ -32,9 +32,6 @@
             this.lstIdiomasActuales = new System.Windows.Forms.ListBox();
             this.grpLeyendas = new System.Windows.Forms.GroupBox();
             this.dgvLeyendas = new System.Windows.Forms.DataGridView();
-            this.colIdentifiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTextoEspaniol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTextoIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCrearNuevo = new System.Windows.Forms.Button();
             this.lblIdiomasActuales = new System.Windows.Forms.Label();
             this.grpDetalles = new System.Windows.Forms.GroupBox();
@@ -44,6 +41,9 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.colIdentifiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTextoEspaniol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTextoIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpLeyendas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeyendas)).BeginInit();
             this.grpDetalles.SuspendLayout();
@@ -81,27 +81,8 @@
             this.colTextoIdioma});
             this.dgvLeyendas.Location = new System.Drawing.Point(7, 20);
             this.dgvLeyendas.Name = "dgvLeyendas";
-            this.dgvLeyendas.ReadOnly = true;
             this.dgvLeyendas.Size = new System.Drawing.Size(982, 315);
             this.dgvLeyendas.TabIndex = 0;
-            // 
-            // colIdentifiador
-            // 
-            this.colIdentifiador.HeaderText = "Identificador";
-            this.colIdentifiador.Name = "colIdentifiador";
-            this.colIdentifiador.ReadOnly = true;
-            // 
-            // colTextoEspaniol
-            // 
-            this.colTextoEspaniol.HeaderText = "Texto en Español";
-            this.colTextoEspaniol.Name = "colTextoEspaniol";
-            this.colTextoEspaniol.ReadOnly = true;
-            // 
-            // colTextoIdioma
-            // 
-            this.colTextoIdioma.HeaderText = "Texto en idioma seleccionado";
-            this.colTextoIdioma.Name = "colTextoIdioma";
-            this.colTextoIdioma.ReadOnly = true;
             // 
             // btnCrearNuevo
             // 
@@ -111,6 +92,7 @@
             this.btnCrearNuevo.TabIndex = 1;
             this.btnCrearNuevo.Text = "Crear nuevo";
             this.btnCrearNuevo.UseVisualStyleBackColor = true;
+            this.btnCrearNuevo.Click += new System.EventHandler(this.btnCrearNuevo_Click);
             // 
             // lblIdiomasActuales
             // 
@@ -143,6 +125,7 @@
             this.btnDescartar.TabIndex = 3;
             this.btnDescartar.Text = "Descartar";
             this.btnDescartar.UseVisualStyleBackColor = true;
+            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
             // 
             // btnGuardar
             // 
@@ -152,6 +135,7 @@
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtNombre
             // 
@@ -189,6 +173,24 @@
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // colIdentifiador
+            // 
+            this.colIdentifiador.HeaderText = "Identificador";
+            this.colIdentifiador.Name = "colIdentifiador";
+            this.colIdentifiador.ReadOnly = true;
+            // 
+            // colTextoEspaniol
+            // 
+            this.colTextoEspaniol.HeaderText = "Texto en Español";
+            this.colTextoEspaniol.Name = "colTextoEspaniol";
+            this.colTextoEspaniol.ReadOnly = true;
+            // 
+            // colTextoIdioma
+            // 
+            this.colTextoIdioma.HeaderText = "Texto en idioma seleccionado";
+            this.colTextoIdioma.Name = "colTextoIdioma";
+            this.colTextoIdioma.ReadOnly = true;
             // 
             // IdiomasForm
             // 

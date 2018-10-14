@@ -59,7 +59,34 @@ namespace BL
         #region Métodos públicos
         public void Guardar()
         {
+            // Primero el idioma en sí
+            IdiomaDAL idiomaDAL = new IdiomaDAL()
+            {
+                IdiomaId = Id,
+                Editable = Editable,
+                Nombre = Nombre
+            };
+            idiomaDAL.Guardar();
+            Id = idiomaDAL.IdiomaId;
 
+            // Ahora las leyendas
+            LeyendaDAL leyendaDAL = new LeyendaDAL();
+            leyendaDAL.IdiomaId = Id;
+            foreach(Leyenda leyenda in Leyendas)
+            {
+                leyendaDAL.NombreControl = leyenda.NombreControl;
+                leyendaDAL.NombreForm = leyenda.NombreForm;
+                leyendaDAL.Texto = leyenda.Texto;
+                leyendaDAL.Guardar();
+            }
+
+            // Registro en la bitácora
+            BitacoraDAL bitacora = new BitacoraDAL()
+            {
+                Detalle = "Se guardó el idioma con el id " + Id,
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+            bitacora.Guardar();
         }
 
         public static List<Idioma> ListarTodos()
