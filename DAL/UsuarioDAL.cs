@@ -152,6 +152,16 @@ namespace DAL
         {
             return new List<UsuarioDAL>();
         }
+
+        public static void PonerIdiomaDefault(int idiomaIdAQuitar)
+        {
+            string query = "UPDATE usuario SET idioma_id = 1 WHERE idioma_id = @idiomaIdViejo";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@idiomaIdViejo", idiomaIdAQuitar)
+            };
+            SqlHelper.Instancia().Ejecutar(query, parameters);
+        }
         #endregion
 
     }

@@ -108,6 +108,11 @@ namespace BL
             }
         }
 
+        public static void PonerIdiomaDefault(Idioma idiomaAQuitar)
+        {
+            UsuarioDAL.PonerIdiomaDefault(idiomaAQuitar.Id);
+        }
+
         private void ConvertirDesdeDAL(UsuarioDAL usuarioDAL)
         {
             _id = usuarioDAL.UsuarioId;

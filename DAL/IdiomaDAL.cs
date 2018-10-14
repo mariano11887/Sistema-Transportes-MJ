@@ -64,9 +64,14 @@ namespace DAL
             return idiomaDAL;
         }
 
-        public void Borrar()
+        public static void Borrar(int id)
         {
-
+            string query = "DELETE FROM idioma WHERE id = @idiomaId AND editable = 1";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@idiomaId", id)
+            };
+            SqlHelper.Instancia().Ejecutar(query, parameters);
         }
 
         public static List<IdiomaDAL> ObtenerTodos()

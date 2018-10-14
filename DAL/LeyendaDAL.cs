@@ -105,6 +105,16 @@ namespace DAL
                 }
             }
         }
+
+        public static void EliminarPorIdioma(int IdiomaId)
+        {
+            string query = "DELETE FROM leyenda WHERE idioma_id = @idiomaId";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@idiomaId", IdiomaId)
+            };
+            SqlHelper.Instancia().Ejecutar(query, parameters);
+        }
         #endregion
 
         #region Métodos privados

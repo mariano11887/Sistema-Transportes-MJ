@@ -102,14 +102,16 @@ namespace BL
             return idiomas;
         }
 
-        public void Buscar()
-        {
-
-        }
-
         public void Eliminar()
         {
+            // Los usuarios que tengan este idioma asignado pasarán a tener Español (id 1)
+            Usuario.PonerIdiomaDefault(this);
 
+            // Eliminar las leyendas de este idioa
+            LeyendaDAL.EliminarPorIdioma(Id);
+
+            // Ahora sí elimino el idioma
+            IdiomaDAL.Borrar(Id);
         }
 
         public override string ToString()

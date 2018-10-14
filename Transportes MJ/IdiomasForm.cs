@@ -135,6 +135,31 @@ namespace UI
                 lstIdiomasActuales.SelectedItem = null;
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            _editando = true;
+            txtNombre.Enabled = true;
+            dgvLeyendas.Columns[2].ReadOnly = false;
+            btnGuardar.Enabled = true;
+            btnDescartar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(ObtenerLeyenda("msgEliminar"), ObtenerLeyenda("msgEliminarTitulo"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (result == DialogResult.Yes)
+            {
+                Idioma idioma = (Idioma)lstIdiomasActuales.SelectedItem;
+                idioma.Eliminar();
+                LimpiarForm();
+
+                List<Idioma> idiomas = Idioma.ListarTodos();
+                lstIdiomasActuales.DataSource = idiomas;
+                lstIdiomasActuales.SelectedItem = null;
+            }
+        }
         #endregion
 
         #region Métodos
