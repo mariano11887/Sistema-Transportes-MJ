@@ -99,5 +99,18 @@ namespace BL
         {
             return new PermisoCompuesto();
         }
+
+        public class Comparador : IEqualityComparer<Permiso>
+        {
+            public bool Equals(Permiso x, Permiso y)
+            {
+                return x.Id == y.Id;
+            }
+
+            public int GetHashCode(Permiso obj)
+            {
+                return obj.GetHashCode();
+            }
+        }
     }
 }

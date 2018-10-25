@@ -148,11 +148,6 @@ namespace DAL
             }
         }
 
-        public List<UsuarioDAL> ObtenerVarios()
-        {
-            return new List<UsuarioDAL>();
-        }
-
         public static void PonerIdiomaDefault(int idiomaIdAQuitar)
         {
             string query = "UPDATE usuario SET idioma_id = 1 WHERE idioma_id = @idiomaIdViejo";
@@ -161,6 +156,28 @@ namespace DAL
                 new SqlParameter("@idiomaIdViejo", idiomaIdAQuitar)
             };
             SqlHelper.Instancia().Ejecutar(query, parameters);
+        }
+
+        public static List<UsuarioDAL> ObtenerTodos()
+        {
+            string query = "SELECT id, nombre, idioma_id, nombre_usuario, contrasenia FROM usuario WHERE habilitado = 1";
+            SqlParameter[] parameters = { };
+            DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+            List<UsuarioDAL> usuariosDAL = new List<UsuarioDAL>();
+            foreach(DataRow row in table.Rows)
+            {
+                UsuarioDAL usuarioDAL = new UsuarioDAL()
+                {
+                    UsuarioId = int.Parse(row["id"].ToString()),
+                    Nombre = row["nombre"].ToString(),
+                    IdiomaId = int.Parse(row["idioma_id"].ToString()),
+                    NombreDeUsuario = row["nombre_usuario"].ToString(),
+                    Contrasenia = row["contrasenia"].ToString(),
+                    Habilitado = true
+                };
+                usuariosDAL.Add(usuarioDAL);
+            }
+            return usuariosDAL;
         }
         #endregion
 

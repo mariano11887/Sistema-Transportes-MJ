@@ -165,9 +165,9 @@ namespace UI
         #region Métodos
         public override void ProcesarControlesConPermisos()
         {
-            btnCrearNuevo.Visible = TienePermiso(Permisos.CREAR_IDIOMAS);
-            btnEditar.Visible = TienePermiso(Permisos.MODIFICAR_IDIOMAS);
-            btnEliminar.Visible = TienePermiso(Permisos.BORRAR_IDIOMAS);
+            btnCrearNuevo.Visible = TienePermiso(Permisos.IDIOMAS_ALTA);
+            btnEditar.Visible = TienePermiso(Permisos.IDIOMAS_MODIFICAR);
+            btnEliminar.Visible = TienePermiso(Permisos.IDIOMAS_BAJA);
         }
 
         private void LlenarGrillaLeyendasEspaniol(List<Leyenda> leyendas)

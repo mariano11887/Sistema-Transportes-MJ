@@ -172,8 +172,10 @@ namespace UI
 
         private void AgregarAlArbol(Permiso permiso, TreeNode nodoPadre)
         {
-            TreeNode nodo = new TreeNode(permiso.ToString());
-            nodo.Tag = permiso;
+            TreeNode nodo = new TreeNode(permiso.ToString())
+            {
+                Tag = permiso
+            };
             List<Permiso> permisosHijos = permiso.ObtenerPermisosHijos();
             foreach (Permiso p in permisosHijos)
             {
@@ -276,9 +278,9 @@ namespace UI
 
         public override void ProcesarControlesConPermisos()
         {
-            btnCrearNuevo.Visible = TienePermiso(Permisos.CREAR_PERFILES);
-            btnEditar.Visible = TienePermiso(Permisos.MODIFICAR_PERFILES);
-            btnEliminar.Visible = TienePermiso(Permisos.BORRAR_PERFILES);
+            btnCrearNuevo.Visible = TienePermiso(Permisos.PERFILES_ALTA);
+            btnEditar.Visible = TienePermiso(Permisos.PERFILES_MODIFICAR);
+            btnEliminar.Visible = TienePermiso(Permisos.PERFILES_BAJA);
         }
 
         #endregion

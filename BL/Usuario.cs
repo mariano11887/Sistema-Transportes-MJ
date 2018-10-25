@@ -25,6 +25,13 @@ namespace BL
             set { _nombreDeUsuario = value; }
         }
 
+        private string _contrasenia;
+        public string Contrasenia
+        {
+            get { return _contrasenia; }
+            set { _contrasenia = value; }
+        }
+
         private string _nombre;
         public string Nombre
         {
@@ -66,8 +73,13 @@ namespace BL
             }
             set { _idioma = value; }
         }
-
         #endregion
+
+        #region Métodos públicos
+        public override string ToString()
+        {
+            return Nombre;
+        }
 
         public bool Login(string nombreDeUsuario, string contrasenia)
         {
@@ -113,6 +125,21 @@ namespace BL
             UsuarioDAL.PonerIdiomaDefault(idiomaAQuitar.Id);
         }
 
+        public static List<Usuario> ObtenerTodos()
+        {
+            List<UsuarioDAL> usuariosDAL = UsuarioDAL.ObtenerTodos();
+            List<Usuario> usuarios = new List<Usuario>();
+            foreach(UsuarioDAL usuarioDAL in usuariosDAL)
+            {
+                Usuario usuario = new Usuario();
+                usuario.ConvertirDesdeDAL(usuarioDAL);
+                usuarios.Add(usuario);
+            }
+            return usuarios;
+        }
+        #endregion
+
+        #region Métodos privados
         private void ConvertirDesdeDAL(UsuarioDAL usuarioDAL)
         {
             _id = usuarioDAL.UsuarioId;
@@ -120,6 +147,6 @@ namespace BL
             _nombre = usuarioDAL.Nombre;
             _idiomaId = usuarioDAL.IdiomaId;
         }
-
+        #endregion
     }
 }
