@@ -137,6 +137,40 @@ namespace BL
             }
             return usuarios;
         }
+
+        public void Guardar()
+        {
+            if(!string.IsNullOrEmpty(Contrasenia))
+            {
+                Contrasenia = Encriptador.Encriptar(Contrasenia);
+            }
+
+            // Guardo el usuario
+            UsuarioDAL usuarioDAL = new UsuarioDAL()
+            {
+                UsuarioId = Id,
+                Nombre = Nombre,
+                NombreDeUsuario = NombreDeUsuario,
+                Contrasenia = Contrasenia,
+                IdiomaId = Idioma.Id,
+                Habilitado = true
+            };
+            
+            List<int> permisosId = new List<int>();
+            foreach(Permiso permiso in Perfil)
+            {
+                permisosId.Add(permiso.Id);
+            }
+            usuarioDAL.PermisosId = permisosId;
+            usuarioDAL.Guardar();
+
+            // Registro en bitácora
+            BitacoraDAL bitacoraDAL = new BitacoraDAL()
+            {
+                Detalle = "Usuario " + NombreDeUsuario + " guardado",
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+        }
         #endregion
 
         #region Métodos privados

@@ -47,6 +47,12 @@ namespace DAL
             set { _idiomaId = value; }
         }
 
+        private List<int> _permisosId;
+        public List<int> PermisosId
+        {
+            set { _permisosId = value; }
+        }
+
         private bool _habilitado;
         public bool Habilitado
         {
@@ -58,7 +64,36 @@ namespace DAL
         #region Métodos públicos
         public void Guardar()
         {
+            string query;
+            SqlParameter[] parameters;
+            if (UsuarioId > 0)
+            {
+                Actualizar();
 
+                // Borro los permisos que tenga el usuario
+                query = "DELETE FROM usuario_permiso WHERE usuario_id = @usuarioId";
+                parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@usuarioId", UsuarioId)
+                };
+                SqlHelper.Instancia().Ejecutar(query, parameters);
+            }
+            else
+            {
+                Insertar();
+            }
+
+            // Inserto los permisos
+            query = "INSERT INTO usuario_permiso (usuario_id, permiso_id) VALUES (@usuarioId, @permisoId)";
+            foreach (int permisoId in _permisosId)
+            {
+                parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@usuarioId", UsuarioId),
+                    new SqlParameter("@permisoId", permisoId)
+                };
+                SqlHelper.Instancia().Ejecutar(query, parameters);
+            }
         }
 
         public void Obtener()
@@ -164,7 +199,7 @@ namespace DAL
             SqlParameter[] parameters = { };
             DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
             List<UsuarioDAL> usuariosDAL = new List<UsuarioDAL>();
-            foreach(DataRow row in table.Rows)
+            foreach (DataRow row in table.Rows)
             {
                 UsuarioDAL usuarioDAL = new UsuarioDAL()
                 {
@@ -181,5 +216,42 @@ namespace DAL
         }
         #endregion
 
+        #region Métodos privados
+        private void Insertar()
+        {
+            string query = "INSERT INTO usuario (nombre, idioma_id, nombre_usuario, contrasenia) OUTPUT INSERTED.id VALUES (@nombre, @idiomaId, @nombreUsuario, @contrasenia)";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@nombre", Nombre),
+                new SqlParameter("@idiomaId", IdiomaId),
+                new SqlParameter("@nombreUsuario", NombreDeUsuario),
+                new SqlParameter("@contrasenia", Contrasenia)
+            };
+            UsuarioId = SqlHelper.Instancia().Insertar(query, parameters);
+        }
+
+        private void Actualizar()
+        {
+            string query = "UPDATE usuario SET nombre = @nombre, idioma_id = @idiomaId, nombre_usuario = @nombreUsuario";
+            SqlParameter[] parameters;
+            if (!string.IsNullOrEmpty(Contrasenia))
+            {
+                query += ", contrasenia = @contrasenia";
+                parameters = new SqlParameter[5];
+                parameters[4] = new SqlParameter("@contrasenia", Contrasenia);
+            }
+            else
+            {
+                parameters = new SqlParameter[4];
+            }
+            query += " WHERE id = @id";
+            parameters[0] = new SqlParameter("@nombre", Nombre);
+            parameters[1] = new SqlParameter("@idiomaId", IdiomaId);
+            parameters[2] = new SqlParameter("@nombreUsuario", NombreDeUsuario);
+            parameters[3] = new SqlParameter("@id", UsuarioId);
+
+            SqlHelper.Instancia().Ejecutar(query, parameters);
+        }
+        #endregion
     }
 }

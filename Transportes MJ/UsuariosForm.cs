@@ -72,19 +72,7 @@ namespace UI
                 txtNombre.Text = usuario.Nombre;
                 cmbIdioma.SelectedIndex = cmbIdioma.FindStringExact(usuario.Idioma.ToString());
                 txtNombreUsuario.Text = usuario.NombreDeUsuario;
-                _editando = true;
-                foreach (TreeNode nodo in trvPermisos.Nodes)
-                {
-                    if (!nodo.Checked)
-                    {
-                        Permiso permiso = (Permiso)nodo.Tag;
-                        if (usuario.Perfil.Contains(permiso, new Permiso.Comparador()))
-                        {
-                            nodo.Checked = true;
-                        }
-                    }
-                }
-                _editando = false;
+                TildarPermisosUsuario(usuario, trvPermisos.Nodes);
 
                 // El usuario administrador (id 1) no puede editarse ni eliminarse
                 btnEditar.Enabled = usuario.Id > 1;
@@ -132,7 +120,9 @@ namespace UI
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Chequeo que la info esté bien
-            if(string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombreUsuario.Text))
+            if (string.IsNullOrWhiteSpace(txtNombre.Text)
+                || string.IsNullOrWhiteSpace(txtNombreUsuario.Text)
+                || (lstUsuariosActuales.SelectedItem == null && string.IsNullOrWhiteSpace(txtContrasenia.Text)))
             {
                 // Faltan datos
                 MessageBox.Show(ObtenerLeyenda("msgIncompleto"), ObtenerLeyenda("msgIncompletoTitulo"),
@@ -148,7 +138,7 @@ namespace UI
             {
                 // Todo OK, guardo
                 Usuario usuario;
-                if(lstUsuariosActuales.SelectedItem == null)
+                if (lstUsuariosActuales.SelectedItem == null)
                 {
                     usuario = new Usuario();
                 }
@@ -161,9 +151,16 @@ namespace UI
                 usuario.NombreDeUsuario = txtNombreUsuario.Text;
                 usuario.Contrasenia = txtContrasenia.Text;
                 usuario.Perfil = ObtenerPermisosTildados();
-                // TODO: Hacer que guarde!!
+                usuario.Guardar();
+
+                MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ResetearDetalles(false);
+                RefrescarListaUsuarios();
             }
         }
+
         #endregion
 
         #region Métodos
@@ -255,6 +252,24 @@ namespace UI
                 }
             }
             return permisos;
+        }
+
+        private void TildarPermisosUsuario(Usuario usuario, TreeNodeCollection nodosABuscar)
+        {
+            foreach (TreeNode nodo in nodosABuscar)
+            {
+                if (!nodo.Checked)
+                {
+                    Permiso permiso = (Permiso)nodo.Tag;
+                    if (usuario.Perfil.Contains(permiso, new Permiso.Comparador()))
+                    {
+                        _editando = true;
+                        nodo.Checked = true;
+                        _editando = false;
+                    }
+                    TildarPermisosUsuario(usuario, nodo.Nodes);
+                }
+            }
         }
         #endregion
     }
