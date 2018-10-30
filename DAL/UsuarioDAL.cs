@@ -214,6 +214,24 @@ namespace DAL
             }
             return usuariosDAL;
         }
+
+        public static void Eliminar(int usuarioId)
+        {
+            // Primero elimino los permisos
+            string query = "DELETE FROM usuario_permiso WHERE usuario_id = @usuarioId";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@usuarioId", usuarioId)
+            };
+            SqlHelper.Instancia().Ejecutar(query, parameters);
+
+            // Ahora deshabilito el usuario
+            query = "UPDATE usuario SET habilitado = 0 WHERE id = @usuarioId";
+            parameters = new SqlParameter[1] {
+                new SqlParameter("@usuarioId", usuarioId)
+            };
+            SqlHelper.Instancia().Ejecutar(query, parameters);
+        }
         #endregion
 
         #region Métodos privados

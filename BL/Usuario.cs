@@ -170,6 +170,20 @@ namespace BL
                 Detalle = "Usuario " + NombreDeUsuario + " guardado",
                 UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
             };
+            bitacoraDAL.Guardar();
+        }
+
+        public void Eliminar()
+        {
+            UsuarioDAL.Eliminar(Id);
+
+            // Registro en bitácora
+            BitacoraDAL bitacoraDAL = new BitacoraDAL()
+            {
+                Detalle = "Usuario " + NombreDeUsuario + " eliminado",
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+            bitacoraDAL.Guardar();
         }
         #endregion
 

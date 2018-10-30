@@ -75,8 +75,10 @@ namespace UI
                 TildarPermisosUsuario(usuario, trvPermisos.Nodes);
 
                 // El usuario administrador (id 1) no puede editarse ni eliminarse
-                btnEditar.Enabled = usuario.Id > 1;
-                btnEliminar.Enabled = usuario.Id > 1;
+                // Tampoco puede editarse el usuario actual
+                bool puedeEditarse = usuario.Id > 1 && usuario.Id != Sesion.Instancia().UsuarioLogueado.Id;
+                btnEditar.Enabled = puedeEditarse;
+                btnEliminar.Enabled = puedeEditarse;
             }
             _ultimoUsuarioSeleccionado = lstUsuariosActuales.SelectedIndex;
         }
@@ -161,6 +163,34 @@ namespace UI
             }
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Enabled = true;
+            cmbIdioma.Enabled = true;
+            txtNombreUsuario.Enabled = true;
+            txtContrasenia.Enabled = true;
+            txtRepetirContrasenia.Enabled = true;
+            _editando = true;
+            btnGuardar.Enabled = true;
+            btnDescartar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(ObtenerLeyenda("msgConfEliminar"), ObtenerLeyenda("msgConfEliminarTitulo"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+            {
+                Usuario usuario = (Usuario)lstUsuariosActuales.SelectedItem;
+                usuario.Eliminar();
+
+                MessageBox.Show(ObtenerLeyenda("msgEliminado"), ObtenerLeyenda("msgEliminadoTitulo"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ResetearDetalles(false);
+                RefrescarListaUsuarios();
+            }
+        }
         #endregion
 
         #region Métodos
@@ -179,6 +209,7 @@ namespace UI
             {
                 lstUsuariosActuales.Items.Add(usuario);
             }
+            _ultimoUsuarioSeleccionado = -1;
         }
 
         private void AgregarAlArbol(Permiso permiso, TreeNode nodoPadre)
