@@ -29,115 +29,146 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BitacoraForm));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grpFiltros = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblParteDelTexto = new System.Windows.Forms.Label();
+            this.txtParteDelTexto = new System.Windows.Forms.TextBox();
+            this.lblFechaFin = new System.Windows.Forms.Label();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.dgvRegistros = new System.Windows.Forms.DataGridView();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.cmbUsuario = new System.Windows.Forms.ComboBox();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grpFiltros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grpFiltros
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(241, 14);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 137);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
+            this.grpFiltros.Controls.Add(this.cmbUsuario);
+            this.grpFiltros.Controls.Add(this.lblUsuario);
+            this.grpFiltros.Controls.Add(this.btnBuscar);
+            this.grpFiltros.Controls.Add(this.lblParteDelTexto);
+            this.grpFiltros.Controls.Add(this.txtParteDelTexto);
+            this.grpFiltros.Controls.Add(this.lblFechaFin);
+            this.grpFiltros.Controls.Add(this.dtpFechaFin);
+            this.grpFiltros.Controls.Add(this.lblFechaInicio);
+            this.grpFiltros.Controls.Add(this.dtpFechaInicio);
+            this.grpFiltros.Location = new System.Drawing.Point(241, 14);
+            this.grpFiltros.Name = "grpFiltros";
+            this.grpFiltros.Size = new System.Drawing.Size(323, 157);
+            this.grpFiltros.TabIndex = 0;
+            this.grpFiltros.TabStop = false;
+            this.grpFiltros.Text = "Filtros";
             // 
-            // dateTimePicker1
+            // btnBuscar
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(96, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.btnBuscar.Location = new System.Drawing.Point(126, 124);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // label1
+            // lblParteDelTexto
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Fecha inicio";
+            this.lblParteDelTexto.AutoSize = true;
+            this.lblParteDelTexto.Location = new System.Drawing.Point(15, 101);
+            this.lblParteDelTexto.Name = "lblParteDelTexto";
+            this.lblParteDelTexto.Size = new System.Drawing.Size(75, 13);
+            this.lblParteDelTexto.TabIndex = 5;
+            this.lblParteDelTexto.Text = "Parte del texto";
             // 
-            // label2
+            // txtParteDelTexto
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Fecha fin";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.txtParteDelTexto.Location = new System.Drawing.Point(96, 98);
+            this.txtParteDelTexto.Name = "txtParteDelTexto";
+            this.txtParteDelTexto.Size = new System.Drawing.Size(200, 20);
+            this.txtParteDelTexto.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // lblFechaFin
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(96, 45);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 2;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.lblFechaFin.AutoSize = true;
+            this.lblFechaFin.Location = new System.Drawing.Point(39, 51);
+            this.lblFechaFin.Name = "lblFechaFin";
+            this.lblFechaFin.Size = new System.Drawing.Size(51, 13);
+            this.lblFechaFin.TabIndex = 3;
+            this.lblFechaFin.Text = "Fecha fin";
             // 
-            // textBox1
+            // dtpFechaFin
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 4;
+            this.dtpFechaFin.Location = new System.Drawing.Point(96, 45);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaFin.TabIndex = 2;
+            this.dtpFechaFin.ValueChanged += new System.EventHandler(this.dtpFechaFin_ValueChanged);
             // 
-            // label3
+            // lblFechaInicio
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Parte del texto";
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(26, 25);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(64, 13);
+            this.lblFechaInicio.TabIndex = 1;
+            this.lblFechaInicio.Text = "Fecha inicio";
             // 
-            // button1
+            // dtpFechaInicio
             // 
-            this.button1.Location = new System.Drawing.Point(118, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(96, 19);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaInicio.TabIndex = 0;
+            this.dtpFechaInicio.ValueChanged += new System.EventHandler(this.dtpFechaInicio_ValueChanged);
             // 
-            // dataGridView1
+            // dgvRegistros
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRegistros.AllowUserToAddRows = false;
+            this.dgvRegistros.AllowUserToDeleteRows = false;
+            this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colFecha,
+            this.colUsuario,
             this.colDetalle});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 157);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 210);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvRegistros.Location = new System.Drawing.Point(12, 177);
+            this.dgvRegistros.Name = "dgvRegistros";
+            this.dgvRegistros.ReadOnly = true;
+            this.dgvRegistros.Size = new System.Drawing.Size(776, 237);
+            this.dgvRegistros.TabIndex = 1;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(47, 74);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.TabIndex = 7;
+            this.lblUsuario.Text = "Usuario";
+            // 
+            // cmbUsuario
+            // 
+            this.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUsuario.FormattingEnabled = true;
+            this.cmbUsuario.Location = new System.Drawing.Point(96, 71);
+            this.cmbUsuario.Name = "cmbUsuario";
+            this.cmbUsuario.Size = new System.Drawing.Size(200, 21);
+            this.cmbUsuario.TabIndex = 8;
             // 
             // colFecha
             // 
             this.colFecha.HeaderText = "Fecha";
             this.colFecha.Name = "colFecha";
             this.colFecha.ReadOnly = true;
+            // 
+            // colUsuario
+            // 
+            this.colUsuario.HeaderText = "Usuario";
+            this.colUsuario.Name = "colUsuario";
+            this.colUsuario.ReadOnly = true;
             // 
             // colDetalle
             // 
@@ -149,31 +180,35 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 385);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(800, 426);
+            this.Controls.Add(this.dgvRegistros);
+            this.Controls.Add(this.grpFiltros);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BitacoraForm";
             this.Text = "Bitácora";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.BitacoraForm_Load);
+            this.grpFiltros.ResumeLayout(false);
+            this.grpFiltros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox grpFiltros;
+        private System.Windows.Forms.Label lblFechaFin;
+        private System.Windows.Forms.DateTimePicker dtpFechaFin;
+        private System.Windows.Forms.Label lblFechaInicio;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblParteDelTexto;
+        private System.Windows.Forms.TextBox txtParteDelTexto;
+        private System.Windows.Forms.DataGridView dgvRegistros;
+        private System.Windows.Forms.ComboBox cmbUsuario;
+        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDetalle;
     }
 }

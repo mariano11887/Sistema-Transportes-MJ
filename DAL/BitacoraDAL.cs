@@ -48,9 +48,36 @@ namespace DAL
             SqlHelper.Instancia().Ejecutar(query, parameters, SqlHelper.Bd.Bitacora);
         }
 
-        public static List<BitacoraDAL> ObtenerVarios(DateTime fechaInicio, DateTime fechaFin, string texto)
+        public static List<BitacoraDAL> Buscar(DateTime fechaInicio, DateTime fechaFin, int usuarioId, string texto)
         {
-            return new List<BitacoraDAL>();
+            string query = "SELECT fecha_hora, usuario_id, detalle FROM bitacora WHERE fecha_hora BETWEEN @fechaInicio AND @fechaFin";
+            List<SqlParameter> paramList = new List<SqlParameter> {
+                new SqlParameter("@fechaInicio", fechaInicio),
+                new SqlParameter("@fechaFin", fechaFin)
+            };
+            if(usuarioId > 0)
+            {
+                query += " AND usuario_id = @usuarioId";
+                paramList.Add(new SqlParameter("@usuarioId", usuarioId));
+            }
+            if(!string.IsNullOrEmpty(texto))
+            {
+                query += " AND detalle LIKE @detalle";
+                paramList.Add(new SqlParameter("@detalle", "%" + texto + "%"));
+            }
+            DataTable table = SqlHelper.Instancia().Obtener(query, paramList.ToArray(), SqlHelper.Bd.Bitacora);
+            List<BitacoraDAL> bitacorasDAL = new List<BitacoraDAL>();
+            foreach(DataRow row in table.Rows)
+            {
+                BitacoraDAL bitacoraDAL = new BitacoraDAL
+                {
+                    _fechaHora = DateTime.Parse(row["fecha_hora"].ToString()),
+                    UsuarioId = int.Parse(row["usuario_id"].ToString()),
+                    Detalle = row["detalle"].ToString()
+                };
+                bitacorasDAL.Add(bitacoraDAL);
+            }
+            return bitacorasDAL;
         }
     }
 }

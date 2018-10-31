@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backup.cs" />
+    <Compile Include="Bitacora.cs" />
     <Compile Include="Encriptador.cs" />
     <Compile Include="Idioma.cs" />
     <Compile Include="Leyenda.cs" />

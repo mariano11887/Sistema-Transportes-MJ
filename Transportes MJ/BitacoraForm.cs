@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,45 @@ namespace UI
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void BitacoraForm_Load(object sender, EventArgs e)
         {
+            Abrir();
 
+            dtpFechaInicio.MaxDate = DateTime.Now;
+            dtpFechaFin.MinDate = DateTime.Now;
+            dtpFechaFin.MaxDate = DateTime.Now;
+
+            cmbUsuario.Items.AddRange(Usuario.ObtenerTodos().ToArray());
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        private void dtpFechaInicio_ValueChanged(object sender, EventArgs e)
         {
+            dtpFechaFin.MinDate = dtpFechaInicio.Value;
+        }
 
+        private void dtpFechaFin_ValueChanged(object sender, EventArgs e)
+        {
+            dtpFechaInicio.MaxDate = dtpFechaFin.Value;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgvRegistros.Rows.Clear();
+
+            DateTime fechaInicio = dtpFechaInicio.Value.Date;
+            DateTime fechaFin = dtpFechaFin.Value.Date.AddDays(1); // Agrego un día para que lo incluya en la búsqueda
+            Usuario usuario = cmbUsuario.SelectedItem as Usuario;
+            string parteTexto = txtParteDelTexto.Text.Trim();
+            List<Bitacora> bitacoras = Bitacora.Buscar(fechaInicio, fechaFin, usuario, parteTexto);
+            foreach(Bitacora bitacora in bitacoras)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgvRegistros);
+                row.Cells[0].Value = bitacora.FechaHora;
+                row.Cells[1].Value = bitacora.Usuario;
+                row.Cells[2].Value = bitacora.Detalle;
+                dgvRegistros.Rows.Add(row);
+            }
         }
     }
 }

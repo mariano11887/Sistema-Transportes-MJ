@@ -50,8 +50,10 @@ namespace UI
 
         private void mniPerfilesDeUsuario_Click(object sender, EventArgs e)
         {
-            PerfilesForm perfilesForm = new PerfilesForm();
-            perfilesForm.MdiParent = this;
+            PerfilesForm perfilesForm = new PerfilesForm
+            {
+                MdiParent = this
+            };
             perfilesForm.Show();
         }
 
@@ -62,23 +64,43 @@ namespace UI
 
         private void mniCopiaDeSeguridad_Click(object sender, EventArgs e)
         {
-            BackupForm backupForm = new BackupForm();
-            backupForm.MdiParent = this;
+            BackupForm backupForm = new BackupForm
+            {
+                MdiParent = this
+            };
             backupForm.Show();
         }
 
         private void mniIdiomas_Click(object sender, EventArgs e)
         {
-            IdiomasForm idiomasForm = new IdiomasForm();
-            idiomasForm.MdiParent = this;
+            IdiomasForm idiomasForm = new IdiomasForm
+            {
+                MdiParent = this
+            };
             idiomasForm.Show();
         }
 
         private void mniUsuarios_Click(object sender, EventArgs e)
         {
-            UsuariosForm usuariosForm = new UsuariosForm();
-            usuariosForm.MdiParent = this;
+            UsuariosForm usuariosForm = new UsuariosForm
+            {
+                MdiParent = this
+            };
             usuariosForm.Show();
+        }
+
+        private void mniSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void mniVerBitacora_Click(object sender, EventArgs e)
+        {
+            BitacoraForm bitacoraForm = new BitacoraForm
+            {
+                MdiParent = this
+            };
+            bitacoraForm.Show();
         }
         #endregion
 
@@ -98,6 +120,9 @@ namespace UI
 
         public override void ProcesarControlesConPermisos()
         {
+            // Sistema
+            mniVerBitacora.Visible = TienePermiso(Permisos.BITACORA_VER);
+
             // Administrar
             mniPerfilesDeUsuario.Visible = TienePermiso(Permisos.PERFILES_VER);
             mniIdiomas.Visible = TienePermiso(Permisos.IDIOMAS_VER);
@@ -106,7 +131,6 @@ namespace UI
 
             // Opciones
             mniCopiaDeSeguridad.Visible = TienePermiso(Permisos.BACKUP_GESTIONAR);
-            mniOpciones.Visible = TienePermiso(Permisos.BACKUP_GESTIONAR);
         }
 
         #endregion

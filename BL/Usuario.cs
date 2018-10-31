@@ -10,6 +10,20 @@ namespace BL
 {
     public class Usuario
     {
+        #region Constructores
+        public Usuario() { }
+
+        public Usuario(int id)
+        {
+            UsuarioDAL usuarioDAL = new UsuarioDAL()
+            {
+                UsuarioId = id
+            };
+            usuarioDAL.Obtener(false);
+            ConvertirDesdeDAL(usuarioDAL);
+        }
+        #endregion
+
         #region Propiedades
         private int _id;
         public int Id
