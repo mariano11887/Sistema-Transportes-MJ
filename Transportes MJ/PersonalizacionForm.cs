@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,39 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        #region Eventos
+        private void PersonalizacionForm_Load(object sender, EventArgs e)
+        {
+            Abrir();
+
+            cmbIdioma.Items.AddRange(Idioma.ListarTodos().ToArray());
+            cmbIdioma.SelectedIndex = cmbIdioma.FindStringExact(Sesion.Instancia().UsuarioLogueado.Idioma.ToString());
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Usuario usuarioLogueado = Sesion.Instancia().UsuarioLogueado;
+            Idioma idiomaSeleccionado = (Idioma)cmbIdioma.SelectedItem;
+            if(!usuarioLogueado.Idioma.Equals(idiomaSeleccionado))
+            {
+                usuarioLogueado.Idioma = idiomaSeleccionado;
+                usuarioLogueado.Guardar();
+
+                GestorDeIdioma.Instancia().Notificar();
+            }
+
+            Close();
+        }
+        #endregion
+
+        #region Métodos
+
+        #endregion
     }
 }

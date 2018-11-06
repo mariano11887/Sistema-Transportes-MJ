@@ -118,6 +118,15 @@ namespace BL
         {
             return Nombre;
         }
+
+        public override bool Equals(object obj)
+        {
+            if(obj is Idioma)
+            {
+                return Id == ((Idioma)obj).Id;
+            }
+            return false;
+        }
         #endregion
 
         #region Métodos privados

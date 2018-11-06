@@ -35,6 +35,7 @@
             this.mniLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.mniOpciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniPersonalizar = new System.Windows.Forms.ToolStripMenuItem();
             this.mniCopiaDeSeguridad = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAdministrar = new System.Windows.Forms.ToolStripMenuItem();
             this.mniPerfilesDeUsuario = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.mniAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAyudaEnLinea = new System.Windows.Forms.ToolStripMenuItem();
             this.mniFicheroLeame = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniPersonalizar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,21 +79,21 @@
             // mniVerBitacora
             // 
             this.mniVerBitacora.Name = "mniVerBitacora";
-            this.mniVerBitacora.Size = new System.Drawing.Size(180, 22);
+            this.mniVerBitacora.Size = new System.Drawing.Size(158, 22);
             this.mniVerBitacora.Text = "Ver bitácora";
             this.mniVerBitacora.Click += new System.EventHandler(this.mniVerBitacora_Click);
             // 
             // mniLogout
             // 
             this.mniLogout.Name = "mniLogout";
-            this.mniLogout.Size = new System.Drawing.Size(180, 22);
+            this.mniLogout.Size = new System.Drawing.Size(158, 22);
             this.mniLogout.Text = "Cerrar Sesión";
             this.mniLogout.Click += new System.EventHandler(this.mniLogout_Click);
             // 
             // mniSalir
             // 
             this.mniSalir.Name = "mniSalir";
-            this.mniSalir.Size = new System.Drawing.Size(180, 22);
+            this.mniSalir.Size = new System.Drawing.Size(158, 22);
             this.mniSalir.Text = "Salir del sistema";
             this.mniSalir.Click += new System.EventHandler(this.mniSalir_Click);
             // 
@@ -105,6 +105,13 @@
             this.mniOpciones.Name = "mniOpciones";
             this.mniOpciones.Size = new System.Drawing.Size(69, 20);
             this.mniOpciones.Text = "Opciones";
+            // 
+            // mniPersonalizar
+            // 
+            this.mniPersonalizar.Name = "mniPersonalizar";
+            this.mniPersonalizar.Size = new System.Drawing.Size(180, 22);
+            this.mniPersonalizar.Text = "Personalizar";
+            this.mniPersonalizar.Click += new System.EventHandler(this.mniPersonalizar_Click);
             // 
             // mniCopiaDeSeguridad
             // 
@@ -126,21 +133,21 @@
             // mniPerfilesDeUsuario
             // 
             this.mniPerfilesDeUsuario.Name = "mniPerfilesDeUsuario";
-            this.mniPerfilesDeUsuario.Size = new System.Drawing.Size(180, 22);
+            this.mniPerfilesDeUsuario.Size = new System.Drawing.Size(170, 22);
             this.mniPerfilesDeUsuario.Text = "Perfiles de usuario";
             this.mniPerfilesDeUsuario.Click += new System.EventHandler(this.mniPerfilesDeUsuario_Click);
             // 
             // mniIdiomas
             // 
             this.mniIdiomas.Name = "mniIdiomas";
-            this.mniIdiomas.Size = new System.Drawing.Size(180, 22);
+            this.mniIdiomas.Size = new System.Drawing.Size(170, 22);
             this.mniIdiomas.Text = "Idiomas";
             this.mniIdiomas.Click += new System.EventHandler(this.mniIdiomas_Click);
             // 
             // mniUsuarios
             // 
             this.mniUsuarios.Name = "mniUsuarios";
-            this.mniUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.mniUsuarios.Size = new System.Drawing.Size(170, 22);
             this.mniUsuarios.Text = "Usuarios";
             this.mniUsuarios.Click += new System.EventHandler(this.mniUsuarios_Click);
             // 
@@ -199,12 +206,6 @@
             this.mniFicheroLeame.Name = "mniFicheroLeame";
             this.mniFicheroLeame.Size = new System.Drawing.Size(152, 22);
             this.mniFicheroLeame.Text = "Fichero léame";
-            // 
-            // mniPersonalizar
-            // 
-            this.mniPersonalizar.Name = "mniPersonalizar";
-            this.mniPersonalizar.Size = new System.Drawing.Size(180, 22);
-            this.mniPersonalizar.Text = "Personalizar";
             // 
             // MainForm
             // 

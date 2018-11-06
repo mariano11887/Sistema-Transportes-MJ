@@ -72,12 +72,15 @@
     <Compile Include="FormGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GestorDeIdioma.cs" />
     <Compile Include="IdiomasForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IdiomasForm.Designer.cs">
       <DependentUpon>IdiomasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="IObservadorIdioma.cs" />
+    <Compile Include="IPublicadorIdioma.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

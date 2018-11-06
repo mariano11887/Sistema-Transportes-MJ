@@ -9,16 +9,30 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public class FormGeneral : Form
+    public class FormGeneral : Form, IObservadorIdioma
     {
         private List<Leyenda> _leyendas;
         
         public void Abrir()
         {
+            GestorDeIdioma.Instancia().RegistrarObservador(this);
+
+            FormClosing += new FormClosingEventHandler(ThisForm_FormClosing);
+
+            ActualizarLeyendas();
+            ProcesarControlesConPermisos();
+        }
+
+        private void ThisForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GestorDeIdioma.Instancia().QuitarObservador(this);
+        }
+
+        public void ActualizarLeyendas()
+        {
             Idioma idioma = Sesion.Instancia().UsuarioLogueado.Idioma;
             _leyendas = idioma.Leyendas.Where(l => l.NombreForm == Name).ToList();
             AsignarLeyenda(this);
-            ProcesarControlesConPermisos();
         }
 
         private void AsignarLeyenda(Control Control)

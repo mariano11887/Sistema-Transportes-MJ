@@ -102,6 +102,15 @@ namespace UI
             };
             bitacoraForm.Show();
         }
+
+        private void mniPersonalizar_Click(object sender, EventArgs e)
+        {
+            PersonalizacionForm personalizacionForm = new PersonalizacionForm
+            {
+                MdiParent = this
+            };
+            personalizacionForm.Show();
+        }
         #endregion
 
         #region Métodos
