@@ -43,7 +43,7 @@ namespace UI
             }
             else
             {
-                MostrarError();
+                MessageBox.Show("Se deben completar todos los campos");
             }
         }
 
@@ -63,19 +63,7 @@ namespace UI
 
         public bool ValidarDatos()
         {
-            return !String.IsNullOrWhiteSpace(txtNombreDeUsuario.Text) && !String.IsNullOrWhiteSpace(txtContrasenia.Text);
-        }
-
-        public void Login()
-        {
-
-        }
-
-        public void MostrarError()
-        {
-            MessageBox.Show("Se deben completar todos los campos");
-        }
-
-        
+            return !string.IsNullOrWhiteSpace(txtNombreDeUsuario.Text) && !string.IsNullOrWhiteSpace(txtContrasenia.Text);
+        }        
     }
 }

@@ -10,6 +10,14 @@ namespace DAL
 {
     public class BitacoraDAL
     {
+        #region Constructores
+        public BitacoraDAL()
+        {
+            _fechaHora = DateTime.Now;
+        }
+        #endregion
+
+        #region Propiedades
         private DateTime _fechaHora;
         public DateTime FechaHora
         {
@@ -23,19 +31,15 @@ namespace DAL
             set { _usuarioId = value; }
         }
 
-
         private string _detalle;
         public string Detalle
         {
             get { return _detalle; }
             set { _detalle = value; }
         }
+        #endregion
 
-        public BitacoraDAL()
-        {
-            _fechaHora = DateTime.Now;
-        }
-
+        #region Métodos
         public void Guardar()
         {
             string query = "INSERT INTO bitacora (fecha_hora, usuario_id, detalle) VALUES (@fechaHora, @usuarioId, @detalle);";
@@ -79,5 +83,6 @@ namespace DAL
             }
             return bitacorasDAL;
         }
+        #endregion
     }
 }

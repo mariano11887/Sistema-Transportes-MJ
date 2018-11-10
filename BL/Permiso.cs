@@ -9,6 +9,7 @@ namespace BL
 {
     public abstract class Permiso
     {
+        #region Propiedades
         protected int _id;
         public int Id
         {
@@ -40,8 +41,9 @@ namespace BL
         {
             get { return _esPerfil; }
         }
+        #endregion
 
-
+        #region Métodos
         public abstract void Guardar();
 
         public abstract void Borrar();
@@ -99,6 +101,7 @@ namespace BL
         {
             return new PermisoCompuesto();
         }
+        #endregion
 
         public class Comparador : IEqualityComparer<Permiso>
         {

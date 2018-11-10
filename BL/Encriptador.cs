@@ -12,11 +12,11 @@ namespace BL
     {
         private const string _salt = "b5N3pWkRwzJH";
 
-        public static string Encriptar(string contrasenia)
+        public static string Encriptar(string texto)
         {
             try
             {
-                byte[] data = Encoding.ASCII.GetBytes(contrasenia + _salt);
+                byte[] data = Encoding.ASCII.GetBytes(texto + _salt);
                 data = new SHA256Managed().ComputeHash(data);
                 return Convert.ToBase64String(data);
             }

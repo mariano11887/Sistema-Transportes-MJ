@@ -25,6 +25,13 @@ namespace UI
         private void PerfilesForm_Load(object sender, EventArgs e)
         {
             Abrir();
+
+            // Armo el árbol de permisos
+            Permiso permisoRaiz = Permiso.ObtenerPermisoRaiz();
+            AgregarAlArbol(permisoRaiz, null);
+            trvPermisosInteriores.ExpandAll();
+
+            CompletarListadoPerfiles();
         }
 
         private void lstPerfilesActuales_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,17 +166,6 @@ namespace UI
         #endregion
 
         #region Métodos
-        private new void Abrir()
-        {
-            base.Abrir();
-            // Armo el árbol de permisos
-            Permiso permisoRaiz = Permiso.ObtenerPermisoRaiz();
-            AgregarAlArbol(permisoRaiz, null);
-            trvPermisosInteriores.ExpandAll();
-
-            CompletarListadoPerfiles();
-        }
-
         private void AgregarAlArbol(Permiso permiso, TreeNode nodoPadre)
         {
             TreeNode nodo = new TreeNode(permiso.ToString())

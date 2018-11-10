@@ -41,25 +41,6 @@ namespace DAL
             return _instancia;
         }
 
-        private static string LeerConnString(Bd bd)
-        {
-            string key = "";
-            if(bd == Bd.Principal)
-            {
-                key = "Principal";
-            }
-            else if(bd == Bd.Bitacora)
-            {
-                key = "Bitacora";
-            }
-            else if(bd == Bd.Master)
-            {
-                key = "Master";
-            }
-
-            return ConfigurationManager.ConnectionStrings[key].ConnectionString;
-        }
-
         public DataTable Obtener(string query, SqlParameter[] parameters)
         {
             return Obtener(query, parameters, Bd.Principal);
@@ -153,6 +134,25 @@ namespace DAL
                 Log.Grabar(ex);
                 return 0;
             }
+        }
+
+        private static string LeerConnString(Bd bd)
+        {
+            string key = "";
+            if (bd == Bd.Principal)
+            {
+                key = "Principal";
+            }
+            else if (bd == Bd.Bitacora)
+            {
+                key = "Bitacora";
+            }
+            else if (bd == Bd.Master)
+            {
+                key = "Master";
+            }
+
+            return ConfigurationManager.ConnectionStrings[key].ConnectionString;
         }
     }
 }

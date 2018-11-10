@@ -18,7 +18,6 @@ namespace UI
             InitializeComponent();
         }
 
-        #region Eventos
         private void PersonalizacionForm_Load(object sender, EventArgs e)
         {
             Abrir();
@@ -46,10 +45,5 @@ namespace UI
 
             Close();
         }
-        #endregion
-
-        #region Métodos
-
-        #endregion
     }
 }

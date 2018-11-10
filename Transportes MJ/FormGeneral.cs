@@ -12,7 +12,8 @@ namespace UI
     public class FormGeneral : Form, IObservadorIdioma
     {
         private List<Leyenda> _leyendas;
-        
+
+        #region Métodos públicos
         public void Abrir()
         {
             GestorDeIdioma.Instancia().RegistrarObservador(this);
@@ -23,16 +24,40 @@ namespace UI
             ProcesarControlesConPermisos();
         }
 
-        private void ThisForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            GestorDeIdioma.Instancia().QuitarObservador(this);
-        }
-
         public void ActualizarLeyendas()
         {
             Idioma idioma = Sesion.Instancia().UsuarioLogueado.Idioma;
             _leyendas = idioma.Leyendas.Where(l => l.NombreForm == Name).ToList();
             AsignarLeyenda(this);
+        }
+
+        public virtual void ProcesarControlesConPermisos() { }
+        #endregion
+
+        #region Métodos protegidos
+        protected string ObtenerLeyenda(string Clave)
+        {
+            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Clave);
+            if (leyenda != null)
+            {
+                return leyenda.Texto;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        protected bool TienePermiso(string Permiso)
+        {
+            return Sesion.Instancia().TienePermiso(Permiso);
+        }
+        #endregion
+
+        #region Métodos privados
+        private void ThisForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GestorDeIdioma.Instancia().QuitarObservador(this);
         }
 
         private void AsignarLeyenda(Control Control)
@@ -49,7 +74,7 @@ namespace UI
                     AsignarLeyenda(item);
                 }
             }
-            else if(Control.GetType() == typeof(DataGridView))
+            else if (Control.GetType() == typeof(DataGridView))
             {
                 foreach (DataGridViewColumn columna in ((DataGridView)Control).Columns)
                 {
@@ -72,7 +97,7 @@ namespace UI
             {
                 Item.Text = leyenda.Texto;
             }
-            foreach(ToolStripMenuItem item in Item.DropDownItems)
+            foreach (ToolStripMenuItem item in Item.DropDownItems)
             {
                 AsignarLeyenda(item);
             }
@@ -86,25 +111,6 @@ namespace UI
                 columna.HeaderText = leyenda.Texto;
             }
         }
-
-        protected string ObtenerLeyenda(string Clave)
-        {
-            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Clave);
-            if (leyenda != null)
-            {
-                return leyenda.Texto;
-            }
-            else
-            {
-                return "";
-            }
-        }
-
-        public virtual void ProcesarControlesConPermisos() { }
-
-        protected bool TienePermiso(string Permiso)
-        {
-            return Sesion.Instancia().TienePermiso(Permiso);
-        }
+        #endregion
     }
 }

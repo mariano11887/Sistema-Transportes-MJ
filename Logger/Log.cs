@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,17 +10,17 @@ namespace Logger
 {
     public static class Log
     {
-        private static string _logDirectory = "C:/TransportesMJ/";
-        private static string _logFile = _logDirectory + "Transportes MJ.log";
+        private const string ARCHIVO_LOG = "TransportesMJ.log";
 
         public static void Grabar(Exception ex)
         {
-            if (!Directory.Exists(_logDirectory))
+            string ubicacionLog = ConfigurationManager.AppSettings.Get("ubicacionLog");
+            if (!Directory.Exists(ubicacionLog))
             {
-                Directory.CreateDirectory(_logDirectory);
+                Directory.CreateDirectory(ubicacionLog);
             }
 
-            using (StreamWriter writer = new StreamWriter(_logFile, true))
+            using (StreamWriter writer = new StreamWriter(ubicacionLog + ARCHIVO_LOG, true))
             {
                 writer.WriteLine("Fecha: " + DateTime.Now.ToString() + Environment.NewLine +
                     "Mensaje: " + ex.Message + Environment.NewLine +

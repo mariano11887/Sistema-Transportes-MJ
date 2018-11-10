@@ -69,7 +69,6 @@ namespace DAL
             set { _esPerfil = value; }
         }
 
-
         private bool _habilitado;
         public bool Habilitado
         {
