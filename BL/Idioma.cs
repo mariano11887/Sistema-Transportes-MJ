@@ -112,6 +112,14 @@ namespace BL
 
             // Ahora sí elimino el idioma
             IdiomaDAL.Borrar(Id);
+
+            // Registro en la bitácora
+            BitacoraDAL bitacora = new BitacoraDAL()
+            {
+                Detalle = "Se eliminó el idioma " + Nombre,
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+            bitacora.Guardar();
         }
 
         public override string ToString()
