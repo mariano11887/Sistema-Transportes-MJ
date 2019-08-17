@@ -16,5 +16,10 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void PlanillasHorariasForm_Load(object sender, EventArgs e)
+        {
+            Abrir();
+        }
     }
 }

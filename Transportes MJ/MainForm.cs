@@ -37,18 +37,18 @@ namespace UI
                     Application.Exit();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Grabar(ex);
             }
         }
 
-        private void mniLogout_Click(object sender, EventArgs e)
+        private void MniLogout_Click(object sender, EventArgs e)
         {
             CerrarSesion();
         }
 
-        private void mniPerfilesDeUsuario_Click(object sender, EventArgs e)
+        private void MniPerfilesDeUsuario_Click(object sender, EventArgs e)
         {
             PerfilesForm perfilesForm = new PerfilesForm
             {
@@ -62,7 +62,7 @@ namespace UI
             Sesion.Instancia().CerrarSesion();
         }
 
-        private void mniCopiaDeSeguridad_Click(object sender, EventArgs e)
+        private void MniCopiaDeSeguridad_Click(object sender, EventArgs e)
         {
             BackupForm backupForm = new BackupForm
             {
@@ -71,7 +71,7 @@ namespace UI
             backupForm.Show();
         }
 
-        private void mniIdiomas_Click(object sender, EventArgs e)
+        private void MniIdiomas_Click(object sender, EventArgs e)
         {
             IdiomasForm idiomasForm = new IdiomasForm
             {
@@ -80,7 +80,7 @@ namespace UI
             idiomasForm.Show();
         }
 
-        private void mniUsuarios_Click(object sender, EventArgs e)
+        private void MniUsuarios_Click(object sender, EventArgs e)
         {
             UsuariosForm usuariosForm = new UsuariosForm
             {
@@ -89,12 +89,12 @@ namespace UI
             usuariosForm.Show();
         }
 
-        private void mniSalir_Click(object sender, EventArgs e)
+        private void MniSalir_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void mniVerBitacora_Click(object sender, EventArgs e)
+        private void MniVerBitacora_Click(object sender, EventArgs e)
         {
             BitacoraForm bitacoraForm = new BitacoraForm
             {
@@ -103,13 +103,31 @@ namespace UI
             bitacoraForm.Show();
         }
 
-        private void mniPersonalizar_Click(object sender, EventArgs e)
+        private void MniPersonalizar_Click(object sender, EventArgs e)
         {
             PersonalizacionForm personalizacionForm = new PersonalizacionForm
             {
                 MdiParent = this
             };
             personalizacionForm.Show();
+        }
+
+        private void MniPlanillasHorarias_Click(object sender, EventArgs e)
+        {
+            PlanillasHorariasForm planillasHorariasForm = new PlanillasHorariasForm
+            {
+                MdiParent = this
+            };
+            planillasHorariasForm.Show();
+        }
+
+        private void MniVehiculos_Click(object sender, EventArgs e)
+        {
+            VehiculosForm vehiculosForm = new VehiculosForm
+            {
+                MdiParent = this
+            };
+            vehiculosForm.Show();
         }
         #endregion
 
@@ -142,6 +160,9 @@ namespace UI
             mniCopiaDeSeguridad.Visible = TienePermiso(Permisos.BACKUP_GESTIONAR);
         }
 
+
         #endregion
+
+
     }
 }

@@ -81,21 +81,21 @@
             this.mniVerBitacora.Name = "mniVerBitacora";
             this.mniVerBitacora.Size = new System.Drawing.Size(158, 22);
             this.mniVerBitacora.Text = "Ver bitácora";
-            this.mniVerBitacora.Click += new System.EventHandler(this.mniVerBitacora_Click);
+            this.mniVerBitacora.Click += new System.EventHandler(this.MniVerBitacora_Click);
             // 
             // mniLogout
             // 
             this.mniLogout.Name = "mniLogout";
             this.mniLogout.Size = new System.Drawing.Size(158, 22);
             this.mniLogout.Text = "Cerrar Sesión";
-            this.mniLogout.Click += new System.EventHandler(this.mniLogout_Click);
+            this.mniLogout.Click += new System.EventHandler(this.MniLogout_Click);
             // 
             // mniSalir
             // 
             this.mniSalir.Name = "mniSalir";
             this.mniSalir.Size = new System.Drawing.Size(158, 22);
             this.mniSalir.Text = "Salir del sistema";
-            this.mniSalir.Click += new System.EventHandler(this.mniSalir_Click);
+            this.mniSalir.Click += new System.EventHandler(this.MniSalir_Click);
             // 
             // mniOpciones
             // 
@@ -109,16 +109,16 @@
             // mniPersonalizar
             // 
             this.mniPersonalizar.Name = "mniPersonalizar";
-            this.mniPersonalizar.Size = new System.Drawing.Size(180, 22);
+            this.mniPersonalizar.Size = new System.Drawing.Size(176, 22);
             this.mniPersonalizar.Text = "Personalizar";
-            this.mniPersonalizar.Click += new System.EventHandler(this.mniPersonalizar_Click);
+            this.mniPersonalizar.Click += new System.EventHandler(this.MniPersonalizar_Click);
             // 
             // mniCopiaDeSeguridad
             // 
             this.mniCopiaDeSeguridad.Name = "mniCopiaDeSeguridad";
-            this.mniCopiaDeSeguridad.Size = new System.Drawing.Size(180, 22);
+            this.mniCopiaDeSeguridad.Size = new System.Drawing.Size(176, 22);
             this.mniCopiaDeSeguridad.Text = "Copia de seguridad";
-            this.mniCopiaDeSeguridad.Click += new System.EventHandler(this.mniCopiaDeSeguridad_Click);
+            this.mniCopiaDeSeguridad.Click += new System.EventHandler(this.MniCopiaDeSeguridad_Click);
             // 
             // mniAdministrar
             // 
@@ -135,21 +135,21 @@
             this.mniPerfilesDeUsuario.Name = "mniPerfilesDeUsuario";
             this.mniPerfilesDeUsuario.Size = new System.Drawing.Size(170, 22);
             this.mniPerfilesDeUsuario.Text = "Perfiles de usuario";
-            this.mniPerfilesDeUsuario.Click += new System.EventHandler(this.mniPerfilesDeUsuario_Click);
+            this.mniPerfilesDeUsuario.Click += new System.EventHandler(this.MniPerfilesDeUsuario_Click);
             // 
             // mniIdiomas
             // 
             this.mniIdiomas.Name = "mniIdiomas";
             this.mniIdiomas.Size = new System.Drawing.Size(170, 22);
             this.mniIdiomas.Text = "Idiomas";
-            this.mniIdiomas.Click += new System.EventHandler(this.mniIdiomas_Click);
+            this.mniIdiomas.Click += new System.EventHandler(this.MniIdiomas_Click);
             // 
             // mniUsuarios
             // 
             this.mniUsuarios.Name = "mniUsuarios";
             this.mniUsuarios.Size = new System.Drawing.Size(170, 22);
             this.mniUsuarios.Text = "Usuarios";
-            this.mniUsuarios.Click += new System.EventHandler(this.mniUsuarios_Click);
+            this.mniUsuarios.Click += new System.EventHandler(this.MniUsuarios_Click);
             // 
             // mniGestionar
             // 
@@ -164,19 +164,21 @@
             // mniPlanillasHorarias
             // 
             this.mniPlanillasHorarias.Name = "mniPlanillasHorarias";
-            this.mniPlanillasHorarias.Size = new System.Drawing.Size(162, 22);
+            this.mniPlanillasHorarias.Size = new System.Drawing.Size(180, 22);
             this.mniPlanillasHorarias.Text = "Planillas horarias";
+            this.mniPlanillasHorarias.Click += new System.EventHandler(this.MniPlanillasHorarias_Click);
             // 
             // mniVehiculos
             // 
             this.mniVehiculos.Name = "mniVehiculos";
-            this.mniVehiculos.Size = new System.Drawing.Size(162, 22);
+            this.mniVehiculos.Size = new System.Drawing.Size(180, 22);
             this.mniVehiculos.Text = "Vehículos";
+            this.mniVehiculos.Click += new System.EventHandler(this.MniVehiculos_Click);
             // 
             // mniChoferes
             // 
             this.mniChoferes.Name = "mniChoferes";
-            this.mniChoferes.Size = new System.Drawing.Size(162, 22);
+            this.mniChoferes.Size = new System.Drawing.Size(180, 22);
             this.mniChoferes.Text = "Choferes";
             // 
             // mniAyuda
