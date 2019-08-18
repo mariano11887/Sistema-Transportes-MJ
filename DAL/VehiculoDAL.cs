@@ -94,6 +94,16 @@ namespace DAL
             }
         }
 
+        public static void Borrar(int id)
+        {
+            string query = "DELETE FROM coche WHERE id = @id";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@id", id)
+            };
+            SqlHelper.Instancia().Ejecutar(query, parameters);
+        }
+
         public static List<VehiculoDAL> Buscar(string patente, int numeroDeInterno, bool enCirculacion)
         {
             string queryTemplate = "SELECT id, patente, marca, modelo, fecha_adquisicion, anio_fabricacion, numero_interno, " +

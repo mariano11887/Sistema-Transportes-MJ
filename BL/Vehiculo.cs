@@ -99,6 +99,18 @@ namespace BL
             bitacoraDAL.Guardar();
         }
 
+        public void Borrar()
+        {
+            VehiculoDAL.Borrar(Id);
+
+            BitacoraDAL bitacoraDAL = new BitacoraDAL
+            {
+                Detalle = "Se borró vehículo con Id " + Id,
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+            bitacoraDAL.Guardar();
+        }
+
         public static List<Vehiculo> Buscar(string patente, int numeroDeInterno, bool enCirculacion)
         {
             return VehiculoDAL.Buscar(patente, numeroDeInterno, enCirculacion).Select(v => new Vehiculo

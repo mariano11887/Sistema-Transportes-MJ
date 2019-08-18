@@ -1,12 +1,8 @@
 ﻿using BL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -27,6 +23,7 @@ namespace UI
 
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
+            lstResultadoBusqueda.SelectedIndices.Clear();
             grpDetalles.Enabled = true;
             BorrarSeccionDetalles();
         }
@@ -55,30 +52,37 @@ namespace UI
         {
             if(ValidarDatos())
             {
-                Vehiculo vehiculo = new Vehiculo
+                Vehiculo vehiculo;
+                if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
                 {
-                    AnioFabricacion = int.Parse(txtAnioFabricacion.Text),
-                    Capacidad = int.Parse(txtCapacidad.Text),
-                    EnCirculacion = chkEnCirculacionDetalles.Checked,
-                    FechaAdquisiquion = dtpFechaDeAdquisicion.Value,
-                    NumeroInterno = int.Parse(txtNumeroDeInternoDetalles.Text),
-                    Marca = txtMarca.Text.Trim(),
-                    Modelo = txtModelo.Text.Trim(),
-                    Patente = txtPatenteDetalles.Text.Trim().ToUpper()
-                };
+                    vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as Vehiculo;
+                }
+                else
+                {
+                    vehiculo = new Vehiculo();
+                }
+
+                vehiculo.AnioFabricacion = int.Parse(txtAnioFabricacion.Text);
+                vehiculo.Capacidad = int.Parse(txtCapacidad.Text);
+                vehiculo.EnCirculacion = chkEnCirculacionDetalles.Checked;
+                vehiculo.FechaAdquisiquion = dtpFechaDeAdquisicion.Value;
+                vehiculo.NumeroInterno = int.Parse(txtNumeroDeInternoDetalles.Text);
+                vehiculo.Marca = txtMarca.Text.Trim();
+                vehiculo.Modelo = txtModelo.Text.Trim();
+                vehiculo.Patente = txtPatenteDetalles.Text.Trim().ToUpper();
 
                 vehiculo.Guardar();
 
                 MessageBox.Show(ObtenerLeyenda("msgVehiculoGuardado"), string.Empty,
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ResetearFormulario();
+                btnBuscar.PerformClick();
             }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             lstResultadoBusqueda.Items.Clear();
-
 
             int numeroInterno = string.IsNullOrWhiteSpace(txtNumeroDeInternoBusqueda.Text) ? 0 : 
                 int.Parse(txtNumeroDeInternoBusqueda.Text);
@@ -92,6 +96,62 @@ namespace UI
             }).ToArray();
 
             lstResultadoBusqueda.Items.AddRange(items);
+        }
+
+        private void LstResultadoBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
+            {
+                btnEditar.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
+            else
+            {
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+                BorrarSeccionDetalles();
+                grpDetalles.Enabled = false;
+            }
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
+            {
+                grpDetalles.Enabled = true;
+
+                Vehiculo vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as Vehiculo;
+
+                txtPatenteDetalles.Text = vehiculo.Patente;
+                txtMarca.Text = vehiculo.Marca;
+                txtModelo.Text = vehiculo.Modelo;
+                txtCapacidad.Text = vehiculo.Capacidad.ToString();
+                dtpFechaDeAdquisicion.Value = vehiculo.FechaAdquisiquion;
+                txtAnioFabricacion.Text = vehiculo.AnioFabricacion.ToString();
+                txtNumeroDeInternoDetalles.Text = vehiculo.NumeroInterno.ToString();
+                chkEnCirculacionDetalles.Checked = vehiculo.EnCirculacion;
+            }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
+            {
+                Vehiculo vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as Vehiculo;
+                vehiculo.Borrar();
+
+                MessageBox.Show(ObtenerLeyenda("msgVehiculoBorrado"), string.Empty,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ResetearFormulario();
+                btnBuscar.PerformClick();
+            }
+        }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            lstResultadoBusqueda.SelectedIndices.Clear();
+            grpDetalles.Enabled = false;
+            BorrarSeccionDetalles();
         }
 
         private void ResetearFormulario()
@@ -138,7 +198,5 @@ namespace UI
 
             return true;
         }
-
-        
     }
 }

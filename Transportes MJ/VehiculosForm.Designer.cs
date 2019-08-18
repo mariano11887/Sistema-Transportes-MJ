@@ -138,6 +138,7 @@
             // 
             // lstResultadoBusqueda
             // 
+            this.lstResultadoBusqueda.HideSelection = false;
             this.lstResultadoBusqueda.Location = new System.Drawing.Point(241, 32);
             this.lstResultadoBusqueda.MultiSelect = false;
             this.lstResultadoBusqueda.Name = "lstResultadoBusqueda";
@@ -145,6 +146,7 @@
             this.lstResultadoBusqueda.TabIndex = 7;
             this.lstResultadoBusqueda.UseCompatibleStateImageBehavior = false;
             this.lstResultadoBusqueda.View = System.Windows.Forms.View.List;
+            this.lstResultadoBusqueda.SelectedIndexChanged += new System.EventHandler(this.LstResultadoBusqueda_SelectedIndexChanged);
             // 
             // grpDetalles
             // 
@@ -181,6 +183,7 @@
             this.btnDescartar.TabIndex = 25;
             this.btnDescartar.Text = "Descartar";
             this.btnDescartar.UseVisualStyleBackColor = true;
+            this.btnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click);
             // 
             // btnGuardar
             // 
@@ -349,6 +352,7 @@
             this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -359,6 +363,7 @@
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // VehiculosForm
             // 
