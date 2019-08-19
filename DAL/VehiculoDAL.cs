@@ -104,17 +104,14 @@ namespace DAL
             SqlHelper.Instancia().Ejecutar(query, parameters);
         }
 
-        public static List<VehiculoDAL> Buscar(string patente, int numeroDeInterno, bool enCirculacion)
+        public static List<VehiculoDAL> Buscar(string patente, int numeroDeInterno, bool? enCirculacion)
         {
             string queryTemplate = "SELECT id, patente, marca, modelo, fecha_adquisicion, anio_fabricacion, numero_interno, " +
                 "capacidad, en_circulacion FROM coche WHERE patente = {0} AND numero_interno = {1} " +
-                "AND en_circulacion = @enCirculacion AND habilitado = 1";
+                "AND en_circulacion = {2} AND habilitado = 1";
             
-            List<SqlParameter> parameters = new List<SqlParameter>
-            {
-                new SqlParameter("@enCirculacion", enCirculacion)
-            };
-            string sqlPatente, sqlNumeroInterno;
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            string sqlPatente, sqlNumeroInterno, sqlEnCirculacion;
 
             if(string.IsNullOrEmpty(patente))
             {
@@ -136,8 +133,41 @@ namespace DAL
                 parameters.Add(new SqlParameter("@numeroInterno", numeroDeInterno));
             }
 
-            string query = string.Format(queryTemplate, sqlPatente, sqlNumeroInterno);
-            DataTable table = SqlHelper.Instancia().Obtener(query, parameters.ToArray());
+            if(enCirculacion == null)
+            {
+                sqlEnCirculacion = "en_circulacion";
+            }
+            else
+            {
+                sqlEnCirculacion = "@enCirculacion";
+                parameters.Add(new SqlParameter("@enCirculacion", (bool)enCirculacion));
+            }
+
+            string query = string.Format(queryTemplate, sqlPatente, sqlNumeroInterno, sqlEnCirculacion);
+            return RealizarBusqueda(query, parameters.ToArray());
+        }
+
+        public static VehiculoDAL Buscar(int id)
+        {
+            string query = "SELECT id, patente, marca, modelo, fecha_adquisicion, anio_fabricacion, numero_interno, " +
+                "capacidad, en_circulacion FROM coche WHERE id = @id AND habilitado = 1";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@id", id)
+            };
+            return RealizarBusqueda(query, parameters).FirstOrDefault();
+        }
+
+        public static List<VehiculoDAL> ListarTodos()
+        {
+            string query = "SELECT id, patente, marca, modelo, fecha_adquisicion, anio_fabricacion, numero_interno, " +
+                "capacidad, en_circulacion FROM coche WHERE habilitado = 1";
+            return RealizarBusqueda(query, new SqlParameter[0]);
+        }
+
+        private static List<VehiculoDAL> RealizarBusqueda(string query, SqlParameter[] parameters)
+        {
+            DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
             return table.Select().Select(r => new VehiculoDAL
             {
                 AnioFabricacion = int.Parse(r["anio_fabricacion"].ToString()),

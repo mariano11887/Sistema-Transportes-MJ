@@ -29,330 +29,346 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChoferesForm));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grpBuscarChoferes = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.cmbCochePreferidoBusqueda = new System.Windows.Forms.ComboBox();
+            this.lblCochePreferidoBusqueda = new System.Windows.Forms.Label();
+            this.cmbDeLicencia = new System.Windows.Forms.ComboBox();
+            this.lblDeLicencia = new System.Windows.Forms.Label();
+            this.txtDniBusqueda = new System.Windows.Forms.TextBox();
+            this.lblDniBusqueda = new System.Windows.Forms.Label();
+            this.txtNombreBusqueda = new System.Windows.Forms.TextBox();
+            this.lblNombreBusqueda = new System.Windows.Forms.Label();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.lblResultadoBusqueda = new System.Windows.Forms.Label();
+            this.lstResultadoBusqueda = new System.Windows.Forms.ListView();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.grpDetalles = new System.Windows.Forms.GroupBox();
+            this.cmbCochePreferidoDetalle = new System.Windows.Forms.ComboBox();
+            this.lblCochePreferidoDetalle = new System.Windows.Forms.Label();
+            this.txtNombreDetalle = new System.Windows.Forms.TextBox();
+            this.lblNombreDetalle = new System.Windows.Forms.Label();
+            this.txtDniDetalle = new System.Windows.Forms.TextBox();
+            this.lblDniDetalle = new System.Windows.Forms.Label();
+            this.btnDescartar = new System.Windows.Forms.Button();
+            this.btnGuardarChofer = new System.Windows.Forms.Button();
+            this.dtpFechaFinLicencia = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaFinLicencia = new System.Windows.Forms.Label();
+            this.btnCargarLicencia = new System.Windows.Forms.Button();
+            this.grpLicencias = new System.Windows.Forms.GroupBox();
+            this.btnGuardarLicencia = new System.Windows.Forms.Button();
+            this.grpBuscarChoferes.SuspendLayout();
+            this.grpDetalles.SuspendLayout();
+            this.grpLicencias.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grpBuscarChoferes
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(241, 179);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar choferes";
+            this.grpBuscarChoferes.Controls.Add(this.btnBuscar);
+            this.grpBuscarChoferes.Controls.Add(this.cmbCochePreferidoBusqueda);
+            this.grpBuscarChoferes.Controls.Add(this.lblCochePreferidoBusqueda);
+            this.grpBuscarChoferes.Controls.Add(this.cmbDeLicencia);
+            this.grpBuscarChoferes.Controls.Add(this.lblDeLicencia);
+            this.grpBuscarChoferes.Controls.Add(this.txtDniBusqueda);
+            this.grpBuscarChoferes.Controls.Add(this.lblDniBusqueda);
+            this.grpBuscarChoferes.Controls.Add(this.txtNombreBusqueda);
+            this.grpBuscarChoferes.Controls.Add(this.lblNombreBusqueda);
+            this.grpBuscarChoferes.Location = new System.Drawing.Point(13, 13);
+            this.grpBuscarChoferes.Name = "grpBuscarChoferes";
+            this.grpBuscarChoferes.Size = new System.Drawing.Size(241, 179);
+            this.grpBuscarChoferes.TabIndex = 0;
+            this.grpBuscarChoferes.TabStop = false;
+            this.grpBuscarChoferes.Text = "Buscar choferes";
             // 
-            // label1
+            // btnBuscar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
+            this.btnBuscar.Location = new System.Drawing.Point(77, 139);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(88, 23);
+            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // textBox1
+            // cmbCochePreferidoBusqueda
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
-            this.textBox1.TabIndex = 1;
+            this.cmbCochePreferidoBusqueda.DisplayMember = "Patente";
+            this.cmbCochePreferidoBusqueda.FormattingEnabled = true;
+            this.cmbCochePreferidoBusqueda.Location = new System.Drawing.Point(95, 99);
+            this.cmbCochePreferidoBusqueda.Name = "cmbCochePreferidoBusqueda";
+            this.cmbCochePreferidoBusqueda.Size = new System.Drawing.Size(135, 21);
+            this.cmbCochePreferidoBusqueda.TabIndex = 7;
             // 
-            // label2
+            // lblCochePreferidoBusqueda
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "DNI";
+            this.lblCochePreferidoBusqueda.AutoSize = true;
+            this.lblCochePreferidoBusqueda.Location = new System.Drawing.Point(7, 102);
+            this.lblCochePreferidoBusqueda.Name = "lblCochePreferidoBusqueda";
+            this.lblCochePreferidoBusqueda.Size = new System.Drawing.Size(82, 13);
+            this.lblCochePreferidoBusqueda.TabIndex = 6;
+            this.lblCochePreferidoBusqueda.Text = "Coche preferido";
             // 
-            // textBox2
+            // cmbDeLicencia
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 3;
+            this.cmbDeLicencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDeLicencia.FormattingEnabled = true;
+            this.cmbDeLicencia.Location = new System.Drawing.Point(95, 72);
+            this.cmbDeLicencia.Name = "cmbDeLicencia";
+            this.cmbDeLicencia.Size = new System.Drawing.Size(135, 21);
+            this.cmbDeLicencia.TabIndex = 5;
             // 
-            // label3
+            // lblDeLicencia
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "De licencia";
+            this.lblDeLicencia.AutoSize = true;
+            this.lblDeLicencia.Location = new System.Drawing.Point(29, 75);
+            this.lblDeLicencia.Name = "lblDeLicencia";
+            this.lblDeLicencia.Size = new System.Drawing.Size(60, 13);
+            this.lblDeLicencia.TabIndex = 4;
+            this.lblDeLicencia.Text = "De licencia";
             // 
-            // comboBox1
+            // txtDniBusqueda
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
-            this.comboBox1.TabIndex = 5;
+            this.txtDniBusqueda.Location = new System.Drawing.Point(95, 46);
+            this.txtDniBusqueda.Name = "txtDniBusqueda";
+            this.txtDniBusqueda.Size = new System.Drawing.Size(135, 20);
+            this.txtDniBusqueda.TabIndex = 3;
+            this.txtDniBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDniBusqueda_KeyPress);
             // 
-            // label4
+            // lblDniBusqueda
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Coche preferido";
+            this.lblDniBusqueda.AutoSize = true;
+            this.lblDniBusqueda.Location = new System.Drawing.Point(63, 49);
+            this.lblDniBusqueda.Name = "lblDniBusqueda";
+            this.lblDniBusqueda.Size = new System.Drawing.Size(26, 13);
+            this.lblDniBusqueda.TabIndex = 2;
+            this.lblDniBusqueda.Text = "DNI";
             // 
-            // comboBox2
+            // txtNombreBusqueda
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(95, 99);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(135, 21);
-            this.comboBox2.TabIndex = 7;
+            this.txtNombreBusqueda.Location = new System.Drawing.Point(95, 20);
+            this.txtNombreBusqueda.Name = "txtNombreBusqueda";
+            this.txtNombreBusqueda.Size = new System.Drawing.Size(135, 20);
+            this.txtNombreBusqueda.TabIndex = 1;
             // 
-            // button1
+            // lblNombreBusqueda
             // 
-            this.button1.Location = new System.Drawing.Point(77, 139);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblNombreBusqueda.AutoSize = true;
+            this.lblNombreBusqueda.Location = new System.Drawing.Point(45, 23);
+            this.lblNombreBusqueda.Name = "lblNombreBusqueda";
+            this.lblNombreBusqueda.Size = new System.Drawing.Size(44, 13);
+            this.lblNombreBusqueda.TabIndex = 0;
+            this.lblNombreBusqueda.Text = "Nombre";
             // 
-            // button2
+            // btnNuevo
             // 
-            this.button2.Location = new System.Drawing.Point(61, 199);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Nuevo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnNuevo.Location = new System.Drawing.Point(61, 199);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(134, 23);
+            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
-            // label5
+            // lblResultadoBusqueda
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(261, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Resultado de la búsqueda";
+            this.lblResultadoBusqueda.AutoSize = true;
+            this.lblResultadoBusqueda.Location = new System.Drawing.Point(261, 13);
+            this.lblResultadoBusqueda.Name = "lblResultadoBusqueda";
+            this.lblResultadoBusqueda.Size = new System.Drawing.Size(131, 13);
+            this.lblResultadoBusqueda.TabIndex = 2;
+            this.lblResultadoBusqueda.Text = "Resultado de la búsqueda";
             // 
-            // listView1
+            // lstResultadoBusqueda
             // 
-            this.listView1.Location = new System.Drawing.Point(261, 30);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(474, 162);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lstResultadoBusqueda.HideSelection = false;
+            this.lstResultadoBusqueda.Location = new System.Drawing.Point(261, 30);
+            this.lstResultadoBusqueda.MultiSelect = false;
+            this.lstResultadoBusqueda.Name = "lstResultadoBusqueda";
+            this.lstResultadoBusqueda.Size = new System.Drawing.Size(474, 162);
+            this.lstResultadoBusqueda.TabIndex = 3;
+            this.lstResultadoBusqueda.UseCompatibleStateImageBehavior = false;
+            this.lstResultadoBusqueda.View = System.Windows.Forms.View.List;
+            this.lstResultadoBusqueda.SelectedIndexChanged += new System.EventHandler(this.LstResultadoBusqueda_SelectedIndexChanged);
             // 
-            // button5
+            // btnEditar
             // 
-            this.button5.Location = new System.Drawing.Point(264, 199);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Editar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnEditar.Location = new System.Drawing.Point(264, 199);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 11;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnEliminar
             // 
-            this.button6.Location = new System.Drawing.Point(659, 199);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Eliminar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(659, 199);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 12;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // grpDetalles
             // 
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(12, 228);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(427, 122);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detalles";
+            this.grpDetalles.Controls.Add(this.cmbCochePreferidoDetalle);
+            this.grpDetalles.Controls.Add(this.lblCochePreferidoDetalle);
+            this.grpDetalles.Controls.Add(this.txtNombreDetalle);
+            this.grpDetalles.Controls.Add(this.lblNombreDetalle);
+            this.grpDetalles.Controls.Add(this.txtDniDetalle);
+            this.grpDetalles.Controls.Add(this.lblDniDetalle);
+            this.grpDetalles.Controls.Add(this.btnDescartar);
+            this.grpDetalles.Controls.Add(this.btnGuardarChofer);
+            this.grpDetalles.Location = new System.Drawing.Point(12, 228);
+            this.grpDetalles.Name = "grpDetalles";
+            this.grpDetalles.Size = new System.Drawing.Size(427, 122);
+            this.grpDetalles.TabIndex = 13;
+            this.grpDetalles.TabStop = false;
+            this.grpDetalles.Text = "Detalles";
             // 
-            // button3
+            // cmbCochePreferidoDetalle
             // 
-            this.button3.Location = new System.Drawing.Point(6, 90);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Guardar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cmbCochePreferidoDetalle.DisplayMember = "Patente";
+            this.cmbCochePreferidoDetalle.FormattingEnabled = true;
+            this.cmbCochePreferidoDetalle.Location = new System.Drawing.Point(128, 46);
+            this.cmbCochePreferidoDetalle.Name = "cmbCochePreferidoDetalle";
+            this.cmbCochePreferidoDetalle.Size = new System.Drawing.Size(199, 21);
+            this.cmbCochePreferidoDetalle.TabIndex = 10;
+            this.cmbCochePreferidoDetalle.ValueMember = "Patente";
             // 
-            // button4
+            // lblCochePreferidoDetalle
             // 
-            this.button4.Location = new System.Drawing.Point(334, 90);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Descartar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.lblCochePreferidoDetalle.AutoSize = true;
+            this.lblCochePreferidoDetalle.Location = new System.Drawing.Point(40, 49);
+            this.lblCochePreferidoDetalle.Name = "lblCochePreferidoDetalle";
+            this.lblCochePreferidoDetalle.Size = new System.Drawing.Size(82, 13);
+            this.lblCochePreferidoDetalle.TabIndex = 9;
+            this.lblCochePreferidoDetalle.Text = "Coche preferido";
             // 
-            // textBox4
+            // txtNombreDetalle
             // 
-            this.textBox4.Location = new System.Drawing.Point(277, 20);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(135, 20);
-            this.textBox4.TabIndex = 10;
+            this.txtNombreDetalle.Location = new System.Drawing.Point(69, 20);
+            this.txtNombreDetalle.Name = "txtNombreDetalle";
+            this.txtNombreDetalle.Size = new System.Drawing.Size(162, 20);
+            this.txtNombreDetalle.TabIndex = 10;
             // 
-            // label7
+            // lblNombreDetalle
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(245, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "DNI";
+            this.lblNombreDetalle.AutoSize = true;
+            this.lblNombreDetalle.Location = new System.Drawing.Point(19, 23);
+            this.lblNombreDetalle.Name = "lblNombreDetalle";
+            this.lblNombreDetalle.Size = new System.Drawing.Size(44, 13);
+            this.lblNombreDetalle.TabIndex = 9;
+            this.lblNombreDetalle.Text = "Nombre";
             // 
-            // textBox3
+            // txtDniDetalle
             // 
-            this.textBox3.Location = new System.Drawing.Point(69, 20);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtDniDetalle.Location = new System.Drawing.Point(277, 20);
+            this.txtDniDetalle.Name = "txtDniDetalle";
+            this.txtDniDetalle.Size = new System.Drawing.Size(135, 20);
+            this.txtDniDetalle.TabIndex = 10;
+            this.txtDniDetalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDniDetalle_KeyPress);
             // 
-            // label6
+            // lblDniDetalle
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Nombre";
+            this.lblDniDetalle.AutoSize = true;
+            this.lblDniDetalle.Location = new System.Drawing.Point(245, 23);
+            this.lblDniDetalle.Name = "lblDniDetalle";
+            this.lblDniDetalle.Size = new System.Drawing.Size(26, 13);
+            this.lblDniDetalle.TabIndex = 9;
+            this.lblDniDetalle.Text = "DNI";
             // 
-            // comboBox3
+            // btnDescartar
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(128, 46);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(199, 21);
-            this.comboBox3.TabIndex = 10;
+            this.btnDescartar.Location = new System.Drawing.Point(334, 90);
+            this.btnDescartar.Name = "btnDescartar";
+            this.btnDescartar.Size = new System.Drawing.Size(75, 23);
+            this.btnDescartar.TabIndex = 26;
+            this.btnDescartar.Text = "Descartar";
+            this.btnDescartar.UseVisualStyleBackColor = true;
+            this.btnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click);
             // 
-            // label8
+            // btnGuardarChofer
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(40, 49);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 13);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Coche preferido";
+            this.btnGuardarChofer.Location = new System.Drawing.Point(6, 90);
+            this.btnGuardarChofer.Name = "btnGuardarChofer";
+            this.btnGuardarChofer.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarChofer.TabIndex = 25;
+            this.btnGuardarChofer.Text = "Guardar";
+            this.btnGuardarChofer.UseVisualStyleBackColor = true;
+            this.btnGuardarChofer.Click += new System.EventHandler(this.BtnGuardarChofer_Click);
             // 
-            // dateTimePicker1
+            // dtpFechaFinLicencia
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(52, 42);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 28;
+            this.dtpFechaFinLicencia.CustomFormat = " ";
+            this.dtpFechaFinLicencia.Location = new System.Drawing.Point(52, 42);
+            this.dtpFechaFinLicencia.Name = "dtpFechaFinLicencia";
+            this.dtpFechaFinLicencia.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaFinLicencia.TabIndex = 28;
             // 
-            // label9
+            // lblFechaFinLicencia
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(89, 23);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 13);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Fecha de fin de licencia";
+            this.lblFechaFinLicencia.AutoSize = true;
+            this.lblFechaFinLicencia.Location = new System.Drawing.Point(89, 23);
+            this.lblFechaFinLicencia.Name = "lblFechaFinLicencia";
+            this.lblFechaFinLicencia.Size = new System.Drawing.Size(120, 13);
+            this.lblFechaFinLicencia.TabIndex = 29;
+            this.lblFechaFinLicencia.Text = "Fecha de fin de licencia";
             // 
-            // button7
+            // btnCargarLicencia
             // 
-            this.button7.Location = new System.Drawing.Point(346, 199);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(93, 23);
-            this.button7.TabIndex = 14;
-            this.button7.Text = "Cargar licencia";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnCargarLicencia.Location = new System.Drawing.Point(346, 199);
+            this.btnCargarLicencia.Name = "btnCargarLicencia";
+            this.btnCargarLicencia.Size = new System.Drawing.Size(93, 23);
+            this.btnCargarLicencia.TabIndex = 14;
+            this.btnCargarLicencia.Text = "Cargar licencia";
+            this.btnCargarLicencia.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // grpLicencias
             // 
-            this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(446, 228);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(289, 122);
-            this.groupBox3.TabIndex = 30;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Licencias";
+            this.grpLicencias.Controls.Add(this.btnGuardarLicencia);
+            this.grpLicencias.Controls.Add(this.dtpFechaFinLicencia);
+            this.grpLicencias.Controls.Add(this.lblFechaFinLicencia);
+            this.grpLicencias.Location = new System.Drawing.Point(446, 228);
+            this.grpLicencias.Name = "grpLicencias";
+            this.grpLicencias.Size = new System.Drawing.Size(289, 122);
+            this.grpLicencias.TabIndex = 30;
+            this.grpLicencias.TabStop = false;
+            this.grpLicencias.Text = "Licencias";
             // 
-            // button8
+            // btnGuardarLicencia
             // 
-            this.button8.Location = new System.Drawing.Point(108, 80);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 27;
-            this.button8.Text = "Guardar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnGuardarLicencia.Location = new System.Drawing.Point(108, 80);
+            this.btnGuardarLicencia.Name = "btnGuardarLicencia";
+            this.btnGuardarLicencia.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarLicencia.TabIndex = 27;
+            this.btnGuardarLicencia.Text = "Guardar";
+            this.btnGuardarLicencia.UseVisualStyleBackColor = true;
             // 
             // ChoferesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 358);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpLicencias);
+            this.Controls.Add(this.btnCargarLicencia);
+            this.Controls.Add(this.grpDetalles);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.lstResultadoBusqueda);
+            this.Controls.Add(this.lblResultadoBusqueda);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.grpBuscarChoferes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChoferesForm";
             this.Text = "Choferes";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.Load += new System.EventHandler(this.ChoferesForm_Load);
+            this.grpBuscarChoferes.ResumeLayout(false);
+            this.grpBuscarChoferes.PerformLayout();
+            this.grpDetalles.ResumeLayout(false);
+            this.grpDetalles.PerformLayout();
+            this.grpLicencias.ResumeLayout(false);
+            this.grpLicencias.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,34 +376,34 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.GroupBox grpBuscarChoferes;
+        private System.Windows.Forms.ComboBox cmbCochePreferidoBusqueda;
+        private System.Windows.Forms.Label lblCochePreferidoBusqueda;
+        private System.Windows.Forms.ComboBox cmbDeLicencia;
+        private System.Windows.Forms.Label lblDeLicencia;
+        private System.Windows.Forms.TextBox txtDniBusqueda;
+        private System.Windows.Forms.Label lblDniBusqueda;
+        private System.Windows.Forms.TextBox txtNombreBusqueda;
+        private System.Windows.Forms.Label lblNombreBusqueda;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label lblResultadoBusqueda;
+        private System.Windows.Forms.ListView lstResultadoBusqueda;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.GroupBox grpDetalles;
+        private System.Windows.Forms.Button btnGuardarChofer;
+        private System.Windows.Forms.Label lblFechaFinLicencia;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinLicencia;
+        private System.Windows.Forms.ComboBox cmbCochePreferidoDetalle;
+        private System.Windows.Forms.Label lblCochePreferidoDetalle;
+        private System.Windows.Forms.TextBox txtNombreDetalle;
+        private System.Windows.Forms.Label lblNombreDetalle;
+        private System.Windows.Forms.TextBox txtDniDetalle;
+        private System.Windows.Forms.Label lblDniDetalle;
+        private System.Windows.Forms.Button btnDescartar;
+        private System.Windows.Forms.Button btnCargarLicencia;
+        private System.Windows.Forms.GroupBox grpLicencias;
+        private System.Windows.Forms.Button btnGuardarLicencia;
     }
 }

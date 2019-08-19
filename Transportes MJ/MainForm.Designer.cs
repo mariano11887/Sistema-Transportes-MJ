@@ -180,6 +180,7 @@
             this.mniChoferes.Name = "mniChoferes";
             this.mniChoferes.Size = new System.Drawing.Size(180, 22);
             this.mniChoferes.Text = "Choferes";
+            this.mniChoferes.Click += new System.EventHandler(this.MniChoferes_Click);
             // 
             // mniAyuda
             // 

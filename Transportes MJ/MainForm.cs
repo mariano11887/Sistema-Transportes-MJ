@@ -129,6 +129,15 @@ namespace UI
             };
             vehiculosForm.Show();
         }
+
+        private void MniChoferes_Click(object sender, EventArgs e)
+        {
+            ChoferesForm choferesForm = new ChoferesForm
+            {
+                MdiParent = this
+            };
+            choferesForm.Show();
+        }
         #endregion
 
         #region Métodos
@@ -161,8 +170,7 @@ namespace UI
         }
 
 
+
         #endregion
-
-
     }
 }

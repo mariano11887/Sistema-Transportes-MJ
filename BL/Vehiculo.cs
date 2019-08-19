@@ -111,9 +111,42 @@ namespace BL
             bitacoraDAL.Guardar();
         }
 
-        public static List<Vehiculo> Buscar(string patente, int numeroDeInterno, bool enCirculacion)
+        public static Vehiculo Buscar(int id)
+        {
+            VehiculoDAL v = VehiculoDAL.Buscar(id);
+            return new Vehiculo
+            {
+                AnioFabricacion = v.AnioFabricacion,
+                Capacidad = v.Capacidad,
+                EnCirculacion = v.EnCirculacion,
+                FechaAdquisiquion = v.FechaAdquisicion,
+                Id = v.VehiculoId,
+                Marca = v.Marca,
+                Modelo = v.Modelo,
+                NumeroInterno = v.NumeroInterno,
+                Patente = v.Patente
+            };
+        }
+
+        public static List<Vehiculo> Buscar(string patente, int numeroDeInterno, bool? enCirculacion)
         {
             return VehiculoDAL.Buscar(patente, numeroDeInterno, enCirculacion).Select(v => new Vehiculo
+            {
+                AnioFabricacion = v.AnioFabricacion,
+                Capacidad = v.Capacidad,
+                EnCirculacion = v.EnCirculacion,
+                FechaAdquisiquion = v.FechaAdquisicion,
+                Id = v.VehiculoId,
+                Marca = v.Marca,
+                Modelo = v.Modelo,
+                NumeroInterno = v.NumeroInterno,
+                Patente = v.Patente
+            }).ToList();
+        }
+
+        public static List<Vehiculo> ListarTodos()
+        {
+            return VehiculoDAL.ListarTodos().Select(v => new Vehiculo
             {
                 AnioFabricacion = v.AnioFabricacion,
                 Capacidad = v.Capacidad,
