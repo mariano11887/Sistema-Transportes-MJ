@@ -96,7 +96,7 @@ namespace DAL
 
         public static void Borrar(int id)
         {
-            string query = "DELETE FROM coche WHERE id = @id";
+            string query = "UPDATE coche SET habilitado = 0 WHERE id = @id";
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@id", id)

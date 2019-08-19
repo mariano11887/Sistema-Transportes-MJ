@@ -199,6 +199,7 @@
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -208,6 +209,7 @@
             this.btnEliminar.TabIndex = 12;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // grpDetalles
             // 
@@ -301,6 +303,7 @@
             // dtpFechaFinLicencia
             // 
             this.dtpFechaFinLicencia.CustomFormat = " ";
+            this.dtpFechaFinLicencia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaFinLicencia.Location = new System.Drawing.Point(52, 42);
             this.dtpFechaFinLicencia.Name = "dtpFechaFinLicencia";
             this.dtpFechaFinLicencia.Size = new System.Drawing.Size(200, 20);
@@ -323,6 +326,7 @@
             this.btnCargarLicencia.TabIndex = 14;
             this.btnCargarLicencia.Text = "Cargar licencia";
             this.btnCargarLicencia.UseVisualStyleBackColor = true;
+            this.btnCargarLicencia.Click += new System.EventHandler(this.BtnCargarLicencia_Click);
             // 
             // grpLicencias
             // 
@@ -344,6 +348,7 @@
             this.btnGuardarLicencia.TabIndex = 27;
             this.btnGuardarLicencia.Text = "Guardar";
             this.btnGuardarLicencia.UseVisualStyleBackColor = true;
+            this.btnGuardarLicencia.Click += new System.EventHandler(this.BtnGuardarLicencia_Click);
             // 
             // ChoferesForm
             // 

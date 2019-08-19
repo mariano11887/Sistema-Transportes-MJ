@@ -140,6 +140,17 @@ namespace DAL
             }
         }
 
+        public static void Borrar(int id)
+        {
+            string query = "UPDATE chofer SET habilitado = 0 WHERE id = @id";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@id", id)
+            };
+
+            SqlHelper.Instancia().Ejecutar(query, parameters);
+        }
+
         private void Insertar()
         {
             string query = "INSERT INTO chofer (nombre, dni, coche_preferido_id, habilitado) " +

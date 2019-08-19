@@ -25,7 +25,7 @@ namespace UI
         {
             Abrir();
 
-            dtpFechaFinLicencia.MinDate = DateTime.Today.AddDays(1);
+            dtpFechaFinLicencia.MinDate = DateTime.Today;
             btnEditar.Enabled = false;
             btnCargarLicencia.Enabled = false;
             btnEliminar.Enabled = false;
@@ -73,6 +73,8 @@ namespace UI
             btnEditar.Enabled = false;
             btnCargarLicencia.Enabled = false;
             btnEliminar.Enabled = false;
+            grpDetalles.Enabled = false;
+            grpLicencias.Enabled = false;
 
             string nombre = txtNombreBusqueda.Text;
             int.TryParse(txtDniBusqueda.Text, out int dni);
@@ -104,6 +106,9 @@ namespace UI
         {
             LimpiarDetalles();
             grpDetalles.Enabled = false;
+            btnEditar.Enabled = false;
+            btnCargarLicencia.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void BtnGuardarChofer_Click(object sender, EventArgs e)
@@ -133,6 +138,7 @@ namespace UI
 
                 LimpiarDetalles();
                 grpDetalles.Enabled = false;
+                grpLicencias.Enabled = false;
                 btnEditar.Enabled = false;
                 btnCargarLicencia.Enabled = false;
                 btnEliminar.Enabled = false;
@@ -170,6 +176,64 @@ namespace UI
 
                 LimpiarDetalles();
             }
+
+            grpDetalles.Enabled = false;
+            grpLicencias.Enabled = false;
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            grpDetalles.Enabled = true;
+        }
+
+        private void BtnCargarLicencia_Click(object sender, EventArgs e)
+        {
+            grpLicencias.Enabled = true;
+            if(dtpFechaFinLicencia.Format == DateTimePickerFormat.Custom)
+            {
+                dtpFechaFinLicencia.Format = DateTimePickerFormat.Long;
+                dtpFechaFinLicencia.Value = DateTime.Today;
+            }
+        }
+
+        private void BtnGuardarLicencia_Click(object sender, EventArgs e)
+        {
+            if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
+            {
+                Chofer chofer = lstResultadoBusqueda.SelectedItems[0].Tag as Chofer;
+                chofer.FechaFinLicencia = dtpFechaFinLicencia.Value;
+                chofer.Guardar();
+
+                MessageBox.Show(ObtenerLeyenda("msgLicenciaGuardada"));
+
+                LimpiarDetalles();
+                grpDetalles.Enabled = false;
+                grpLicencias.Enabled = false;
+                btnEditar.Enabled = false;
+                btnCargarLicencia.Enabled = false;
+                btnEliminar.Enabled = false;
+                lstResultadoBusqueda.Items.Clear();
+            }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
+            {
+                Chofer chofer = lstResultadoBusqueda.SelectedItems[0].Tag as Chofer;
+                chofer.Borrar();
+
+                MessageBox.Show(ObtenerLeyenda("msgChoferBorrado"), string.Empty,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarDetalles();
+                grpDetalles.Enabled = false;
+                grpLicencias.Enabled = false;
+                btnEditar.Enabled = false;
+                btnCargarLicencia.Enabled = false;
+                btnEliminar.Enabled = false;
+                lstResultadoBusqueda.Items.Clear();
+            }
         }
 
         private void AceptarSoloNumeros(KeyPressEventArgs e)
@@ -185,7 +249,7 @@ namespace UI
             txtNombreDetalle.Text = "";
             txtDniDetalle.Text = "";
             cmbCochePreferidoDetalle.Text = "";
-            cmbCochePreferidoDetalle.SelectedItem = null;
+            dtpFechaFinLicencia.Format = DateTimePickerFormat.Custom;
         }
 
         private bool ValidarDatos()

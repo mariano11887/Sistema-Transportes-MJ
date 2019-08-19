@@ -83,7 +83,7 @@ namespace BL
 
         public void Guardar()
         {
-            new ChoferDAL
+            ChoferDAL choferDAL = new ChoferDAL
             {
                 CochePreferidoId = CochePreferido?.Id ?? 0,
                 Dni = Dni,
@@ -91,7 +91,27 @@ namespace BL
                 Habilitado = true,
                 Id = Id,
                 Nombre = Nombre
-            }.Guardar();
+            };
+            choferDAL.Guardar();
+
+            BitacoraDAL bitacoraDAL = new BitacoraDAL
+            {
+                Detalle = "Se guardó el chofer con Id " + choferDAL.Id,
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+            bitacoraDAL.Guardar();
+        }
+
+        public void Borrar()
+        {
+            ChoferDAL.Borrar(Id);
+
+            BitacoraDAL bitacoraDAL = new BitacoraDAL
+            {
+                Detalle = "Se borró el chofer con Id " + Id,
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
+            };
+            bitacoraDAL.Guardar();
         }
     }
 }
