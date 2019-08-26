@@ -76,7 +76,7 @@ namespace DAL
                 {
                     new SqlParameter("@usuarioId", UsuarioId)
                 };
-                SqlHelper.Instancia().Ejecutar(query, parameters);
+                SqlHelper.Ejecutar(query, parameters);
             }
             else
             {
@@ -92,7 +92,7 @@ namespace DAL
                     new SqlParameter("@usuarioId", UsuarioId),
                     new SqlParameter("@permisoId", permisoId)
                 };
-                SqlHelper.Instancia().Ejecutar(query, parameters);
+                SqlHelper.Ejecutar(query, parameters);
             }
         }
 
@@ -166,7 +166,7 @@ namespace DAL
 
                 string query = sb.ToString();
                 SqlParameter[] paramsArray = parameters.ToArray();
-                DataTable table = SqlHelper.Instancia().Obtener(query, paramsArray);
+                DataTable table = SqlHelper.Obtener(query, paramsArray);
                 if (table.Rows.Count > 0)
                 {
                     _usuarioId = int.Parse(table.Rows[0]["id"].ToString());
@@ -190,14 +190,14 @@ namespace DAL
             {
                 new SqlParameter("@idiomaIdViejo", idiomaIdAQuitar)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
 
         public static List<UsuarioDAL> ObtenerTodos()
         {
             string query = "SELECT id, nombre, idioma_id, nombre_usuario, contrasenia FROM usuario WHERE habilitado = 1";
             SqlParameter[] parameters = { };
-            DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+            DataTable table = SqlHelper.Obtener(query, parameters);
             List<UsuarioDAL> usuariosDAL = new List<UsuarioDAL>();
             foreach (DataRow row in table.Rows)
             {
@@ -223,14 +223,14 @@ namespace DAL
             {
                 new SqlParameter("@usuarioId", usuarioId)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
 
             // Ahora deshabilito el usuario
             query = "UPDATE usuario SET habilitado = 0 WHERE id = @usuarioId";
             parameters = new SqlParameter[1] {
                 new SqlParameter("@usuarioId", usuarioId)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
         #endregion
 
@@ -245,7 +245,7 @@ namespace DAL
                 new SqlParameter("@nombreUsuario", NombreDeUsuario),
                 new SqlParameter("@contrasenia", Contrasenia)
             };
-            UsuarioId = SqlHelper.Instancia().Insertar(query, parameters);
+            UsuarioId = SqlHelper.Insertar(query, parameters);
         }
 
         private void Actualizar()
@@ -268,7 +268,7 @@ namespace DAL
             parameters[2] = new SqlParameter("@nombreUsuario", NombreDeUsuario);
             parameters[3] = new SqlParameter("@id", UsuarioId);
 
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
         #endregion
     }

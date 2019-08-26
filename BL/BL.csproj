@@ -51,6 +51,8 @@
     <Compile Include="PermisoCompuesto.cs" />
     <Compile Include="Permisos.cs" />
     <Compile Include="PermisoSimple.cs" />
+    <Compile Include="PlanillaHoraria.cs" />
+    <Compile Include="Recorrido.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

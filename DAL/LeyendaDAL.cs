@@ -58,7 +58,7 @@ namespace DAL
             {
                 new SqlParameter("@idiomaId", IdiomaId)
             };
-            DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+            DataTable table = SqlHelper.Obtener(query, parameters);
             List<LeyendaDAL> leyendasDAL = new List<LeyendaDAL>();
             foreach(DataRow row in table.Rows)
             {
@@ -94,7 +94,7 @@ namespace DAL
                     new SqlParameter("@nombreForm", NombreForm),
                     new SqlParameter("@nombreControl", NombreControl)
                 };
-                DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+                DataTable table = SqlHelper.Obtener(query, parameters);
                 if(table.Rows.Count == 0)
                 {
                     Insertar();
@@ -113,7 +113,7 @@ namespace DAL
             {
                 new SqlParameter("@idiomaId", IdiomaId)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
         #endregion
 
@@ -129,7 +129,7 @@ namespace DAL
                 {
                     new SqlParameter("@idiomaId", IdiomaId)
                 };
-                DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+                DataTable table = SqlHelper.Obtener(query, parameters);
                 if (table.Rows.Count == 1)
                 {
                     // Significa que no hay leyendas del idioma nuevo
@@ -160,7 +160,7 @@ namespace DAL
                 new SqlParameter("@nombreControl", NombreControl),
                 new SqlParameter("@texto", Texto)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
 
         private void Actualizar()
@@ -173,7 +173,7 @@ namespace DAL
                 new SqlParameter("@nombreControl", NombreControl),
                 new SqlParameter("@texto", Texto)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
         #endregion
     }

@@ -63,6 +63,7 @@
     <Compile Include="IdiomaDAL.cs" />
     <Compile Include="LeyendaDAL.cs" />
     <Compile Include="PermisoDAL.cs" />
+    <Compile Include="PlanillaHorariaDAL.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

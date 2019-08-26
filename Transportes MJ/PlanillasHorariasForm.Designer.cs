@@ -42,15 +42,15 @@
             this.lblChofer = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dgvResultadoBusqueda = new System.Windows.Forms.DataGridView();
-            this.grpGenerarPlanillas = new System.Windows.Forms.GroupBox();
-            this.btnGenerarPlanillas = new System.Windows.Forms.Button();
-            this.lblUltimaPlanillaInfo = new System.Windows.Forms.Label();
             this.colNumeroPlanilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChofer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCoche = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRecorrido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDetalles = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.grpGenerarPlanillas = new System.Windows.Forms.GroupBox();
+            this.btnGenerarPlanillas = new System.Windows.Forms.Button();
+            this.lblUltimaPlanillaInfo = new System.Windows.Forms.Label();
             this.grpBuscarPlanillas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadoBusqueda)).BeginInit();
             this.grpGenerarPlanillas.SuspendLayout();
@@ -81,7 +81,7 @@
             this.textBox1.Location = new System.Drawing.Point(86, 19);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 10;
+            this.textBox1.TabIndex = 1;
             // 
             // lblNumeroDePlanilla
             // 
@@ -97,7 +97,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(125, 152);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
@@ -116,7 +116,7 @@
             this.comboBox3.Location = new System.Drawing.Point(86, 125);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(200, 21);
-            this.comboBox3.TabIndex = 6;
+            this.comboBox3.TabIndex = 5;
             // 
             // lblCoche
             // 
@@ -166,7 +166,7 @@
             this.comboBox1.Location = new System.Drawing.Point(86, 71);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboBox1.TabIndex = 3;
             // 
             // dgvResultadoBusqueda
             // 
@@ -185,35 +185,6 @@
             this.dgvResultadoBusqueda.ReadOnly = true;
             this.dgvResultadoBusqueda.Size = new System.Drawing.Size(722, 237);
             this.dgvResultadoBusqueda.TabIndex = 1;
-            // 
-            // grpGenerarPlanillas
-            // 
-            this.grpGenerarPlanillas.Controls.Add(this.btnGenerarPlanillas);
-            this.grpGenerarPlanillas.Controls.Add(this.lblUltimaPlanillaInfo);
-            this.grpGenerarPlanillas.Location = new System.Drawing.Point(322, 13);
-            this.grpGenerarPlanillas.Name = "grpGenerarPlanillas";
-            this.grpGenerarPlanillas.Size = new System.Drawing.Size(413, 182);
-            this.grpGenerarPlanillas.TabIndex = 2;
-            this.grpGenerarPlanillas.TabStop = false;
-            this.grpGenerarPlanillas.Text = "Generar planillas";
-            // 
-            // btnGenerarPlanillas
-            // 
-            this.btnGenerarPlanillas.Location = new System.Drawing.Point(121, 88);
-            this.btnGenerarPlanillas.Name = "btnGenerarPlanillas";
-            this.btnGenerarPlanillas.Size = new System.Drawing.Size(163, 38);
-            this.btnGenerarPlanillas.TabIndex = 1;
-            this.btnGenerarPlanillas.Text = "Generar planillas para el 21/6/2018";
-            this.btnGenerarPlanillas.UseVisualStyleBackColor = true;
-            // 
-            // lblUltimaPlanillaInfo
-            // 
-            this.lblUltimaPlanillaInfo.AutoSize = true;
-            this.lblUltimaPlanillaInfo.Location = new System.Drawing.Point(47, 52);
-            this.lblUltimaPlanillaInfo.Name = "lblUltimaPlanillaInfo";
-            this.lblUltimaPlanillaInfo.Size = new System.Drawing.Size(308, 13);
-            this.lblUltimaPlanillaInfo.TabIndex = 0;
-            this.lblUltimaPlanillaInfo.Text = "Las últimas planillas generadas corresponden al día 20/6/2018.";
             // 
             // colNumeroPlanilla
             // 
@@ -252,6 +223,35 @@
             this.colDetalles.ReadOnly = true;
             this.colDetalles.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colDetalles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // grpGenerarPlanillas
+            // 
+            this.grpGenerarPlanillas.Controls.Add(this.btnGenerarPlanillas);
+            this.grpGenerarPlanillas.Controls.Add(this.lblUltimaPlanillaInfo);
+            this.grpGenerarPlanillas.Location = new System.Drawing.Point(322, 13);
+            this.grpGenerarPlanillas.Name = "grpGenerarPlanillas";
+            this.grpGenerarPlanillas.Size = new System.Drawing.Size(413, 182);
+            this.grpGenerarPlanillas.TabIndex = 2;
+            this.grpGenerarPlanillas.TabStop = false;
+            this.grpGenerarPlanillas.Text = "Generar planillas";
+            // 
+            // btnGenerarPlanillas
+            // 
+            this.btnGenerarPlanillas.Location = new System.Drawing.Point(121, 88);
+            this.btnGenerarPlanillas.Name = "btnGenerarPlanillas";
+            this.btnGenerarPlanillas.Size = new System.Drawing.Size(163, 38);
+            this.btnGenerarPlanillas.TabIndex = 7;
+            this.btnGenerarPlanillas.Text = "Generar planillas para el 21/6/2018";
+            this.btnGenerarPlanillas.UseVisualStyleBackColor = true;
+            // 
+            // lblUltimaPlanillaInfo
+            // 
+            this.lblUltimaPlanillaInfo.AutoSize = true;
+            this.lblUltimaPlanillaInfo.Location = new System.Drawing.Point(47, 52);
+            this.lblUltimaPlanillaInfo.Name = "lblUltimaPlanillaInfo";
+            this.lblUltimaPlanillaInfo.Size = new System.Drawing.Size(308, 13);
+            this.lblUltimaPlanillaInfo.TabIndex = 0;
+            this.lblUltimaPlanillaInfo.Text = "Las últimas planillas generadas corresponden al día 20/6/2018.";
             // 
             // PlanillasHorariasForm
             // 

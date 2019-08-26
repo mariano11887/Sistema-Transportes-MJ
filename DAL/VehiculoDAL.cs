@@ -101,7 +101,7 @@ namespace DAL
             {
                 new SqlParameter("@id", id)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
 
         public static List<VehiculoDAL> Buscar(string patente, int numeroDeInterno, bool? enCirculacion)
@@ -167,7 +167,7 @@ namespace DAL
 
         private static List<VehiculoDAL> RealizarBusqueda(string query, SqlParameter[] parameters)
         {
-            DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+            DataTable table = SqlHelper.Obtener(query, parameters);
             return table.Select().Select(r => new VehiculoDAL
             {
                 AnioFabricacion = int.Parse(r["anio_fabricacion"].ToString()),
@@ -202,7 +202,7 @@ namespace DAL
                 new SqlParameter("@vehiculoId", VehiculoId)
             };
 
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
 
         private void Insertar()
@@ -221,7 +221,7 @@ namespace DAL
                 new SqlParameter("@enCirculacion", EnCirculacion)
             };
 
-            VehiculoId = SqlHelper.Instancia().Insertar(query, parameters);
+            VehiculoId = SqlHelper.Insertar(query, parameters);
         }
     }
 }

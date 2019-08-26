@@ -83,7 +83,7 @@ namespace DAL
             try
             {
                 string query = "SELECT id, nombre, descripcion, editable FROM permiso WHERE habilitado = 1 AND es_perfil = 1";
-                DataTable table = SqlHelper.Instancia().Obtener(query, new SqlParameter[0]);
+                DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
                 List<PermisoDAL> perfiles = new List<PermisoDAL>();
                 foreach(DataRow row in table.Rows)
                 {
@@ -116,7 +116,7 @@ namespace DAL
                 {
                     new SqlParameter("@nombre", Nombre)
                 };
-                DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+                DataTable table = SqlHelper.Obtener(query, parameters);
                 if(table.Rows.Count > 0)
                 {
                     DataRow row = table.Rows[0];
@@ -160,7 +160,7 @@ namespace DAL
                 {
                     new SqlParameter("@permisoPadreId", PermisoId)
                 };
-                SqlHelper.Instancia().Ejecutar(query, parameters);
+                SqlHelper.Ejecutar(query, parameters);
 
                 // Inserto cada uno de los permisos hijos
                 query = "INSERT INTO permiso_permiso (permiso_padre_id, permiso_hijo_id) VALUES (@permisoPadreId, @permisoHijoId)";
@@ -171,7 +171,7 @@ namespace DAL
                         new SqlParameter("@permisoPadreId", PermisoId),
                         new SqlParameter("@permisoHijoId", hijoId)
                     };
-                    SqlHelper.Instancia().Ejecutar(query, parameters);
+                    SqlHelper.Ejecutar(query, parameters);
                 }
             }
         }
@@ -210,7 +210,7 @@ namespace DAL
 
                 string query = sb.ToString();
                 SqlParameter[] paramsArray = parameters.ToArray();
-                DataTable table = SqlHelper.Instancia().Obtener(query, paramsArray);
+                DataTable table = SqlHelper.Obtener(query, paramsArray);
                 if (table.Rows.Count > 0)
                 {
                     _permisoId = int.Parse(table.Rows[0]["id"].ToString());
@@ -240,7 +240,7 @@ namespace DAL
                 ParameterName = "@usuarioId",
                 Value = usuarioId
             };
-            DataTable table = SqlHelper.Instancia().Obtener(query, paramsArray);
+            DataTable table = SqlHelper.Obtener(query, paramsArray);
             List<PermisoDAL> permisos = new List<PermisoDAL>();
             foreach(DataRow row in table.Rows)
             {
@@ -271,7 +271,7 @@ namespace DAL
                 Value = _permisoId
             });
 
-            DataTable table = SqlHelper.Instancia().Obtener(query, parameters.ToArray());
+            DataTable table = SqlHelper.Obtener(query, parameters.ToArray());
             _permisosHijosIds = new List<int>();
             foreach (DataRow row in table.Rows)
             {
@@ -287,7 +287,7 @@ namespace DAL
                 new SqlParameter("@nombre", Nombre),
                 new SqlParameter("@descripcion", Descripcion)
             };
-            PermisoId = SqlHelper.Instancia().Insertar(query, parameters);
+            PermisoId = SqlHelper.Insertar(query, parameters);
         }
 
         private void Actualizar()
@@ -300,7 +300,7 @@ namespace DAL
                 new SqlParameter("@habilitado", Habilitado),
                 new SqlParameter("@id", PermisoId)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
         #endregion
     }

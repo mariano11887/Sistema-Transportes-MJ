@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,13 @@ namespace UI
         private void PlanillasHorariasForm_Load(object sender, EventArgs e)
         {
             Abrir();
+
+            DateTime ultimaFecha = PlanillaHoraria.ObtenerUltimaPlanilla();
+            lblUltimaPlanillaInfo.Text = string.Format(lblUltimaPlanillaInfo.Text, ultimaFecha.ToString("dd/MM/yyyy"));
+
+            DateTime proximaFecha = PlanillaHoraria.ObtenerProximaFecha(ultimaFecha, out bool puedeGenerarse);
+            btnGenerarPlanillas.Text = string.Format(btnGenerarPlanillas.Text, proximaFecha.ToString("dd/MM/yyyy"));
+            btnGenerarPlanillas.Enabled = puedeGenerarse;
         }
     }
 }

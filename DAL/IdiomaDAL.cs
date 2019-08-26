@@ -53,7 +53,7 @@ namespace DAL
             {
                 new SqlParameter("@id", Id)
             };
-            DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+            DataTable table = SqlHelper.Obtener(query, parameters);
             IdiomaDAL idiomaDAL = new IdiomaDAL();
             if(table.Rows.Count > 0)
             {
@@ -71,14 +71,14 @@ namespace DAL
             {
                 new SqlParameter("@idiomaId", id)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
 
         public static List<IdiomaDAL> ObtenerTodos()
         {
             string query = "SELECT id, nombre, editable FROM idioma";
             SqlParameter[] parameters = new SqlParameter[0];
-            DataTable table = SqlHelper.Instancia().Obtener(query, parameters);
+            DataTable table = SqlHelper.Obtener(query, parameters);
             List<IdiomaDAL> idiomasDAL = new List<IdiomaDAL>();
             foreach(DataRow row in table.Rows)
             {
@@ -102,7 +102,7 @@ namespace DAL
             {
                 new SqlParameter("@nombre", Nombre)
             };
-            IdiomaId = SqlHelper.Instancia().Insertar(query, parameters);
+            IdiomaId = SqlHelper.Insertar(query, parameters);
         }
 
         private void Actualizar()
@@ -113,7 +113,7 @@ namespace DAL
                 new SqlParameter("@nombre", Nombre),
                 new SqlParameter("@id", IdiomaId)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
         #endregion
     }

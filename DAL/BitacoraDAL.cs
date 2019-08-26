@@ -49,7 +49,7 @@ namespace DAL
                 new SqlParameter("@usuarioId", _usuarioId),
                 new SqlParameter("@detalle", _detalle)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters, SqlHelper.Bd.Bitacora);
+            SqlHelper.Ejecutar(query, parameters, SqlHelper.Bd.Bitacora);
         }
 
         public static List<BitacoraDAL> Buscar(DateTime fechaInicio, DateTime fechaFin, int usuarioId, string texto)
@@ -69,7 +69,7 @@ namespace DAL
                 query += " AND detalle LIKE @detalle";
                 paramList.Add(new SqlParameter("@detalle", "%" + texto + "%"));
             }
-            DataTable table = SqlHelper.Instancia().Obtener(query, paramList.ToArray(), SqlHelper.Bd.Bitacora);
+            DataTable table = SqlHelper.Obtener(query, paramList.ToArray(), SqlHelper.Bd.Bitacora);
             List<BitacoraDAL> bitacorasDAL = new List<BitacoraDAL>();
             foreach(DataRow row in table.Rows)
             {

@@ -14,11 +14,6 @@ namespace DAL
 {
     class SqlHelper
     {
-        private static SqlHelper _instancia;
-
-        private string _connStringBdPrincipal;
-        private string _connStringBdBitacora;
-
         public enum Bd
         {
             Principal,
@@ -26,29 +21,14 @@ namespace DAL
             Master
         }
 
-        private SqlHelper() { }
-
-        public static SqlHelper Instancia()
-        {
-            if(_instancia == null)
-            {
-                _instancia = new SqlHelper()
-                {
-                    _connStringBdPrincipal = LeerConnString(Bd.Principal),
-                    _connStringBdBitacora = LeerConnString(Bd.Bitacora)
-                };
-            }
-            return _instancia;
-        }
-
-        public DataTable Obtener(string query, SqlParameter[] parameters)
+        public static DataTable Obtener(string query, SqlParameter[] parameters)
         {
             return Obtener(query, parameters, Bd.Principal);
         }
 
-        public DataTable Obtener(string query, SqlParameter[] parameters, Bd bd)
+        public static DataTable Obtener(string query, SqlParameter[] parameters, Bd bd)
         {
-            string connString = bd == Bd.Principal ? _connStringBdPrincipal : _connStringBdBitacora;
+            string connString = LeerConnString(bd);
             try
             {
                 SqlCommand cmd = new SqlCommand
@@ -64,13 +44,14 @@ namespace DAL
                 {
                     cmd.Parameters.AddRange(parameters);
                 }
-                cmd.Connection.Open();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter
-                {
-                    SelectCommand = cmd
-                };
+
                 DataSet ds = new DataSet();
-                dataAdapter.Fill(ds);
+                cmd.Connection.Open();
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter())
+                {
+                    dataAdapter.SelectCommand = cmd;
+                    dataAdapter.Fill(ds);
+                }
                 cmd.Connection.Close();
 
                 return ds.Tables[0];
@@ -82,19 +63,47 @@ namespace DAL
             }
         }
 
-        public void Ejecutar(string query, SqlParameter[] parameters)
+        public static T ObtenerValor<T>(string query, SqlParameter[] parameters)
+        {
+            return ObtenerValor<T>(query, parameters, Bd.Principal);
+        }
+
+        public static T ObtenerValor<T>(string query, SqlParameter[] parameters, Bd bd)
+        {
+            string connString = LeerConnString(bd);
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connString))
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddRange(parameters);
+                    command.Connection.Open();
+                    T valor = (T)command.ExecuteScalar();
+                    command.Connection.Close();
+                    return valor;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Grabar(ex);
+                return default;
+            }
+        }
+
+        public static void Ejecutar(string query, SqlParameter[] parameters)
         {
             Ejecutar(query, parameters, Bd.Principal);
         }
 
-        public void Ejecutar(string query, SqlParameter[] parameters, Bd bd)
+        public static void Ejecutar(string query, SqlParameter[] parameters, Bd bd)
         {
-            string connString = bd == Bd.Principal ? _connStringBdPrincipal : _connStringBdBitacora;
+            string connString = LeerConnString(bd);
             try
             {
                 using (SqlConnection connection = new SqlConnection(connString))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    SqlCommand command = new SqlCommand(query, connection);
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddRange(parameters);
                     command.Connection.Open();
@@ -108,21 +117,21 @@ namespace DAL
             }
         }
 
-        public int Insertar(string Query, SqlParameter[] Parameters)
+        public static int Insertar(string query, SqlParameter[] parameters)
         {
-            return Insertar(Query, Parameters, Bd.Principal);
+            return Insertar(query, parameters, Bd.Principal);
         }
 
-        public int Insertar(string Query, SqlParameter[] Parameters, Bd Bd)
+        public static int Insertar(string query, SqlParameter[] parameters, Bd bd)
         {
-            string connString = Bd == Bd.Principal ? _connStringBdPrincipal : _connStringBdBitacora;
+            string connString = LeerConnString(bd);
             try
             {
                 using (SqlConnection connection = new SqlConnection(connString))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    SqlCommand command = new SqlCommand(Query, connection);
                     command.CommandType = CommandType.Text;
-                    command.Parameters.AddRange(Parameters);
+                    command.Parameters.AddRange(parameters);
                     command.Connection.Open();
                     int idInsertado = (int)command.ExecuteScalar();
                     command.Connection.Close();

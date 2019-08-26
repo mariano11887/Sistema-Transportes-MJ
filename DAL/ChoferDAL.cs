@@ -116,7 +116,7 @@ namespace DAL
             }
 
             string query = string.Format(queryTemplate, sqlNombre, sqlDni);
-            DataTable table = SqlHelper.Instancia().Obtener(query, parameters.ToArray());
+            DataTable table = SqlHelper.Obtener(query, parameters.ToArray());
             return table.Select().Select(r => new ChoferDAL
             {
                 CochePreferidoId = r.IsNull("coche_preferido_id") ? 0 : int.Parse(r["coche_preferido_id"].ToString()),
@@ -148,7 +148,7 @@ namespace DAL
                 new SqlParameter("@id", id)
             };
 
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
 
         private void Insertar()
@@ -162,7 +162,7 @@ namespace DAL
                 new SqlParameter("@cochePreferidoId", CochePreferidoId == 0 ? DBNull.Value : (object)CochePreferidoId)
             };
 
-            Id = SqlHelper.Instancia().Insertar(query, parameters);
+            Id = SqlHelper.Insertar(query, parameters);
         }
 
         private void Actualizar()
@@ -178,7 +178,7 @@ namespace DAL
                 new SqlParameter("@id", Id)
             };
 
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
     }
 }

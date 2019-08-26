@@ -18,7 +18,7 @@ namespace DAL
             {
                 new SqlParameter("@ubicacion", Ubicacion)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters);
+            SqlHelper.Ejecutar(query, parameters);
         }
 
         public static void RestaurarBackup(string Ubicacion)
@@ -31,7 +31,7 @@ namespace DAL
             {
                 new SqlParameter("@ubicacion", Ubicacion)
             };
-            SqlHelper.Instancia().Ejecutar(query, parameters, SqlHelper.Bd.Master);
+            SqlHelper.Ejecutar(query, parameters, SqlHelper.Bd.Master);
         }
     }
 }
