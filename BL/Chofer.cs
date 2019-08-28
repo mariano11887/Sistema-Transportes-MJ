@@ -81,6 +81,19 @@ namespace BL
             }).ToList();
         }
 
+        public static Chofer Obtener(int id)
+        {
+            ChoferDAL dal = ChoferDAL.Obtener(id);
+            return new Chofer
+            {
+                _cochePreferidoId = dal.CochePreferidoId,
+                Dni = dal.Dni,
+                FechaFinLicencia = dal.FechaFinLicencia,
+                Id = dal.Id,
+                Nombre = dal.Nombre
+            };
+        }
+
         public void Guardar()
         {
             ChoferDAL choferDAL = new ChoferDAL

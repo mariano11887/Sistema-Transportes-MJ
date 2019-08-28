@@ -243,6 +243,7 @@
             this.btnGenerarPlanillas.TabIndex = 7;
             this.btnGenerarPlanillas.Text = "Generar planillas para el 21/6/2018";
             this.btnGenerarPlanillas.UseVisualStyleBackColor = true;
+            this.btnGenerarPlanillas.Click += new System.EventHandler(this.BtnGenerarPlanillas_Click);
             // 
             // lblUltimaPlanillaInfo
             // 

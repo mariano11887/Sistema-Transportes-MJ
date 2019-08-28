@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,36 @@ namespace DAL
         {
             string query = "SELECT MAX(fecha) FROM planilla_horaria";
             return SqlHelper.ObtenerValor<DateTime>(query, new SqlParameter[0]);
+        }
+
+        public static List<PlanillaHorariaDAL> ObtenerPorRecorridoYFechas(int recorridoId, List<DateTime> fechas)
+        {
+            string query = "SELECT id, chofer_id, coche_id, recorrido_id, fecha FROM planilla_horaria " +
+                "WHERE recorrido_id = @recorridoId AND fecha IN ({0})";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@recorridoId", recorridoId)
+            };
+
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < fechas.Count; i++)
+            {
+                string parameterName = "@fecha" + i;
+                sb.Append(parameterName).Append(",");
+                parameters.Add(new SqlParameter(parameterName, fechas[i].ToString("yyyy-MM-dd")));
+            }
+
+            query = string.Format(query, sb.ToString().TrimEnd(','));
+
+            DataTable table = SqlHelper.Obtener(query, parameters.ToArray());
+            return table.Select().Select(r => new PlanillaHorariaDAL
+            {
+                ChoferId = int.Parse(r["chofer_id"].ToString()),
+                CocheId = int.Parse(r["coche_id"].ToString()),
+                Fecha = DateTime.Parse(r["fecha"].ToString()),
+                Id = int.Parse(r["id"].ToString()),
+                RecorridoId = int.Parse(r["recorrido_id"].ToString())
+            }).ToList();
         }
     }
 }

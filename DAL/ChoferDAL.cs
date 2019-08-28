@@ -93,7 +93,7 @@ namespace DAL
                 "FROM chofer WHERE habilitado = 1 AND nombre LIKE {0} AND dni = {1} " +
                 "AND " + queryLicencia + " AND " + queryCochePreferido;
 
-            string sqlNombre, sqlDni, sqlCochePreferido;
+            string sqlNombre, sqlDni;
 
             if(string.IsNullOrWhiteSpace(nombre))
             {
@@ -116,16 +116,20 @@ namespace DAL
             }
 
             string query = string.Format(queryTemplate, sqlNombre, sqlDni);
-            DataTable table = SqlHelper.Obtener(query, parameters.ToArray());
-            return table.Select().Select(r => new ChoferDAL
+
+            return HacerBusqueda(query, parameters.ToArray()).ToList();
+        }
+
+        public static ChoferDAL Obtener(int id)
+        {
+            string query = "SELECT id, nombre, dni, coche_preferido_id, fecha_fin_licencia, habilitado FROM chofer " +
+                "WHERE habilitado = 1 AND id = @id";
+            SqlParameter[] parameters = new SqlParameter[]
             {
-                CochePreferidoId = r.IsNull("coche_preferido_id") ? 0 : int.Parse(r["coche_preferido_id"].ToString()),
-                Dni = int.Parse(r["dni"].ToString()),
-                FechaFinLicencia = r.IsNull("fecha_fin_licencia") ? default : DateTime.Parse(r["fecha_fin_licencia"].ToString()),
-                Habilitado = true,
-                Id = int.Parse(r["id"].ToString()),
-                Nombre = r["nombre"].ToString()
-            }).ToList();
+                new SqlParameter("@id", id)
+            };
+
+            return HacerBusqueda(query, parameters).FirstOrDefault();
         }
 
         public void Guardar()
@@ -149,6 +153,20 @@ namespace DAL
             };
 
             SqlHelper.Ejecutar(query, parameters);
+        }
+
+        private static IEnumerable<ChoferDAL> HacerBusqueda(string query, SqlParameter[] parameters)
+        {
+            DataTable table = SqlHelper.Obtener(query, parameters);
+            return table.Select().Select(r => new ChoferDAL
+            {
+                CochePreferidoId = r.IsNull("coche_preferido_id") ? 0 : int.Parse(r["coche_preferido_id"].ToString()),
+                Dni = int.Parse(r["dni"].ToString()),
+                FechaFinLicencia = r.IsNull("fecha_fin_licencia") ? default : DateTime.Parse(r["fecha_fin_licencia"].ToString()),
+                Habilitado = true,
+                Id = int.Parse(r["id"].ToString()),
+                Nombre = r["nombre"].ToString()
+            });
         }
 
         private void Insertar()

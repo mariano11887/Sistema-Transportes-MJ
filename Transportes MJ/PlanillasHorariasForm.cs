@@ -29,5 +29,22 @@ namespace UI
             btnGenerarPlanillas.Text = string.Format(btnGenerarPlanillas.Text, proximaFecha.ToString("dd/MM/yyyy"));
             btnGenerarPlanillas.Enabled = puedeGenerarse;
         }
+
+        private void BtnGenerarPlanillas_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(ObtenerLeyenda("msgConfirmacionGenerarPlanillas"), "",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                GenerarPlanillas();
+            }
+        }
+
+        private void GenerarPlanillas()
+        {
+            Cursor = Cursors.WaitCursor;
+            PlanillaHoraria.GenerarProximasPlanillas();
+            Cursor = Cursors.Default;
+        }
     }
 }
