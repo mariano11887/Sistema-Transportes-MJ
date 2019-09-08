@@ -1,6 +1,7 @@
 ﻿using DAL;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,6 +73,21 @@ namespace BL
             get { return _enCirculacion; }
             set { _enCirculacion = value; }
         }
+
+        private Terminal _ultimoEstacionamiento;
+
+        public Terminal UltimoEstacionamiento
+        {
+            get
+            {
+                if(_ultimoEstacionamiento == null)
+                {
+                    _ultimoEstacionamiento = ObtenerUltimoEstacionamiento();
+                }
+                return _ultimoEstacionamiento;
+            }
+        }
+
         #endregion
 
         public void Guardar()
@@ -109,6 +125,18 @@ namespace BL
                 UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
             };
             bitacoraDAL.Guardar();
+        }
+
+        private Terminal ObtenerUltimoEstacionamiento()
+        {
+            int ultimaTerminalId = VehiculoDAL.ObtenerUltimaTerminalId(Id);
+            if (ultimaTerminalId <= 0)
+            {
+                // No hay datos de este vehículo. Asumo que está en la terminal configurada en el config
+                ultimaTerminalId = int.Parse(ConfigurationManager.AppSettings["terminalIdNuevoVehiculo"]);
+            }
+
+            return Terminal.Obtener(ultimaTerminalId);
         }
 
         public static Vehiculo Buscar(int id)

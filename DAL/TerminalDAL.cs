@@ -35,17 +35,17 @@ namespace DAL
             set { _direccion = value; }
         }
 
-        private decimal _latitud;
+        private double _latitud;
 
-        public decimal Latitud
+        public double Latitud
         {
             get { return _latitud; }
             set { _latitud = value; }
         }
 
-        private decimal _longitud;
+        private double _longitud;
 
-        public decimal Longitud
+        public double Longitud
         {
             get { return _longitud; }
             set { _longitud = value; }
@@ -65,10 +65,25 @@ namespace DAL
             {
                 Direccion = r["direccion"].ToString(),
                 Id = int.Parse(r["id"].ToString()),
-                Latitud = decimal.Parse(r["latitud"].ToString()),
-                Longitud = decimal.Parse(r["longitud"].ToString()),
+                Latitud = double.Parse(r["latitud"].ToString()),
+                Longitud = double.Parse(r["longitud"].ToString()),
                 Nombre = r["nombre"].ToString()
             }).FirstOrDefault();
+        }
+
+        public static List<TerminalDAL> ListarTodas()
+        {
+            string query = "SELECT id, nombre, direccion, latitud, longitud FROM terminal";
+
+            DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
+            return table.Select().Select(r => new TerminalDAL
+            {
+                Direccion = r["direccion"].ToString(),
+                Id = int.Parse(r["id"].ToString()),
+                Latitud = double.Parse(r["latitud"].ToString()),
+                Longitud = double.Parse(r["longitud"].ToString()),
+                Nombre = r["nombre"].ToString()
+            }).ToList();
         }
     }
 }

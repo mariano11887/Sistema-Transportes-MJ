@@ -1,6 +1,7 @@
 ﻿using Nager.Date;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,13 +61,15 @@ namespace BL
             }
 
             bool hayVehiculos = ChequearDisponibilidadDeVehiculos();
-            DividirEnDosTurnos();
             bool hayChoferes = ChequearDisponibilidadDeChoferes();
-
             if(!hayVehiculos || !hayChoferes)
             {
                 RecalcularFrecuencias(calculosDeRecorrido);
             }
+
+            AsignarVehiculos();
+
+            DividirEnDosTurnos();
         }
 
         private TipoDeDia ObtenerTipoDeDia(DateTime fecha)
@@ -176,9 +179,9 @@ namespace BL
                 }
                 else
                 {
-                    // Si no hay datos, decido que la frecuencia es cada 12 minutos y la duración de 1 hora
-                    nuevaFrecuencia = 12;
-                    nuevaDuracion = new TimeSpan(1, 0, 0);
+                    // Si no hay datos, tomo la frecuencia y duración por defecto
+                    nuevaFrecuencia = int.Parse(ConfigurationManager.AppSettings["frecuenciaDefault"]);
+                    nuevaDuracion = new TimeSpan(0, int.Parse(ConfigurationManager.AppSettings["duracionDefault"]), 0);
                 }
 
                 calcRecorrido.FrecuenciaPorIntervalo.Add(intervalo, nuevaFrecuencia);
@@ -192,6 +195,8 @@ namespace BL
             // El primer viaje del día es a las 4 AM
             DateTime inicioProximoViaje = new DateTime(1, 1, 1, 4, 0, 0);
             Recorrido recorrido = calcRecorrido.Recorrido;
+            int descansoChoferes = int.Parse(ConfigurationManager.AppSettings["descansoChoferes"]);
+
             foreach (int intervalo in calcRecorrido.FrecuenciaPorIntervalo.Keys)
             {
                 while (inicioProximoViaje.Hour - inicioProximoViaje.Hour % 2 == intervalo)
@@ -200,15 +205,17 @@ namespace BL
                     {
                         HoraSalida = inicioProximoViaje,
                         HoraEstimadaLlegada = inicioProximoViaje.Add(calcRecorrido.DuracionPorIntervalo[intervalo]),
+                        EsIda = true,
+                        TerminalOrigen = recorrido.TerminalInicio,
                         TerminalDestino = recorrido.TerminalFin
                     };
 
                     // Busco la planilla cuyo último viaje termine en la terminal de salida antes de que 
-                    // salga este micro (más 15 min de descanso)
+                    // salga este micro (más el descanso de los choferes)
                     PlanillaHoraria planillaIda = _planillasGeneradas.Where(p =>
                         p.Recorrido == recorrido &&
                         p.Viajes.Last().TerminalDestino == recorrido.TerminalInicio &&
-                        p.Viajes.Last().HoraEstimadaLlegada.AddMinutes(15) < inicioProximoViaje).FirstOrDefault();
+                        p.Viajes.Last().HoraEstimadaLlegada.AddMinutes(descansoChoferes) < inicioProximoViaje).FirstOrDefault();
 
                     if (planillaIda == null)
                     {
@@ -227,13 +234,15 @@ namespace BL
                     {
                         HoraSalida = inicioProximoViaje,
                         HoraEstimadaLlegada = inicioProximoViaje.Add(calcRecorrido.DuracionPorIntervalo[intervalo]),
+                        EsIda = false,
+                        TerminalOrigen = recorrido.TerminalFin,
                         TerminalDestino = recorrido.TerminalInicio,
                     };
 
                     PlanillaHoraria planillaVuelta = _planillasGeneradas.Where(p =>
                         p.Recorrido == recorrido &&
                         p.Viajes.Last().TerminalDestino == recorrido.TerminalFin &&
-                        p.Viajes.Last().HoraEstimadaLlegada.AddMinutes(15) < inicioProximoViaje).FirstOrDefault();
+                        p.Viajes.Last().HoraEstimadaLlegada.AddMinutes(descansoChoferes) < inicioProximoViaje).FirstOrDefault();
 
                     if (planillaVuelta == null)
                     {
@@ -277,7 +286,7 @@ namespace BL
                 _choferes = Chofer.ListarTodos().Where(c => c.FechaFinLicencia <= DateTime.Today).ToList();
             }
 
-            if(_choferes.Count < _planillasGeneradas.Count)
+            if(_choferes.Count <= _planillasGeneradas.Count * 2)
             {
                 // No alcanzan los choferes para cubrir las planillas.
                 // TODO: Generar alerta de insuficiencia de choferes
@@ -307,6 +316,7 @@ namespace BL
                 {
                     Fecha = planilla.Fecha,
                     Recorrido = planilla.Recorrido,
+                    Vehiculo = planilla.Vehiculo,
                     Viajes = viajesSegundoTurno
                 };
                 planillasDivididas.Add(planillaSegundoTurno);
@@ -318,8 +328,10 @@ namespace BL
 
         private void RecalcularFrecuencias(List<CalculoDeRecorrido> calculosDeRecorrido)
         {
-            int cantidadDeRecalculo = Math.Min(_choferes.Count, _vehiculos.Count * 2);
-            float proporcionDeRecalculo = (float)_planillasGeneradas.Count / cantidadDeRecalculo;
+            float propRecalculoChoferes = (float)_planillasGeneradas.Count * 2 / _choferes.Count;
+            float propRecalculoVehiculos = (float)_planillasGeneradas.Count / _vehiculos.Count;
+            float proporcionDeRecalculo = Math.Max(propRecalculoChoferes, propRecalculoVehiculos);
+
             _planillasGeneradas.Clear();
 
             foreach(CalculoDeRecorrido calcRecorrido in calculosDeRecorrido)
@@ -335,8 +347,60 @@ namespace BL
 
                 GenerarViajesYPlanillas(calcRecorrido);
             }
+        }
 
-            DividirEnDosTurnos();
+        private void AsignarVehiculos()
+        {
+            foreach(PlanillaHoraria planilla in _planillasGeneradas)
+            {
+                // Busco un vehiculo (no asignado a otra planilla) que haya terminado su recorrido el día anterior 
+                // en la terminal de origen del primer viaje del día
+                Vehiculo vehiculo = 
+                    _vehiculos.Where(v => v.UltimoEstacionamiento.Id == planilla.Viajes[0].TerminalOrigen.Id &&
+                        !_planillasGeneradas.Any(p => p.Vehiculo != null && p.Vehiculo.Id == v.Id)).FirstOrDefault();
+
+                if (vehiculo != null)
+                {
+                    planilla.Vehiculo = vehiculo;
+                }
+            }
+
+            // A las planillas que todavía quedaron sin vehículo, les busco alguno en las terminales cercanas
+            List<PlanillaHoraria> planillasSinVehiculo = _planillasGeneradas.Where(p => p.Vehiculo == null).ToList();
+            int indiceCercania = -1;
+            while (planillasSinVehiculo.Count > 0)
+            {
+                indiceCercania++;
+                bool hayTerminales = true;
+                foreach (PlanillaHoraria planilla in planillasSinVehiculo)
+                {
+                    Terminal terminalCercana = planilla.Viajes[0].TerminalOrigen.ObtenerTerminalCercana(indiceCercania);
+                    if (terminalCercana != null)
+                    {
+                        Vehiculo vehiculo =
+                            _vehiculos.Where(v => v.UltimoEstacionamiento.Id == terminalCercana.Id &&
+                                !_planillasGeneradas.Any(p => p.Vehiculo != null && p.Vehiculo.Id == v.Id)).FirstOrDefault();
+
+                        if (vehiculo != null)
+                        {
+                            planilla.Vehiculo = vehiculo;
+                        }
+                    }
+                    else
+                    {
+                        // Ya no hay más terminales por verificar (no debería suceder nunca)
+                        hayTerminales = false;
+                        break;
+                    }
+                }
+
+                if(!hayTerminales)
+                {
+                    break;
+                }
+
+                planillasSinVehiculo = _planillasGeneradas.Where(p => p.Vehiculo == null).ToList();
+            }
         }
     }
 }

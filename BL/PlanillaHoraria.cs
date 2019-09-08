@@ -74,6 +74,7 @@ namespace BL
             get { return _viajes; }
             set { _viajes = value; }
         }
+
         #endregion
 
         public static DateTime ObtenerUltimaPlanilla()

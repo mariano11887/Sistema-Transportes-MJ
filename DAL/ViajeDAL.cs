@@ -27,6 +27,14 @@ namespace DAL
             set { _planillaHorariaId = value; }
         }
 
+        private bool _esIda;
+
+        public bool EsIda
+        {
+            get { return _esIda; }
+            set { _esIda = value; }
+        }
+        
         private DateTime _horaSalida;
 
         public DateTime HoraSalida
@@ -77,7 +85,7 @@ namespace DAL
 
         public static List<ViajeDAL> ObtenerPorPlanillaHoraria(int planillaHorariaId)
         {
-            string query = "SELECT id, hora_salida, hora_estimada_llegada, hora_real_llegada, completitud_id " +
+            string query = "SELECT id, es_ida, hora_salida, hora_estimada_llegada, hora_real_llegada, completitud_id " +
                 "FROM viaje WHERE planilla_horaria_id = @planillaHorariaId AND completado = 1";
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -89,6 +97,7 @@ namespace DAL
             {
                 Completado = true,
                 CompletitudId = r.IsNull("completitud_id") ? 0 : int.Parse(r["completitud_id"].ToString()),
+                EsIda = bool.Parse(r["es_ida"].ToString()),
                 HoraEstimadaLlegada = DateTime.Parse(r["hora_estimada_llegada"].ToString()),
                 HoraRealLlegada = r.IsNull("hora_real_llegada") ? default : DateTime.Parse(r["hora_real_llegada"].ToString()),
                 HoraSalida = DateTime.Parse(r["hora_salida"].ToString()),

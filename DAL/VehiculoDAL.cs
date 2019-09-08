@@ -165,6 +165,21 @@ namespace DAL
             return RealizarBusqueda(query, new SqlParameter[0]);
         }
 
+        public static int ObtenerUltimaTerminalId(int vehiculoId)
+        {
+            string query = "SELECT CASE WHEN v.es_ida = 1 THEN r.terminal_fin_id ELSE r.terminal_inicio_id END AS ultima_terminal_id " +
+                "FROM planilla_horaria ph " +
+                "INNER JOIN viaje v ON v.planilla_horaria_id = ph.id " +
+                "INNER JOIN recorrido r ON ph.recorrido_id = r.id " +
+                "WHERE p.coche_id = @vehiculoId";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@vehiculoId", vehiculoId)
+            };
+
+            return SqlHelper.ObtenerValor<int>(query, parameters);
+        }
+
         private static List<VehiculoDAL> RealizarBusqueda(string query, SqlParameter[] parameters)
         {
             DataTable table = SqlHelper.Obtener(query, parameters);

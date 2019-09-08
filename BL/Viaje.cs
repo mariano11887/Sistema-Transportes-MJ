@@ -18,6 +18,14 @@ namespace BL
             set { _id = value; }
         }
 
+        private bool _esIda;
+
+        public bool EsIda
+        {
+            get { return _esIda; }
+            set { _esIda = value; }
+        }
+
         private DateTime _horaSalida;
 
         public DateTime HoraSalida
@@ -58,6 +66,15 @@ namespace BL
             set { _completitud = value; }
         }
 
+        private Terminal _terminalOrigen;
+
+        public Terminal TerminalOrigen
+        {
+            get { return _terminalOrigen; }
+            set { _terminalOrigen = value; }
+        }
+
+
         private Terminal _terminalDestino;
 
         public Terminal TerminalDestino
@@ -73,6 +90,7 @@ namespace BL
             {
                 Completado = dal.Completado,
                 Completitud = (CompletitudViaje)dal.CompletitudId,
+                EsIda = dal.EsIda,
                 HoraEstimadaLlegada = dal.HoraEstimadaLlegada,
                 HoraRealLlegada = dal.HoraRealLlegada,
                 HoraSalida = dal.HoraSalida,
