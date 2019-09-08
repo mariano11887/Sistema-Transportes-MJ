@@ -68,8 +68,8 @@ namespace BL
             }
 
             AsignarVehiculos();
-
             DividirEnDosTurnos();
+            AsignarChoferes();
         }
 
         private TipoDeDia ObtenerTipoDeDia(DateTime fecha)
@@ -400,6 +400,34 @@ namespace BL
                 }
 
                 planillasSinVehiculo = _planillasGeneradas.Where(p => p.Vehiculo == null).ToList();
+            }
+        }
+
+        public void AsignarChoferes()
+        {
+            List<Chofer> choferesSinAsignar = _choferes.ToList();
+
+            // Primero asigno los choferes cuyo coche preferido esté en la planilla
+            foreach(PlanillaHoraria planilla in _planillasGeneradas)
+            {
+                Chofer chofer = choferesSinAsignar.Where(c => c.CochePreferido != null &&
+                    c.CochePreferido.Id == planilla.Vehiculo.Id).FirstOrDefault();
+                if(chofer != null)
+                {
+                    planilla.Chofer = chofer;
+                    choferesSinAsignar.Remove(chofer);
+                }
+            }
+
+            // Luego a las planillas restantes les asigno cualquier chofer
+            foreach(PlanillaHoraria planilla in _planillasGeneradas.Where(p => p.Chofer == null).ToList())
+            {
+                Chofer chofer = choferesSinAsignar.FirstOrDefault();
+                if(chofer != null)
+                {
+                    planilla.Chofer = chofer;
+                    choferesSinAsignar.Remove(chofer);
+                }
             }
         }
     }
