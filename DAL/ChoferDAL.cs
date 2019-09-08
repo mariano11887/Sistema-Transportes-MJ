@@ -120,6 +120,23 @@ namespace DAL
             return HacerBusqueda(query, parameters.ToArray()).ToList();
         }
 
+        public static List<ChoferDAL> ListarTodos()
+        {
+            string query = "SELECT id, nombre, dni, coche_preferido_id, fecha_fin_licencia FROM chofer " +
+                "WHERE habilitado = 1 AND (fecha_fin_licencia IS NULL OR fecha_fin_licencia <= GETDATE())";
+
+            DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
+            return table.Select().Select(r => new ChoferDAL
+            {
+                Id = int.Parse(r["id"].ToString()),
+                Nombre = r["nombre"].ToString(),
+                Dni = int.Parse(r["dni"].ToString()),
+                CochePreferidoId = r.IsNull("coche_preferido_id") ? 0 : int.Parse(r["coche_preferido_id"].ToString()),
+                FechaFinLicencia = r.IsNull("fecha_fin_licencia") ? default : DateTime.Parse(r["fech_fin_licencia"].ToString()),
+                Habilitado = true
+            }).ToList();
+        }
+
         public static ChoferDAL Obtener(int id)
         {
             string query = "SELECT id, nombre, dni, coche_preferido_id, fecha_fin_licencia, habilitado FROM chofer " +

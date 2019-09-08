@@ -81,6 +81,18 @@ namespace BL
             }).ToList();
         }
 
+        public static List<Chofer> ListarTodos()
+        {
+            return ChoferDAL.ListarTodos().Select(dal => new Chofer
+            {
+                _cochePreferidoId = dal.CochePreferidoId,
+                Dni = dal.Dni,
+                FechaFinLicencia = dal.FechaFinLicencia,
+                Id = dal.Id,
+                Nombre = dal.Nombre
+            }).ToList();
+        }
+
         public static Chofer Obtener(int id)
         {
             ChoferDAL dal = ChoferDAL.Obtener(id);

@@ -46,9 +46,11 @@
   <ItemGroup>
     <Compile Include="Backup.cs" />
     <Compile Include="Bitacora.cs" />
+    <Compile Include="CalculoDeRecorrido.cs" />
     <Compile Include="Chofer.cs" />
     <Compile Include="CompletitudViaje.cs" />
     <Compile Include="Encriptador.cs" />
+    <Compile Include="GeneradorDePlanillas.cs" />
     <Compile Include="Idioma.cs" />
     <Compile Include="Leyenda.cs" />
     <Compile Include="Permiso.cs" />

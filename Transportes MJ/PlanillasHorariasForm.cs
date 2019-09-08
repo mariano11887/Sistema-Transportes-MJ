@@ -25,7 +25,7 @@ namespace UI
             DateTime ultimaFecha = PlanillaHoraria.ObtenerUltimaPlanilla();
             lblUltimaPlanillaInfo.Text = string.Format(lblUltimaPlanillaInfo.Text, ultimaFecha.ToString("dd/MM/yyyy"));
 
-            DateTime proximaFecha = PlanillaHoraria.ObtenerProximaFecha(ultimaFecha, out bool puedeGenerarse);
+            DateTime proximaFecha = GeneradorDePlanillas.ObtenerProximaFecha(ultimaFecha, out bool puedeGenerarse);
             btnGenerarPlanillas.Text = string.Format(btnGenerarPlanillas.Text, proximaFecha.ToString("dd/MM/yyyy"));
             btnGenerarPlanillas.Enabled = puedeGenerarse;
         }
@@ -43,7 +43,7 @@ namespace UI
         private void GenerarPlanillas()
         {
             Cursor = Cursors.WaitCursor;
-            PlanillaHoraria.GenerarProximasPlanillas();
+            GeneradorDePlanillas.GenerarProximasPlanillas();
             Cursor = Cursors.Default;
         }
     }
