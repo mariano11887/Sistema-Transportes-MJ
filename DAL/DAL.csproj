@@ -60,6 +60,7 @@
     <Compile Include="BackupDAL.cs" />
     <Compile Include="BitacoraDAL.cs" />
     <Compile Include="ChoferDAL.cs" />
+    <Compile Include="DigitoVerificador.cs" />
     <Compile Include="IdiomaDAL.cs" />
     <Compile Include="LeyendaDAL.cs" />
     <Compile Include="PermisoDAL.cs" />

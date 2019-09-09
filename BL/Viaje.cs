@@ -84,6 +84,33 @@ namespace BL
         }
         #endregion
 
+        public void Guardar(PlanillaHoraria planillaHoraria, bool recalcularDVV)
+        {
+            ViajeDAL viajeDAL = new ViajeDAL
+            {
+                Completado = Completado,
+                CompletitudId = (int)Completitud,
+                EsIda = EsIda,
+                HoraEstimadaLlegada = HoraEstimadaLlegada,
+                HoraRealLlegada = HoraRealLlegada,
+                HoraSalida = HoraSalida,
+                Id = Id,
+                PlanillaHorariaId = planillaHoraria.Id
+            };
+            viajeDAL.Guardar();
+            Id = viajeDAL.Id;
+
+            if (recalcularDVV)
+            {
+                RecalcularDVV();
+            }
+        }
+
+        public static void RecalcularDVV()
+        {
+            ViajeDAL.RecalcularDVV();
+        }
+
         public static List<Viaje> ObtenerPorPlanilla(PlanillaHoraria planilla)
         {
             return ViajeDAL.ObtenerPorPlanillaHoraria(planilla.Id).Select(dal => new Viaje

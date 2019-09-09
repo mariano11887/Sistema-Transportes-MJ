@@ -70,6 +70,8 @@ namespace BL
             AsignarVehiculos();
             DividirEnDosTurnos();
             AsignarChoferes();
+
+            PlanillaHoraria.GuardarMultiples(_planillasGeneradas);
         }
 
         private TipoDeDia ObtenerTipoDeDia(DateTime fecha)

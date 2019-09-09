@@ -1,10 +1,7 @@
 ﻿using DAL;
-using Nager.Date;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
@@ -76,6 +73,32 @@ namespace BL
         }
 
         #endregion
+
+        private void Guardar()
+        {
+            PlanillaHorariaDAL planillaHorariaDAL = new PlanillaHorariaDAL
+            {
+                ChoferId = Chofer.Id,
+                CocheId = Vehiculo.Id,
+                Fecha = Fecha,
+                RecorridoId = Recorrido.Id
+            };
+            planillaHorariaDAL.Guardar();
+            Id = planillaHorariaDAL.Id;
+
+            // Guardo todos los viajes
+            foreach(Viaje viaje in Viajes)
+            {
+                viaje.Guardar(this, false);
+            }
+        }
+
+        public static void GuardarMultiples(List<PlanillaHoraria> planillas)
+        {
+            planillas.ForEach(p => p.Guardar());
+            PlanillaHorariaDAL.RecalcularDVV();
+            Viaje.RecalcularDVV();
+        }
 
         public static DateTime ObtenerUltimaPlanilla()
         {

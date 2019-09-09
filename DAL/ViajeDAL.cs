@@ -74,14 +74,57 @@ namespace DAL
             set { _completitudId = value; }
         }
 
-        private short _dvh;
+        private int _dvh;
 
-        public short DVH
+        public int DVH
         {
             get { return _dvh; }
-            set { _dvh = value; }
         }
         #endregion
+
+        public void Guardar()
+        {
+            if(Id > 0)
+            {
+                Actualizar();
+            }
+            else
+            {
+                Insertar();
+            }
+
+            string registro = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", Id, PlanillaHorariaId, EsIda,
+                HoraSalida.ToString("yyyyMMddHHmm"), HoraEstimadaLlegada.ToString("yyyyMMddHHmm"),
+                HoraRealLlegada.ToString("yyyyMMddHHmm"), Completado, CompletitudId);
+            _dvh = DigitoVerificador.CalcularDV(registro);
+
+            DigitoVerificador.ActualizarDVH("viaje", _dvh, Id);
+        }
+
+        private void Insertar()
+        {
+            string query = "INSERT INTO viaje (planilla_horaria_id, es_ida, hora_salida, hora_estimada_llegada, dvh) " +
+                "OUTPUT INSERTED.id VALUES (@planillaHorariaId, @esIda, @horaSalida, @horaEstimadaLlegada, 0)";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@planillaHorariaId", PlanillaHorariaId),
+                new SqlParameter("@esIda", EsIda),
+                new SqlParameter("@horaSalida", HoraSalida),
+                new SqlParameter("@horaEstimadaLlegada", HoraEstimadaLlegada)
+            };
+
+            Id = SqlHelper.Insertar(query, parameters);
+        }
+
+        private void Actualizar()
+        {
+
+        }
+
+        public static void RecalcularDVV()
+        {
+            DigitoVerificador.RecalcularDVV("viaje");
+        }
 
         public static List<ViajeDAL> ObtenerPorPlanillaHoraria(int planillaHorariaId)
         {

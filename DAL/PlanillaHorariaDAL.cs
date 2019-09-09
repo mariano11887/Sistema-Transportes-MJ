@@ -51,14 +51,38 @@ namespace DAL
             set { _fecha = value; }
         }
 
-        private short _dvh;
+        private int _dvh;
 
-        public short DVH
+        public int DVH
         {
             get { return _dvh; }
-            set { _dvh = value; }
         }
         #endregion
+
+        public void Guardar()
+        {
+            string query = "INSERT INTO planilla_horaria (chofer_id, coche_id, recorrido_id, fecha, dvh) " +
+                "OUTPUT INSERTED.id VALUES (@choferId, @cocheId, @recorridoId, @fecha, 0)";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@choferId", ChoferId),
+                new SqlParameter("@cocheId", CocheId),
+                new SqlParameter("@recorridoId", RecorridoId),
+                new SqlParameter("@fecha", Fecha)
+            };
+
+            Id = SqlHelper.Insertar(query, parameters);
+
+            string registro = string.Format("{0}{1}{2}{3}{4}", Id, ChoferId, CocheId, RecorridoId, Fecha);
+            _dvh = DigitoVerificador.CalcularDV(registro);
+
+            DigitoVerificador.ActualizarDVH("planilla_horaria", _dvh, Id);
+        }
+
+        public static void RecalcularDVV()
+        {
+            DigitoVerificador.RecalcularDVV("planilla_horaria");
+        }
 
         public static DateTime ObtenerUltimaPlanilla()
         {
