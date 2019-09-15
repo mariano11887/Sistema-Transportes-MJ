@@ -38,6 +38,16 @@ namespace BL
         #endregion
 
         #region Métodos
+        public static void Loguear(string mensaje)
+        {
+            BitacoraDAL bitacora = new BitacoraDAL()
+            {
+                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id,
+                Detalle = mensaje
+            };
+            bitacora.Guardar();
+        }
+
         public static List<Bitacora> Buscar(DateTime fechaInicio, DateTime fechafin, Usuario usuario, string parteDetalle)
         {
             int usuarioId = usuario == null ? 0 : usuario.Id;

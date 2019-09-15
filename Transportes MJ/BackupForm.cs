@@ -32,11 +32,15 @@ namespace UI
                 MessageBox.Show(ObtenerLeyenda("msgUbicacionVaciaCrear"), ObtenerLeyenda("msgUbicacionVaciaCrearTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if (DigitoVerificador.ChequearDVs())
             {
                 Backup.HacerBackup(sfdCrearBackup.FileName);
                 MessageBox.Show(ObtenerLeyenda("msgBackupCreado"), ObtenerLeyenda("msgBackupCreadoTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(ObtenerLeyenda("msgPruebaDVMal"), "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

@@ -36,6 +36,8 @@ namespace BL
             {
                 GeneradorDePlanillas generadorDePlanillas = new GeneradorDePlanillas(proximaFecha);
                 generadorDePlanillas.Generar();
+
+                Bitacora.Loguear(string.Format("Se generaron las planillas para el día {0}", proximaFecha));
             }
         }
 

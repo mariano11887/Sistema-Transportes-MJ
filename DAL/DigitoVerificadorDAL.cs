@@ -1,16 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
-    class DigitoVerificador
+    public class DigitoVerificadorDAL
     {
-        public static int CalcularDV(string registro)
+        public static bool ChequearDVs()
+        {
+            List<IDigitoVerificable> verificables = new List<IDigitoVerificable>()
+            {
+                new PlanillaHorariaDAL(),
+                new ViajeDAL()
+            };
+
+            foreach(IDigitoVerificable verificable in verificables)
+            {
+                List<RegistroParaDV> registrosAVerificar = verificable.ObtenerRegistrosParaDV();
+                if(registrosAVerificar.Count == 0)
+                {
+                    // No hay registros para verificar, salteo esta tabla
+                    break;
+                }
+
+                StringBuilder sb = new StringBuilder();
+                foreach (RegistroParaDV registro in registrosAVerificar)
+                {
+                    int dvhCalculado = CalcularDV(registro.Registro);
+                    if(dvhCalculado != registro.DVH)
+                    {
+                        return false;
+                    }
+                    sb.Append(dvhCalculado.ToString());
+                }
+
+                // Ahora los DVV
+                string query = "SELECT dvv FROM digito_verificador WHERE tabla = @tabla";
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@tabla", verificable.ObtenerNombreTabla())
+                };
+
+                int dvvGuardado = SqlHelper.ObtenerValor<int>(query, parameters);
+                int dvvCalculado = CalcularDV(sb.ToString());
+
+                if(dvvCalculado != dvvGuardado)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        internal static int CalcularDV(string registro)
         {
             int sum = 0;
             byte[] regBytes = Encoding.UTF8.GetBytes(registro);
@@ -24,7 +69,7 @@ namespace DAL
             return (d == 0) ? 0 : (10 - d);
         }
 
-        public static void ActualizarDVH(string tabla, int dvh, int id)
+        internal static void ActualizarDVH(string tabla, int dvh, int id)
         {
             string query = string.Format("UPDATE {0} SET dvh = @dvh WHERE id = @id", tabla);
             SqlParameter[] parameters = new SqlParameter[]
@@ -35,7 +80,7 @@ namespace DAL
             SqlHelper.Ejecutar(query, parameters);
         }
 
-        public static void RecalcularDVV(string tabla)
+        internal static void RecalcularDVV(string tabla)
         {
             string query = "SELECT dvh FROM " + tabla;
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class ViajeDAL
+    public class ViajeDAL : IDigitoVerificable
     {
         #region Propiedades
         private int _id;
@@ -82,6 +82,31 @@ namespace DAL
         }
         #endregion
 
+        public string ObtenerNombreTabla()
+        {
+            return "viaje";
+        }
+
+        public List<RegistroParaDV> ObtenerRegistrosParaDV()
+        {
+            string query = "SELECT id, planilla_horaria_id, es_ida, hora_salida, hora_estimada_llegada, hora_real_llegada, " +
+                "completado, completitud_id FROM viaje";
+            DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
+
+            return table.Select().Select(r => new RegistroParaDV
+            {
+                Registro = r["id"].ToString() + 
+                    r["planilla_horaria_id"].ToString() + 
+                    bool.Parse(r["es_ida"].ToString()).ToString() + 
+                    DateTime.Parse(r["hora_salida"].ToString()).ToString("HHmm") +
+                    DateTime.Parse(r["hora_estimada_llegada"].ToString()).ToString("HHmm") +
+                    (r.IsNull("hora_real_llegada") ? default : DateTime.Parse(r["hora_real_llegada"].ToString())).ToString("HHmm") +
+                    (r.IsNull("completado") ? default : bool.Parse(r["completado"].ToString())).ToString() +
+                    (r.IsNull("completitud_id") ? "0" : r["completitud_id"].ToString()),
+                DVH = int.Parse(r["dvh"].ToString())
+            }).ToList();
+        }
+
         public void Guardar()
         {
             if(Id > 0)
@@ -94,11 +119,11 @@ namespace DAL
             }
 
             string registro = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", Id, PlanillaHorariaId, EsIda,
-                HoraSalida.ToString("yyyyMMddHHmm"), HoraEstimadaLlegada.ToString("yyyyMMddHHmm"),
-                HoraRealLlegada.ToString("yyyyMMddHHmm"), Completado, CompletitudId);
-            _dvh = DigitoVerificador.CalcularDV(registro);
+                HoraSalida.ToString("HHmm"), HoraEstimadaLlegada.ToString("HHmm"),
+                HoraRealLlegada.ToString("HHmm"), Completado, CompletitudId);
+            _dvh = DigitoVerificadorDAL.CalcularDV(registro);
 
-            DigitoVerificador.ActualizarDVH("viaje", _dvh, Id);
+            DigitoVerificadorDAL.ActualizarDVH("viaje", _dvh, Id);
         }
 
         private void Insertar()
@@ -123,7 +148,7 @@ namespace DAL
 
         public static void RecalcularDVV()
         {
-            DigitoVerificador.RecalcularDVV("viaje");
+            DigitoVerificadorDAL.RecalcularDVV("viaje");
         }
 
         public static List<ViajeDAL> ObtenerPorPlanillaHoraria(int planillaHorariaId)

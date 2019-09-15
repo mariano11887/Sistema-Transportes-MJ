@@ -31,6 +31,11 @@ namespace UI
                 {
                     Show();
                     Abrir();
+
+                    if(!DigitoVerificador.ChequearDVs())
+                    {
+                        MessageBox.Show(ObtenerLeyenda("msgPruebaDVMal"), "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 else
                 {

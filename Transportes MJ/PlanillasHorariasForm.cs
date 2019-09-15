@@ -1,12 +1,5 @@
 ﻿using BL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -23,10 +16,18 @@ namespace UI
             Abrir();
 
             DateTime ultimaFecha = PlanillaHoraria.ObtenerUltimaPlanilla();
-            lblUltimaPlanillaInfo.Text = string.Format(lblUltimaPlanillaInfo.Text, ultimaFecha.ToString("dd/MM/yyyy"));
+            string leyendaUltimaPlanillaInfo = ObtenerLeyenda("lblUltimaPlanillaInfo");
+            if (leyendaUltimaPlanillaInfo.Contains("{0}"))
+            {
+                lblUltimaPlanillaInfo.Text = string.Format(leyendaUltimaPlanillaInfo, ultimaFecha.ToString("dd/MM/yyyy"));
+            }
 
             DateTime proximaFecha = GeneradorDePlanillas.ObtenerProximaFecha(ultimaFecha, out bool puedeGenerarse);
-            btnGenerarPlanillas.Text = string.Format(btnGenerarPlanillas.Text, proximaFecha.ToString("dd/MM/yyyy"));
+            string leyendaGenerarPlanillas = ObtenerLeyenda("btnGenerarPlanillas");
+            if (leyendaGenerarPlanillas.Contains("{0}"))
+            {
+                btnGenerarPlanillas.Text = string.Format(leyendaGenerarPlanillas, proximaFecha.ToString("dd/MM/yyyy"));
+            }
             btnGenerarPlanillas.Enabled = puedeGenerarse;
         }
 
@@ -36,15 +37,12 @@ namespace UI
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.Yes)
             {
-                GenerarPlanillas();
-            }
-        }
+                Cursor = Cursors.WaitCursor;
+                GeneradorDePlanillas.GenerarProximasPlanillas();
+                Cursor = Cursors.Default;
 
-        private void GenerarPlanillas()
-        {
-            Cursor = Cursors.WaitCursor;
-            GeneradorDePlanillas.GenerarProximasPlanillas();
-            Cursor = Cursors.Default;
+                MessageBox.Show(ObtenerLeyenda("msgGeneracionPlanillasOk"));
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PlanillaHorariaDAL
+    public class PlanillaHorariaDAL : IDigitoVerificable
     {
         #region Propiedades
         private int _id;
@@ -59,6 +59,24 @@ namespace DAL
         }
         #endregion
 
+        public string ObtenerNombreTabla()
+        {
+            return "planilla_horaria";
+        }
+
+        public List<RegistroParaDV> ObtenerRegistrosParaDV()
+        {
+            string query = "SELECT id, chofer_id, coche_id, recorrido_id, fecha, dvh FROM planilla_horaria";
+            DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
+
+            return table.Select().Select(r => new RegistroParaDV
+            {
+                Registro = r["id"].ToString() + r["chofer_id"].ToString() + r["coche_id"].ToString() + 
+                    r["recorrido_id"].ToString() + DateTime.Parse(r["fecha"].ToString()).ToString("yyyyMMdd"),
+                DVH = int.Parse(r["dvh"].ToString())
+            }).ToList();
+        }
+
         public void Guardar()
         {
             string query = "INSERT INTO planilla_horaria (chofer_id, coche_id, recorrido_id, fecha, dvh) " +
@@ -73,15 +91,15 @@ namespace DAL
 
             Id = SqlHelper.Insertar(query, parameters);
 
-            string registro = string.Format("{0}{1}{2}{3}{4}", Id, ChoferId, CocheId, RecorridoId, Fecha);
-            _dvh = DigitoVerificador.CalcularDV(registro);
+            string registro = string.Format("{0}{1}{2}{3}{4}", Id, ChoferId, CocheId, RecorridoId, Fecha.ToString("yyyyMMdd"));
+            _dvh = DigitoVerificadorDAL.CalcularDV(registro);
 
-            DigitoVerificador.ActualizarDVH("planilla_horaria", _dvh, Id);
+            DigitoVerificadorDAL.ActualizarDVH("planilla_horaria", _dvh, Id);
         }
 
         public static void RecalcularDVV()
         {
-            DigitoVerificador.RecalcularDVV("planilla_horaria");
+            DigitoVerificadorDAL.RecalcularDVV("planilla_horaria");
         }
 
         public static DateTime ObtenerUltimaPlanilla()

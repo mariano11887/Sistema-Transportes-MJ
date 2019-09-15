@@ -51,6 +51,7 @@
     <Compile Include="CalculoDeRecorrido.cs" />
     <Compile Include="Chofer.cs" />
     <Compile Include="CompletitudViaje.cs" />
+    <Compile Include="DigitoVerificador.cs" />
     <Compile Include="Encriptador.cs" />
     <Compile Include="GeneradorDePlanillas.cs" />
     <Compile Include="Idioma.cs" />
