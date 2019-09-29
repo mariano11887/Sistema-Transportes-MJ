@@ -28,7 +28,10 @@ namespace UI
 
             // Armo el árbol de permisos
             Permiso permisoRaiz = Permiso.ObtenerPermisoRaiz();
-            AgregarAlArbol(permisoRaiz, null);
+            foreach (Permiso perfil in permisoRaiz.ObtenerPermisosHijos())
+            {
+                AgregarAlArbol(perfil, null);
+            }
             trvPermisosInteriores.ExpandAll();
 
             CompletarListadoPerfiles();
