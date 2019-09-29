@@ -29,18 +29,6 @@ namespace BL
             get { return _descripcion; }
             set { _descripcion = value; }
         }
-
-        protected bool _editable;
-        public bool Editable
-        {
-            get { return _editable; }
-        }
-
-        protected bool _esPerfil;
-        public bool EsPerfil
-        {
-            get { return _esPerfil; }
-        }
         #endregion
 
         #region Métodos
@@ -54,21 +42,18 @@ namespace BL
 
         public abstract void AgregarPermisoHijo(Permiso permiso);
 
-        public static Permiso ObtenerPermisoRaiz()
-        {
-            PermisoDAL permisoDAL = PermisoDAL.ObtenerPorNombre(Permisos.RAIZ);
-            return ConvertirDesdeDAL(permisoDAL);
-        }
+        public abstract void QuitarPermisoHijo(Permiso permiso);
 
         public static List<Permiso> ObtenerPerfiles()
         {
             List<PermisoDAL> perfilesDAL = PermisoDAL.ObtenerPerfiles();
-            List<Permiso> perfiles = new List<Permiso>();
-            foreach(PermisoDAL perfilDAL in perfilesDAL)
-            {
-                perfiles.Add(ConvertirDesdeDAL(perfilDAL));
-            }
-            return perfiles;
+            return perfilesDAL.Select(dal => ConvertirDesdeDAL(dal)).ToList();
+        }
+
+        public static List<Permiso> ObtenerPermisosSimples()
+        {
+            List<PermisoDAL> permisosDAL = PermisoDAL.ObtenerPermisos();
+            return permisosDAL.Select(dal => ConvertirDesdeDAL(dal)).ToList();
         }
 
         public override string ToString()
@@ -91,8 +76,6 @@ namespace BL
             permiso._id = permisoDAL.PermisoId;
             permiso.Nombre = permisoDAL.Nombre;
             permiso.Descripcion = permisoDAL.Descripcion;
-            permiso._editable = permisoDAL.Editable;
-            permiso._esPerfil = permisoDAL.EsPerfil;
 
             return permiso;
         }

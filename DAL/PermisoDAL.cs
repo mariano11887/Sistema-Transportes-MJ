@@ -55,20 +55,6 @@ namespace DAL
             set { _descripcion = value; }
         }
 
-        private bool _editable;
-        public bool Editable
-        {
-            get { return _editable; }
-            set { _editable = value; }
-        }
-
-        private bool _esPerfil;
-        public bool EsPerfil
-        {
-            get { return _esPerfil; }
-            set { _esPerfil = value; }
-        }
-
         private bool _habilitado;
         public bool Habilitado
         {
@@ -80,66 +66,51 @@ namespace DAL
         #region Métodos públicos
         public static List<PermisoDAL> ObtenerPerfiles()
         {
-            try
-            {
-                string query = "SELECT id, nombre, descripcion, editable FROM permiso WHERE habilitado = 1 AND es_perfil = 1";
-                DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
-                List<PermisoDAL> perfiles = new List<PermisoDAL>();
-                foreach(DataRow row in table.Rows)
-                {
-                    PermisoDAL permisoDAL = new PermisoDAL()
-                    {
-                        Descripcion = row["descripcion"].ToString(),
-                        Editable = bool.Parse(row["editable"].ToString()),
-                        EsPerfil = true,
-                        Habilitado = true,
-                        Nombre = row["nombre"].ToString(),
-                        PermisoId = int.Parse(row["id"].ToString())
-                    };
-                    perfiles.Add(permisoDAL);
-                }
-                return perfiles;
-            }
-            catch (Exception ex)
-            {
-                Log.Grabar(ex);
-                return new List<PermisoDAL>();
-            }
+            string query = "SELECT DISTINCT p.id, p.nombre, p.descripcion " +
+                    "FROM permiso p " +
+                    "INNER JOIN permiso_permiso pp ON p.id = pp.permiso_padre_id " +
+                    "WHERE P.habilitado = 1";
+            return Obtener(query, new SqlParameter[0]);
         }
 
-        public static PermisoDAL ObtenerPorNombre(string Nombre)
+        public static List<PermisoDAL> ObtenerPermisos()
         {
-            try
-            {
-                string query = "SELECT id, nombre, descripcion, editable, es_perfil FROM permiso WHERE habilitado = 1 AND nombre = @nombre";
-                SqlParameter[] parameters = new SqlParameter[1]
-                {
-                    new SqlParameter("@nombre", Nombre)
-                };
-                DataTable table = SqlHelper.Obtener(query, parameters);
-                if(table.Rows.Count > 0)
-                {
-                    DataRow row = table.Rows[0];
-                    PermisoDAL permisoDAL = new PermisoDAL()
-                    {
-                        Descripcion = row["descripcion"].ToString(),
-                        Editable = bool.Parse(row["editable"].ToString()),
-                        EsPerfil = bool.Parse(row["es_perfil"].ToString()),
-                        Habilitado = true,
-                        Nombre = row["nombre"].ToString(),
-                        PermisoId = int.Parse(row["id"].ToString())
-                    };
-                    return permisoDAL;
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Grabar(ex);
-            }
-            return null;
+            string query = "SELECT DISTINCT p.id, p.nombre, p.descripcion " +
+                    "FROM permiso p " +
+                    "LEFT JOIN permiso_permiso pp ON p.id = pp.permiso_padre_id " +
+                    "WHERE p.habilitado = 1 " +
+                    "AND pp.permiso_padre_id IS NULL";
+            return Obtener(query, new SqlParameter[0]);
         }
 
-        public void Guardar(bool ActualizarHijos)
+        public static PermisoDAL ObtenerPorId(int id)
+        {
+            string query = "SELECT id, nombre, descripcion FROM permiso WHERE habilitado = 1 AND id = @id";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@id", id)
+            };
+            return Obtener(query, parameters)?.FirstOrDefault();
+        }
+
+        public List<PermisoDAL> ObtenerPorUsuario(int usuarioId)
+        {
+            string query = "SELECT p.id, p.nombre, p.descripcion " +
+                "FROM usuario_permiso up " +
+                "JOIN permiso p ON p.id = up.permiso_id " +
+                "WHERE up.usuario_id = @usuarioId " +
+                "AND p.habilitado = 1;";
+            SqlParameter[] paramsArray = new SqlParameter[1];
+            paramsArray[0] = new SqlParameter
+            {
+                ParameterName = "@usuarioId",
+                Value = usuarioId
+            };
+
+            return Obtener(query, paramsArray);
+        }
+
+        public void Guardar(bool actualizarHijos)
         {
             // Primero guardo los datos del permiso en sí
             if (PermisoId > 0)
@@ -152,7 +123,7 @@ namespace DAL
             }
 
             // Luego guardo los permisos hijos
-            if (PermisoId > 0 && ActualizarHijos)
+            if (PermisoId > 0 && actualizarHijos)
             {
                 // Borro permisos hijos
                 string query = "DELETE FROM permiso_permiso WHERE permiso_padre_id = @permisoPadreId";
@@ -175,84 +146,6 @@ namespace DAL
                 }
             }
         }
-
-        public void Obtener()
-        {
-            try
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append("SELECT id, nombre, descripcion, editable, es_perfil, habilitado FROM permiso WHERE habilitado = 1");
-
-                List<SqlParameter> parameters = new List<SqlParameter>();
-
-                if(_permisoId > 0)
-                {
-                    sb.Append(" AND id = @permisoId");
-                    parameters.Add(new SqlParameter
-                    {
-                        ParameterName = "@permisoId",
-                        Value = _permisoId
-                    });
-                }
-                else
-                {
-                    if (!string.IsNullOrWhiteSpace(_nombre))
-                    {
-                        sb.Append(" AND nombre = @nombre");
-                        parameters.Add(new SqlParameter
-                        {
-                            ParameterName = "@nombre",
-                            Value = _nombre
-                        });
-                    }
-                }
-                sb.Append(";");
-
-                string query = sb.ToString();
-                SqlParameter[] paramsArray = parameters.ToArray();
-                DataTable table = SqlHelper.Obtener(query, paramsArray);
-                if (table.Rows.Count > 0)
-                {
-                    _permisoId = int.Parse(table.Rows[0]["id"].ToString());
-                    _nombre = table.Rows[0]["nombre"].ToString();
-                    _descripcion = table.Rows[0]["descripcion"].ToString();
-                    _editable = bool.Parse(table.Rows[0]["editable"].ToString());
-                    _habilitado = bool.Parse(table.Rows[0]["habilitado"].ToString());
-                    _esPerfil = bool.Parse(table.Rows[0]["es_perfil"].ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Grabar(ex);
-            }
-        }
-
-        public List<PermisoDAL> ObtenerPorUsuario(int usuarioId)
-        {
-            string query = "SELECT p.id, p.nombre, p.descripcion, p.editable " +
-                "FROM usuario_permiso up " +
-                "JOIN permiso p ON p.id = up.permiso_id " +
-                "WHERE up.usuario_id = @usuarioId " +
-                "AND p.habilitado = 1;";
-            SqlParameter[] paramsArray = new SqlParameter[1];
-            paramsArray[0] = new SqlParameter
-            {
-                ParameterName = "@usuarioId",
-                Value = usuarioId
-            };
-            DataTable table = SqlHelper.Obtener(query, paramsArray);
-            List<PermisoDAL> permisos = new List<PermisoDAL>();
-            foreach(DataRow row in table.Rows)
-            {
-                permisos.Add(new PermisoDAL() {
-                    _permisoId = int.Parse(row["id"].ToString()),
-                    _nombre = row["nombre"].ToString(),
-                    _descripcion = row["descripcion"].ToString(),
-                    _editable = bool.Parse(row["editable"].ToString())
-                });
-            }
-            return permisos;
-        }
         #endregion
 
         #region Métodos privados
@@ -263,19 +156,43 @@ namespace DAL
                 "INNER JOIN permiso p ON pp.permiso_hijo_id = p.id " +
                 "WHERE p.habilitado = 1 " +
                 "AND pp.permiso_padre_id = @permisoPadreId;";
-            
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter
+
+            List<SqlParameter> parameters = new List<SqlParameter>
             {
-                ParameterName = "@permisoPadreId",
-                Value = _permisoId
-            });
+                new SqlParameter("@permisoPadreId", _permisoId)
+            };
 
             DataTable table = SqlHelper.Obtener(query, parameters.ToArray());
             _permisosHijosIds = new List<int>();
             foreach (DataRow row in table.Rows)
             {
                 _permisosHijosIds.Add(int.Parse(row["permiso_hijo_id"].ToString()));
+            }
+        }
+
+        private static List<PermisoDAL> Obtener(string query, SqlParameter[] parameters)
+        {
+            try
+            {
+                DataTable table = SqlHelper.Obtener(query, parameters);
+                List<PermisoDAL> perfiles = new List<PermisoDAL>();
+                foreach (DataRow row in table.Rows)
+                {
+                    PermisoDAL permisoDAL = new PermisoDAL()
+                    {
+                        Descripcion = row["descripcion"].ToString(),
+                        Habilitado = true,
+                        Nombre = row["nombre"].ToString(),
+                        PermisoId = int.Parse(row["id"].ToString())
+                    };
+                    perfiles.Add(permisoDAL);
+                }
+                return perfiles;
+            }
+            catch (Exception ex)
+            {
+                Log.Grabar(ex);
+                return new List<PermisoDAL>();
             }
         }
 

@@ -8,7 +8,6 @@ namespace BL
 {
     public sealed class Permisos
     {
-        public const string RAIZ = "Raíz";
         public const string LOGIN = "Login";
         public const string PERFILES_VER = "Ver perfiles";
         public const string PERFILES_ALTA = "Crear perfiles";

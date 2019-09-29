@@ -1,31 +1,35 @@
 ﻿using DAL;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
     class PermisoCompuesto : Permiso
     {
-        private List<Permiso> _permisos;
+        private readonly List<Permiso> _permisos = new List<Permiso>();
         public List<Permiso> Permisos
         {
             get
             {
-                if(_permisos == null)
-                {
-                    _permisos = new List<Permiso>();
-                }
                 return _permisos;
             }
-            set { _permisos = value; }
         }
 
         public override void AgregarPermisoHijo(Permiso permiso)
         {
-            Permisos.Add(permiso);
+            if (!Permisos.Any(p => p.Id == permiso.Id))
+            {
+                Permisos.Add(permiso);
+            }
+        }
+
+        public override void QuitarPermisoHijo(Permiso permiso)
+        {
+            Permiso permisoAQuitar = Permisos.Where(p => p.Id == permiso.Id).FirstOrDefault();
+            if (permisoAQuitar != null)
+            {
+                Permisos.Remove(permisoAQuitar);
+            }
         }
 
         public override void Borrar()
@@ -40,12 +44,7 @@ namespace BL
             permisoDAL.Guardar(false);
 
             // Guardo la bitácora
-            BitacoraDAL bitacora = new BitacoraDAL()
-            {
-                Detalle = "Se eliminó el permiso con Id " + Id,
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacora.Guardar();
+            Bitacora.Loguear("Se eliminó el permiso con Id " + Id);
         }
 
         public override List<Permiso> DevolverPerfil()
@@ -64,16 +63,11 @@ namespace BL
             PermisoDAL permisoDAL = new PermisoDAL()
             {
                 Descripcion = Descripcion,
-                Editable = true,
-                EsPerfil = true,
                 Habilitado = true,
                 Nombre = Nombre,
-                PermisoId = Id
+                PermisoId = Id,
+                PermisosHijosIds = Permisos.Select(p => p.Id).ToList()
             };
-            foreach(Permiso hijo in Permisos)
-            {
-                permisoDAL.PermisosHijosIds.Add(hijo.Id);
-            }
             permisoDAL.Guardar(true);
 
             // Guardo la bitácora
@@ -86,31 +80,18 @@ namespace BL
             {
                 mensajeBitacora = "Se creó un nuevo permiso. Nombre: " + Nombre;
             }
-            BitacoraDAL bitacora = new BitacoraDAL()
-            {
-                Detalle = mensajeBitacora,
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacora.Guardar();
+            Bitacora.Loguear(mensajeBitacora);
         }
 
         public override List<Permiso> ObtenerPermisosHijos()
         {
-            if (Permisos.Count == 0)
+            if (Permisos.Count == 0 && _id > 0)
             {
-                PermisoDAL permisoDAL = new PermisoDAL()
+                PermisoDAL dal = PermisoDAL.ObtenerPorId(_id);
+                foreach (int hijoId in dal.PermisosHijosIds)
                 {
-                    PermisoId = _id
-                };
-                permisoDAL.Obtener();
-                foreach (int hijoId in permisoDAL.PermisosHijosIds)
-                {
-                    PermisoDAL permisoDALHijo = new PermisoDAL()
-                    {
-                        PermisoId = hijoId
-                    };
-                    permisoDALHijo.Obtener();
-                    Permisos.Add(ConvertirDesdeDAL(permisoDALHijo));
+                    PermisoDAL dalHijo = PermisoDAL.ObtenerPorId(hijoId);
+                    Permisos.Add(ConvertirDesdeDAL(dalHijo));
                 }
             }
 

@@ -1,20 +1,16 @@
 ﻿using BL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
 {
     public partial class PerfilesForm : FormGeneral
     {
-        private bool _edicionHabilitada = false;
-        private bool _cambiosRealizados = false;
+        private List<Permiso> todosLosPerfiles = new List<Permiso>();
+        private Permiso permisoActual;
 
         public PerfilesForm()
         {
@@ -26,134 +22,97 @@ namespace UI
         {
             Abrir();
 
-            // Armo el árbol de permisos
-            Permiso permisoRaiz = Permiso.ObtenerPermisoRaiz();
-            foreach (Permiso perfil in permisoRaiz.ObtenerPermisosHijos())
-            {
-                AgregarAlArbol(perfil, null);
-            }
-            trvPermisosInteriores.ExpandAll();
-
-            CompletarListadoPerfiles();
+            ActualizarPerfiles();
+            cmbPermisos.DataSource = Permiso.ObtenerPermisosSimples();
+            ResetearFormulario();
         }
 
-        private void lstPerfilesActuales_SelectedIndexChanged(object sender, EventArgs e)
+        private void LstPerfilesActuales_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool estadoEdicion = _edicionHabilitada;
-            _edicionHabilitada = true;
-            DestildarNodos(trvPermisosInteriores.Nodes);
-            if (lstPerfilesActuales.SelectedItem == null)
+            ResetearFormulario();
+            cmbFamilias.DataSource = todosLosPerfiles.ToList();
+
+            if (lstPerfilesActuales.SelectedItem != null)
             {
-                // Ningún ítem seleccionado, deshabilito todo
-                btnEditar.Enabled = false;
-                btnEliminar.Enabled = false;
-                txtNombre.Text = "";
-                txtDescripcion.Text = "";
-                DestildarNodos(trvPermisosInteriores.Nodes);
+                permisoActual = (Permiso)lstPerfilesActuales.SelectedItem;
+                btnEditar.Enabled = true;
+                btnEliminar.Enabled = true;
+                txtNombre.Text = permisoActual.Nombre;
+                txtDescripcion.Text = permisoActual.Descripcion;
+                cmbFamilias.DataSource = todosLosPerfiles.Where(p => p.Id != permisoActual.Id).ToList();
+
+                RefrescarArbol();
             }
-            else
-            {
-                Permiso permisoSeleccionado = (Permiso)lstPerfilesActuales.SelectedItem;
-                btnEditar.Enabled = permisoSeleccionado.Editable;
-                btnEliminar.Enabled = permisoSeleccionado.Editable;
-                txtNombre.Text = permisoSeleccionado.Nombre;
-                txtDescripcion.Text = permisoSeleccionado.Descripcion;
-                // Tildo los nodos que corresponden
-                List<Permiso> permisosHijos = permisoSeleccionado.ObtenerPermisosHijos();
-                foreach (Permiso hijo in permisosHijos)
-                {
-                    TildarNodo(hijo.ToString(), trvPermisosInteriores.Nodes);
-                }
-            }
-            _edicionHabilitada = estadoEdicion;
-            _cambiosRealizados = true;
         }
 
-        private void trvPermisosInteriores_BeforeCheck(object sender, TreeViewCancelEventArgs e)
+        private void BtnCrearNuevo_Click(object sender, EventArgs e)
         {
-            if (!_edicionHabilitada || e.Node.Text == "Raíz")
-            {
-                e.Cancel = true;
-            }
+            lstPerfilesActuales.SelectedItem = null;
+            txtNombre.Enabled = true;
+            txtDescripcion.Enabled = true;
+            grpFamiliasPermisos.Enabled = true;
+            btnGuardar.Enabled = true;
+
+            permisoActual = Permiso.NuevoPerfil();
         }
 
-        private void trvPermisosInteriores_AfterCheck(object sender, TreeViewEventArgs e)
+        private void BtnAgregarFamilia_Click(object sender, EventArgs e)
         {
-            foreach(TreeNode nodoHijo in e.Node.Nodes)
-            {
-                nodoHijo.Checked = e.Node.Checked;
-            }
-            _cambiosRealizados = true;
+            Permiso familiaSeleccionada = (Permiso)cmbFamilias.SelectedItem;
+            permisoActual.AgregarPermisoHijo(familiaSeleccionada);
+
+            RefrescarArbol();
         }
 
-        private void btnCrearNuevo_Click(object sender, EventArgs e)
+        private void BtnAgregarPermiso_Click(object sender, EventArgs e)
         {
-            lstPerfilesActuales.ClearSelected();
-            _edicionHabilitada = true;
-            _cambiosRealizados = false;
-            RefrescarControlesDetalles();
-            txtNombre.Text = "";
-            txtDescripcion.Text = "";
-            DestildarNodos(trvPermisosInteriores.Nodes);
+            Permiso permisoSeleccionado = (Permiso)cmbPermisos.SelectedItem;
+            permisoActual.AgregarPermisoHijo(permisoSeleccionado);
+
+            RefrescarArbol();
         }
 
-        private void btnDescartar_Click(object sender, EventArgs e)
+        private void TrvPermisosAsignados_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if(_cambiosRealizados)
-            {
-                DialogResult result = MessageBox.Show(ObtenerLeyenda("msgDescartar"), ObtenerLeyenda("msgDescartarTitulo"), 
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                if(result == DialogResult.Yes)
-                {
-                    ResetearFormulario();
-                }
-            }
-            else
-            {
-                ResetearFormulario();
-            }
+            btnQuitar.Enabled = txtNombre.Enabled && 
+                trvPermisosAsignados.SelectedNode != null && 
+                trvPermisosAsignados.SelectedNode.Parent == null;
         }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void BtnQuitar_Click(object sender, EventArgs e)
         {
-            _cambiosRealizados = true;
+            Permiso permisoSeleccionado = (Permiso)trvPermisosAsignados.SelectedNode.Tag;
+            permisoActual.QuitarPermisoHijo(permisoSeleccionado);
+
+            RefrescarArbol();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
             if(ValidarDatos())
             {
-                Permiso perfil;
-                if (lstPerfilesActuales.SelectedItem == null)
-                {
-                    perfil = Permiso.NuevoPerfil();
-                }
-                else
-                {
-                    perfil = (Permiso)lstPerfilesActuales.SelectedItem;
-                }
-                perfil.Descripcion = txtDescripcion.Text;
-                perfil.Nombre = txtNombre.Text;
-                List<Permiso> permisosTildados = ObtenerPermisosTildados();
-                foreach(Permiso permisoTildado in permisosTildados)
-                {
-                    perfil.AgregarPermisoHijo(permisoTildado);
-                }
-                perfil.Guardar();
+                permisoActual.Descripcion = txtDescripcion.Text;
+                permisoActual.Nombre = txtNombre.Text;
+                permisoActual.Guardar();
+
                 MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CompletarListadoPerfiles();
+
+                ActualizarPerfiles();
                 ResetearFormulario();
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
-            _edicionHabilitada = true;
-            RefrescarControlesDetalles();
+            txtNombre.Enabled = true;
+            txtDescripcion.Enabled = true;
+            grpFamiliasPermisos.Enabled = true;
+            btnGuardar.Enabled = true;
+            trvPermisosAsignados.SelectedNode = null;
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(ObtenerLeyenda("msgEliminar"), ObtenerLeyenda("msgEliminarTitulo"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
@@ -161,15 +120,14 @@ namespace UI
             {
                 Permiso permiso = (Permiso)lstPerfilesActuales.SelectedItem;
                 permiso.Borrar();
-                _edicionHabilitada = true;
-                CompletarListadoPerfiles();
+                ActualizarPerfiles();
                 ResetearFormulario();
             }
         }
         #endregion
 
         #region Métodos
-        private void AgregarAlArbol(Permiso permiso, TreeNode nodoPadre)
+        private void AgregarAlArbol(Permiso permiso, TreeNode nodoPadre, int nivel)
         {
             TreeNode nodo = new TreeNode(permiso.ToString())
             {
@@ -178,65 +136,41 @@ namespace UI
             List<Permiso> permisosHijos = permiso.ObtenerPermisosHijos();
             foreach (Permiso p in permisosHijos)
             {
-                AgregarAlArbol(p, nodo);
+                // Pongo este nivel como método de seguridad contra los permisos anidados de manera cíclica
+                if (nivel < 10)
+                {
+                    AgregarAlArbol(p, nodo, nivel + 1);
+                }
             }
 
             if (nodoPadre == null)
             {
-                trvPermisosInteriores.Nodes.Add(nodo);
+                trvPermisosAsignados.Nodes.Add(nodo);
             }
-            else if(!permiso.Editable)
-                // Solamente agrego los que no son editables para que no aparezcan los perfiles creados
+            else
             {
                 nodoPadre.Nodes.Add(nodo);
             }
         }
 
-        private void DestildarNodos(TreeNodeCollection nodos)
-        {
-            foreach(TreeNode nodo in nodos)
-            {
-                nodo.Checked = false;
-                DestildarNodos(nodo.Nodes);
-            }
-        }
-
-        private void TildarNodo(string Texto, TreeNodeCollection NodosDondeBuscar)
-        {
-            foreach(TreeNode nodo in NodosDondeBuscar)
-            {
-                if(nodo.Text == Texto)
-                {
-                    nodo.Checked = true;
-                }
-                TildarNodo(Texto, nodo.Nodes);
-            }
-        }
-
-        private void RefrescarControlesDetalles()
-        {
-            txtNombre.Enabled = _edicionHabilitada;
-            txtDescripcion.Enabled = _edicionHabilitada;
-            btnGuardar.Enabled = _edicionHabilitada;
-            btnDescartar.Enabled = _edicionHabilitada;
-        }
-
         private void ResetearFormulario()
         {
-            lstPerfilesActuales.ClearSelected();
             txtNombre.Text = "";
             txtDescripcion.Text = "";
-            DestildarNodos(trvPermisosInteriores.Nodes);
-            _edicionHabilitada = false;
-            _cambiosRealizados = false;
-            RefrescarControlesDetalles();
+            txtNombre.Enabled = false;
+            txtDescripcion.Enabled = false;
+            grpFamiliasPermisos.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnQuitar.Enabled = false;
+            trvPermisosAsignados.Nodes.Clear();
+            permisoActual = null;
         }
 
         private bool ValidarDatos()
         {
             if(string.IsNullOrWhiteSpace(txtNombre.Text) || 
                 string.IsNullOrWhiteSpace(txtDescripcion.Text) ||
-                ObtenerPermisosTildados().Count == 0)
+                permisoActual.ObtenerPermisosHijos().Count == 0)
             {
                 MessageBox.Show(ObtenerLeyenda("msgDatosIncompletos"), ObtenerLeyenda("msgDatosIncompletosTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -245,34 +179,17 @@ namespace UI
             return true;
         }
 
-        private List<Permiso> ObtenerPermisosTildados()
+        private void ActualizarPerfiles()
         {
-            List<Permiso> permisos = ObtenerPermisosTildados(trvPermisosInteriores.Nodes);
-            return permisos;
-        }
+            lstPerfilesActuales.DataSource = null;
+            cmbFamilias.DataSource = null;
 
-        private List<Permiso> ObtenerPermisosTildados(TreeNodeCollection NodosDondeBuscar)
-        {
-            List<Permiso> permisos = new List<Permiso>();
-            foreach(TreeNode nodo in NodosDondeBuscar)
-            {
-                if(nodo.Checked)
-                {
-                    permisos.Add((Permiso)nodo.Tag);
-                }
-                else if(nodo.Nodes.Count > 0)
-                {
-                    permisos.AddRange(ObtenerPermisosTildados(nodo.Nodes));
-                }
-            }
-            return permisos;
-        }
+            todosLosPerfiles = Permiso.ObtenerPerfiles();
+            lstPerfilesActuales.DataSource = todosLosPerfiles;
+            lstPerfilesActuales.SelectedItem = null;
 
-        private void CompletarListadoPerfiles()
-        {
-            lstPerfilesActuales.Items.Clear();
-            List<Permiso> perfiles = Permiso.ObtenerPerfiles();
-            lstPerfilesActuales.Items.AddRange(perfiles.ToArray());
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         public override void ProcesarControlesConPermisos()
@@ -280,6 +197,20 @@ namespace UI
             btnCrearNuevo.Visible = TienePermiso(Permisos.PERFILES_ALTA);
             btnEditar.Visible = TienePermiso(Permisos.PERFILES_MODIFICAR);
             btnEliminar.Visible = TienePermiso(Permisos.PERFILES_BAJA);
+        }
+
+        private void RefrescarArbol()
+        {
+            trvPermisosAsignados.Nodes.Clear();
+            if (permisoActual != null)
+            {
+                foreach (Permiso permiso in permisoActual.ObtenerPermisosHijos())
+                {
+                    AgregarAlArbol(permiso, null, 1);
+                }
+            }
+
+            btnQuitar.Enabled = false;
         }
 
         #endregion

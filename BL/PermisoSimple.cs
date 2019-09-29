@@ -1,15 +1,15 @@
-﻿using DAL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BL
 {
     class PermisoSimple : Permiso
     {
         public override void AgregarPermisoHijo(Permiso permiso)
+        {
+            // No hace nada
+        }
+
+        public override void QuitarPermisoHijo(Permiso permiso)
         {
             // No hace nada
         }
