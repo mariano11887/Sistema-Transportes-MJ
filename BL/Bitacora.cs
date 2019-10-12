@@ -25,6 +25,10 @@ namespace BL
                 if(_usuario == null && _usuarioId > 0)
                 {
                     _usuario = new Usuario(_usuarioId);
+                    if(string.IsNullOrEmpty(_usuario.Nombre))
+                    {
+                        _usuario.Nombre = "Usuario inexistente";
+                    }
                 }
                 return _usuario;
             }

@@ -1,13 +1,8 @@
 ﻿using Logger;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 using System.Configuration;
 
 namespace DAL
@@ -79,7 +74,8 @@ namespace DAL
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddRange(parameters);
                     command.Connection.Open();
-                    T valor = (T)command.ExecuteScalar();
+                    object value = command.ExecuteScalar();
+                    T valor = value is DBNull || value == null ? default : (T)value;
                     command.Connection.Close();
                     return valor;
                 }

@@ -105,7 +105,8 @@ namespace DAL
         public static DateTime ObtenerUltimaPlanilla()
         {
             string query = "SELECT MAX(fecha) FROM planilla_horaria";
-            return SqlHelper.ObtenerValor<DateTime>(query, new SqlParameter[0]);
+            string fecha = SqlHelper.ObtenerValor<string>(query, new SqlParameter[0]);
+            return fecha != null ? DateTime.Parse(fecha) : default;
         }
 
         public static List<PlanillaHorariaDAL> ObtenerPorRecorridoYFechas(int recorridoId, List<DateTime> fechas)

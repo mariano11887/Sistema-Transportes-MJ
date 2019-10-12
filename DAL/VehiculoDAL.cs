@@ -171,7 +171,7 @@ namespace DAL
                 "FROM planilla_horaria ph " +
                 "INNER JOIN viaje v ON v.planilla_horaria_id = ph.id " +
                 "INNER JOIN recorrido r ON ph.recorrido_id = r.id " +
-                "WHERE p.coche_id = @vehiculoId";
+                "WHERE ph.coche_id = @vehiculoId";
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@vehiculoId", vehiculoId)
