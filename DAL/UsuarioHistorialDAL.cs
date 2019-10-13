@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace DAL
 {
@@ -88,6 +91,57 @@ namespace DAL
             };
 
             SqlHelper.Ejecutar(query, parameters);
+        }
+
+        public static List<UsuarioHistorialDAL> ObtenerUltimos()
+        {
+            string query = "SELECT top 100 fecha, id_usuario, nombre, idioma, nombre_usuario, contrasenia, permisos, habilitado " +
+                "FROM usuario_historial ORDER BY id DESC";
+            DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
+            return DesdeDatatable(table);
+        }
+
+        public static List<UsuarioHistorialDAL> Buscar(DateTime fechaInicio, DateTime fechaFin, string nombre, string nombreUsuario)
+        {
+            string query = "SELECT top 100 fecha, id_usuario, nombre, idioma, nombre_usuario, contrasenia, permisos, habilitado " +
+                "FROM usuario_historial WHERE fecha BETWEEN @fechaInicio AND @fechaFin {0} ORDER BY id DESC";
+            List<SqlParameter> parameters = new List<SqlParameter>
+            {
+                new SqlParameter("@fechaInicio", fechaInicio),
+                new SqlParameter("@fechaFin", fechaFin)
+            };
+
+            string conditions = "";
+            if(!string.IsNullOrWhiteSpace(nombre))
+            {
+                conditions += "AND nombre LIKE  @nombre ";
+                parameters.Add(new SqlParameter("@nombre", "%" + nombre + "%"));
+            }
+            if(!string.IsNullOrWhiteSpace(nombreUsuario))
+            {
+                conditions += "AND nombre_usuario LIKE @nombreUsuario ";
+                parameters.Add(new SqlParameter("@nombreUsuario", "%" + nombreUsuario + "%"));
+            }
+
+            query = string.Format(query, conditions);
+
+            DataTable table = SqlHelper.Obtener(query, parameters.ToArray());
+            return DesdeDatatable(table);
+        }
+
+        private static List<UsuarioHistorialDAL> DesdeDatatable(DataTable table)
+        {
+            return table.Select().Select(r => new UsuarioHistorialDAL
+            {
+                Contrasenia = r["contrasenia"].ToString(),
+                Fecha = DateTime.Parse(r["fecha"].ToString()),
+                Habilitado = bool.Parse(r["habilitado"].ToString()),
+                Idioma = r["idioma"].ToString(),
+                IdUsuario = int.Parse(r["id_usuario"].ToString()),
+                Nombre = r["nombre"].ToString(),
+                NombreDeUsuario = r["nombre_usuario"].ToString(),
+                Permisos = r["permisos"].ToString()
+            }).ToList();
         }
     }
 }
