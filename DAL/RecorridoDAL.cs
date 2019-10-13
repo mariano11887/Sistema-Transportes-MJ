@@ -56,6 +56,24 @@ namespace DAL
         {
             string query = "SELECT id, linea, ramal, terminal_inicio_id, terminal_fin_id FROM recorrido";
             DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
+            return RealizarBusqueda(table);
+        }
+
+        public static RecorridoDAL Obtener(int idRecorrido)
+        {
+            string query = "SELECT id, linea, ramal, terminal_inicio_id, terminal_fin_id " +
+                "FROM recorrido WHERE id = @id";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@id", idRecorrido)
+            };
+
+            DataTable table = SqlHelper.Obtener(query, parameters);
+            return RealizarBusqueda(table).FirstOrDefault();
+        }
+
+        private static List<RecorridoDAL> RealizarBusqueda(DataTable table)
+        {
             return table.Select().Select(r => new RecorridoDAL
             {
                 Id = int.Parse(r["id"].ToString()),

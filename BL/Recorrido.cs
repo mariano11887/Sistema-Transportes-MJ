@@ -78,5 +78,28 @@ namespace BL
                 _terminalFinId = dal.TerminalFinId
             }).ToList();
         }
+
+        public static Recorrido Obtener(int idRecorrido)
+        {
+            RecorridoDAL dal = RecorridoDAL.Obtener(idRecorrido);
+            return new Recorrido
+            {
+                Id = dal.Id,
+                Linea = dal.Linea,
+                Ramal = dal.Ramal,
+                _terminalFinId = dal.TerminalFinId,
+                _terminalInicioId = dal.TerminalInicioId
+            };
+        }
+
+        public override string ToString()
+        {
+            string valor = Linea > 0 ? Linea.ToString() : "";
+            if(!string.IsNullOrEmpty(Ramal))
+            {
+                valor += " (" + Ramal + ")";
+            }
+            return valor;
+        }
     }
 }

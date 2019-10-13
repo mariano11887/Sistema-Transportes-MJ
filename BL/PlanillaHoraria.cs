@@ -48,11 +48,19 @@ namespace BL
             set { _vehiculo = value; }
         }
 
+        private int _recorridoId;
         private Recorrido _recorrido;
 
         public Recorrido Recorrido
         {
-            get { return _recorrido; }
+            get 
+            {
+                if(_recorrido == null && _recorridoId > 0)
+                {
+                    _recorrido = Recorrido.Obtener(_recorridoId);
+                }
+                return _recorrido; 
+            }
             set { _recorrido = value; }
         }
 
@@ -128,6 +136,18 @@ namespace BL
             }
 
             return planillas;
+        }
+
+        public static List<PlanillaHoraria> Buscar(int numeroPlanilla, DateTime? fecha, Chofer chofer, Vehiculo vehiculo, Recorrido recorrido)
+        {
+            return PlanillaHorariaDAL.Buscar(numeroPlanilla, fecha, chofer.Id, vehiculo.Id, recorrido.Id).Select(dal => new PlanillaHoraria
+            {
+                _choferId = dal.ChoferId,
+                Fecha = dal.Fecha,
+                Id = dal.Id,
+                _recorridoId = dal.RecorridoId,
+                _vehiculoId = dal.CocheId
+            }).ToList();
         }
     }
 }

@@ -30,27 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanillasHorariasForm));
             this.grpBuscarPlanillas = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.chkFecha = new System.Windows.Forms.CheckBox();
+            this.txtNumeroPlanilla = new System.Windows.Forms.TextBox();
             this.lblNumeroDePlanilla = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblRecorrido = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbRecorrido = new System.Windows.Forms.ComboBox();
             this.lblCoche = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbCoche = new System.Windows.Forms.ComboBox();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblChofer = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbChofer = new System.Windows.Forms.ComboBox();
             this.dgvResultadoBusqueda = new System.Windows.Forms.DataGridView();
+            this.grpGenerarPlanillas = new System.Windows.Forms.GroupBox();
+            this.btnGenerarPlanillas = new System.Windows.Forms.Button();
+            this.lblUltimaPlanillaInfo = new System.Windows.Forms.Label();
             this.colNumeroPlanilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChofer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCoche = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRecorrido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDetalles = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.grpGenerarPlanillas = new System.Windows.Forms.GroupBox();
-            this.btnGenerarPlanillas = new System.Windows.Forms.Button();
-            this.lblUltimaPlanillaInfo = new System.Windows.Forms.Label();
+            this.colPlanilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpBuscarPlanillas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadoBusqueda)).BeginInit();
             this.grpGenerarPlanillas.SuspendLayout();
@@ -58,17 +60,18 @@
             // 
             // grpBuscarPlanillas
             // 
-            this.grpBuscarPlanillas.Controls.Add(this.textBox1);
+            this.grpBuscarPlanillas.Controls.Add(this.chkFecha);
+            this.grpBuscarPlanillas.Controls.Add(this.txtNumeroPlanilla);
             this.grpBuscarPlanillas.Controls.Add(this.lblNumeroDePlanilla);
             this.grpBuscarPlanillas.Controls.Add(this.btnBuscar);
             this.grpBuscarPlanillas.Controls.Add(this.lblRecorrido);
-            this.grpBuscarPlanillas.Controls.Add(this.comboBox3);
+            this.grpBuscarPlanillas.Controls.Add(this.cmbRecorrido);
             this.grpBuscarPlanillas.Controls.Add(this.lblCoche);
-            this.grpBuscarPlanillas.Controls.Add(this.comboBox2);
+            this.grpBuscarPlanillas.Controls.Add(this.cmbCoche);
             this.grpBuscarPlanillas.Controls.Add(this.lblFecha);
-            this.grpBuscarPlanillas.Controls.Add(this.dateTimePicker1);
+            this.grpBuscarPlanillas.Controls.Add(this.dtpFecha);
             this.grpBuscarPlanillas.Controls.Add(this.lblChofer);
-            this.grpBuscarPlanillas.Controls.Add(this.comboBox1);
+            this.grpBuscarPlanillas.Controls.Add(this.cmbChofer);
             this.grpBuscarPlanillas.Location = new System.Drawing.Point(13, 13);
             this.grpBuscarPlanillas.Name = "grpBuscarPlanillas";
             this.grpBuscarPlanillas.Size = new System.Drawing.Size(292, 182);
@@ -76,12 +79,23 @@
             this.grpBuscarPlanillas.TabStop = false;
             this.grpBuscarPlanillas.Text = "Buscar planillas";
             // 
-            // textBox1
+            // chkFecha
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 1;
+            this.chkFecha.AutoSize = true;
+            this.chkFecha.Location = new System.Drawing.Point(86, 50);
+            this.chkFecha.Name = "chkFecha";
+            this.chkFecha.Size = new System.Drawing.Size(15, 14);
+            this.chkFecha.TabIndex = 10;
+            this.chkFecha.UseVisualStyleBackColor = true;
+            this.chkFecha.CheckedChanged += new System.EventHandler(this.ChkFecha_CheckedChanged);
+            // 
+            // txtNumeroPlanilla
+            // 
+            this.txtNumeroPlanilla.Location = new System.Drawing.Point(86, 19);
+            this.txtNumeroPlanilla.Name = "txtNumeroPlanilla";
+            this.txtNumeroPlanilla.Size = new System.Drawing.Size(200, 20);
+            this.txtNumeroPlanilla.TabIndex = 1;
+            this.txtNumeroPlanilla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumeroPlanilla_KeyPress);
             // 
             // lblNumeroDePlanilla
             // 
@@ -100,6 +114,7 @@
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // lblRecorrido
             // 
@@ -110,13 +125,14 @@
             this.lblRecorrido.TabIndex = 7;
             this.lblRecorrido.Text = "Recorrido";
             // 
-            // comboBox3
+            // cmbRecorrido
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(86, 125);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(200, 21);
-            this.comboBox3.TabIndex = 5;
+            this.cmbRecorrido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRecorrido.FormattingEnabled = true;
+            this.cmbRecorrido.Location = new System.Drawing.Point(86, 125);
+            this.cmbRecorrido.Name = "cmbRecorrido";
+            this.cmbRecorrido.Size = new System.Drawing.Size(200, 21);
+            this.cmbRecorrido.TabIndex = 5;
             // 
             // lblCoche
             // 
@@ -127,13 +143,15 @@
             this.lblCoche.TabIndex = 5;
             this.lblCoche.Text = "Coche";
             // 
-            // comboBox2
+            // cmbCoche
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(86, 98);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 4;
+            this.cmbCoche.DisplayMember = "Patente";
+            this.cmbCoche.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCoche.FormattingEnabled = true;
+            this.cmbCoche.Location = new System.Drawing.Point(86, 98);
+            this.cmbCoche.Name = "cmbCoche";
+            this.cmbCoche.Size = new System.Drawing.Size(200, 21);
+            this.cmbCoche.TabIndex = 4;
             // 
             // lblFecha
             // 
@@ -144,12 +162,14 @@
             this.lblFecha.TabIndex = 3;
             this.lblFecha.Text = "Fecha";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(86, 45);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpFecha.Enabled = false;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(107, 45);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(179, 20);
+            this.dtpFecha.TabIndex = 2;
             // 
             // lblChofer
             // 
@@ -160,13 +180,15 @@
             this.lblChofer.TabIndex = 1;
             this.lblChofer.Text = "Chofer";
             // 
-            // comboBox1
+            // cmbChofer
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(86, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cmbChofer.DisplayMember = "Nombre";
+            this.cmbChofer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChofer.FormattingEnabled = true;
+            this.cmbChofer.Location = new System.Drawing.Point(86, 71);
+            this.cmbChofer.Name = "cmbChofer";
+            this.cmbChofer.Size = new System.Drawing.Size(200, 21);
+            this.cmbChofer.TabIndex = 3;
             // 
             // dgvResultadoBusqueda
             // 
@@ -179,50 +201,13 @@
             this.colChofer,
             this.colCoche,
             this.colRecorrido,
-            this.colDetalles});
+            this.colDetalles,
+            this.colPlanilla});
             this.dgvResultadoBusqueda.Location = new System.Drawing.Point(13, 201);
             this.dgvResultadoBusqueda.Name = "dgvResultadoBusqueda";
             this.dgvResultadoBusqueda.ReadOnly = true;
             this.dgvResultadoBusqueda.Size = new System.Drawing.Size(722, 237);
             this.dgvResultadoBusqueda.TabIndex = 1;
-            // 
-            // colNumeroPlanilla
-            // 
-            this.colNumeroPlanilla.HeaderText = "N° planilla";
-            this.colNumeroPlanilla.Name = "colNumeroPlanilla";
-            this.colNumeroPlanilla.ReadOnly = true;
-            // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            // 
-            // colChofer
-            // 
-            this.colChofer.HeaderText = "Chofer";
-            this.colChofer.Name = "colChofer";
-            this.colChofer.ReadOnly = true;
-            // 
-            // colCoche
-            // 
-            this.colCoche.HeaderText = "Coche";
-            this.colCoche.Name = "colCoche";
-            this.colCoche.ReadOnly = true;
-            // 
-            // colRecorrido
-            // 
-            this.colRecorrido.HeaderText = "Recorrido";
-            this.colRecorrido.Name = "colRecorrido";
-            this.colRecorrido.ReadOnly = true;
-            // 
-            // colDetalles
-            // 
-            this.colDetalles.HeaderText = "Detalles";
-            this.colDetalles.Name = "colDetalles";
-            this.colDetalles.ReadOnly = true;
-            this.colDetalles.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDetalles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // grpGenerarPlanillas
             // 
@@ -254,6 +239,59 @@
             this.lblUltimaPlanillaInfo.TabIndex = 0;
             this.lblUltimaPlanillaInfo.Text = "Las últimas planillas generadas corresponden al día 20/6/2018.";
             // 
+            // colNumeroPlanilla
+            // 
+            this.colNumeroPlanilla.DataPropertyName = "Id";
+            this.colNumeroPlanilla.HeaderText = "N° planilla";
+            this.colNumeroPlanilla.Name = "colNumeroPlanilla";
+            this.colNumeroPlanilla.ReadOnly = true;
+            // 
+            // colFecha
+            // 
+            this.colFecha.DataPropertyName = "Fecha";
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
+            // colChofer
+            // 
+            this.colChofer.DataPropertyName = "Chofer";
+            this.colChofer.HeaderText = "Chofer";
+            this.colChofer.Name = "colChofer";
+            this.colChofer.ReadOnly = true;
+            // 
+            // colCoche
+            // 
+            this.colCoche.DataPropertyName = "Vehiculo";
+            this.colCoche.HeaderText = "Coche";
+            this.colCoche.Name = "colCoche";
+            this.colCoche.ReadOnly = true;
+            // 
+            // colRecorrido
+            // 
+            this.colRecorrido.DataPropertyName = "Recorrido";
+            this.colRecorrido.HeaderText = "Recorrido";
+            this.colRecorrido.Name = "colRecorrido";
+            this.colRecorrido.ReadOnly = true;
+            // 
+            // colDetalles
+            // 
+            this.colDetalles.DataPropertyName = "Detalles";
+            this.colDetalles.HeaderText = "Detalles";
+            this.colDetalles.Name = "colDetalles";
+            this.colDetalles.ReadOnly = true;
+            this.colDetalles.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDetalles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colDetalles.Text = "";
+            // 
+            // colPlanilla
+            // 
+            this.colPlanilla.DataPropertyName = "Planilla";
+            this.colPlanilla.HeaderText = "Planilla";
+            this.colPlanilla.Name = "colPlanilla";
+            this.colPlanilla.ReadOnly = true;
+            this.colPlanilla.Visible = false;
+            // 
             // PlanillasHorariasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,24 +318,26 @@
         private System.Windows.Forms.GroupBox grpBuscarPlanillas;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblRecorrido;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbRecorrido;
         private System.Windows.Forms.Label lblCoche;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbCoche;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblChofer;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbChofer;
         private System.Windows.Forms.DataGridView dgvResultadoBusqueda;
         private System.Windows.Forms.GroupBox grpGenerarPlanillas;
         private System.Windows.Forms.Button btnGenerarPlanillas;
         private System.Windows.Forms.Label lblUltimaPlanillaInfo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNumeroPlanilla;
         private System.Windows.Forms.Label lblNumeroDePlanilla;
+        private System.Windows.Forms.CheckBox chkFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumeroPlanilla;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn colChofer;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCoche;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRecorrido;
         private System.Windows.Forms.DataGridViewButtonColumn colDetalles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPlanilla;
     }
 }

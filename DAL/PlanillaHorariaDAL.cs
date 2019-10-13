@@ -129,6 +129,53 @@ namespace DAL
             query = string.Format(query, sb.ToString().TrimEnd(','));
 
             DataTable table = SqlHelper.Obtener(query, parameters.ToArray());
+            return Transformar(table);
+        }
+
+        public static List<PlanillaHorariaDAL> Buscar(int idPlanilla, DateTime? fecha, int idChofer, int idVehiculo, int idRecorrido)
+        {
+            string query = "SELECT TOP 1000 id, chofer_id, coche_id, recorrido_id, fecha FROM planilla_horaria " +
+                "WHERE 1 = 1";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            if(idPlanilla > 0)
+            {
+                query += " AND id = @id";
+                parameters.Add(new SqlParameter("@id", idPlanilla));
+            }
+
+            if(fecha.HasValue)
+            {
+                query += " AND fecha = @fecha";
+                parameters.Add(new SqlParameter("@fecha", fecha.Value.Date));
+            }
+
+            if(idChofer > 0)
+            {
+                query += " AND chofer_id = @idChofer";
+                parameters.Add(new SqlParameter("@idChofer", idChofer));
+            }
+
+            if (idVehiculo > 0)
+            {
+                query += " AND coche_id = @idCoche";
+                parameters.Add(new SqlParameter("@idCoche", idVehiculo));
+            }
+
+            if (idRecorrido > 0)
+            {
+                query += " AND recorrido_id = @idRecorrido";
+                parameters.Add(new SqlParameter("@idRecorrido", idRecorrido));
+            }
+
+            query += " ORDER BY fecha DESC";
+
+            DataTable table = SqlHelper.Obtener(query, parameters.ToArray());
+            return Transformar(table);
+        }
+
+        private static List<PlanillaHorariaDAL> Transformar(DataTable table)
+        {
             return table.Select().Select(r => new PlanillaHorariaDAL
             {
                 ChoferId = int.Parse(r["chofer_id"].ToString()),
