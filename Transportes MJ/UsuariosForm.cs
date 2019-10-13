@@ -1,12 +1,7 @@
 ﻿using BL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -47,7 +42,7 @@ namespace UI
             btnEliminar.Enabled = false;
         }
 
-        private void lstUsuariosActuales_SelectedIndexChanged(object sender, EventArgs e)
+        private void LstUsuariosActuales_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(lstUsuariosActuales.SelectedIndex == _ultimoUsuarioSeleccionado)
             {
@@ -83,7 +78,7 @@ namespace UI
             _ultimoUsuarioSeleccionado = lstUsuariosActuales.SelectedIndex;
         }
 
-        private void trvPermisos_AfterCheck(object sender, TreeViewEventArgs e)
+        private void TrvPermisos_AfterCheck(object sender, TreeViewEventArgs e)
         {
             foreach(TreeNode nodoHijo in e.Node.Nodes)
             {
@@ -91,7 +86,7 @@ namespace UI
             }
         }
 
-        private void trvPermisos_BeforeCheck(object sender, TreeViewCancelEventArgs e)
+        private void TrvPermisos_BeforeCheck(object sender, TreeViewCancelEventArgs e)
         {
             if(!_editando)
             {
@@ -99,7 +94,7 @@ namespace UI
             }
         }
 
-        private void btnCrearNuevo_Click(object sender, EventArgs e)
+        private void BtnCrearNuevo_Click(object sender, EventArgs e)
         {
             if (_editando && !PreguntarPorLosCambios())
             {
@@ -110,7 +105,7 @@ namespace UI
             ResetearDetalles(true);
         }
 
-        private void btnDescartar_Click(object sender, EventArgs e)
+        private void BtnDescartar_Click(object sender, EventArgs e)
         {
             if(PreguntarPorLosCambios())
             {
@@ -119,7 +114,7 @@ namespace UI
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
             // Chequeo que la info esté bien
             if (string.IsNullOrWhiteSpace(txtNombre.Text)
@@ -163,7 +158,7 @@ namespace UI
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
             txtNombre.Enabled = true;
             cmbIdioma.Enabled = true;
@@ -175,7 +170,7 @@ namespace UI
             btnDescartar.Enabled = true;
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(ObtenerLeyenda("msgConfEliminar"), ObtenerLeyenda("msgConfEliminarTitulo"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -282,7 +277,7 @@ namespace UI
                     permisos.AddRange(ObtenerPermisosTildados(nodo.Nodes));
                 }
             }
-            return permisos;
+            return permisos.GroupBy(p => p.Id).Select(g => g.First()).ToList();
         }
 
         private void TildarPermisosUsuario(Usuario usuario, TreeNodeCollection nodosABuscar)

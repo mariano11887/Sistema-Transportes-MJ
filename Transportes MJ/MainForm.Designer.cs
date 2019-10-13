@@ -49,6 +49,7 @@
             this.mniAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAyudaEnLinea = new System.Windows.Forms.ToolStripMenuItem();
             this.mniFicheroLeame = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniControlDeCambios = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,7 +126,8 @@
             this.mniAdministrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniPerfilesDeUsuario,
             this.mniIdiomas,
-            this.mniUsuarios});
+            this.mniUsuarios,
+            this.mniControlDeCambios});
             this.mniAdministrar.Name = "mniAdministrar";
             this.mniAdministrar.Size = new System.Drawing.Size(81, 20);
             this.mniAdministrar.Text = "Administrar";
@@ -133,21 +135,21 @@
             // mniPerfilesDeUsuario
             // 
             this.mniPerfilesDeUsuario.Name = "mniPerfilesDeUsuario";
-            this.mniPerfilesDeUsuario.Size = new System.Drawing.Size(170, 22);
+            this.mniPerfilesDeUsuario.Size = new System.Drawing.Size(241, 22);
             this.mniPerfilesDeUsuario.Text = "Perfiles de usuario";
             this.mniPerfilesDeUsuario.Click += new System.EventHandler(this.MniPerfilesDeUsuario_Click);
             // 
             // mniIdiomas
             // 
             this.mniIdiomas.Name = "mniIdiomas";
-            this.mniIdiomas.Size = new System.Drawing.Size(170, 22);
+            this.mniIdiomas.Size = new System.Drawing.Size(241, 22);
             this.mniIdiomas.Text = "Idiomas";
             this.mniIdiomas.Click += new System.EventHandler(this.MniIdiomas_Click);
             // 
             // mniUsuarios
             // 
             this.mniUsuarios.Name = "mniUsuarios";
-            this.mniUsuarios.Size = new System.Drawing.Size(170, 22);
+            this.mniUsuarios.Size = new System.Drawing.Size(241, 22);
             this.mniUsuarios.Text = "Usuarios";
             this.mniUsuarios.Click += new System.EventHandler(this.MniUsuarios_Click);
             // 
@@ -210,6 +212,13 @@
             this.mniFicheroLeame.Size = new System.Drawing.Size(152, 22);
             this.mniFicheroLeame.Text = "Fichero léame";
             // 
+            // mniControlDeCambios
+            // 
+            this.mniControlDeCambios.Name = "mniControlDeCambios";
+            this.mniControlDeCambios.Size = new System.Drawing.Size(241, 22);
+            this.mniControlDeCambios.Text = "Control de cambios de usuarios";
+            this.mniControlDeCambios.Click += new System.EventHandler(this.MniControlDeCambios_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,6 +262,7 @@
         private System.Windows.Forms.ToolStripMenuItem mniAyudaEnLinea;
         private System.Windows.Forms.ToolStripMenuItem mniFicheroLeame;
         private System.Windows.Forms.ToolStripMenuItem mniPersonalizar;
+        private System.Windows.Forms.ToolStripMenuItem mniControlDeCambios;
     }
 }
 

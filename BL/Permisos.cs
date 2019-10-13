@@ -35,5 +35,6 @@ namespace BL
         public const string CHOFERES_ALTA = "Alta choferes";
         public const string CHOFERES_MODIFICAR = "Modificar choferes";
         public const string CHOFERES_BAJA = "Baja choferes";
+        public const string CONTROL_DE_CAMBIOS_VER = "Ver control de cambios";
     }
 }

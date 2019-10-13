@@ -1,13 +1,6 @@
 ﻿using BL;
 using Logger;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -19,20 +12,21 @@ namespace UI
             InitializeComponent();
         }
 
-        #region Eventos
         private void MainForm_Load(object sender, EventArgs e)
         {
             try
             {
                 Hide();
-                LoginForm frmLogin = new LoginForm();
-                frmLogin.ShowDialog();
+                using (LoginForm frmLogin = new LoginForm())
+                {
+                    frmLogin.ShowDialog();
+                }
                 if (Sesion.Instancia().UsuarioLogueado != null)
                 {
                     Show();
                     Abrir();
 
-                    if(!DigitoVerificador.ChequearDVs())
+                    if (!DigitoVerificador.ChequearDVs())
                     {
                         MessageBox.Show(ObtenerLeyenda("msgPruebaDVMal"), "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
@@ -48,11 +42,82 @@ namespace UI
             }
         }
 
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Sesion.Instancia().CerrarSesion();
+        }
+
+        public void CerrarSesion()
+        {
+            try
+            {
+                Sesion.Instancia().CerrarSesion();
+                Application.Restart();
+            }
+            catch (Exception ex)
+            {
+                Log.Grabar(ex);
+            }
+        }
+
+        public override void ProcesarControlesConPermisos()
+        {
+            // Sistema
+            mniVerBitacora.Visible = TienePermiso(Permisos.BITACORA_VER);
+
+            // Administrar
+            mniPerfilesDeUsuario.Visible = TienePermiso(Permisos.PERFILES_VER);
+            mniIdiomas.Visible = TienePermiso(Permisos.IDIOMAS_VER);
+            mniUsuarios.Visible = TienePermiso(Permisos.USUARIOS_VER);
+            mniAdministrar.Visible = TienePermiso(Permisos.PERFILES_VER) || TienePermiso(Permisos.IDIOMAS_VER) || TienePermiso(Permisos.USUARIOS_VER);
+            mniControlDeCambios.Visible = TienePermiso(Permisos.CONTROL_DE_CAMBIOS_VER);
+
+            // Opciones
+            mniCopiaDeSeguridad.Visible = TienePermiso(Permisos.BACKUP_GESTIONAR);
+        }
+
+        #region Sistema
         private void MniLogout_Click(object sender, EventArgs e)
         {
             CerrarSesion();
         }
 
+        private void MniSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void MniVerBitacora_Click(object sender, EventArgs e)
+        {
+            BitacoraForm bitacoraForm = new BitacoraForm
+            {
+                MdiParent = this
+            };
+            bitacoraForm.Show();
+        }
+        #endregion
+
+        #region Opciones
+        private void MniCopiaDeSeguridad_Click(object sender, EventArgs e)
+        {
+            BackupForm backupForm = new BackupForm
+            {
+                MdiParent = this
+            };
+            backupForm.Show();
+        }
+
+        private void MniPersonalizar_Click(object sender, EventArgs e)
+        {
+            PersonalizacionForm personalizacionForm = new PersonalizacionForm
+            {
+                MdiParent = this
+            };
+            personalizacionForm.Show();
+        }
+        #endregion
+
+        #region Administrar
         private void MniPerfilesDeUsuario_Click(object sender, EventArgs e)
         {
             PerfilesForm perfilesForm = new PerfilesForm
@@ -62,18 +127,13 @@ namespace UI
             perfilesForm.Show();
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void MniControlDeCambios_Click(object sender, EventArgs e)
         {
-            Sesion.Instancia().CerrarSesion();
-        }
-
-        private void MniCopiaDeSeguridad_Click(object sender, EventArgs e)
-        {
-            BackupForm backupForm = new BackupForm
+            UsuarioHistorialForm usuarioHistorialForm = new UsuarioHistorialForm
             {
                 MdiParent = this
             };
-            backupForm.Show();
+            usuarioHistorialForm.Show();
         }
 
         private void MniIdiomas_Click(object sender, EventArgs e)
@@ -93,30 +153,9 @@ namespace UI
             };
             usuariosForm.Show();
         }
+        #endregion
 
-        private void MniSalir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void MniVerBitacora_Click(object sender, EventArgs e)
-        {
-            BitacoraForm bitacoraForm = new BitacoraForm
-            {
-                MdiParent = this
-            };
-            bitacoraForm.Show();
-        }
-
-        private void MniPersonalizar_Click(object sender, EventArgs e)
-        {
-            PersonalizacionForm personalizacionForm = new PersonalizacionForm
-            {
-                MdiParent = this
-            };
-            personalizacionForm.Show();
-        }
-
+        #region Gestionar
         private void MniPlanillasHorarias_Click(object sender, EventArgs e)
         {
             PlanillasHorariasForm planillasHorariasForm = new PlanillasHorariasForm
@@ -145,36 +184,7 @@ namespace UI
         }
         #endregion
 
-        #region Métodos
-        public void CerrarSesion()
-        {
-            try
-            {
-                Sesion.Instancia().CerrarSesion();
-                Application.Restart();
-            }
-            catch (Exception ex)
-            {
-                Log.Grabar(ex);
-            }
-        }
-
-        public override void ProcesarControlesConPermisos()
-        {
-            // Sistema
-            mniVerBitacora.Visible = TienePermiso(Permisos.BITACORA_VER);
-
-            // Administrar
-            mniPerfilesDeUsuario.Visible = TienePermiso(Permisos.PERFILES_VER);
-            mniIdiomas.Visible = TienePermiso(Permisos.IDIOMAS_VER);
-            mniUsuarios.Visible = TienePermiso(Permisos.USUARIOS_VER);
-            mniAdministrar.Visible = TienePermiso(Permisos.PERFILES_VER) || TienePermiso(Permisos.IDIOMAS_VER) || TienePermiso(Permisos.USUARIOS_VER);
-
-            // Opciones
-            mniCopiaDeSeguridad.Visible = TienePermiso(Permisos.BACKUP_GESTIONAR);
-        }
-
-
+        #region Ayuda
 
         #endregion
     }

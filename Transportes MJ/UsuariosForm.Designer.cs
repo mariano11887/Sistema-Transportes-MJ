@@ -70,7 +70,7 @@
             this.lstUsuariosActuales.Name = "lstUsuariosActuales";
             this.lstUsuariosActuales.Size = new System.Drawing.Size(120, 212);
             this.lstUsuariosActuales.TabIndex = 1;
-            this.lstUsuariosActuales.SelectedIndexChanged += new System.EventHandler(this.lstUsuariosActuales_SelectedIndexChanged);
+            this.lstUsuariosActuales.SelectedIndexChanged += new System.EventHandler(this.LstUsuariosActuales_SelectedIndexChanged);
             // 
             // btnCrearNuevo
             // 
@@ -80,7 +80,7 @@
             this.btnCrearNuevo.TabIndex = 2;
             this.btnCrearNuevo.Text = "Crear nuevo";
             this.btnCrearNuevo.UseVisualStyleBackColor = true;
-            this.btnCrearNuevo.Click += new System.EventHandler(this.btnCrearNuevo_Click);
+            this.btnCrearNuevo.Click += new System.EventHandler(this.BtnCrearNuevo_Click);
             // 
             // btnEditar
             // 
@@ -90,7 +90,7 @@
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -100,7 +100,7 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // grpDetalles
             // 
@@ -128,7 +128,7 @@
             this.btnDescartar.TabIndex = 10;
             this.btnDescartar.Text = "Descartar";
             this.btnDescartar.UseVisualStyleBackColor = true;
-            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
+            this.btnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click);
             // 
             // btnGuardar
             // 
@@ -138,7 +138,7 @@
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // lblPermisos
             // 
@@ -156,8 +156,8 @@
             this.trvPermisos.Name = "trvPermisos";
             this.trvPermisos.Size = new System.Drawing.Size(283, 157);
             this.trvPermisos.TabIndex = 7;
-            this.trvPermisos.BeforeCheck += new System.Windows.Forms.TreeViewCancelEventHandler(this.trvPermisos_BeforeCheck);
-            this.trvPermisos.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trvPermisos_AfterCheck);
+            this.trvPermisos.BeforeCheck += new System.Windows.Forms.TreeViewCancelEventHandler(this.TrvPermisos_BeforeCheck);
+            this.trvPermisos.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.TrvPermisos_AfterCheck);
             // 
             // grpInfoLogin
             // 

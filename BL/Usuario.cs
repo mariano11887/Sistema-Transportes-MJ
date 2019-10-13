@@ -177,6 +177,9 @@ namespace BL
             }
             usuarioDAL.PermisosId = permisosId;
             usuarioDAL.Guardar();
+            Id = usuarioDAL.UsuarioId;
+
+            GuardarHistorial(true);
 
             // Registro en bitácora
             BitacoraDAL bitacoraDAL = new BitacoraDAL()
@@ -190,6 +193,8 @@ namespace BL
         public void Eliminar()
         {
             UsuarioDAL.Eliminar(Id);
+
+            GuardarHistorial(false);
 
             // Registro en bitácora
             BitacoraDAL bitacoraDAL = new BitacoraDAL()
@@ -208,6 +213,22 @@ namespace BL
             _nombreDeUsuario = usuarioDAL.NombreDeUsuario;
             _nombre = usuarioDAL.Nombre;
             _idiomaId = usuarioDAL.IdiomaId;
+        }
+
+        private void GuardarHistorial(bool habilitado)
+        {
+            UsuarioHistorialDAL usuarioHistorialDAL = new UsuarioHistorialDAL
+            {
+                Contrasenia = Contrasenia ?? "",
+                Fecha = DateTime.Now,
+                Idioma = Idioma.Nombre,
+                IdUsuario = Id,
+                Nombre = Nombre,
+                NombreDeUsuario = NombreDeUsuario,
+                Permisos = string.Join(", ", Perfil.Select(p => p.Nombre).ToList()),
+                Habilitado = habilitado
+            };
+            usuarioHistorialDAL.Guardar();
         }
         #endregion
     }
