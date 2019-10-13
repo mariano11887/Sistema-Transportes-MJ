@@ -91,9 +91,9 @@ namespace BL
                 Completado = Completado,
                 CompletitudId = (int)Completitud,
                 EsIda = EsIda,
-                HoraEstimadaLlegada = HoraEstimadaLlegada,
-                HoraRealLlegada = HoraRealLlegada,
-                HoraSalida = HoraSalida,
+                HoraEstimadaLlegada = HoraEstimadaLlegada.TimeOfDay,
+                HoraRealLlegada = HoraRealLlegada.TimeOfDay,
+                HoraSalida = HoraSalida.TimeOfDay,
                 Id = Id,
                 PlanillaHorariaId = planillaHoraria.Id
             };
@@ -118,9 +118,9 @@ namespace BL
                 Completado = dal.Completado,
                 Completitud = (CompletitudViaje)dal.CompletitudId,
                 EsIda = dal.EsIda,
-                HoraEstimadaLlegada = dal.HoraEstimadaLlegada,
-                HoraRealLlegada = dal.HoraRealLlegada,
-                HoraSalida = dal.HoraSalida,
+                HoraEstimadaLlegada = new DateTime(1, 1, 1) + dal.HoraEstimadaLlegada,
+                HoraRealLlegada = new DateTime(1, 1, 1) + dal.HoraRealLlegada,
+                HoraSalida = new DateTime(1, 1, 1) + dal.HoraSalida,
                 Id = dal.Id
             }).ToList();
         }

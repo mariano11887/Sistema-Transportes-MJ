@@ -75,7 +75,7 @@ namespace DAL
                     command.Parameters.AddRange(parameters);
                     command.Connection.Open();
                     object value = command.ExecuteScalar();
-                    T valor = value is DBNull || value == null ? default : (T)value;
+                    T valor = value is DBNull || value == null ? default : (T)Convert.ChangeType(value, typeof(T));
                     command.Connection.Close();
                     return valor;
                 }

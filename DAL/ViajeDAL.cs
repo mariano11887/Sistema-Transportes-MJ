@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -35,24 +33,24 @@ namespace DAL
             set { _esIda = value; }
         }
         
-        private DateTime _horaSalida;
+        private TimeSpan _horaSalida;
 
-        public DateTime HoraSalida
+        public TimeSpan HoraSalida
         {
             get { return _horaSalida; }
             set { _horaSalida = value; }
         }
-        private DateTime _horaEstimadaLlegada;
+        private TimeSpan _horaEstimadaLlegada;
 
-        public DateTime HoraEstimadaLlegada
+        public TimeSpan HoraEstimadaLlegada
         {
             get { return _horaEstimadaLlegada; }
             set { _horaEstimadaLlegada = value; }
         }
 
-        private DateTime _horaRealLlegada;
+        private TimeSpan _horaRealLlegada;
 
-        public DateTime HoraRealLlegada
+        public TimeSpan HoraRealLlegada
         {
             get { return _horaRealLlegada; }
             set { _horaRealLlegada = value; }
@@ -90,7 +88,7 @@ namespace DAL
         public List<RegistroParaDV> ObtenerRegistrosParaDV()
         {
             string query = "SELECT id, planilla_horaria_id, es_ida, hora_salida, hora_estimada_llegada, hora_real_llegada, " +
-                "completado, completitud_id FROM viaje";
+                "completado, completitud_id, dvh FROM viaje";
             DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
 
             return table.Select().Select(r => new RegistroParaDV
@@ -98,9 +96,9 @@ namespace DAL
                 Registro = r["id"].ToString() + 
                     r["planilla_horaria_id"].ToString() + 
                     bool.Parse(r["es_ida"].ToString()).ToString() + 
-                    DateTime.Parse(r["hora_salida"].ToString()).ToString("HHmm") +
-                    DateTime.Parse(r["hora_estimada_llegada"].ToString()).ToString("HHmm") +
-                    (r.IsNull("hora_real_llegada") ? default : DateTime.Parse(r["hora_real_llegada"].ToString())).ToString("HHmm") +
+                    TimeSpan.Parse(r["hora_salida"].ToString()).ToString() +
+                    TimeSpan.Parse(r["hora_estimada_llegada"].ToString()).ToString() +
+                    (r.IsNull("hora_real_llegada") ? default : TimeSpan.Parse(r["hora_real_llegada"].ToString())).ToString() +
                     (r.IsNull("completado") ? default : bool.Parse(r["completado"].ToString())).ToString() +
                     (r.IsNull("completitud_id") ? "0" : r["completitud_id"].ToString()),
                 DVH = int.Parse(r["dvh"].ToString())
@@ -119,8 +117,8 @@ namespace DAL
             }
 
             string registro = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", Id, PlanillaHorariaId, EsIda,
-                HoraSalida.ToString("HHmm"), HoraEstimadaLlegada.ToString("HHmm"),
-                HoraRealLlegada.ToString("HHmm"), Completado, CompletitudId);
+                HoraSalida.ToString(), HoraEstimadaLlegada.ToString(),
+                HoraRealLlegada.ToString(), Completado, CompletitudId);
             _dvh = DigitoVerificadorDAL.CalcularDV(registro);
 
             DigitoVerificadorDAL.ActualizarDVH("viaje", _dvh, Id);
@@ -166,9 +164,9 @@ namespace DAL
                 Completado = true,
                 CompletitudId = r.IsNull("completitud_id") ? 0 : int.Parse(r["completitud_id"].ToString()),
                 EsIda = bool.Parse(r["es_ida"].ToString()),
-                HoraEstimadaLlegada = DateTime.Parse(r["hora_estimada_llegada"].ToString()),
-                HoraRealLlegada = r.IsNull("hora_real_llegada") ? default : DateTime.Parse(r["hora_real_llegada"].ToString()),
-                HoraSalida = DateTime.Parse(r["hora_salida"].ToString()),
+                HoraEstimadaLlegada = TimeSpan.Parse(r["hora_estimada_llegada"].ToString()),
+                HoraRealLlegada = r.IsNull("hora_real_llegada") ? default : TimeSpan.Parse(r["hora_real_llegada"].ToString()),
+                HoraSalida = TimeSpan.Parse(r["hora_salida"].ToString()),
                 Id = int.Parse(r["id"].ToString()),
                 PlanillaHorariaId = planillaHorariaId
             }).ToList();

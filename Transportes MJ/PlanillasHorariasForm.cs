@@ -14,7 +14,27 @@ namespace UI
         private void PlanillasHorariasForm_Load(object sender, EventArgs e)
         {
             Abrir();
+            RefrescarGeneracionPlanillas();
+        }
 
+        private void BtnGenerarPlanillas_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(ObtenerLeyenda("msgConfirmacionGenerarPlanillas"), "",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                Cursor = Cursors.WaitCursor;
+                GeneradorDePlanillas.GenerarProximasPlanillas();
+                Cursor = Cursors.Default;
+
+                MessageBox.Show(ObtenerLeyenda("msgGeneracionPlanillasOk"));
+
+                RefrescarGeneracionPlanillas();
+            }
+        }
+
+        private void RefrescarGeneracionPlanillas()
+        {
             DateTime ultimaFecha = PlanillaHoraria.ObtenerUltimaPlanilla();
             string leyendaUltimaPlanillaInfo = ObtenerLeyenda("lblUltimaPlanillaInfo");
             if (leyendaUltimaPlanillaInfo.Contains("{0}"))
@@ -29,20 +49,6 @@ namespace UI
                 btnGenerarPlanillas.Text = string.Format(leyendaGenerarPlanillas, proximaFecha.ToString("dd/MM/yyyy"));
             }
             btnGenerarPlanillas.Enabled = puedeGenerarse;
-        }
-
-        private void BtnGenerarPlanillas_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show(ObtenerLeyenda("msgConfirmacionGenerarPlanillas"), "",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == DialogResult.Yes)
-            {
-                Cursor = Cursors.WaitCursor;
-                GeneradorDePlanillas.GenerarProximasPlanillas();
-                Cursor = Cursors.Default;
-
-                MessageBox.Show(ObtenerLeyenda("msgGeneracionPlanillasOk"));
-            }
         }
     }
 }
