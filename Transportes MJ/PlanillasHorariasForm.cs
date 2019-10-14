@@ -71,16 +71,31 @@ namespace UI
             Recorrido recorrido = (Recorrido)cmbRecorrido.SelectedItem;
 
             List<PlanillaHoraria> planillas = PlanillaHoraria.Buscar(numeroPlanilla, fecha, chofer, coche, recorrido);
-            dgvResultadoBusqueda.DataSource = planillas.Select(p => new
+            dgvResultadoBusqueda.DataSource = planillas.Select(p => new GridItem
             {
                 Planilla = p,
-                p.Id,
-                p.Fecha,
+                Id = p.Id,
+                Fecha = p.Fecha,
                 Chofer = p.Chofer.Nombre,
                 Vehiculo = p.Vehiculo.Patente,
                 Recorrido = p.Recorrido.ToString(),
                 Detalles = ObtenerLeyenda("btnVer")
             }).ToList();
+        }
+
+        private void DgvResultadoBusqueda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView grid = (DataGridView)sender;
+            if(grid.Columns[e.ColumnIndex] is DataGridViewButtonColumn & e.RowIndex >= 0)
+            {
+                // Se clickeó en un botón de Detalle
+                PlanillaHoraria planilla = (grid.Rows[e.RowIndex].DataBoundItem as GridItem).Planilla;
+                DetalleDePlanillaForm detalleDePlanillaForm = new DetalleDePlanillaForm(planilla)
+                {
+                    MdiParent = MdiParent
+                };
+                detalleDePlanillaForm.Show();
+            }
         }
 
         private void RefrescarGeneracionPlanillas()
@@ -99,6 +114,17 @@ namespace UI
                 btnGenerarPlanillas.Text = string.Format(leyendaGenerarPlanillas, proximaFecha.ToString("dd/MM/yyyy"));
             }
             btnGenerarPlanillas.Enabled = puedeGenerarse;
+        }
+
+        private class GridItem
+        {
+            public PlanillaHoraria Planilla { get; set; }
+            public int Id { get; set; }
+            public DateTime Fecha { get; set; }
+            public string Chofer { get; set; }
+            public string Vehiculo { get; set; }
+            public string Recorrido { get; set; }
+            public string Detalles { get; set; }
         }
     }
 }

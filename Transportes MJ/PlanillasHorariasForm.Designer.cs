@@ -208,6 +208,7 @@
             this.dgvResultadoBusqueda.ReadOnly = true;
             this.dgvResultadoBusqueda.Size = new System.Drawing.Size(722, 237);
             this.dgvResultadoBusqueda.TabIndex = 1;
+            this.dgvResultadoBusqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvResultadoBusqueda_CellContentClick);
             // 
             // grpGenerarPlanillas
             // 

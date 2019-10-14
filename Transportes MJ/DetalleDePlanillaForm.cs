@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace UI
 {
     public partial class DetalleDePlanillaForm : FormGeneral
     {
-        public DetalleDePlanillaForm()
+        private PlanillaHoraria planillaHoraria;
+
+        public DetalleDePlanillaForm(PlanillaHoraria planillaHoraria)
         {
             InitializeComponent();
+            this.planillaHoraria = planillaHoraria;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
