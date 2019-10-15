@@ -48,17 +48,17 @@ namespace DAL
             set { _horaEstimadaLlegada = value; }
         }
 
-        private TimeSpan _horaRealLlegada;
+        private TimeSpan? _horaRealLlegada;
 
-        public TimeSpan HoraRealLlegada
+        public TimeSpan? HoraRealLlegada
         {
             get { return _horaRealLlegada; }
             set { _horaRealLlegada = value; }
         }
 
-        private bool _completado;
+        private bool? _completado;
 
-        public bool Completado
+        public bool? Completado
         {
             get { return _completado; }
             set { _completado = value; }
@@ -141,7 +141,17 @@ namespace DAL
 
         private void Actualizar()
         {
+            string query = "UPDATE viaje SET hora_real_llegada = @horaRealLlegada, completado = @completado, " +
+                "completitud_id = @idCompletitud WHERE id = @id";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@horaRealLlegada", (object)HoraRealLlegada.Value ?? DBNull.Value),
+                new SqlParameter("@completado", (object)Completado ?? DBNull.Value),
+                new SqlParameter("@idCompletitud", CompletitudId > 0 ? (object)CompletitudId : DBNull.Value),
+                new SqlParameter("@id", Id)
+            };
 
+            SqlHelper.Ejecutar(query, parameters);
         }
 
         public static void RecalcularDVV()
@@ -149,10 +159,15 @@ namespace DAL
             DigitoVerificadorDAL.RecalcularDVV("viaje");
         }
 
-        public static List<ViajeDAL> ObtenerPorPlanillaHoraria(int planillaHorariaId)
+        public static List<ViajeDAL> ObtenerPorPlanillaHoraria(int planillaHorariaId, bool soloCompletados)
         {
-            string query = "SELECT id, es_ida, hora_salida, hora_estimada_llegada, hora_real_llegada, completitud_id " +
-                "FROM viaje WHERE planilla_horaria_id = @planillaHorariaId AND completado = 1";
+            string query = "SELECT id, es_ida, hora_salida, hora_estimada_llegada, hora_real_llegada, completado, completitud_id " +
+                "FROM viaje WHERE planilla_horaria_id = @planillaHorariaId";
+            if(soloCompletados)
+            {
+                query += " AND completado = 1";
+            }
+
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@planillaHorariaId", planillaHorariaId)
@@ -161,11 +176,11 @@ namespace DAL
             DataTable table = SqlHelper.Obtener(query, parameters);
             return table.Select().Select(r => new ViajeDAL
             {
-                Completado = true,
+                Completado = r.IsNull("completado") ? (bool?)null : bool.Parse(r["completado"].ToString()),
                 CompletitudId = r.IsNull("completitud_id") ? 0 : int.Parse(r["completitud_id"].ToString()),
                 EsIda = bool.Parse(r["es_ida"].ToString()),
                 HoraEstimadaLlegada = TimeSpan.Parse(r["hora_estimada_llegada"].ToString()),
-                HoraRealLlegada = r.IsNull("hora_real_llegada") ? default : TimeSpan.Parse(r["hora_real_llegada"].ToString()),
+                HoraRealLlegada = r.IsNull("hora_real_llegada") ? (TimeSpan?)null : TimeSpan.Parse(r["hora_real_llegada"].ToString()),
                 HoraSalida = TimeSpan.Parse(r["hora_salida"].ToString()),
                 Id = int.Parse(r["id"].ToString()),
                 PlanillaHorariaId = planillaHorariaId

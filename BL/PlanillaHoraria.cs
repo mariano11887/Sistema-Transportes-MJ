@@ -76,7 +76,14 @@ namespace BL
 
         public List<Viaje> Viajes
         {
-            get { return _viajes; }
+            get 
+            {
+                if(_viajes == null && Id > 0)
+                {
+                    _viajes = Viaje.ObtenerPorPlanilla(this, false);
+                }
+                return _viajes; 
+            }
             set { _viajes = value; }
         }
 
@@ -97,7 +104,7 @@ namespace BL
             // Guardo todos los viajes
             foreach(Viaje viaje in Viajes)
             {
-                viaje.Guardar(this, false);
+                viaje.Guardar(this);
             }
         }
 
@@ -132,7 +139,7 @@ namespace BL
 
             foreach(PlanillaHoraria planilla in planillas)
             {
-                planilla.Viajes = Viaje.ObtenerPorPlanilla(planilla);
+                planilla.Viajes = Viaje.ObtenerPorPlanilla(planilla, true);
             }
 
             return planillas;

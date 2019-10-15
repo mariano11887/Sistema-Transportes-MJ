@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
@@ -42,17 +40,17 @@ namespace BL
             set { _horaEstimadaLlegada = value; }
         }
 
-        private DateTime _horaRealLlegada;
+        private DateTime? _horaRealLlegada;
 
-        public DateTime HoraRealLlegada
+        public DateTime? HoraRealLlegada
         {
             get { return _horaRealLlegada; }
             set { _horaRealLlegada = value; }
         }
 
-        private bool _completado;
+        private bool? _completado;
 
-        public bool Completado
+        public bool? Completado
         {
             get { return _completado; }
             set { _completado = value; }
@@ -84,7 +82,7 @@ namespace BL
         }
         #endregion
 
-        public void Guardar(PlanillaHoraria planillaHoraria, bool recalcularDVV)
+        public void Guardar()
         {
             ViajeDAL viajeDAL = new ViajeDAL
             {
@@ -92,18 +90,31 @@ namespace BL
                 CompletitudId = (int)Completitud,
                 EsIda = EsIda,
                 HoraEstimadaLlegada = HoraEstimadaLlegada.TimeOfDay,
-                HoraRealLlegada = HoraRealLlegada.TimeOfDay,
+                HoraRealLlegada = HoraRealLlegada?.TimeOfDay,
+                HoraSalida = HoraSalida.TimeOfDay,
+                Id = Id
+            };
+            viajeDAL.Guardar();
+            Id = viajeDAL.Id;
+
+            Bitacora.Loguear("Se guardó nueva información del viaje " + Id);
+        }
+        
+        public void Guardar(PlanillaHoraria planillaHoraria)
+        {
+            ViajeDAL viajeDAL = new ViajeDAL
+            {
+                Completado = Completado,
+                CompletitudId = (int)Completitud,
+                EsIda = EsIda,
+                HoraEstimadaLlegada = HoraEstimadaLlegada.TimeOfDay,
+                HoraRealLlegada = HoraRealLlegada?.TimeOfDay,
                 HoraSalida = HoraSalida.TimeOfDay,
                 Id = Id,
                 PlanillaHorariaId = planillaHoraria.Id
             };
             viajeDAL.Guardar();
             Id = viajeDAL.Id;
-
-            if (recalcularDVV)
-            {
-                RecalcularDVV();
-            }
         }
 
         public static void RecalcularDVV()
@@ -111,9 +122,9 @@ namespace BL
             ViajeDAL.RecalcularDVV();
         }
 
-        public static List<Viaje> ObtenerPorPlanilla(PlanillaHoraria planilla)
+        public static List<Viaje> ObtenerPorPlanilla(PlanillaHoraria planilla, bool soloCompletados)
         {
-            return ViajeDAL.ObtenerPorPlanillaHoraria(planilla.Id).Select(dal => new Viaje
+            return ViajeDAL.ObtenerPorPlanillaHoraria(planilla.Id, soloCompletados).Select(dal => new Viaje
             {
                 Completado = dal.Completado,
                 Completitud = (CompletitudViaje)dal.CompletitudId,

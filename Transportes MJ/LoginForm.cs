@@ -22,9 +22,9 @@ namespace UI
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // IMPORTANTE: Sacar esto cuando ya no se pruebe más
-            //txtNombreDeUsuario.Text = "admin";
-            //txtContrasenia.Text = "admin";
-            //btnAceptar.PerformClick();
+            txtNombreDeUsuario.Text = "admin";
+            txtContrasenia.Text = "admin";
+            btnAceptar.PerformClick();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

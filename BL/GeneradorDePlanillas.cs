@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
@@ -159,7 +157,12 @@ namespace BL
                         }
 
                         // Duración del viaje
-                        sumaDuracion.Add(viaje.HoraRealLlegada - viaje.HoraSalida);
+                        if(viaje.HoraRealLlegada.Value < viaje.HoraSalida)
+                        {
+                            // Este es el caso cuando llega al día siguiente
+                            viaje.HoraRealLlegada = viaje.HoraRealLlegada.Value.AddDays(1);
+                        }
+                        sumaDuracion.Add(viaje.HoraRealLlegada.Value - viaje.HoraSalida);
 
                         // Frecuencia del día anterior
                         if (dia == 0 && frecuenciaDiaAnterior < 0 && iViaje < viajesDeIntervalo.Count)
