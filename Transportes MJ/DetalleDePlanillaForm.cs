@@ -1,12 +1,8 @@
 ﻿using BL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -41,7 +37,11 @@ namespace UI
                 Viaje = v,
                 HoraSalida = v.HoraSalida.ToString(MASCARA_TIEMPO),
                 HoraEstimadaLlegada = v.HoraEstimadaLlegada.ToString(MASCARA_TIEMPO),
-                HoraRealLlegada = v.HoraRealLlegada?.ToString(MASCARA_TIEMPO)
+                HoraRealLlegada = v.HoraRealLlegada?.ToString(MASCARA_TIEMPO),
+                Completado = v.Completado ?? false,
+                Completitud = v.Completitud == CompletitudViaje.Vacio ? ObtenerLeyenda("valVacio") :
+                            v.Completitud == CompletitudViaje.Moderado ? ObtenerLeyenda("valModerado") :
+                            v.Completitud == CompletitudViaje.Lleno ? ObtenerLeyenda("valLleno") : ""
             }).ToList();
 
             // Lleno los dropdown de densidad de pasajeros
@@ -118,8 +118,9 @@ namespace UI
             // Esto es para que los dropdown se expandan al primer clic
             if (dgvViajes.Columns[e.ColumnIndex] is DataGridViewComboBoxColumn)
             {
-                dgvViajes.BeginEdit(true);
-                ((ComboBox)dgvViajes.EditingControl).DroppedDown = true;
+                SendKeys.Send("{F4}");
+                //dgvViajes.BeginEdit(true);
+                //((ComboBox)dgvViajes.EditingControl).DroppedDown = true;
             }
         }
 
@@ -143,9 +144,11 @@ namespace UI
                     {
                         viaje.Completitud = completitudes.First(c => c.Value == row.Cells["colDensidadPasajeros"].Value.ToString()).Key;
                     }
-
-                    viaje.Guardar();
                 }
+
+                planillaHoraria.GuardarViajes();
+
+                MessageBox.Show(ObtenerLeyenda("msgPlanillaActualizada"));
             }
         }
 
@@ -184,6 +187,8 @@ namespace UI
             public string HoraSalida { get; set; }
             public string HoraEstimadaLlegada { get; set; }
             public string HoraRealLlegada { get; set; }
+            public bool Completado { get; set; }
+            public string Completitud { get; set; }
         }
     }
 }

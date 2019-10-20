@@ -89,6 +89,18 @@ namespace BL
 
         #endregion
 
+        public void GuardarViajes()
+        {
+            foreach (Viaje viaje in Viajes)
+            {
+                viaje.Guardar(this);
+            }
+            
+            Viaje.RecalcularDVV();
+
+            Bitacora.Loguear("Se actualizaron los viajes de la planilla N° " + Id);
+        }
+
         private void Guardar()
         {
             PlanillaHorariaDAL planillaHorariaDAL = new PlanillaHorariaDAL

@@ -243,6 +243,7 @@
             // 
             // colCompletado
             // 
+            this.colCompletado.DataPropertyName = "Completado";
             this.colCompletado.HeaderText = "Completado";
             this.colCompletado.Name = "colCompletado";
             this.colCompletado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -250,6 +251,7 @@
             // 
             // colDensidadPasajeros
             // 
+            this.colDensidadPasajeros.DataPropertyName = "Completitud";
             this.colDensidadPasajeros.HeaderText = "Densidad de pasajeros";
             this.colDensidadPasajeros.Name = "colDensidadPasajeros";
             this.colDensidadPasajeros.Resizable = System.Windows.Forms.DataGridViewTriState.True;
