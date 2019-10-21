@@ -132,7 +132,9 @@ namespace BL
                 HoraEstimadaLlegada = new DateTime(1, 1, 1) + dal.HoraEstimadaLlegada,
                 HoraRealLlegada = new DateTime(1, 1, 1) + dal.HoraRealLlegada,
                 HoraSalida = new DateTime(1, 1, 1) + dal.HoraSalida,
-                Id = dal.Id
+                Id = dal.Id,
+                TerminalOrigen = dal.EsIda ? planilla.Recorrido.TerminalInicio : planilla.Recorrido.TerminalFin,
+                TerminalDestino = dal.EsIda ? planilla.Recorrido.TerminalFin : planilla.Recorrido.TerminalInicio
             }).ToList();
         }
     }

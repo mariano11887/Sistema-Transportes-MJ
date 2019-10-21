@@ -1,7 +1,9 @@
 ﻿using BL;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -12,6 +14,8 @@ namespace UI
         private readonly PlanillaHoraria planillaHoraria;
         private const string MASCARA_TIEMPO = "HH:mm";
         private readonly Dictionary<CompletitudViaje, string> completitudes = new Dictionary<CompletitudViaje, string>();
+
+        Bitmap memoryImage;
 
         public DetalleDePlanillaForm(PlanillaHoraria planillaHoraria)
         {
@@ -35,7 +39,9 @@ namespace UI
             dgvViajes.DataSource = planillaHoraria.Viajes.Select(v => new GridItem
             {
                 Viaje = v,
+                Origen = v.TerminalOrigen.Nombre,
                 HoraSalida = v.HoraSalida.ToString(MASCARA_TIEMPO),
+                Destino = v.TerminalDestino.Nombre,
                 HoraEstimadaLlegada = v.HoraEstimadaLlegada.ToString(MASCARA_TIEMPO),
                 HoraRealLlegada = v.HoraRealLlegada?.ToString(MASCARA_TIEMPO),
                 Completado = v.Completado ?? false,
@@ -152,6 +158,19 @@ namespace UI
             }
         }
 
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ImpresorDePlanillas impresorDePlanillas = new ImpresorDePlanillas(planillaHoraria, dgvViajes, this);
+                impresorDePlanillas.Imprimir();
+            }
+            catch (Exception ex)
+            {
+                Log.Grabar(ex);
+            }
+        }
+
         private bool ValidarGrilla()
         {
             foreach (DataGridViewRow row in dgvViajes.Rows)
@@ -184,7 +203,9 @@ namespace UI
         private class GridItem
         {
             public Viaje Viaje { get; set; }
+            public string Origen { get; set; }
             public string HoraSalida { get; set; }
+            public string Destino { get; set; }
             public string HoraEstimadaLlegada { get; set; }
             public string HoraRealLlegada { get; set; }
             public bool Completado { get; set; }

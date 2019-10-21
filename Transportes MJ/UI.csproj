@@ -80,6 +80,7 @@
     <Compile Include="IdiomasForm.Designer.cs">
       <DependentUpon>IdiomasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImpresorDePlanillas.cs" />
     <Compile Include="IObservadorIdioma.cs" />
     <Compile Include="IPublicadorIdioma.cs" />
     <Compile Include="MainForm.cs">

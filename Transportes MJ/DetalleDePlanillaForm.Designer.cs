@@ -44,7 +44,9 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvViajes = new System.Windows.Forms.DataGridView();
+            this.colOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoraEstimadaLlegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoraRealLlegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCompletado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -69,7 +71,7 @@
             this.grpDatos.Controls.Add(this.lblNumeroPlanilla);
             this.grpDatos.Location = new System.Drawing.Point(13, 13);
             this.grpDatos.Name = "grpDatos";
-            this.grpDatos.Size = new System.Drawing.Size(694, 100);
+            this.grpDatos.Size = new System.Drawing.Size(759, 100);
             this.grpDatos.TabIndex = 0;
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos";
@@ -176,19 +178,20 @@
             this.grpViajes.Controls.Add(this.dgvViajes);
             this.grpViajes.Location = new System.Drawing.Point(13, 120);
             this.grpViajes.Name = "grpViajes";
-            this.grpViajes.Size = new System.Drawing.Size(694, 317);
+            this.grpViajes.Size = new System.Drawing.Size(759, 317);
             this.grpViajes.TabIndex = 1;
             this.grpViajes.TabStop = false;
             this.grpViajes.Text = "Viajes";
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(549, 282);
+            this.btnImprimir.Location = new System.Drawing.Point(615, 282);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(138, 23);
             this.btnImprimir.TabIndex = 2;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
             // btnGuardar
             // 
@@ -206,7 +209,9 @@
             this.dgvViajes.AllowUserToDeleteRows = false;
             this.dgvViajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvViajes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colOrigen,
             this.colHoraSalida,
+            this.colDestino,
             this.colHoraEstimadaLlegada,
             this.colHoraRealLlegada,
             this.colCompletado,
@@ -214,11 +219,18 @@
             this.colViaje});
             this.dgvViajes.Location = new System.Drawing.Point(6, 19);
             this.dgvViajes.Name = "dgvViajes";
-            this.dgvViajes.Size = new System.Drawing.Size(681, 257);
+            this.dgvViajes.Size = new System.Drawing.Size(744, 257);
             this.dgvViajes.TabIndex = 0;
             this.dgvViajes.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvViajes_CellEndEdit);
             this.dgvViajes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvViajes_CellEnter);
             this.dgvViajes.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.DgvViajes_EditingControlShowing);
+            // 
+            // colOrigen
+            // 
+            this.colOrigen.DataPropertyName = "Origen";
+            this.colOrigen.HeaderText = "Origen";
+            this.colOrigen.Name = "colOrigen";
+            this.colOrigen.ReadOnly = true;
             // 
             // colHoraSalida
             // 
@@ -226,6 +238,13 @@
             this.colHoraSalida.HeaderText = "Hora de salida";
             this.colHoraSalida.Name = "colHoraSalida";
             this.colHoraSalida.ReadOnly = true;
+            // 
+            // colDestino
+            // 
+            this.colDestino.DataPropertyName = "Destino";
+            this.colDestino.HeaderText = "Destino";
+            this.colDestino.Name = "colDestino";
+            this.colDestino.ReadOnly = true;
             // 
             // colHoraEstimadaLlegada
             // 
@@ -268,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 447);
+            this.ClientSize = new System.Drawing.Size(785, 447);
             this.Controls.Add(this.grpViajes);
             this.Controls.Add(this.grpDatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -300,7 +319,9 @@
         private System.Windows.Forms.DataGridView dgvViajes;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOrigen;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHoraSalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDestino;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHoraEstimadaLlegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHoraRealLlegada;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colCompletado;

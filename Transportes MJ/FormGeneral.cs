@@ -31,23 +31,16 @@ namespace UI
             AsignarLeyenda(this);
         }
 
+        public string ObtenerLeyenda(string Clave)
+        {
+            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Clave);
+            return leyenda != null ? leyenda.Texto : "";
+        }
+
         public virtual void ProcesarControlesConPermisos() { }
         #endregion
 
         #region Métodos protegidos
-        protected string ObtenerLeyenda(string Clave)
-        {
-            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Clave);
-            if (leyenda != null)
-            {
-                return leyenda.Texto;
-            }
-            else
-            {
-                return "";
-            }
-        }
-
         protected bool TienePermiso(string Permiso)
         {
             return Sesion.Instancia().TienePermiso(Permiso);
