@@ -80,7 +80,7 @@ namespace BL
             {
                 if(_viajes == null && Id > 0)
                 {
-                    _viajes = Viaje.ObtenerPorPlanilla(this, false);
+                    _viajes = Viaje.ObtenerPorPlanilla(this);
                 }
                 return _viajes; 
             }
@@ -129,13 +129,7 @@ namespace BL
 
         public static DateTime ObtenerUltimaPlanilla()
         {
-            DateTime ultimaFecha = PlanillaHorariaDAL.ObtenerUltimaPlanilla();
-            if(ultimaFecha == default)
-            {
-                // Si no hay planillas, pongo la fecha de hoy
-                ultimaFecha = DateTime.Today;
-            }
-            return ultimaFecha;
+            return PlanillaHorariaDAL.ObtenerUltimaPlanilla();
         }
 
         public static List<PlanillaHoraria> ObtenerPlanilas(Recorrido recorrido, List<DateTime> fechas)
@@ -151,7 +145,7 @@ namespace BL
 
             foreach(PlanillaHoraria planilla in planillas)
             {
-                planilla.Viajes = Viaje.ObtenerPorPlanilla(planilla, true);
+                planilla.Viajes = Viaje.ObtenerPorPlanilla(planilla);
             }
 
             return planillas;

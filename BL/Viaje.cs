@@ -56,7 +56,7 @@ namespace BL
             set { _completado = value; }
         }
 
-        private CompletitudViaje _completitud;
+        private CompletitudViaje _completitud = CompletitudViaje.Nulo;
 
         public CompletitudViaje Completitud
         {
@@ -122,9 +122,9 @@ namespace BL
             ViajeDAL.RecalcularDVV();
         }
 
-        public static List<Viaje> ObtenerPorPlanilla(PlanillaHoraria planilla, bool soloCompletados)
+        public static List<Viaje> ObtenerPorPlanilla(PlanillaHoraria planilla)
         {
-            return ViajeDAL.ObtenerPorPlanillaHoraria(planilla.Id, soloCompletados).Select(dal => new Viaje
+            return ViajeDAL.ObtenerPorPlanillaHoraria(planilla.Id).Select(dal => new Viaje
             {
                 Completado = dal.Completado,
                 Completitud = (CompletitudViaje)dal.CompletitudId,
@@ -133,8 +133,8 @@ namespace BL
                 HoraRealLlegada = new DateTime(1, 1, 1) + dal.HoraRealLlegada,
                 HoraSalida = new DateTime(1, 1, 1) + dal.HoraSalida,
                 Id = dal.Id,
-                TerminalOrigen = dal.EsIda ? planilla.Recorrido.TerminalInicio : planilla.Recorrido.TerminalFin,
-                TerminalDestino = dal.EsIda ? planilla.Recorrido.TerminalFin : planilla.Recorrido.TerminalInicio
+                TerminalOrigen = dal.EsIda ? planilla.Recorrido?.TerminalInicio : planilla.Recorrido?.TerminalFin,
+                TerminalDestino = dal.EsIda ? planilla.Recorrido?.TerminalFin : planilla.Recorrido?.TerminalInicio
             }).ToList();
         }
     }

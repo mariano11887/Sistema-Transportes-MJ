@@ -101,10 +101,17 @@ namespace UI
         private void RefrescarGeneracionPlanillas()
         {
             DateTime ultimaFecha = PlanillaHoraria.ObtenerUltimaPlanilla();
-            string leyendaUltimaPlanillaInfo = ObtenerLeyenda("lblUltimaPlanillaInfo");
-            if (leyendaUltimaPlanillaInfo.Contains("{0}"))
+            if(ultimaFecha == default)
             {
-                lblUltimaPlanillaInfo.Text = string.Format(leyendaUltimaPlanillaInfo, ultimaFecha.ToString("dd/MM/yyyy"));
+                // TODO: Crear leyenda que diga que no hay datos todavía.
+            }
+            else
+            {
+                string leyendaUltimaPlanillaInfo = ObtenerLeyenda("lblUltimaPlanillaInfo");
+                if (leyendaUltimaPlanillaInfo.Contains("{0}"))
+                {
+                    lblUltimaPlanillaInfo.Text = string.Format(leyendaUltimaPlanillaInfo, ultimaFecha.ToString("dd/MM/yyyy"));
+                }
             }
 
             DateTime proximaFecha = GeneradorDePlanillas.ObtenerProximaFecha(ultimaFecha, out bool puedeGenerarse);

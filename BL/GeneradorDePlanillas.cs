@@ -29,7 +29,14 @@ namespace BL
 
         public static void GenerarProximasPlanillas()
         {
-            DateTime proximaFecha = ObtenerProximaFecha(PlanillaHoraria.ObtenerUltimaPlanilla(), out bool puedeGenerarse);
+            DateTime fechaUltimaPlanilla = PlanillaHoraria.ObtenerUltimaPlanilla();
+            if(fechaUltimaPlanilla == default)
+            {
+                // Si no hay planillas, pongo la fecha de hoy
+                fechaUltimaPlanilla = DateTime.Today;
+            }
+
+            DateTime proximaFecha = ObtenerProximaFecha(fechaUltimaPlanilla, out bool puedeGenerarse);
             if (puedeGenerarse)
             {
                 GeneradorDePlanillas generadorDePlanillas = new GeneradorDePlanillas(proximaFecha);
@@ -131,12 +138,14 @@ namespace BL
                 decimal sumaDeIndices = 0;
                 TimeSpan sumaDuracion = new TimeSpan();
                 int frecuenciaDiaAnterior = -1;
+                int cantidadViajes = 0;
                 for (int dia = 0; dia < diasDeCalculo; dia++)
                 {
                     // Viajes de este intervalo de cada planilla
                     List<Viaje> viajesDeIntervalo = planillasPorDia[dia].Planillas.SelectMany(p => p.Viajes)
                         .Where(v => v.HoraSalida.Hour - v.HoraSalida.Hour % 2 == intervalo).OrderBy(v => v.HoraSalida).ToList();
 
+                    cantidadViajes += viajesDeIntervalo.Count;
                     decimal sumaCompletitud = 0;
                     for (int iViaje = 0; iViaje < viajesDeIntervalo.Count; iViaje++)
                     {
@@ -147,7 +156,7 @@ namespace BL
                         {
                             sumaCompletitud += 0.5M;
                         }
-                        else if (viaje.Completitud == CompletitudViaje.Moderado)
+                        else if (viaje.Completitud == CompletitudViaje.Moderado || viaje.Completitud == CompletitudViaje.Nulo)
                         {
                             sumaCompletitud += 1;
                         }
@@ -157,17 +166,40 @@ namespace BL
                         }
 
                         // Duración del viaje
-                        if(viaje.HoraRealLlegada.Value < viaje.HoraSalida)
+                        if(viaje.HoraRealLlegada.HasValue && viaje.HoraRealLlegada.Value < viaje.HoraSalida)
                         {
                             // Este es el caso cuando llega al día siguiente
                             viaje.HoraRealLlegada = viaje.HoraRealLlegada.Value.AddDays(1);
                         }
-                        sumaDuracion.Add(viaje.HoraRealLlegada.Value - viaje.HoraSalida);
+                        DateTime horaLlegada = viaje.HoraRealLlegada ?? viaje.HoraEstimadaLlegada;
+                        sumaDuracion = sumaDuracion.Add(horaLlegada - viaje.HoraSalida);
 
                         // Frecuencia del día anterior
-                        if (dia == 0 && frecuenciaDiaAnterior < 0 && iViaje < viajesDeIntervalo.Count)
+                        if (dia == 0 && frecuenciaDiaAnterior < 0)
                         {
-                            frecuenciaDiaAnterior = (viajesDeIntervalo[iViaje + 1].HoraSalida - viaje.HoraSalida).Minutes;
+                            DateTime horaProximoViaje = viajesDeIntervalo.Where(v => v.HoraSalida > viaje.HoraSalida)
+                                .OrderBy(v => v.HoraSalida).Select(v => v.HoraSalida).FirstOrDefault();
+                            if(horaProximoViaje != default)
+                            {
+                                frecuenciaDiaAnterior = (int)(horaProximoViaje - viaje.HoraSalida).TotalMinutes;
+                            }
+                            else if (intervalo <= 20)
+                            {
+                                // No hay proximo viaje en este intervalo, busco en el siguiente
+                                horaProximoViaje = planillasPorDia[dia].Planillas.SelectMany(p => p.Viajes)
+                                    .Where(v => v.HoraSalida.Hour - v.HoraSalida.Hour % 2 == (intervalo + 2))
+                                    .OrderBy(v => v.HoraSalida).Select(v => v.HoraSalida).FirstOrDefault();
+                                frecuenciaDiaAnterior = (int)(horaProximoViaje - viaje.HoraSalida).TotalMinutes;
+                            }
+                            else
+                            {
+                                // No hay siguiente intervalo, tomo la frecuencia respecto al anterior.
+                                DateTime horaViajeAnterior = planillasPorDia[dia].Planillas
+                                        .SelectMany(p => p.Viajes)
+                                        .Where(v => v.HoraSalida.Hour - v.HoraSalida.Hour % 2 == (intervalo - 2))
+                                        .OrderBy(v => v.HoraSalida).Select(v => v.HoraSalida).LastOrDefault();
+                                frecuenciaDiaAnterior = (int)(viaje.HoraSalida - horaViajeAnterior).TotalMinutes;
+                            }
                         }
                     }
 
@@ -178,11 +210,14 @@ namespace BL
 
                 int nuevaFrecuencia;
                 TimeSpan nuevaDuracion;
-                if (diasDeCalculo > 0)
+                if (diasDeCalculo > 0 && cantidadViajes > 0)
                 {
-                    decimal multiplicadorDeFrecuencia = sumaDeIndices / diasDeCalculo;
-                    nuevaFrecuencia = (int)Math.Round(frecuenciaDiaAnterior * multiplicadorDeFrecuencia);
-                    nuevaDuracion = new TimeSpan(sumaDuracion.Ticks / diasDeCalculo);
+                    decimal divisorDeFrecuencia = sumaDeIndices / diasDeCalculo;
+                    nuevaFrecuencia = (int)Math.Round(frecuenciaDiaAnterior / divisorDeFrecuencia);
+                    nuevaFrecuencia = Math.Min(nuevaFrecuencia, 60); // No puede haber una frecuencia mayor a 60 minutos
+                    nuevaDuracion = new TimeSpan(sumaDuracion.Ticks / cantidadViajes);
+                    // Redondeo al minuto más cercano
+                    nuevaDuracion = TimeSpan.FromMinutes(Math.Round(nuevaDuracion.TotalMinutes));
                 }
                 else
                 {
