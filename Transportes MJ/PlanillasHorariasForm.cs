@@ -109,6 +109,11 @@ namespace UI
             }
         }
 
+        public override void ProcesarControlesConPermisos()
+        {
+            btnGenerarPlanillas.Visible = TienePermiso(Permisos.PLANILLAS_GENERAR);
+        }
+
         private void RefrescarGeneracionPlanillas()
         {
             DateTime ultimaFecha = PlanillaHoraria.ObtenerUltimaPlanilla();

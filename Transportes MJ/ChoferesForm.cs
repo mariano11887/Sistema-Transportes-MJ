@@ -1,12 +1,8 @@
 ﻿using BL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -234,6 +230,13 @@ namespace UI
                 btnEliminar.Enabled = false;
                 lstResultadoBusqueda.Items.Clear();
             }
+        }
+
+        public override void ProcesarControlesConPermisos()
+        {
+            btnNuevo.Visible = TienePermiso(Permisos.CHOFERES_ALTA);
+            btnEditar.Visible = TienePermiso(Permisos.CHOFERES_MODIFICAR);
+            btnEliminar.Visible = TienePermiso(Permisos.CHOFERES_BAJA);
         }
 
         private void AceptarSoloNumeros(KeyPressEventArgs e)

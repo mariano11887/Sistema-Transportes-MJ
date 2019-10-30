@@ -154,6 +154,13 @@ namespace UI
             BorrarSeccionDetalles();
         }
 
+        public override void ProcesarControlesConPermisos()
+        {
+            btnNuevo.Visible = TienePermiso(Permisos.VEHICULOS_ALTA);
+            btnEditar.Visible = TienePermiso(Permisos.VEHICULOS_MODIFICAR);
+            btnEliminar.Visible = TienePermiso(Permisos.VEHICULOS_BAJA);
+        }
+
         private void ResetearFormulario()
         {
             btnEditar.Enabled = false;

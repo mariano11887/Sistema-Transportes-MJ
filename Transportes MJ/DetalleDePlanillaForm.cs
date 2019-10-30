@@ -15,8 +15,6 @@ namespace UI
         private const string MASCARA_TIEMPO = "HH:mm";
         private readonly Dictionary<CompletitudViaje, string> completitudes = new Dictionary<CompletitudViaje, string>();
 
-        Bitmap memoryImage;
-
         public DetalleDePlanillaForm(PlanillaHoraria planillaHoraria)
         {
             InitializeComponent();
@@ -169,6 +167,12 @@ namespace UI
             {
                 Log.Grabar(ex);
             }
+        }
+
+        public override void ProcesarControlesConPermisos()
+        {
+            btnGuardar.Visible = TienePermiso(Permisos.PLANILLAS_COMPLETAR);
+            btnImprimir.Visible = TienePermiso(Permisos.PLANILLAS_IMPRIMIR);
         }
 
         private bool ValidarGrilla()

@@ -76,6 +76,12 @@ namespace UI
 
             // Opciones
             mniCopiaDeSeguridad.Visible = TienePermiso(Permisos.BACKUP_GESTIONAR);
+
+            // Gestionar
+            mniGestionar.Visible = TienePermiso(Permisos.PLANILLAS_VER) || TienePermiso(Permisos.VEHICULOS_VER) || TienePermiso(Permisos.CHOFERES_VER);
+            mniPlanillasHorarias.Visible = TienePermiso(Permisos.PLANILLAS_VER);
+            mniVehiculos.Visible = TienePermiso(Permisos.VEHICULOS_VER);
+            mniChoferes.Visible = TienePermiso(Permisos.CHOFERES_VER);
         }
 
         public void ChequearAlertasDeInsuficiencia()
