@@ -1,4 +1,5 @@
 ﻿using BL;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,13 +40,23 @@ namespace UI
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.Yes)
             {
-                Cursor = Cursors.WaitCursor;
-                GeneradorDePlanillas.GenerarProximasPlanillas();
-                Cursor = Cursors.Default;
+                try
+                {
+                    Cursor = Cursors.WaitCursor;
+                    GeneradorDePlanillas.GenerarProximasPlanillas();
+                    Cursor = Cursors.Default;
 
-                MessageBox.Show(ObtenerLeyenda("msgGeneracionPlanillasOk"));
+                    MessageBox.Show(ObtenerLeyenda("msgGeneracionPlanillasOk"));
 
-                RefrescarGeneracionPlanillas();
+                    RefrescarGeneracionPlanillas();
+
+                    (MdiParent as MainForm).ChequearAlertasDeInsuficiencia();
+                }
+                catch (Exception ex)
+                {
+                    Log.Grabar(ex);
+                    MessageBox.Show(ObtenerLeyenda("msgErrorAlGenerarPlanillas"), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -103,7 +114,7 @@ namespace UI
             DateTime ultimaFecha = PlanillaHoraria.ObtenerUltimaPlanilla();
             if(ultimaFecha == default)
             {
-                // TODO: Crear leyenda que diga que no hay datos todavía.
+                lblUltimaPlanillaInfo.Text = ObtenerLeyenda("msgNoHayPlanillas");
             }
             else
             {

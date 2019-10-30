@@ -1,4 +1,5 @@
-﻿using Nager.Date;
+﻿using Logger;
+using Nager.Date;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -30,7 +31,7 @@ namespace BL
         public static void GenerarProximasPlanillas()
         {
             DateTime fechaUltimaPlanilla = PlanillaHoraria.ObtenerUltimaPlanilla();
-            if(fechaUltimaPlanilla == default)
+            if (fechaUltimaPlanilla == default)
             {
                 // Si no hay planillas, pongo la fecha de hoy
                 fechaUltimaPlanilla = DateTime.Today;
@@ -67,10 +68,11 @@ namespace BL
                 calculosDeRecorrido.Add(calcRecorrido);
             }
 
-            bool hayVehiculos = ChequearDisponibilidadDeVehiculos();
-            bool hayChoferes = ChequearDisponibilidadDeChoferes();
+            bool hayVehiculos = ChequearDisponibilidadDeVehiculos(out int vehiculosFaltantes);
+            bool hayChoferes = ChequearDisponibilidadDeChoferes(out int choferesFaltantes);
             if(!hayVehiculos || !hayChoferes)
             {
+                GenerarAlertaDeInsuficiencia(vehiculosFaltantes, choferesFaltantes);
                 RecalcularFrecuencias(calculosDeRecorrido);
             }
 
@@ -303,7 +305,7 @@ namespace BL
             }
         }
 
-        private bool ChequearDisponibilidadDeVehiculos()
+        private bool ChequearDisponibilidadDeVehiculos(out int vehiculosFaltantes)
         {
             if (_vehiculos == null)
             {
@@ -313,29 +315,29 @@ namespace BL
             if(_vehiculos.Count < _planillasGeneradas.Count)
             {
                 // No alcanzan los vehículos para cubrir la frecuencia recomendada.
-                // TODO: Generar alerta de insuficiencia de vehículos
-
+                vehiculosFaltantes = _planillasGeneradas.Count - _vehiculos.Count;
                 return false;
             }
 
+            vehiculosFaltantes = 0;
             return true;
         }
 
-        private bool ChequearDisponibilidadDeChoferes()
+        private bool ChequearDisponibilidadDeChoferes(out int choferesFaltantes)
         {
             if (_choferes == null)
             {
                 _choferes = Chofer.ListarTodos().Where(c => c.FechaFinLicencia <= DateTime.Today).ToList();
             }
 
-            if(_choferes.Count <= _planillasGeneradas.Count * 2)
+            if(_choferes.Count < _planillasGeneradas.Count * 2)
             {
                 // No alcanzan los choferes para cubrir las planillas.
-                // TODO: Generar alerta de insuficiencia de choferes
-
+                choferesFaltantes = _planillasGeneradas.Count * 2 - _choferes.Count;
                 return false;
             }
 
+            choferesFaltantes = 0;
             return true;
         }
 
@@ -471,6 +473,17 @@ namespace BL
                     choferesSinAsignar.Remove(chofer);
                 }
             }
+        }
+
+        private void GenerarAlertaDeInsuficiencia(int vehiculosFaltantes, int choferesFaltantes)
+        {
+            AlertaInsuficiencia alerta = new AlertaInsuficiencia
+            {
+                Fecha = DateTime.Now,
+                ChoferesFaltantes = choferesFaltantes,
+                VehiculosFaltantes = vehiculosFaltantes
+            };
+            alerta.Guardar();
         }
     }
 }

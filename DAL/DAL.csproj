@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlertaInsuficienciaDAL.cs" />
     <Compile Include="BackupDAL.cs" />
     <Compile Include="BitacoraDAL.cs" />
     <Compile Include="ChoferDAL.cs" />

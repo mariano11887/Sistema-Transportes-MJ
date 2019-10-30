@@ -30,6 +30,8 @@ namespace UI
                     {
                         MessageBox.Show(ObtenerLeyenda("msgPruebaDVMal"), "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
+
+                    ChequearAlertasDeInsuficiencia();
                 }
                 else
                 {
@@ -74,6 +76,27 @@ namespace UI
 
             // Opciones
             mniCopiaDeSeguridad.Visible = TienePermiso(Permisos.BACKUP_GESTIONAR);
+        }
+
+        public void ChequearAlertasDeInsuficiencia()
+        {
+            if (TienePermiso(Permisos.CHOFERES_ALTA) || TienePermiso(Permisos.VEHICULOS_ALTA) || TienePermiso(Permisos.PLANILLAS_GENERAR))
+            {
+                AlertaInsuficiencia alerta = AlertaInsuficiencia.ChequearAlerta();
+                if (alerta != null)
+                {
+                    string mensajePrincipal = ObtenerLeyenda("msgAlertaInsuficiencia");
+                    string mensajeChoferesFaltantes = ObtenerLeyenda("msgChoferesFaltantes");
+                    string mensajeVehiculosFaltantes = ObtenerLeyenda("msgVehiculosFaltantes");
+                    if (mensajeChoferesFaltantes.Contains("{0}") && mensajeVehiculosFaltantes.Contains("{0}"))
+                    {
+                        string mensaje = mensajePrincipal + Environment.NewLine + Environment.NewLine +
+                            string.Format(mensajeChoferesFaltantes, alerta.ChoferesFaltantes) + Environment.NewLine +
+                            string.Format(mensajeVehiculosFaltantes, alerta.VehiculosFaltantes);
+                        MessageBox.Show(mensaje, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
 
         #region Sistema

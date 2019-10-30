@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlertaInsuficiencia.cs" />
     <Compile Include="Backup.cs" />
     <Compile Include="Bitacora.cs" />
     <Compile Include="CalculoDeRecorrido.cs" />
