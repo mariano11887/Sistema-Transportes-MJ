@@ -146,7 +146,7 @@ namespace UI
 
                     if(row.Cells["colDensidadPasajeros"].Value != null)
                     {
-                        viaje.Completitud = completitudes.First(c => c.Value == row.Cells["colDensidadPasajeros"].Value.ToString()).Key;
+                        viaje.Completitud = completitudes.FirstOrDefault(c => c.Value == row.Cells["colDensidadPasajeros"].Value.ToString()).Key;
                     }
                 }
 

@@ -155,7 +155,7 @@ namespace DAL
                 "completitud_id = @idCompletitud WHERE id = @id";
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@horaRealLlegada", (object)HoraRealLlegada.Value ?? DBNull.Value),
+                new SqlParameter("@horaRealLlegada", HoraRealLlegada.HasValue ? (object)HoraRealLlegada.Value : DBNull.Value),
                 new SqlParameter("@completado", (object)Completado ?? DBNull.Value),
                 new SqlParameter("@idCompletitud", CompletitudId > 0 ? (object)CompletitudId : DBNull.Value),
                 new SqlParameter("@id", Id)
