@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39EEE706-1AD3-4655-B1C5-E64DB68C3654}</ProjectGuid>
+    <ProjectGuid>{EB53B608-CD3F-4960-9C0C-60E0C5097AA0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BL</RootNamespace>
-    <AssemblyName>BL</AssemblyName>
+    <RootNamespace>CustomActionInstalador</RootNamespace>
+    <AssemblyName>CustomActionInstalador</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,14 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Nager.Date, Version=1.25.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Nager.Date.1.25.7\lib\net45\Nager.Date.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Device" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,44 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlertaInsuficiencia.cs" />
-    <Compile Include="Backup.cs" />
-    <Compile Include="Bitacora.cs" />
-    <Compile Include="CalculoDeRecorrido.cs" />
-    <Compile Include="Chofer.cs" />
-    <Compile Include="CompletitudViaje.cs" />
-    <Compile Include="DigitoVerificador.cs" />
-    <Compile Include="Encriptador.cs" />
-    <Compile Include="GeneradorDePlanillas.cs" />
-    <Compile Include="Idioma.cs" />
-    <Compile Include="Leyenda.cs" />
-    <Compile Include="Permiso.cs" />
-    <Compile Include="PermisoCompuesto.cs" />
-    <Compile Include="Permisos.cs" />
-    <Compile Include="PermisoSimple.cs" />
-    <Compile Include="PlanillaHoraria.cs" />
-    <Compile Include="Recorrido.cs" />
-    <Compile Include="Sesion.cs" />
-    <Compile Include="Terminal.cs" />
-    <Compile Include="TipoDeDia.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="InstalacionBd.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsuarioHistorial.cs" />
-    <Compile Include="Vehiculo.cs" />
-    <Compile Include="Viaje.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{A4EBEA06-6FD2-4364-9D65-2E5153029C94}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logger\Logger.csproj">
-      <Project>{d94b13be-6a08-4f10-979f-b59ccbd1b762}</Project>
-      <Name>Logger</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
