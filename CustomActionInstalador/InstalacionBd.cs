@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Configuration.Install;
-using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace CustomActionInstalador
 {
@@ -28,29 +24,45 @@ namespace CustomActionInstalador
             }
 
             string sourceExePath = Path.Combine(targetDirectory, "Transportes MJ.exe");
-            Configuration sourceConfiguration = ConfigurationManager.OpenExeConfiguration(sourceExePath);
+            System.Configuration.Configuration sourceConfiguration = ConfigurationManager.OpenExeConfiguration(sourceExePath);
             if (sourceConfiguration != null)
             {
                 sourceConfiguration.ConnectionStrings.ConnectionStrings["Principal"].ConnectionString =
                     sourceConfiguration.ConnectionStrings.ConnectionStrings["Principal"].ConnectionString.Replace("DESKTOP-FE0C8EN", Context.Parameters["Db"]);
                 sourceConfiguration.ConnectionStrings.ConnectionStrings["Bitacora"].ConnectionString =
                     sourceConfiguration.ConnectionStrings.ConnectionStrings["Bitacora"].ConnectionString.Replace("DESKTOP-FE0C8EN", Context.Parameters["Db"]);
-                //sourceConfiguration.ConnectionStrings.ConnectionStrings["Master"].ConnectionString =
-                //    sourceConfiguration.ConnectionStrings.ConnectionStrings["Master"].ConnectionString.Replace("DESKTOP-FE0C8EN", Context.Parameters["Db"]);
+                sourceConfiguration.ConnectionStrings.ConnectionStrings["Master"].ConnectionString =
+                    sourceConfiguration.ConnectionStrings.ConnectionStrings["Master"].ConnectionString.Replace("DESKTOP-FE0C8EN", Context.Parameters["Db"]);
 
                 sourceConfiguration.Save();
 
-                //string query = File.ReadAllText("transportes_mj.sql");
-                //string connString = sourceConfiguration.ConnectionStrings.ConnectionStrings["Master"].ConnectionString;
+                string script = File.ReadAllText(Path.Combine(targetDirectory, "transportes_mj.sql"));
+                string scriptBitacora = File.ReadAllText(Path.Combine(targetDirectory, "transportes_mj_bitacora.sql"));
+                string connString = sourceConfiguration.ConnectionStrings.ConnectionStrings["Master"].ConnectionString;
 
-                //using (SqlConnection connection = new SqlConnection(connString))
-                //using (SqlCommand command = new SqlCommand(query, connection))
-                //{
-                //    command.CommandType = CommandType.Text;
-                //    command.Connection.Open();
-                //    command.ExecuteNonQuery();
-                //    command.Connection.Close();
-                //}
+                ExecuteScript(script, connString);
+                ExecuteScript(scriptBitacora, connString);
+            }
+        }
+
+        private void ExecuteScript(string script, string connString)
+        {
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                IEnumerable<string> commandStrings = Regex.Split(script, @"^\s*GO\s*$", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+
+                connection.Open();
+                foreach (string commandString in commandStrings)
+                {
+                    if (commandString.Trim() != "")
+                    {
+                        using (SqlCommand command = new SqlCommand(commandString, connection))
+                        {
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                connection.Close();
             }
         }
     }
