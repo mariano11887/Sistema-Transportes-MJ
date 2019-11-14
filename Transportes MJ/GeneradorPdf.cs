@@ -5,9 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -51,10 +48,10 @@ namespace UI
             };
         }
 
-        public void Generar()
+        public void Generar(string fileName)
         {
             PrepararDatos();
-            GuardarPdf();
+            GuardarPdf(fileName);
         }
 
         private void PrepararDatos()
@@ -75,7 +72,7 @@ namespace UI
             }
         }
 
-        private void GuardarPdf()
+        private void GuardarPdf(string fileName)
         {
             Bitmap pg = new Bitmap((int)PageSize.A4.Height, (int)PageSize.A4.Width);
             Graphics gr = Graphics.FromImage(pg);
@@ -172,20 +169,12 @@ namespace UI
                 margenSuperior += alturaCelda;
             }
 
-
-
-            //System.Drawing.Image image = System.Drawing.Image.FromFile("C:\\TransportesMJ\\foto.jpg");
             Document doc = new Document(PageSize.A4.Rotate());
-            PdfWriter.GetInstance(doc, new FileStream("C:\\TransportesMJ\\ejemplo.pdf", FileMode.Create));
+            PdfWriter.GetInstance(doc, new FileStream(fileName, FileMode.Create));
             doc.Open();
             iTextSharp.text.Image pdfImage = iTextSharp.text.Image.GetInstance(pg, BaseColor.WHITE);
-            //iTextSharp.text.Image pdfImage = iTextSharp.text.Image.GetInstance(image, BaseColor.WHITE);
             doc.Add(pdfImage);
             doc.Close();
-
-
-            // https://stackoverflow.com/questions/12882363/how-to-convert-graphics-into-image-or-bitmap
-            // https://stackoverflow.com/questions/17145837/c-sharp-save-bitmap-as-pdf-with-itextsharp
         }
     }
 }

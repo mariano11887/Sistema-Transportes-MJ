@@ -23,14 +23,14 @@ namespace UI
             Abrir();
         }
 
-        private void btnCrearBackup_Click(object sender, EventArgs e)
+        private void BtnCrearBackup_Click(object sender, EventArgs e)
         {
             sfdCrearBackup.ShowDialog();
             string filePath = sfdCrearBackup.FileName;
             if (string.IsNullOrWhiteSpace(filePath))
             {
-                MessageBox.Show(ObtenerLeyenda("msgUbicacionVaciaCrear"), ObtenerLeyenda("msgUbicacionVaciaCrearTitulo"),
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(ObtenerLeyenda("msgUbicacionVaciaCrear"), ObtenerLeyenda("msgUbicacionVaciaCrearTitulo"),
+                //    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (DigitoVerificador.ChequearDVs())
             {

@@ -169,11 +169,20 @@ namespace UI
             }
         }
 
-        private void btnExportarPdf_Click(object sender, EventArgs e)
+        private void BtnExportarPdf_Click(object sender, EventArgs e)
         {
-            GeneradorPdf generadorPdf = new GeneradorPdf(planillaHoraria, dgvViajes, this);
-            generadorPdf.Generar();
-            MessageBox.Show("Listo");
+            try
+            {
+                sfdExportarPDF.ShowDialog();
+                GeneradorPdf generadorPdf = new GeneradorPdf(planillaHoraria, dgvViajes, this);
+                generadorPdf.Generar(sfdExportarPDF.FileName);
+                MessageBox.Show(ObtenerLeyenda("msgPdfExportadoBien"), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception ex)
+            {
+                Log.Grabar(ex);
+                MessageBox.Show(ObtenerLeyenda("msgErrorExportacionPdf"), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public override void ProcesarControlesConPermisos()

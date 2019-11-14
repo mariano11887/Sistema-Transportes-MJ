@@ -41,6 +41,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblNumeroPlanilla = new System.Windows.Forms.Label();
             this.grpViajes = new System.Windows.Forms.GroupBox();
+            this.btnExportarPdf = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvViajes = new System.Windows.Forms.DataGridView();
@@ -52,7 +53,7 @@
             this.colCompletado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colDensidadPasajeros = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colViaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnExportarPdf = new System.Windows.Forms.Button();
+            this.sfdExportarPDF = new System.Windows.Forms.SaveFileDialog();
             this.grpDatos.SuspendLayout();
             this.grpViajes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViajes)).BeginInit();
@@ -185,6 +186,16 @@
             this.grpViajes.TabStop = false;
             this.grpViajes.Text = "Viajes";
             // 
+            // btnExportarPdf
+            // 
+            this.btnExportarPdf.Location = new System.Drawing.Point(472, 282);
+            this.btnExportarPdf.Name = "btnExportarPdf";
+            this.btnExportarPdf.Size = new System.Drawing.Size(137, 23);
+            this.btnExportarPdf.TabIndex = 3;
+            this.btnExportarPdf.Text = "Exportar a PDF";
+            this.btnExportarPdf.UseVisualStyleBackColor = true;
+            this.btnExportarPdf.Click += new System.EventHandler(this.BtnExportarPdf_Click);
+            // 
             // btnImprimir
             // 
             this.btnImprimir.Location = new System.Drawing.Point(615, 282);
@@ -285,15 +296,10 @@
             this.colViaje.Name = "colViaje";
             this.colViaje.Visible = false;
             // 
-            // btnExportarPdf
+            // sfdExportarPDF
             // 
-            this.btnExportarPdf.Location = new System.Drawing.Point(522, 281);
-            this.btnExportarPdf.Name = "btnExportarPdf";
-            this.btnExportarPdf.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarPdf.TabIndex = 3;
-            this.btnExportarPdf.Text = "button1";
-            this.btnExportarPdf.UseVisualStyleBackColor = true;
-            this.btnExportarPdf.Click += new System.EventHandler(this.btnExportarPdf_Click);
+            this.sfdExportarPDF.DefaultExt = "pdf";
+            this.sfdExportarPDF.Filter = "PDF Files (*.pdf)|*.pdf";
             // 
             // DetalleDePlanillaForm
             // 
@@ -340,5 +346,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn colDensidadPasajeros;
         private System.Windows.Forms.DataGridViewTextBoxColumn colViaje;
         private System.Windows.Forms.Button btnExportarPdf;
+        private System.Windows.Forms.SaveFileDialog sfdExportarPDF;
     }
 }

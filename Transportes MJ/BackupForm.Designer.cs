@@ -60,7 +60,7 @@
             this.btnCrearBackup.TabIndex = 3;
             this.btnCrearBackup.Text = "Crear copia de seguridad";
             this.btnCrearBackup.UseVisualStyleBackColor = true;
-            this.btnCrearBackup.Click += new System.EventHandler(this.btnCrearBackup_Click);
+            this.btnCrearBackup.Click += new System.EventHandler(this.BtnCrearBackup_Click);
             // 
             // grpRestaurarBackup
             // 
@@ -116,6 +116,7 @@
             // sfdCrearBackup
             // 
             this.sfdCrearBackup.DefaultExt = "bak";
+            this.sfdCrearBackup.Filter = "Backup Files (*.bak)|*.bak";
             // 
             // ofdRestaurarBackup
             // 
