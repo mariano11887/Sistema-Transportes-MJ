@@ -169,6 +169,13 @@ namespace UI
             }
         }
 
+        private void btnExportarPdf_Click(object sender, EventArgs e)
+        {
+            GeneradorPdf generadorPdf = new GeneradorPdf(planillaHoraria, dgvViajes, this);
+            generadorPdf.Generar();
+            MessageBox.Show("Listo");
+        }
+
         public override void ProcesarControlesConPermisos()
         {
             btnGuardar.Visible = TienePermiso(Permisos.PLANILLAS_COMPLETAR);

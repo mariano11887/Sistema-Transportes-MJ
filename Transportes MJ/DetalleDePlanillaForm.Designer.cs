@@ -52,6 +52,7 @@
             this.colCompletado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colDensidadPasajeros = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colViaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExportarPdf = new System.Windows.Forms.Button();
             this.grpDatos.SuspendLayout();
             this.grpViajes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViajes)).BeginInit();
@@ -173,6 +174,7 @@
             // 
             // grpViajes
             // 
+            this.grpViajes.Controls.Add(this.btnExportarPdf);
             this.grpViajes.Controls.Add(this.btnImprimir);
             this.grpViajes.Controls.Add(this.btnGuardar);
             this.grpViajes.Controls.Add(this.dgvViajes);
@@ -283,6 +285,16 @@
             this.colViaje.Name = "colViaje";
             this.colViaje.Visible = false;
             // 
+            // btnExportarPdf
+            // 
+            this.btnExportarPdf.Location = new System.Drawing.Point(522, 281);
+            this.btnExportarPdf.Name = "btnExportarPdf";
+            this.btnExportarPdf.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarPdf.TabIndex = 3;
+            this.btnExportarPdf.Text = "button1";
+            this.btnExportarPdf.UseVisualStyleBackColor = true;
+            this.btnExportarPdf.Click += new System.EventHandler(this.btnExportarPdf_Click);
+            // 
             // DetalleDePlanillaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,5 +339,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colCompletado;
         private System.Windows.Forms.DataGridViewComboBoxColumn colDensidadPasajeros;
         private System.Windows.Forms.DataGridViewTextBoxColumn colViaje;
+        private System.Windows.Forms.Button btnExportarPdf;
     }
 }
