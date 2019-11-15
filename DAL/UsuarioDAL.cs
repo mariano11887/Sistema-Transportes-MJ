@@ -167,7 +167,7 @@ namespace DAL
                 string query = sb.ToString();
                 SqlParameter[] paramsArray = parameters.ToArray();
                 DataTable table = SqlHelper.Obtener(query, paramsArray);
-                if (table.Rows.Count > 0)
+                if (table != null && table.Rows.Count > 0)
                 {
                     _usuarioId = int.Parse(table.Rows[0]["id"].ToString());
                     _nombre = table.Rows[0]["nombre"].ToString();
