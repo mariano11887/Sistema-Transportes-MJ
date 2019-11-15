@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Microsoft.Win32;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -23,16 +25,18 @@ namespace CustomActionInstalador
                 return;
             }
 
+            string sqlServerInstance = GetSqlServerInstance();
+
             string sourceExePath = Path.Combine(targetDirectory, "Transportes MJ.exe");
-            System.Configuration.Configuration sourceConfiguration = ConfigurationManager.OpenExeConfiguration(sourceExePath);
+            Configuration sourceConfiguration = ConfigurationManager.OpenExeConfiguration(sourceExePath);
             if (sourceConfiguration != null)
             {
                 sourceConfiguration.ConnectionStrings.ConnectionStrings["Principal"].ConnectionString =
-                    sourceConfiguration.ConnectionStrings.ConnectionStrings["Principal"].ConnectionString.Replace("DESKTOP-FE0C8EN", Context.Parameters["Db"]);
+                    sourceConfiguration.ConnectionStrings.ConnectionStrings["Principal"].ConnectionString.Replace("DESKTOP-FE0C8EN", sqlServerInstance);
                 sourceConfiguration.ConnectionStrings.ConnectionStrings["Bitacora"].ConnectionString =
-                    sourceConfiguration.ConnectionStrings.ConnectionStrings["Bitacora"].ConnectionString.Replace("DESKTOP-FE0C8EN", Context.Parameters["Db"]);
+                    sourceConfiguration.ConnectionStrings.ConnectionStrings["Bitacora"].ConnectionString.Replace("DESKTOP-FE0C8EN", sqlServerInstance);
                 sourceConfiguration.ConnectionStrings.ConnectionStrings["Master"].ConnectionString =
-                    sourceConfiguration.ConnectionStrings.ConnectionStrings["Master"].ConnectionString.Replace("DESKTOP-FE0C8EN", Context.Parameters["Db"]);
+                    sourceConfiguration.ConnectionStrings.ConnectionStrings["Master"].ConnectionString.Replace("DESKTOP-FE0C8EN", sqlServerInstance);
 
                 sourceConfiguration.Save();
 
@@ -43,6 +47,47 @@ namespace CustomActionInstalador
                 ExecuteScript(script, connString);
                 ExecuteScript(scriptBitacora, connString);
             }
+        }
+
+        private string GetSqlServerInstance()
+        {
+            string serverName = Environment.MachineName;
+            RegistryView registryView = Environment.Is64BitOperatingSystem ? RegistryView.Registry64 : RegistryView.Registry32;
+            using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, registryView))
+            {
+                RegistryKey instanceKey = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL", false);
+                if (instanceKey != null)
+                {
+                    string sqlServer2014InstanceName = "";
+                    string sqlServerNot2014InstanceName = "";
+                    foreach (string name in instanceKey.GetValueNames())
+                    {
+                        if ((instanceKey.GetValue(name) as string).Contains("MSSQL12."))
+                        {
+                            sqlServer2014InstanceName = name;
+                            break;
+                        }
+                        else if(sqlServerNot2014InstanceName == "")
+                        {
+                            sqlServerNot2014InstanceName = name;
+                        }
+                    }
+
+                    string instanceName = sqlServer2014InstanceName != "" ? sqlServer2014InstanceName : sqlServerNot2014InstanceName;
+                    if (instanceName == "MSSQLSERVER")
+                    {
+                        // Instancia por defecto, se pone solamente el ServerName
+                        return serverName;
+                    }
+                    else
+                    {
+                        return serverName + "\\" + instanceName;
+                    }
+                }
+            }
+
+            return "";
+            //return ".\\SQL_UAI";
         }
 
         private void ExecuteScript(string script, string connString)
