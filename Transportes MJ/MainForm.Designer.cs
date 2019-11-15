@@ -173,21 +173,21 @@
             // mniPlanillasHorarias
             // 
             this.mniPlanillasHorarias.Name = "mniPlanillasHorarias";
-            this.mniPlanillasHorarias.Size = new System.Drawing.Size(180, 22);
+            this.mniPlanillasHorarias.Size = new System.Drawing.Size(162, 22);
             this.mniPlanillasHorarias.Text = "Planillas horarias";
             this.mniPlanillasHorarias.Click += new System.EventHandler(this.MniPlanillasHorarias_Click);
             // 
             // mniVehiculos
             // 
             this.mniVehiculos.Name = "mniVehiculos";
-            this.mniVehiculos.Size = new System.Drawing.Size(180, 22);
+            this.mniVehiculos.Size = new System.Drawing.Size(162, 22);
             this.mniVehiculos.Text = "Vehículos";
             this.mniVehiculos.Click += new System.EventHandler(this.MniVehiculos_Click);
             // 
             // mniChoferes
             // 
             this.mniChoferes.Name = "mniChoferes";
-            this.mniChoferes.Size = new System.Drawing.Size(180, 22);
+            this.mniChoferes.Size = new System.Drawing.Size(162, 22);
             this.mniChoferes.Text = "Choferes";
             this.mniChoferes.Click += new System.EventHandler(this.MniChoferes_Click);
             // 
@@ -205,19 +205,19 @@
             // mniAcercaDe
             // 
             this.mniAcercaDe.Name = "mniAcercaDe";
-            this.mniAcercaDe.Size = new System.Drawing.Size(180, 22);
+            this.mniAcercaDe.Size = new System.Drawing.Size(152, 22);
             this.mniAcercaDe.Text = "Acerca de...";
             // 
             // mniAyudaEnLinea
             // 
             this.mniAyudaEnLinea.Name = "mniAyudaEnLinea";
-            this.mniAyudaEnLinea.Size = new System.Drawing.Size(180, 22);
+            this.mniAyudaEnLinea.Size = new System.Drawing.Size(152, 22);
             this.mniAyudaEnLinea.Text = "Ayuda en línea";
             // 
             // mniFicheroLeame
             // 
             this.mniFicheroLeame.Name = "mniFicheroLeame";
-            this.mniFicheroLeame.Size = new System.Drawing.Size(180, 22);
+            this.mniFicheroLeame.Size = new System.Drawing.Size(152, 22);
             this.mniFicheroLeame.Text = "Fichero léame";
             // 
             // MainForm
@@ -228,12 +228,14 @@
             this.Controls.Add(this.mnuPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.mnuPrincipal;
             this.Name = "MainForm";
             this.Text = "Transportes MJ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.mnuPrincipal.ResumeLayout(false);
             this.mnuPrincipal.PerformLayout();
             this.ResumeLayout(false);

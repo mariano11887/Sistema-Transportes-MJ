@@ -214,7 +214,13 @@ namespace UI
         #endregion
 
         #region Ayuda
-
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                System.Diagnostics.Process.Start(Application.StartupPath + @"\Ayuda.chm");
+            }
+        }
         #endregion
     }
 }
