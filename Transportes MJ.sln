@@ -15,6 +15,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador", "Instalador\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomActionInstalador", "CustomActionInstalador\CustomActionInstalador.csproj", "{EB53B608-CD3F-4960-9C0C-60E0C5097AA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{75694D51-6D9C-4715-BF62-F30CD68585F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{EB53B608-CD3F-4960-9C0C-60E0C5097AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB53B608-CD3F-4960-9C0C-60E0C5097AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB53B608-CD3F-4960-9C0C-60E0C5097AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75694D51-6D9C-4715-BF62-F30CD68585F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75694D51-6D9C-4715-BF62-F30CD68585F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75694D51-6D9C-4715-BF62-F30CD68585F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75694D51-6D9C-4715-BF62-F30CD68585F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
