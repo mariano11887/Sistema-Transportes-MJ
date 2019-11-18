@@ -447,7 +447,7 @@ namespace BL
             }
         }
 
-        public void AsignarChoferes()
+        private void AsignarChoferes()
         {
             List<Chofer> choferesSinAsignar = _choferes.ToList();
 
