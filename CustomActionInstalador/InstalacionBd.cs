@@ -56,6 +56,11 @@ namespace CustomActionInstalador
             using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, registryView))
             {
                 RegistryKey instanceKey = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL", false);
+                if (instanceKey == null)
+                {
+                    instanceKey = hklm.OpenSubKey(@"SOFTWARE\Wow6432Node\Microsoft\Microsoft SQL Server\Instance Names\SQL", false);
+                }
+
                 if (instanceKey != null)
                 {
                     string sqlServer2014InstanceName = "";
