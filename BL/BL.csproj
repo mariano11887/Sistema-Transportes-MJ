@@ -74,6 +74,10 @@
     <Compile Include="Viaje.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{40516559-A862-42F3-ACDC-7C16A281DCB6}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{A4EBEA06-6FD2-4364-9D65-2E5153029C94}</Project>
       <Name>DAL</Name>

@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using Logger;
 using System;
 using System.Windows.Forms;
@@ -88,7 +89,7 @@ namespace UI
         {
             if (TienePermiso(Permisos.CHOFERES_ALTA) || TienePermiso(Permisos.VEHICULOS_ALTA) || TienePermiso(Permisos.PLANILLAS_GENERAR))
             {
-                AlertaInsuficiencia alerta = AlertaInsuficiencia.ChequearAlerta();
+                AlertaInsuficienciaBE alerta = AlertaInsuficiencia.ChequearAlerta();
                 if (alerta != null)
                 {
                     string mensajePrincipal = ObtenerLeyenda("msgAlertaInsuficiencia");

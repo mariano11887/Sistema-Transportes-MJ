@@ -1,4 +1,5 @@
-﻿using Logger;
+﻿using BE;
+using Logger;
 using Nager.Date;
 using System;
 using System.Collections.Generic;
@@ -477,13 +478,13 @@ namespace BL
 
         private void GenerarAlertaDeInsuficiencia(int vehiculosFaltantes, int choferesFaltantes)
         {
-            AlertaInsuficiencia alerta = new AlertaInsuficiencia
+            AlertaInsuficienciaBE alerta = new AlertaInsuficienciaBE
             {
                 Fecha = DateTime.Now,
                 ChoferesFaltantes = choferesFaltantes,
                 VehiculosFaltantes = vehiculosFaltantes
             };
-            alerta.Guardar();
+            AlertaInsuficiencia.Guardar(alerta);
         }
     }
 }

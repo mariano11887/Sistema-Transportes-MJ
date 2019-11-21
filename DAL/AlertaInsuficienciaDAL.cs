@@ -1,76 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BE;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
     public class AlertaInsuficienciaDAL
     {
-        #region Propiedades
-        private int _id;
-
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        private DateTime _fecha;
-
-        public DateTime Fecha
-        {
-            get { return _fecha; }
-            set { _fecha = value; }
-        }
-
-        private int _choferesFaltantes;
-
-        public int ChoferesFaltantes
-        {
-            get { return _choferesFaltantes; }
-            set { _choferesFaltantes = value; }
-        }
-
-        private int _vehiculosFaltantes;
-
-        public int VehiculosFaltanes
-        {
-            get { return _vehiculosFaltantes; }
-            set { _vehiculosFaltantes = value; }
-        }
-        #endregion
-
-        public void Guardar()
+        public static void Guardar(AlertaInsuficienciaBE alertaInsuficiencia)
         {
             string query = "INSERT INTO alerta_insuficiencia (fecha, choferes_faltantes, coches_faltantes) " +
                 "OUTPUT INSERTED.id VALUES (@fecha, @choferesFaltantes, @cochesFaltantes)";
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@fecha", Fecha),
-                new SqlParameter("@choferesFaltantes", ChoferesFaltantes),
-                new SqlParameter("@cochesFaltantes", VehiculosFaltanes)
+                new SqlParameter("@fecha", alertaInsuficiencia.Fecha),
+                new SqlParameter("@choferesFaltantes", alertaInsuficiencia.ChoferesFaltantes),
+                new SqlParameter("@cochesFaltantes", alertaInsuficiencia.VehiculosFaltantes)
             };
 
-            Id = SqlHelper.Insertar(query, parameters);
+            alertaInsuficiencia.Id = SqlHelper.Insertar(query, parameters);
         }
 
-        public void MarcarLeida(int idUsuario)
+        public static void MarcarLeida(AlertaInsuficienciaBE alertaInsuficiencia, int idUsuario)
         {
             string query = "INSERT INTO alerta_usuario (alerta_id, usuario_id) VALUES (@idAlerta, @idUsuario)";
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@idAlerta", Id),
+                new SqlParameter("@idAlerta", alertaInsuficiencia.Id),
                 new SqlParameter("@idUsuario", idUsuario)
             };
 
             SqlHelper.Ejecutar(query, parameters);
         }
 
-        public static AlertaInsuficienciaDAL ObtenerPorUsuario(int idUsuario)
+        public static AlertaInsuficienciaBE ObtenerPorUsuario(int idUsuario)
         {
             string query = "SELECT a2.* FROM (SELECT TOP 1 a.id, a.fecha, a.choferes_faltantes, a.coches_faltantes " +
                 "FROM alerta_insuficiencia a " +
@@ -83,12 +47,12 @@ namespace DAL
             DataTable table = SqlHelper.Obtener(query, parameters);
             if(table.Rows.Count > 0)
             {
-                return table.Select().Select(r => new AlertaInsuficienciaDAL
+                return table.Select().Select(r => new AlertaInsuficienciaBE
                 {
                     Id = int.Parse(r["id"].ToString()),
                     Fecha = DateTime.Parse(r["fecha"].ToString()),
                     ChoferesFaltantes = int.Parse(r["choferes_faltantes"].ToString()),
-                    VehiculosFaltanes = int.Parse(r["coches_faltantes"].ToString())
+                    VehiculosFaltantes = int.Parse(r["coches_faltantes"].ToString())
                 }).FirstOrDefault();
             }
             else

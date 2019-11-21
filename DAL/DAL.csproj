@@ -78,6 +78,10 @@
     <Compile Include="ViajeDAL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{40516559-A862-42F3-ACDC-7C16A281DCB6}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logger\Logger.csproj">
       <Project>{d94b13be-6a08-4f10-979f-b59ccbd1b762}</Project>
       <Name>Logger</Name>
