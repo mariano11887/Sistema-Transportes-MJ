@@ -1,16 +1,14 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
     class CalculoDeRecorrido
     {
-        private Recorrido _recorrido;
+        private RecorridoBE _recorrido;
 
-        public Recorrido Recorrido
+        public RecorridoBE Recorrido
         {
             get { return _recorrido; }
             set { _recorrido = value; }

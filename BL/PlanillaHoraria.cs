@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,122 +8,32 @@ namespace BL
 {
     public class PlanillaHoraria
     {
-        #region Propiedades
-        private int _id;
-
-        public int Id
+        public static void GuardarViajes(PlanillaHorariaBE planillaHoraria)
         {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        private int _choferId;
-        private Chofer _chofer;
-
-        public Chofer Chofer
-        {
-            get
+            foreach (ViajeBE viaje in planillaHoraria.Viajes)
             {
-                if(_chofer == null && _choferId > 0)
-                {
-                    _chofer = Chofer.Obtener(_choferId);
-                }
-                return _chofer;
-            }
-            set { _chofer = value; }
-        }
-
-        private int _vehiculoId;
-        private Vehiculo _vehiculo;
-
-        public Vehiculo Vehiculo
-        {
-            get
-            {
-                if(_vehiculo == null && _vehiculoId > 0)
-                {
-                    _vehiculo = Vehiculo.Buscar(_vehiculoId);
-                }
-                return _vehiculo;
-            }
-            set { _vehiculo = value; }
-        }
-
-        private int _recorridoId;
-        private Recorrido _recorrido;
-
-        public Recorrido Recorrido
-        {
-            get 
-            {
-                if(_recorrido == null && _recorridoId > 0)
-                {
-                    _recorrido = Recorrido.Obtener(_recorridoId);
-                }
-                return _recorrido; 
-            }
-            set { _recorrido = value; }
-        }
-
-        private DateTime _fecha;
-
-        public DateTime Fecha
-        {
-            get { return _fecha; }
-            set { _fecha = value; }
-        }
-
-        private List<Viaje> _viajes;
-
-        public List<Viaje> Viajes
-        {
-            get 
-            {
-                if(_viajes == null && Id > 0)
-                {
-                    _viajes = Viaje.ObtenerPorPlanilla(this);
-                }
-                return _viajes; 
-            }
-            set { _viajes = value; }
-        }
-
-        #endregion
-
-        public void GuardarViajes()
-        {
-            foreach (Viaje viaje in Viajes)
-            {
-                viaje.Guardar(this);
+                Viaje.Guardar(viaje, planillaHoraria);
             }
             
             Viaje.RecalcularDVV();
 
-            Bitacora.Loguear("Se actualizaron los viajes de la planilla N° " + Id);
+            Bitacora.Loguear("Se actualizaron los viajes de la planilla N° " + planillaHoraria.Id);
         }
 
-        private void Guardar()
+        private static void Guardar(PlanillaHorariaBE planillaHoraria)
         {
-            PlanillaHorariaDAL planillaHorariaDAL = new PlanillaHorariaDAL
-            {
-                ChoferId = Chofer.Id,
-                CocheId = Vehiculo.Id,
-                Fecha = Fecha,
-                RecorridoId = Recorrido.Id
-            };
-            planillaHorariaDAL.Guardar();
-            Id = planillaHorariaDAL.Id;
+            PlanillaHorariaDAL.Guardar(planillaHoraria);
 
             // Guardo todos los viajes
-            foreach(Viaje viaje in Viajes)
+            foreach(ViajeBE viaje in planillaHoraria.Viajes)
             {
-                viaje.Guardar(this);
+                Viaje.Guardar(viaje, planillaHoraria);
             }
         }
 
-        public static void GuardarMultiples(List<PlanillaHoraria> planillas)
+        public static void GuardarMultiples(List<PlanillaHorariaBE> planillas)
         {
-            planillas.ForEach(p => p.Guardar());
+            planillas.ForEach(p => Guardar(p));
             PlanillaHorariaDAL.RecalcularDVV();
             Viaje.RecalcularDVV();
         }
@@ -132,18 +43,11 @@ namespace BL
             return PlanillaHorariaDAL.ObtenerUltimaPlanilla();
         }
 
-        public static List<PlanillaHoraria> ObtenerPlanilas(Recorrido recorrido, List<DateTime> fechas)
+        public static List<PlanillaHorariaBE> ObtenerPlanilas(RecorridoBE recorrido, List<DateTime> fechas)
         {
-            List<PlanillaHoraria> planillas = PlanillaHorariaDAL.ObtenerPorRecorridoYFechas(recorrido.Id, fechas)
-                .Select(dal => new PlanillaHoraria
-            {
-                _choferId = dal.ChoferId,
-                Fecha = dal.Fecha,
-                Id = dal.Id,
-                _vehiculoId = dal.CocheId
-            }).ToList();
+            List<PlanillaHorariaBE> planillas = PlanillaHorariaDAL.ObtenerPorRecorridoYFechas(recorrido.Id, fechas);
 
-            foreach(PlanillaHoraria planilla in planillas)
+            foreach(PlanillaHorariaBE planilla in planillas)
             {
                 planilla.Viajes = Viaje.ObtenerPorPlanilla(planilla);
             }
@@ -151,16 +55,16 @@ namespace BL
             return planillas;
         }
 
-        public static List<PlanillaHoraria> Buscar(int numeroPlanilla, DateTime? fecha, Chofer chofer, Vehiculo vehiculo, Recorrido recorrido)
+        public static List<PlanillaHorariaBE> Buscar(int numeroPlanilla, DateTime? fecha, ChoferBE chofer, VehiculoBE vehiculo, RecorridoBE recorrido)
         {
-            return PlanillaHorariaDAL.Buscar(numeroPlanilla, fecha, chofer.Id, vehiculo.Id, recorrido.Id).Select(dal => new PlanillaHoraria
+            List<PlanillaHorariaBE> planillas = PlanillaHorariaDAL.Buscar(numeroPlanilla, fecha, chofer.Id, vehiculo.Id, recorrido.Id);
+
+            foreach (PlanillaHorariaBE planilla in planillas)
             {
-                _choferId = dal.ChoferId,
-                Fecha = dal.Fecha,
-                Id = dal.Id,
-                _recorridoId = dal.RecorridoId,
-                _vehiculoId = dal.CocheId
-            }).ToList();
+                planilla.Viajes = Viaje.ObtenerPorPlanilla(planilla);
+            }
+
+            return planillas;
         }
     }
 }

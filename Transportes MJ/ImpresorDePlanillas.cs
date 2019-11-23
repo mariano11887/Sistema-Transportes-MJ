@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -20,7 +21,7 @@ namespace UI
         private readonly List<int> anchosColumnas = new List<int>(); // Usado para guardar los anchos de las columnas
         int anchoTotal; // Para calcular el ancho total de la grilla
 
-        public ImpresorDePlanillas(PlanillaHoraria planillaHoraria, DataGridView dataGridView, FormGeneral formGeneral)
+        public ImpresorDePlanillas(PlanillaHorariaBE planillaHoraria, DataGridView dataGridView, FormGeneral formGeneral)
         {
             this.dataGridView = dataGridView;
             this.formGeneral = formGeneral;

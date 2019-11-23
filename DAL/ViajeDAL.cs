@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,78 +9,6 @@ namespace DAL
 {
     public class ViajeDAL : IDigitoVerificable
     {
-        #region Propiedades
-        private int _id;
-
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        private int _planillaHorariaId;
-
-        public int PlanillaHorariaId
-        {
-            get { return _planillaHorariaId; }
-            set { _planillaHorariaId = value; }
-        }
-
-        private bool _esIda;
-
-        public bool EsIda
-        {
-            get { return _esIda; }
-            set { _esIda = value; }
-        }
-        
-        private TimeSpan _horaSalida;
-
-        public TimeSpan HoraSalida
-        {
-            get { return _horaSalida; }
-            set { _horaSalida = value; }
-        }
-        private TimeSpan _horaEstimadaLlegada;
-
-        public TimeSpan HoraEstimadaLlegada
-        {
-            get { return _horaEstimadaLlegada; }
-            set { _horaEstimadaLlegada = value; }
-        }
-
-        private TimeSpan? _horaRealLlegada;
-
-        public TimeSpan? HoraRealLlegada
-        {
-            get { return _horaRealLlegada; }
-            set { _horaRealLlegada = value; }
-        }
-
-        private bool? _completado;
-
-        public bool? Completado
-        {
-            get { return _completado; }
-            set { _completado = value; }
-        }
-
-        private int _completitudId;
-
-        public int CompletitudId
-        {
-            get { return _completitudId; }
-            set { _completitudId = value; }
-        }
-
-        private int _dvh;
-
-        public int DVH
-        {
-            get { return _dvh; }
-        }
-        #endregion
-
         public string ObtenerNombreTabla()
         {
             return "viaje";
@@ -91,74 +20,70 @@ namespace DAL
                 "completado, completitud_id, dvh FROM viaje";
             DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
 
-            List<ViajeDAL> viajes = table.Select().Select(r => new ViajeDAL
+            return table.Select().Select(r => new RegistroParaDV
             {
-                Completado = r.IsNull("completado") ? (bool?)null : bool.Parse(r["completado"].ToString()),
-                CompletitudId = r.IsNull("completitud_id") ? 0 : int.Parse(r["completitud_id"].ToString()),
-                _dvh = int.Parse(r["dvh"].ToString()),
-                EsIda = bool.Parse(r["es_ida"].ToString()),
-                HoraEstimadaLlegada = TimeSpan.Parse(r["hora_estimada_llegada"].ToString()),
-                HoraRealLlegada = r.IsNull("hora_real_llegada") ? (TimeSpan?)null : TimeSpan.Parse(r["hora_real_llegada"].ToString()),
-                HoraSalida = TimeSpan.Parse(r["hora_salida"].ToString()),
-                Id = int.Parse(r["id"].ToString()),
-                PlanillaHorariaId = int.Parse(r["planilla_horaria_id"].ToString())
-            }).ToList();
-
-            return viajes.Select(v => new RegistroParaDV
-            {
-                Registro = v.ObtenerRegistroDVH(),
-                DVH = v._dvh
+                DVH = int.Parse(r["dvh"].ToString()),
+                Registro = ObtenerRegistroDVH(new ViajeBE
+                {
+                    Completado = r.IsNull("completado") ? (bool?)null : bool.Parse(r["completado"].ToString()),
+                    Completitud = (CompletitudViaje)(r.IsNull("completitud_id") ? 0 : int.Parse(r["completitud_id"].ToString())),
+                    EsIda = bool.Parse(r["es_ida"].ToString()),
+                    HoraEstimadaLlegada = new DateTime() + TimeSpan.Parse(r["hora_estimada_llegada"].ToString()),
+                    HoraRealLlegada = r.IsNull("hora_real_llegada") ? (DateTime?)null : new DateTime() + TimeSpan.Parse(r["hora_real_llegada"].ToString()),
+                    HoraSalida = new DateTime() + TimeSpan.Parse(r["hora_salida"].ToString()),
+                    Id = int.Parse(r["id"].ToString())
+                }, int.Parse(r["planilla_horaria_id"].ToString()))
             }).ToList();
         }
 
-        public void Guardar()
+        public static void Guardar(ViajeBE viaje, int planillaHorariaId)
         {
-            if(Id > 0)
+            if(viaje.Id > 0)
             {
-                Actualizar();
+                Actualizar(viaje);
             }
             else
             {
-                Insertar();
+                Insertar(viaje, planillaHorariaId);
             }
 
-            _dvh = DigitoVerificadorDAL.CalcularDV(ObtenerRegistroDVH());
+            int dvh = DigitoVerificadorDAL.CalcularDV(ObtenerRegistroDVH(viaje, planillaHorariaId));
 
-            DigitoVerificadorDAL.ActualizarDVH("viaje", _dvh, Id);
+            DigitoVerificadorDAL.ActualizarDVH("viaje", dvh, viaje.Id);
         }
 
-        private string ObtenerRegistroDVH()
+        private static string ObtenerRegistroDVH(ViajeBE viaje, int planillaHorariaId)
         {
-            return string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", Id, PlanillaHorariaId, EsIda,
-                HoraSalida.ToString(), HoraEstimadaLlegada.ToString(),
-                HoraRealLlegada.ToString(), Completado, CompletitudId);
+            return string.Format("{0}{1}{2}{3}{4}{5}{6}{7}", viaje.Id, planillaHorariaId, viaje.EsIda,
+                viaje.HoraSalida.TimeOfDay.ToString(), viaje.HoraEstimadaLlegada.TimeOfDay.ToString(),
+                viaje.HoraRealLlegada?.TimeOfDay.ToString(), viaje.Completado, (int)viaje.Completitud);
         }
 
-        private void Insertar()
+        private static void Insertar(ViajeBE viaje, int planillaHorariaId)
         {
             string query = "INSERT INTO viaje (planilla_horaria_id, es_ida, hora_salida, hora_estimada_llegada, dvh) " +
                 "OUTPUT INSERTED.id VALUES (@planillaHorariaId, @esIda, @horaSalida, @horaEstimadaLlegada, 0)";
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@planillaHorariaId", PlanillaHorariaId),
-                new SqlParameter("@esIda", EsIda),
-                new SqlParameter("@horaSalida", HoraSalida),
-                new SqlParameter("@horaEstimadaLlegada", HoraEstimadaLlegada)
+                new SqlParameter("@planillaHorariaId", planillaHorariaId),
+                new SqlParameter("@esIda", viaje.EsIda),
+                new SqlParameter("@horaSalida", viaje.HoraSalida.TimeOfDay),
+                new SqlParameter("@horaEstimadaLlegada", viaje.HoraEstimadaLlegada.TimeOfDay)
             };
 
-            Id = SqlHelper.Insertar(query, parameters);
+            viaje.Id = SqlHelper.Insertar(query, parameters);
         }
 
-        private void Actualizar()
+        private static void Actualizar(ViajeBE viaje)
         {
             string query = "UPDATE viaje SET hora_real_llegada = @horaRealLlegada, completado = @completado, " +
                 "completitud_id = @idCompletitud WHERE id = @id";
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@horaRealLlegada", HoraRealLlegada.HasValue ? (object)HoraRealLlegada.Value : DBNull.Value),
-                new SqlParameter("@completado", (object)Completado ?? DBNull.Value),
-                new SqlParameter("@idCompletitud", CompletitudId > 0 ? (object)CompletitudId : DBNull.Value),
-                new SqlParameter("@id", Id)
+                new SqlParameter("@horaRealLlegada", viaje.HoraRealLlegada.HasValue ? (object)viaje.HoraRealLlegada.Value.TimeOfDay : DBNull.Value),
+                new SqlParameter("@completado", (object)viaje.Completado ?? DBNull.Value),
+                new SqlParameter("@idCompletitud", viaje.Completitud > 0 ? (object)(int)viaje.Completitud : DBNull.Value),
+                new SqlParameter("@id", viaje.Id)
             };
 
             SqlHelper.Ejecutar(query, parameters);
@@ -169,7 +94,7 @@ namespace DAL
             DigitoVerificadorDAL.RecalcularDVV("viaje");
         }
 
-        public static List<ViajeDAL> ObtenerPorPlanillaHoraria(int planillaHorariaId)
+        public static List<ViajeBE> ObtenerPorPlanillaHoraria(int planillaHorariaId)
         {
             string query = "SELECT id, es_ida, hora_salida, hora_estimada_llegada, hora_real_llegada, completado, completitud_id " +
                 "FROM viaje WHERE planilla_horaria_id = @planillaHorariaId";
@@ -180,16 +105,15 @@ namespace DAL
             };
 
             DataTable table = SqlHelper.Obtener(query, parameters);
-            return table.Select().Select(r => new ViajeDAL
+            return table.Select().Select(r => new ViajeBE
             {
                 Completado = r.IsNull("completado") ? (bool?)null : bool.Parse(r["completado"].ToString()),
-                CompletitudId = r.IsNull("completitud_id") ? 0 : int.Parse(r["completitud_id"].ToString()),
+                Completitud = (CompletitudViaje)(r.IsNull("completitud_id") ? 0 : int.Parse(r["completitud_id"].ToString())),
                 EsIda = bool.Parse(r["es_ida"].ToString()),
-                HoraEstimadaLlegada = TimeSpan.Parse(r["hora_estimada_llegada"].ToString()),
-                HoraRealLlegada = r.IsNull("hora_real_llegada") ? (TimeSpan?)null : TimeSpan.Parse(r["hora_real_llegada"].ToString()),
-                HoraSalida = TimeSpan.Parse(r["hora_salida"].ToString()),
-                Id = int.Parse(r["id"].ToString()),
-                PlanillaHorariaId = planillaHorariaId
+                HoraEstimadaLlegada = new DateTime() + TimeSpan.Parse(r["hora_estimada_llegada"].ToString()),
+                HoraRealLlegada = r.IsNull("hora_real_llegada") ? (DateTime?)null : new DateTime() + TimeSpan.Parse(r["hora_real_llegada"].ToString()),
+                HoraSalida = new DateTime() + TimeSpan.Parse(r["hora_salida"].ToString()),
+                Id = int.Parse(r["id"].ToString())
             }).ToList();
         }
     }

@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using Logger;
 using System;
 using System.Collections.Generic;
@@ -21,16 +22,16 @@ namespace UI
 
             dtpFecha.Value = DateTime.Today;
 
-            List<Chofer> choferes = Chofer.ListarTodos().OrderBy(c => c.Nombre).ToList();
-            choferes.Insert(0, new Chofer());
+            List<ChoferBE> choferes = Chofer.ListarTodos().OrderBy(c => c.Nombre).ToList();
+            choferes.Insert(0, new ChoferBE());
             cmbChofer.DataSource = choferes;
 
-            List<Vehiculo> coches = Vehiculo.ListarTodos().OrderBy(v => v.Patente).ToList();
-            coches.Insert(0, new Vehiculo());
+            List<VehiculoBE> coches = Vehiculo.ListarTodos().OrderBy(v => v.Patente).ToList();
+            coches.Insert(0, new VehiculoBE());
             cmbCoche.DataSource = coches;
 
-            List<Recorrido> recorridos = Recorrido.ListarTodos().OrderBy(r => r.ToString()).ToList();
-            recorridos.Insert(0, new Recorrido());
+            List<RecorridoBE> recorridos = Recorrido.ListarTodos().OrderBy(r => r.ToString()).ToList();
+            recorridos.Insert(0, new RecorridoBE());
             cmbRecorrido.DataSource = recorridos;
         }
 
@@ -77,11 +78,11 @@ namespace UI
         {
             int numeroPlanilla = int.TryParse(txtNumeroPlanilla.Text, out int numPlanilla) ? numPlanilla : 0;
             DateTime? fecha = chkFecha.Checked ? dtpFecha.Value : (DateTime?)null;
-            Chofer chofer = (Chofer)cmbChofer.SelectedItem;
-            Vehiculo coche = (Vehiculo)cmbCoche.SelectedItem;
-            Recorrido recorrido = (Recorrido)cmbRecorrido.SelectedItem;
+            ChoferBE chofer = (ChoferBE)cmbChofer.SelectedItem;
+            VehiculoBE coche = (VehiculoBE)cmbCoche.SelectedItem;
+            RecorridoBE recorrido = (RecorridoBE)cmbRecorrido.SelectedItem;
 
-            List<PlanillaHoraria> planillas = PlanillaHoraria.Buscar(numeroPlanilla, fecha, chofer, coche, recorrido);
+            List<PlanillaHorariaBE> planillas = PlanillaHoraria.Buscar(numeroPlanilla, fecha, chofer, coche, recorrido);
             dgvResultadoBusqueda.DataSource = planillas.Select(p => new GridItem
             {
                 Planilla = p,
@@ -100,7 +101,7 @@ namespace UI
             if(grid.Columns[e.ColumnIndex] is DataGridViewButtonColumn & e.RowIndex >= 0)
             {
                 // Se clickeó en un botón de Detalle
-                PlanillaHoraria planilla = (grid.Rows[e.RowIndex].DataBoundItem as GridItem).Planilla;
+                PlanillaHorariaBE planilla = (grid.Rows[e.RowIndex].DataBoundItem as GridItem).Planilla;
                 DetalleDePlanillaForm detalleDePlanillaForm = new DetalleDePlanillaForm(planilla)
                 {
                     MdiParent = MdiParent
@@ -141,7 +142,7 @@ namespace UI
 
         private class GridItem
         {
-            public PlanillaHoraria Planilla { get; set; }
+            public PlanillaHorariaBE Planilla { get; set; }
             public int Id { get; set; }
             public DateTime Fecha { get; set; }
             public string Chofer { get; set; }

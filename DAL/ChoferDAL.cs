@@ -1,66 +1,15 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
     public class ChoferDAL
     {
-        #region Propiedades
-        private int _id;
-
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        private string _nombre;
-
-        public string Nombre
-        {
-            get { return _nombre; }
-            set { _nombre = value; }
-        }
-
-        private int _dni;
-
-        public int Dni
-        {
-            get { return _dni; }
-            set { _dni = value; }
-        }
-
-        private int _cochePreferidoId;
-
-        public int CochePreferidoId
-        {
-            get { return _cochePreferidoId; }
-            set { _cochePreferidoId = value; }
-        }
-
-        private DateTime _fechaFinLicencia;
-
-        public DateTime FechaFinLicencia
-        {
-            get { return _fechaFinLicencia; }
-            set { _fechaFinLicencia = value; }
-        }
-
-        private bool _habilitado;
-
-        public bool Habilitado
-        {
-            get { return _habilitado; }
-            set { _habilitado = value; }
-        }
-        #endregion
-
-        public static List<ChoferDAL> Buscar(string nombre, int dni, bool? deLicencia, int idCochePreferido)
+        public static List<ChoferBE> Buscar(string nombre, int dni, bool? deLicencia, int idCochePreferido)
         {
             string queryLicencia;
             if(deLicencia == true)
@@ -120,24 +69,23 @@ namespace DAL
             return HacerBusqueda(query, parameters.ToArray()).ToList();
         }
 
-        public static List<ChoferDAL> ListarTodos()
+        public static List<ChoferBE> ListarTodos()
         {
             string query = "SELECT id, nombre, dni, coche_preferido_id, fecha_fin_licencia FROM chofer " +
                 "WHERE habilitado = 1 AND (fecha_fin_licencia IS NULL OR fecha_fin_licencia <= GETDATE())";
 
             DataTable table = SqlHelper.Obtener(query, new SqlParameter[0]);
-            return table.Select().Select(r => new ChoferDAL
+            return table.Select().Select(r => new ChoferBE
             {
                 Id = int.Parse(r["id"].ToString()),
                 Nombre = r["nombre"].ToString(),
                 Dni = int.Parse(r["dni"].ToString()),
-                CochePreferidoId = r.IsNull("coche_preferido_id") ? 0 : int.Parse(r["coche_preferido_id"].ToString()),
-                FechaFinLicencia = r.IsNull("fecha_fin_licencia") ? default : DateTime.Parse(r["fech_fin_licencia"].ToString()),
-                Habilitado = true
+                CochePreferido = r.IsNull("coche_preferido_id") ? null : VehiculoDAL.Obtener(int.Parse(r["coche_preferido_id"].ToString())),
+                FechaFinLicencia = r.IsNull("fecha_fin_licencia") ? default : DateTime.Parse(r["fech_fin_licencia"].ToString())
             }).ToList();
         }
 
-        public static ChoferDAL Obtener(int id)
+        public static ChoferBE Obtener(int id)
         {
             string query = "SELECT id, nombre, dni, coche_preferido_id, fecha_fin_licencia, habilitado FROM chofer " +
                 "WHERE habilitado = 1 AND id = @id";
@@ -149,15 +97,15 @@ namespace DAL
             return HacerBusqueda(query, parameters).FirstOrDefault();
         }
 
-        public void Guardar()
+        public static void Guardar(ChoferBE chofer)
         {
-            if(Id > 0)
+            if(chofer.Id > 0)
             {
-                Actualizar();
+                Actualizar(chofer);
             }
             else
             {
-                Insertar();
+                Insertar(chofer);
             }
         }
 
@@ -172,45 +120,44 @@ namespace DAL
             SqlHelper.Ejecutar(query, parameters);
         }
 
-        private static IEnumerable<ChoferDAL> HacerBusqueda(string query, SqlParameter[] parameters)
+        private static IEnumerable<ChoferBE> HacerBusqueda(string query, SqlParameter[] parameters)
         {
             DataTable table = SqlHelper.Obtener(query, parameters);
-            return table.Select().Select(r => new ChoferDAL
+            return table.Select().Select(r => new ChoferBE
             {
-                CochePreferidoId = r.IsNull("coche_preferido_id") ? 0 : int.Parse(r["coche_preferido_id"].ToString()),
+                CochePreferido = r.IsNull("coche_preferido_id") ? null : VehiculoDAL.Obtener(int.Parse(r["coche_preferido_id"].ToString())),
                 Dni = int.Parse(r["dni"].ToString()),
                 FechaFinLicencia = r.IsNull("fecha_fin_licencia") ? default : DateTime.Parse(r["fecha_fin_licencia"].ToString()),
-                Habilitado = true,
                 Id = int.Parse(r["id"].ToString()),
                 Nombre = r["nombre"].ToString()
             });
         }
 
-        private void Insertar()
+        private static void Insertar(ChoferBE chofer)
         {
             string query = "INSERT INTO chofer (nombre, dni, coche_preferido_id, habilitado) " +
                 "OUTPUT INSERTED.id VALUES (@nombre, @dni, @cochePreferidoId, 1)";
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@nombre", Nombre),
-                new SqlParameter("@dni", Dni),
-                new SqlParameter("@cochePreferidoId", CochePreferidoId == 0 ? DBNull.Value : (object)CochePreferidoId)
+                new SqlParameter("@nombre", chofer.Nombre),
+                new SqlParameter("@dni", chofer.Dni),
+                new SqlParameter("@cochePreferidoId", chofer.CochePreferido == null ? DBNull.Value : (object)chofer.CochePreferido.Id)
             };
 
-            Id = SqlHelper.Insertar(query, parameters);
+            chofer.Id = SqlHelper.Insertar(query, parameters);
         }
 
-        private void Actualizar()
+        private static void Actualizar(ChoferBE chofer)
         {
             string query = "UPDATE chofer SET nombre = @nombre, dni = @dni, coche_preferido_id = @cochePreferidoId, " +
                 "fecha_fin_licencia = @fechaFinLicencia WHERE id = @id";
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@nombre", Nombre),
-                new SqlParameter("@dni", Dni),
-                new SqlParameter("@cochePreferidoId", CochePreferidoId == 0 ? DBNull.Value : (object)CochePreferidoId),
-                new SqlParameter("@fechaFinLicencia", FechaFinLicencia >= DateTime.Today ? (object)FechaFinLicencia : DBNull.Value),
-                new SqlParameter("@id", Id)
+                new SqlParameter("@nombre", chofer.Nombre),
+                new SqlParameter("@dni", chofer.Dni),
+                new SqlParameter("@cochePreferidoId", chofer.CochePreferido == null ? DBNull.Value : (object)chofer.CochePreferido.Id),
+                new SqlParameter("@fechaFinLicencia", chofer.FechaFinLicencia >= DateTime.Today ? (object)chofer.FechaFinLicencia : DBNull.Value),
+                new SqlParameter("@id", chofer.Id)
             };
 
             SqlHelper.Ejecutar(query, parameters);

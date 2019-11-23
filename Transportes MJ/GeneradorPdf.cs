@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
@@ -21,7 +22,7 @@ namespace UI
         private readonly List<int> anchosColumnas = new List<int>(); // Usado para guardar los anchos de las columnas
         int anchoTotal; // Para calcular el ancho total de la grilla
 
-        public GeneradorPdf(PlanillaHoraria planillaHoraria, DataGridView dataGridView, FormGeneral formGeneral)
+        public GeneradorPdf(PlanillaHorariaBE planillaHoraria, DataGridView dataGridView, FormGeneral formGeneral)
         {
             this.dataGridView = dataGridView;
             this.formGeneral = formGeneral;

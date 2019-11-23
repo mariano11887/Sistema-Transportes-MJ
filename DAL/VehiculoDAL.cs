@@ -1,96 +1,35 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
     public class VehiculoDAL
     {
-        #region Propiedades
-        private int _vehiculoId;
-        public int VehiculoId
+        public static VehiculoBE Obtener(int id)
         {
-            get { return _vehiculoId; }
-            set { _vehiculoId = value; }
-        }
-
-        private string _patente;
-        public string Patente
-        {
-            get { return _patente; }
-            set { _patente = value; }
-        }
-
-        private string _marca;
-        public string Marca
-        {
-            get { return _marca; }
-            set { _marca = value; }
-        }
-
-        private string _modelo;
-        public string Modelo
-        {
-            get { return _modelo; }
-            set { _modelo = value; }
-        }
-
-        private DateTime _fechaAdquisicion;
-        public DateTime FechaAdquisicion
-        {
-            get { return _fechaAdquisicion; }
-            set { _fechaAdquisicion = value; }
-        }
-
-        private int _anioFabricacion;
-        public int AnioFabricacion
-        {
-            get { return _anioFabricacion; }
-            set { _anioFabricacion = value; }
-        }
-
-        private int _numeroInterno;
-        public int NumeroInterno
-        {
-            get { return _numeroInterno; }
-            set { _numeroInterno = value; }
-        }
-
-        private int _capacidad;
-        public int Capacidad
-        {
-            get { return _capacidad; }
-            set { _capacidad = value; }
-        }
-
-        private bool _enCirculacion;
-        public bool EnCirculacion
-        {
-            get { return _enCirculacion; }
-            set { _enCirculacion = value; }
-        }
-
-        private bool _habilitado;
-        public bool Habilitado
-        {
-            get { return _habilitado; }
-            set { _habilitado = value; }
-        }
-        #endregion
-
-        public void Guardar()
-        {
-            if (VehiculoId > 0)
+            string query = "SELECT id, patente, marca, modelo, fecha_adquisicion, anio_fabricacion, numero_interno, " +
+                "capacidad, en_circulacion FROM coche WHERE habilitado = 1 AND id = @id";
+            SqlParameter[] parameters = new SqlParameter[]
             {
-                Actualizar();
+                new SqlParameter("@id", id)
+            };
+
+            return RealizarBusqueda(query, parameters).FirstOrDefault();
+        }
+
+        public static void Guardar(VehiculoBE vehiculo)
+        {
+            if (vehiculo.Id > 0)
+            {
+                Actualizar(vehiculo);
             }
             else
             {
-                Insertar();
+                Insertar(vehiculo);
             }
         }
 
@@ -104,7 +43,7 @@ namespace DAL
             SqlHelper.Ejecutar(query, parameters);
         }
 
-        public static List<VehiculoDAL> Buscar(string patente, int numeroDeInterno, bool? enCirculacion)
+        public static List<VehiculoBE> Buscar(string patente, int numeroDeInterno, bool? enCirculacion)
         {
             string queryTemplate = "SELECT id, patente, marca, modelo, fecha_adquisicion, anio_fabricacion, numero_interno, " +
                 "capacidad, en_circulacion FROM coche WHERE patente = {0} AND numero_interno = {1} " +
@@ -147,7 +86,7 @@ namespace DAL
             return RealizarBusqueda(query, parameters.ToArray());
         }
 
-        public static VehiculoDAL Buscar(int id)
+        public static VehiculoBE Buscar(int id)
         {
             string query = "SELECT id, patente, marca, modelo, fecha_adquisicion, anio_fabricacion, numero_interno, " +
                 "capacidad, en_circulacion FROM coche WHERE id = @id AND habilitado = 1";
@@ -158,7 +97,7 @@ namespace DAL
             return RealizarBusqueda(query, parameters).FirstOrDefault();
         }
 
-        public static List<VehiculoDAL> ListarTodos()
+        public static List<VehiculoBE> ListarTodos()
         {
             string query = "SELECT id, patente, marca, modelo, fecha_adquisicion, anio_fabricacion, numero_interno, " +
                 "capacidad, en_circulacion FROM coche WHERE habilitado = 1";
@@ -180,63 +119,61 @@ namespace DAL
             return SqlHelper.ObtenerValor<int>(query, parameters);
         }
 
-        private static List<VehiculoDAL> RealizarBusqueda(string query, SqlParameter[] parameters)
+        private static List<VehiculoBE> RealizarBusqueda(string query, SqlParameter[] parameters)
         {
             DataTable table = SqlHelper.Obtener(query, parameters);
-            return table.Select().Select(r => new VehiculoDAL
+            return table.Select().Select(r => new VehiculoBE
             {
                 AnioFabricacion = int.Parse(r["anio_fabricacion"].ToString()),
                 Capacidad = int.Parse(r["capacidad"].ToString()),
                 EnCirculacion = bool.Parse(r["en_circulacion"].ToString()),
                 FechaAdquisicion = DateTime.Parse(r["fecha_adquisicion"].ToString()),
-                Habilitado = true,
                 Marca = r["marca"].ToString(),
                 Modelo = r["modelo"].ToString(),
                 NumeroInterno = int.Parse(r["numero_interno"].ToString()),
                 Patente = r["patente"].ToString(),
-                VehiculoId = int.Parse(r["id"].ToString())
+                Id = int.Parse(r["id"].ToString())
             }).ToList();
         }
 
-        private void Actualizar()
+        private static void Actualizar(VehiculoBE vehiculo)
         {
             string query = "UPDATE coche SET patente = @patente, marca = @marca, modelo = @modelo, " +
                 "fecha_adquisicion = @fechaAdquisicion, anio_fabricacion = @anioFabricacion, numero_interno = @numeroInterno, " +
-                "capacidad = @capacidad, en_circulacion = @enCirculacion, habilitado = @habilitado WHERE id = @vehiculoId";
+                "capacidad = @capacidad, en_circulacion = @enCirculacion WHERE id = @vehiculoId";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@patente", Patente),
-                new SqlParameter("@marca", Marca),
-                new SqlParameter("@modelo", Modelo),
-                new SqlParameter("@fechaAdquisicion", FechaAdquisicion),
-                new SqlParameter("@anioFabricacion", AnioFabricacion),
-                new SqlParameter("@numeroInterno", NumeroInterno),
-                new SqlParameter("@capacidad", Capacidad),
-                new SqlParameter("@enCirculacion", EnCirculacion),
-                new SqlParameter("@habilitado", Habilitado),
-                new SqlParameter("@vehiculoId", VehiculoId)
+                new SqlParameter("@patente", vehiculo.Patente),
+                new SqlParameter("@marca", vehiculo.Marca),
+                new SqlParameter("@modelo", vehiculo.Modelo),
+                new SqlParameter("@fechaAdquisicion", vehiculo.FechaAdquisicion),
+                new SqlParameter("@anioFabricacion", vehiculo.AnioFabricacion),
+                new SqlParameter("@numeroInterno", vehiculo.NumeroInterno),
+                new SqlParameter("@capacidad", vehiculo.Capacidad),
+                new SqlParameter("@enCirculacion", vehiculo.EnCirculacion),
+                new SqlParameter("@vehiculoId", vehiculo.Id)
             };
 
             SqlHelper.Ejecutar(query, parameters);
         }
 
-        private void Insertar()
+        private static void Insertar(VehiculoBE vehiculo)
         {
             string query = "INSERT INTO coche (patente, marca, modelo, fecha_adquisicion, anio_fabricacion, numero_interno, capacidad, en_circulacion) " +
                 "OUTPUT INSERTED.id VALUES (@patente, @marca, @modelo, @fechaAdquisicion, @anioFabricacion, @numeroInterno, @capacidad, @enCirculacion)";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@patente", Patente),
-                new SqlParameter("@marca", Marca),
-                new SqlParameter("@modelo", Modelo),
-                new SqlParameter("@fechaAdquisicion", FechaAdquisicion),
-                new SqlParameter("@anioFabricacion", AnioFabricacion),
-                new SqlParameter("@numeroInterno", NumeroInterno),
-                new SqlParameter("@capacidad", Capacidad),
-                new SqlParameter("@enCirculacion", EnCirculacion)
+                new SqlParameter("@patente", vehiculo.Patente),
+                new SqlParameter("@marca", vehiculo.Marca),
+                new SqlParameter("@modelo", vehiculo.Modelo),
+                new SqlParameter("@fechaAdquisicion", vehiculo.FechaAdquisicion),
+                new SqlParameter("@anioFabricacion", vehiculo.AnioFabricacion),
+                new SqlParameter("@numeroInterno", vehiculo.NumeroInterno),
+                new SqlParameter("@capacidad", vehiculo.Capacidad),
+                new SqlParameter("@enCirculacion", vehiculo.EnCirculacion)
             };
 
-            VehiculoId = SqlHelper.Insertar(query, parameters);
+            vehiculo.Id = SqlHelper.Insertar(query, parameters);
         }
     }
 }

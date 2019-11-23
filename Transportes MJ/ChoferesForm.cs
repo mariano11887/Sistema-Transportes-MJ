@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -35,7 +36,7 @@ namespace UI
             cmbDeLicencia.Items.Add(deLicenciaSi);
             cmbDeLicencia.Items.Add(deLicenciaNo);
 
-            List<Vehiculo> vehiculos = Vehiculo.ListarTodos();
+            List<VehiculoBE> vehiculos = Vehiculo.ListarTodos();
             cmbCochePreferidoBusqueda.Items.AddRange(vehiculos.Select(v => v.Patente).ToArray());
             cmbCochePreferidoDetalle.Items.AddRange(vehiculos.ToArray());
         }
@@ -88,7 +89,7 @@ namespace UI
 
             string patente = cmbCochePreferidoBusqueda.Text;
 
-            List<Chofer> choferes = Chofer.Buscar(nombre, dni, enCirculacion, patente);
+            List<ChoferBE> choferes = Chofer.Buscar(nombre, dni, enCirculacion, patente);
             ListViewItem[] items = choferes.Select(c => new ListViewItem
             {
                 Text = c.Nombre,
@@ -111,25 +112,25 @@ namespace UI
         {
             if(ValidarDatos())
             {
-                Chofer chofer;
+                ChoferBE chofer;
                 if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
                 {
-                    chofer = lstResultadoBusqueda.SelectedItems[0].Tag as Chofer;
+                    chofer = lstResultadoBusqueda.SelectedItems[0].Tag as ChoferBE;
                 }
                 else
                 {
-                    chofer = new Chofer();
+                    chofer = new ChoferBE();
                 }
 
                 int selectedIndex = cmbCochePreferidoDetalle.FindStringExact(cmbCochePreferidoDetalle.Text);
                 if(selectedIndex > 0)
                 {
-                    chofer.CochePreferido = cmbCochePreferidoDetalle.Items[selectedIndex] as Vehiculo;
+                    chofer.CochePreferido = cmbCochePreferidoDetalle.Items[selectedIndex] as VehiculoBE;
                 }
                 chofer.Dni = int.Parse(txtDniDetalle.Text);
                 chofer.Nombre = txtNombreDetalle.Text;
 
-                chofer.Guardar();
+                Chofer.Guardar(chofer);
                 MessageBox.Show(ObtenerLeyenda("msgChoferGuardado"));
 
                 LimpiarDetalles();
@@ -150,7 +151,7 @@ namespace UI
                 btnCargarLicencia.Enabled = true;
                 btnEliminar.Enabled = true;
 
-                Chofer chofer = lstResultadoBusqueda.SelectedItems[0].Tag as Chofer;
+                ChoferBE chofer = lstResultadoBusqueda.SelectedItems[0].Tag as ChoferBE;
                 txtNombreDetalle.Text = chofer.Nombre;
                 txtDniDetalle.Text = chofer.Dni.ToString();
                 cmbCochePreferidoDetalle.Text = chofer.CochePreferido?.Patente ?? "";
@@ -196,9 +197,9 @@ namespace UI
         {
             if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
             {
-                Chofer chofer = lstResultadoBusqueda.SelectedItems[0].Tag as Chofer;
+                ChoferBE chofer = lstResultadoBusqueda.SelectedItems[0].Tag as ChoferBE;
                 chofer.FechaFinLicencia = dtpFechaFinLicencia.Value;
-                chofer.Guardar();
+                Chofer.Guardar(chofer);
 
                 MessageBox.Show(ObtenerLeyenda("msgLicenciaGuardada"));
 
@@ -216,8 +217,8 @@ namespace UI
         {
             if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
             {
-                Chofer chofer = lstResultadoBusqueda.SelectedItems[0].Tag as Chofer;
-                chofer.Borrar();
+                ChoferBE chofer = lstResultadoBusqueda.SelectedItems[0].Tag as ChoferBE;
+                Chofer.Borrar(chofer);
 
                 MessageBox.Show(ObtenerLeyenda("msgChoferBorrado"), string.Empty,
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

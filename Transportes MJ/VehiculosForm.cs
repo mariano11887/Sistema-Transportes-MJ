@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -52,26 +53,26 @@ namespace UI
         {
             if(ValidarDatos())
             {
-                Vehiculo vehiculo;
+                VehiculoBE vehiculo;
                 if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
                 {
-                    vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as Vehiculo;
+                    vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as VehiculoBE;
                 }
                 else
                 {
-                    vehiculo = new Vehiculo();
+                    vehiculo = new VehiculoBE();
                 }
 
                 vehiculo.AnioFabricacion = int.Parse(txtAnioFabricacion.Text);
                 vehiculo.Capacidad = int.Parse(txtCapacidad.Text);
                 vehiculo.EnCirculacion = chkEnCirculacionDetalles.Checked;
-                vehiculo.FechaAdquisiquion = dtpFechaDeAdquisicion.Value;
+                vehiculo.FechaAdquisicion = dtpFechaDeAdquisicion.Value;
                 vehiculo.NumeroInterno = int.Parse(txtNumeroDeInternoDetalles.Text);
                 vehiculo.Marca = txtMarca.Text.Trim();
                 vehiculo.Modelo = txtModelo.Text.Trim();
                 vehiculo.Patente = txtPatenteDetalles.Text.Trim().ToUpper();
 
-                vehiculo.Guardar();
+                Vehiculo.Guardar(vehiculo);
 
                 MessageBox.Show(ObtenerLeyenda("msgVehiculoGuardado"), string.Empty,
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -86,7 +87,7 @@ namespace UI
 
             int numeroInterno = string.IsNullOrWhiteSpace(txtNumeroDeInternoBusqueda.Text) ? 0 : 
                 int.Parse(txtNumeroDeInternoBusqueda.Text);
-            List<Vehiculo> vehiculos = Vehiculo.Buscar(txtPatenteBusqueda.Text.Trim(), numeroInterno, 
+            List<VehiculoBE> vehiculos = Vehiculo.Buscar(txtPatenteBusqueda.Text.Trim(), numeroInterno, 
                 chkEnCirculacionBusqueda.Checked);
 
             ListViewItem[] items = vehiculos.Select(v => new ListViewItem
@@ -120,13 +121,13 @@ namespace UI
             {
                 grpDetalles.Enabled = true;
 
-                Vehiculo vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as Vehiculo;
+                VehiculoBE vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as VehiculoBE;
 
                 txtPatenteDetalles.Text = vehiculo.Patente;
                 txtMarca.Text = vehiculo.Marca;
                 txtModelo.Text = vehiculo.Modelo;
                 txtCapacidad.Text = vehiculo.Capacidad.ToString();
-                dtpFechaDeAdquisicion.Value = vehiculo.FechaAdquisiquion;
+                dtpFechaDeAdquisicion.Value = vehiculo.FechaAdquisicion;
                 txtAnioFabricacion.Text = vehiculo.AnioFabricacion.ToString();
                 txtNumeroDeInternoDetalles.Text = vehiculo.NumeroInterno.ToString();
                 chkEnCirculacionDetalles.Checked = vehiculo.EnCirculacion;
@@ -137,8 +138,8 @@ namespace UI
         {
             if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
             {
-                Vehiculo vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as Vehiculo;
-                vehiculo.Borrar();
+                VehiculoBE vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as VehiculoBE;
+                Vehiculo.Borrar(vehiculo);
 
                 MessageBox.Show(ObtenerLeyenda("msgVehiculoBorrado"), string.Empty,
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

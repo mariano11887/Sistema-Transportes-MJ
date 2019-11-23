@@ -1,4 +1,4 @@
-﻿namespace BL
+﻿namespace BE
 {
     public enum CompletitudViaje
     {

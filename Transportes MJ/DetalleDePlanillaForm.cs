@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using Logger;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace UI
 {
     public partial class DetalleDePlanillaForm : FormGeneral
     {
-        private readonly PlanillaHoraria planillaHoraria;
+        private readonly PlanillaHorariaBE planillaHoraria;
         private const string MASCARA_TIEMPO = "HH:mm";
         private readonly Dictionary<CompletitudViaje, string> completitudes = new Dictionary<CompletitudViaje, string>();
 
-        public DetalleDePlanillaForm(PlanillaHoraria planillaHoraria)
+        public DetalleDePlanillaForm(PlanillaHorariaBE planillaHoraria)
         {
             InitializeComponent();
             this.planillaHoraria = planillaHoraria;
@@ -123,8 +124,6 @@ namespace UI
             if (dgvViajes.Columns[e.ColumnIndex] is DataGridViewComboBoxColumn)
             {
                 SendKeys.Send("{F4}");
-                //dgvViajes.BeginEdit(true);
-                //((ComboBox)dgvViajes.EditingControl).DroppedDown = true;
             }
         }
 
@@ -136,7 +135,7 @@ namespace UI
                 {
                     GridItem gridItem = row.DataBoundItem as GridItem;
                     // TODO: Modificar directamente los viajes de la planilla horaria y hacer un Guardar de la planilla.
-                    Viaje viaje = gridItem.Viaje;
+                    ViajeBE viaje = gridItem.Viaje;
                     viaje.Completado = row.Cells["colCompletado"].Value != null && (bool)row.Cells["colCompletado"].Value;
                     
                     if(row.Cells["colHoraRealLlegada"].Value != null)
@@ -150,7 +149,7 @@ namespace UI
                     }
                 }
 
-                planillaHoraria.GuardarViajes();
+                PlanillaHoraria.GuardarViajes(planillaHoraria);
 
                 MessageBox.Show(ObtenerLeyenda("msgPlanillaActualizada"));
             }
@@ -222,7 +221,7 @@ namespace UI
 
         private class GridItem
         {
-            public Viaje Viaje { get; set; }
+            public ViajeBE Viaje { get; set; }
             public string Origen { get; set; }
             public string HoraSalida { get; set; }
             public string Destino { get; set; }

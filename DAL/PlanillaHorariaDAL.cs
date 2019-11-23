@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,55 +11,6 @@ namespace DAL
 {
     public class PlanillaHorariaDAL : IDigitoVerificable
     {
-        #region Propiedades
-        private int _id;
-
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        private int _choferId;
-
-        public int ChoferId
-        {
-            get { return _choferId; }
-            set { _choferId = value; }
-        }
-
-        private int _cocheId;
-
-        public int CocheId
-        {
-            get { return _cocheId; }
-            set { _cocheId = value; }
-        }
-
-        private int _recorridoId;
-
-        public int RecorridoId
-        {
-            get { return _recorridoId; }
-            set { _recorridoId = value; }
-        }
-
-        private DateTime _fecha;
-
-        public DateTime Fecha
-        {
-            get { return _fecha; }
-            set { _fecha = value; }
-        }
-
-        private int _dvh;
-
-        public int DVH
-        {
-            get { return _dvh; }
-        }
-        #endregion
-
         public string ObtenerNombreTabla()
         {
             return "planilla_horaria";
@@ -77,24 +29,25 @@ namespace DAL
             }).ToList();
         }
 
-        public void Guardar()
+        public static void Guardar(PlanillaHorariaBE planillaHoraria)
         {
             string query = "INSERT INTO planilla_horaria (chofer_id, coche_id, recorrido_id, fecha, dvh) " +
                 "OUTPUT INSERTED.id VALUES (@choferId, @cocheId, @recorridoId, @fecha, 0)";
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@choferId", ChoferId),
-                new SqlParameter("@cocheId", CocheId),
-                new SqlParameter("@recorridoId", RecorridoId),
-                new SqlParameter("@fecha", Fecha)
+                new SqlParameter("@choferId", planillaHoraria.Chofer.Id),
+                new SqlParameter("@cocheId", planillaHoraria.Vehiculo.Id),
+                new SqlParameter("@recorridoId", planillaHoraria.Recorrido.Id),
+                new SqlParameter("@fecha", planillaHoraria.Fecha)
             };
 
-            Id = SqlHelper.Insertar(query, parameters);
+            planillaHoraria.Id = SqlHelper.Insertar(query, parameters);
 
-            string registro = string.Format("{0}{1}{2}{3}{4}", Id, ChoferId, CocheId, RecorridoId, Fecha.ToString("yyyyMMdd"));
-            _dvh = DigitoVerificadorDAL.CalcularDV(registro);
+            string registro = string.Format("{0}{1}{2}{3}{4}", planillaHoraria.Id, planillaHoraria.Chofer.Id, 
+                planillaHoraria.Vehiculo.Id, planillaHoraria.Recorrido.Id, planillaHoraria.Fecha.ToString("yyyyMMdd"));
+            int dvh = DigitoVerificadorDAL.CalcularDV(registro);
 
-            DigitoVerificadorDAL.ActualizarDVH("planilla_horaria", _dvh, Id);
+            DigitoVerificadorDAL.ActualizarDVH("planilla_horaria", dvh, planillaHoraria.Id);
         }
 
         public static void RecalcularDVV()
@@ -109,7 +62,7 @@ namespace DAL
             return fecha != null ? DateTime.Parse(fecha) : default;
         }
 
-        public static List<PlanillaHorariaDAL> ObtenerPorRecorridoYFechas(int recorridoId, List<DateTime> fechas)
+        public static List<PlanillaHorariaBE> ObtenerPorRecorridoYFechas(int recorridoId, List<DateTime> fechas)
         {
             string query = "SELECT id, chofer_id, coche_id, recorrido_id, fecha FROM planilla_horaria " +
                 "WHERE recorrido_id = @recorridoId AND fecha IN ({0})";
@@ -132,7 +85,7 @@ namespace DAL
             return Transformar(table);
         }
 
-        public static List<PlanillaHorariaDAL> Buscar(int idPlanilla, DateTime? fecha, int idChofer, int idVehiculo, int idRecorrido)
+        public static List<PlanillaHorariaBE> Buscar(int idPlanilla, DateTime? fecha, int idChofer, int idVehiculo, int idRecorrido)
         {
             string query = "SELECT TOP 1000 id, chofer_id, coche_id, recorrido_id, fecha FROM planilla_horaria " +
                 "WHERE 1 = 1";
@@ -174,15 +127,16 @@ namespace DAL
             return Transformar(table);
         }
 
-        private static List<PlanillaHorariaDAL> Transformar(DataTable table)
+        private static List<PlanillaHorariaBE> Transformar(DataTable table)
         {
-            return table.Select().Select(r => new PlanillaHorariaDAL
+            return table.Select().Select(r => new PlanillaHorariaBE
             {
-                ChoferId = int.Parse(r["chofer_id"].ToString()),
-                CocheId = int.Parse(r["coche_id"].ToString()),
+                Chofer = ChoferDAL.Obtener(int.Parse(r["chofer_id"].ToString())),
+                Vehiculo = VehiculoDAL.Obtener(int.Parse(r["coche_id"].ToString())),
                 Fecha = DateTime.Parse(r["fecha"].ToString()),
                 Id = int.Parse(r["id"].ToString()),
-                RecorridoId = int.Parse(r["recorrido_id"].ToString())
+                Recorrido = RecorridoDAL.Obtener(int.Parse(r["recorrido_id"].ToString())),
+                Viajes = ViajeDAL.ObtenerPorPlanillaHoraria(int.Parse(r["id"].ToString()))
             }).ToList();
         }
     }

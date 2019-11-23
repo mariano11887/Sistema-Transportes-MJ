@@ -43,14 +43,21 @@
   <ItemGroup>
     <Compile Include="AlertaInsuficienciaBE.cs" />
     <Compile Include="BitacoraBE.cs" />
+    <Compile Include="ChoferBE.cs" />
+    <Compile Include="CompletitudViaje.cs" />
     <Compile Include="IdiomaBE.cs" />
     <Compile Include="LeyendaBE.cs" />
     <Compile Include="PermisoBE.cs" />
     <Compile Include="PermisoCompuestoBE.cs" />
     <Compile Include="PermisoSimpleBE.cs" />
+    <Compile Include="PlanillaHorariaBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecorridoBE.cs" />
+    <Compile Include="TerminalBE.cs" />
     <Compile Include="UsuarioBE.cs" />
     <Compile Include="UsuarioHistorialBE.cs" />
+    <Compile Include="VehiculoBE.cs" />
+    <Compile Include="ViajeBE.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
