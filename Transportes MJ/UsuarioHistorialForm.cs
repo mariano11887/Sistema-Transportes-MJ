@@ -17,12 +17,26 @@ namespace UI
             dtpFechaInicio.MaxDate = DateTime.Now;
             dtpFechaFin.MaxDate = DateTime.Now;
             dtpFechaFin.Value = DateTime.Now;
-            dgvUsuarios.DataSource = UsuarioHistorial.ObtenerUltimos();
+            try
+            {
+                dgvUsuarios.DataSource = UsuarioHistorial.ObtenerUltimos();
+            }
+            catch
+            {
+                MostrarError();
+            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            dgvUsuarios.DataSource = UsuarioHistorial.Buscar(dtpFechaInicio.Value, dtpFechaFin.Value, txtNombre.Text, txtNombreUsuario.Text);
+            try
+            {
+                dgvUsuarios.DataSource = UsuarioHistorial.Buscar(dtpFechaInicio.Value, dtpFechaFin.Value, txtNombre.Text, txtNombreUsuario.Text);
+            }
+            catch
+            {
+                MostrarError();
+            }
         }
     }
 }

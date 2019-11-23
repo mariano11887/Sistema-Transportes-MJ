@@ -42,6 +42,18 @@ namespace UI
         {
             return Sesion.Instancia().TienePermiso(Permiso);
         }
+
+        protected void MostrarError()
+        {
+            if (this is MainForm)
+            {
+                MessageBox.Show(ObtenerLeyenda("msgErrorBD"), ObtenerLeyenda("msgErrorBDTitulo"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(MdiParent is MainForm)
+            {
+                (MdiParent as MainForm).MostrarErrorBd();
+            }
+        }
         #endregion
 
         #region Métodos privados

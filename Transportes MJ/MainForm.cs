@@ -50,6 +50,11 @@ namespace UI
             Sesion.Instancia().CerrarSesion();
         }
 
+        public void MostrarErrorBd()
+        {
+            MostrarError();
+        }
+
         public void CerrarSesion()
         {
             try
@@ -89,19 +94,26 @@ namespace UI
         {
             if (TienePermiso(Permisos.CHOFERES_ALTA) || TienePermiso(Permisos.VEHICULOS_ALTA) || TienePermiso(Permisos.PLANILLAS_GENERAR))
             {
-                AlertaInsuficienciaBE alerta = AlertaInsuficiencia.ChequearAlerta();
-                if (alerta != null)
+                try
                 {
-                    string mensajePrincipal = ObtenerLeyenda("msgAlertaInsuficiencia");
-                    string mensajeChoferesFaltantes = ObtenerLeyenda("msgChoferesFaltantes");
-                    string mensajeVehiculosFaltantes = ObtenerLeyenda("msgVehiculosFaltantes");
-                    if (mensajeChoferesFaltantes.Contains("{0}") && mensajeVehiculosFaltantes.Contains("{0}"))
+                    AlertaInsuficienciaBE alerta = AlertaInsuficiencia.ChequearAlerta();
+                    if (alerta != null)
                     {
-                        string mensaje = mensajePrincipal + Environment.NewLine + Environment.NewLine +
-                            string.Format(mensajeChoferesFaltantes, alerta.ChoferesFaltantes) + Environment.NewLine +
-                            string.Format(mensajeVehiculosFaltantes, alerta.VehiculosFaltantes);
-                        MessageBox.Show(mensaje, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string mensajePrincipal = ObtenerLeyenda("msgAlertaInsuficiencia");
+                        string mensajeChoferesFaltantes = ObtenerLeyenda("msgChoferesFaltantes");
+                        string mensajeVehiculosFaltantes = ObtenerLeyenda("msgVehiculosFaltantes");
+                        if (mensajeChoferesFaltantes.Contains("{0}") && mensajeVehiculosFaltantes.Contains("{0}"))
+                        {
+                            string mensaje = mensajePrincipal + Environment.NewLine + Environment.NewLine +
+                                string.Format(mensajeChoferesFaltantes, alerta.ChoferesFaltantes) + Environment.NewLine +
+                                string.Format(mensajeVehiculosFaltantes, alerta.VehiculosFaltantes);
+                            MessageBox.Show(mensaje, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
+                }
+                catch
+                {
+                    MostrarError();
                 }
             }
         }

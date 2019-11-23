@@ -18,21 +18,29 @@ namespace UI
         private void PlanillasHorariasForm_Load(object sender, EventArgs e)
         {
             Abrir();
-            RefrescarGeneracionPlanillas();
 
-            dtpFecha.Value = DateTime.Today;
+            try
+            {
+                RefrescarGeneracionPlanillas();
 
-            List<ChoferBE> choferes = Chofer.ListarTodos().OrderBy(c => c.Nombre).ToList();
-            choferes.Insert(0, new ChoferBE());
-            cmbChofer.DataSource = choferes;
+                dtpFecha.Value = DateTime.Today;
 
-            List<VehiculoBE> coches = Vehiculo.ListarTodos().OrderBy(v => v.Patente).ToList();
-            coches.Insert(0, new VehiculoBE());
-            cmbCoche.DataSource = coches;
+                List<ChoferBE> choferes = Chofer.ListarTodos().OrderBy(c => c.Nombre).ToList();
+                choferes.Insert(0, new ChoferBE());
+                cmbChofer.DataSource = choferes;
 
-            List<RecorridoBE> recorridos = Recorrido.ListarTodos().OrderBy(r => r.ToString()).ToList();
-            recorridos.Insert(0, new RecorridoBE());
-            cmbRecorrido.DataSource = recorridos;
+                List<VehiculoBE> coches = Vehiculo.ListarTodos().OrderBy(v => v.Patente).ToList();
+                coches.Insert(0, new VehiculoBE());
+                cmbCoche.DataSource = coches;
+
+                List<RecorridoBE> recorridos = Recorrido.ListarTodos().OrderBy(r => r.ToString()).ToList();
+                recorridos.Insert(0, new RecorridoBE());
+                cmbRecorrido.DataSource = recorridos;
+            }
+            catch
+            {
+                MostrarError();
+            }
         }
 
         private void BtnGenerarPlanillas_Click(object sender, EventArgs e)
@@ -82,17 +90,24 @@ namespace UI
             VehiculoBE coche = (VehiculoBE)cmbCoche.SelectedItem;
             RecorridoBE recorrido = (RecorridoBE)cmbRecorrido.SelectedItem;
 
-            List<PlanillaHorariaBE> planillas = PlanillaHoraria.Buscar(numeroPlanilla, fecha, chofer, coche, recorrido);
-            dgvResultadoBusqueda.DataSource = planillas.Select(p => new GridItem
+            try
             {
-                Planilla = p,
-                Id = p.Id,
-                Fecha = p.Fecha,
-                Chofer = p.Chofer.Nombre,
-                Vehiculo = p.Vehiculo.Patente,
-                Recorrido = p.Recorrido.ToString(),
-                Detalles = ObtenerLeyenda("btnVer")
-            }).ToList();
+                List<PlanillaHorariaBE> planillas = PlanillaHoraria.Buscar(numeroPlanilla, fecha, chofer, coche, recorrido);
+                dgvResultadoBusqueda.DataSource = planillas.Select(p => new GridItem
+                {
+                    Planilla = p,
+                    Id = p.Id,
+                    Fecha = p.Fecha,
+                    Chofer = p.Chofer.Nombre,
+                    Vehiculo = p.Vehiculo.Patente,
+                    Recorrido = p.Recorrido.ToString(),
+                    Detalles = ObtenerLeyenda("btnVer")
+                }).ToList();
+            }
+            catch
+            {
+                MostrarError();
+            }
         }
 
         private void DgvResultadoBusqueda_CellContentClick(object sender, DataGridViewCellEventArgs e)

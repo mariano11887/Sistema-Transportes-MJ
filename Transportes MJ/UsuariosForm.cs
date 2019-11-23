@@ -21,26 +21,33 @@ namespace UI
         private void UsuariosForm_Load(object sender, EventArgs e)
         {
             Abrir();
-            RefrescarListaUsuarios();
-
-            // Completo el árbol de permisos
-            List<PermisoBE> permisos = Permiso.ObtenerPerfiles();
-            foreach(PermisoBE permiso in permisos)
+            try
             {
-                AgregarAlArbol(permiso, null);
-            }
+                RefrescarListaUsuarios();
 
-            // Completo el dropdown de idiomas
-            List<IdiomaBE> idiomas = Idioma.ListarTodos();
-            if(idiomas.Count > 0)
+                // Completo el árbol de permisos
+                List<PermisoBE> permisos = Permiso.ObtenerPerfiles();
+                foreach (PermisoBE permiso in permisos)
+                {
+                    AgregarAlArbol(permiso, null);
+                }
+
+                // Completo el dropdown de idiomas
+                List<IdiomaBE> idiomas = Idioma.ListarTodos();
+                if (idiomas.Count > 0)
+                {
+                    cmbIdioma.Items.AddRange(idiomas.ToArray());
+                    cmbIdioma.SelectedIndex = 0;
+                }
+
+                ResetearDetalles(false);
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            catch
             {
-                cmbIdioma.Items.AddRange(idiomas.ToArray());
-                cmbIdioma.SelectedIndex = 0;
+                MostrarError();
             }
-
-            ResetearDetalles(false);
-            btnEditar.Enabled = false;
-            btnEliminar.Enabled = false;
         }
 
         private void LstUsuariosActuales_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,13 +156,20 @@ namespace UI
                 usuario.NombreDeUsuario = txtNombreUsuario.Text;
                 usuario.Contrasenia = txtContrasenia.Text;
                 usuario.Perfil = ObtenerPermisosTildados();
-                Usuario.Guardar(usuario);
+                try
+                {
+                    Usuario.Guardar(usuario);
 
-                MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                ResetearDetalles(false);
-                RefrescarListaUsuarios();
+                    ResetearDetalles(false);
+                    RefrescarListaUsuarios();
+                }
+                catch
+                {
+                    MostrarError();
+                }
             }
         }
 
@@ -173,18 +187,25 @@ namespace UI
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(ObtenerLeyenda("msgConfEliminar"), ObtenerLeyenda("msgConfEliminarTitulo"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(result == DialogResult.Yes)
+            try
             {
-                UsuarioBE usuario = (UsuarioBE)lstUsuariosActuales.SelectedItem;
-                Usuario.Eliminar(usuario);
+                DialogResult result = MessageBox.Show(ObtenerLeyenda("msgConfEliminar"), ObtenerLeyenda("msgConfEliminarTitulo"),
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    UsuarioBE usuario = (UsuarioBE)lstUsuariosActuales.SelectedItem;
+                    Usuario.Eliminar(usuario);
 
-                MessageBox.Show(ObtenerLeyenda("msgEliminado"), ObtenerLeyenda("msgEliminadoTitulo"),
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ObtenerLeyenda("msgEliminado"), ObtenerLeyenda("msgEliminadoTitulo"),
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                ResetearDetalles(false);
-                RefrescarListaUsuarios();
+                    ResetearDetalles(false);
+                    RefrescarListaUsuarios();
+                }
+            }
+            catch
+            {
+                MostrarError();
             }
         }
         #endregion

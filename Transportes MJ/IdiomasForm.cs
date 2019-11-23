@@ -23,14 +23,21 @@ namespace UI
         {
             Abrir();
 
-            List<IdiomaBE> idiomas = Idioma.ListarTodos();
-            lstIdiomasActuales.DataSource = idiomas;
-            lstIdiomasActuales.SelectedItem = null;
-
-            IdiomaBE idiomaEspaniol = idiomas.SingleOrDefault(i => i.Id == 1);
-            if (idiomaEspaniol != null)
+            try
             {
-                LlenarGrillaLeyendasEspaniol(idiomaEspaniol.Leyendas);
+                List<IdiomaBE> idiomas = Idioma.ListarTodos();
+                lstIdiomasActuales.DataSource = idiomas;
+                lstIdiomasActuales.SelectedItem = null;
+
+                IdiomaBE idiomaEspaniol = idiomas.SingleOrDefault(i => i.Id == 1);
+                if (idiomaEspaniol != null)
+                {
+                    LlenarGrillaLeyendasEspaniol(idiomaEspaniol.Leyendas);
+                }
+            }
+            catch
+            {
+                MostrarError();
             }
         }
 
@@ -121,16 +128,23 @@ namespace UI
                     idioma.Leyendas.Add(leyenda);
                 }
 
-                Idioma.Guardar(idioma);
+                try
+                {
+                    Idioma.Guardar(idioma);
 
-                MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _editando = false;
-                LimpiarForm();
+                    MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _editando = false;
+                    LimpiarForm();
 
-                List<IdiomaBE> idiomas = Idioma.ListarTodos();
-                lstIdiomasActuales.DataSource = idiomas;
-                lstIdiomasActuales.SelectedItem = null;
+                    List<IdiomaBE> idiomas = Idioma.ListarTodos();
+                    lstIdiomasActuales.DataSource = idiomas;
+                    lstIdiomasActuales.SelectedItem = null;
+                }
+                catch
+                {
+                    MostrarError();
+                }
             }
         }
 
@@ -145,17 +159,24 @@ namespace UI
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(ObtenerLeyenda("msgEliminar"), ObtenerLeyenda("msgEliminarTitulo"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (result == DialogResult.Yes)
+            try
             {
-                IdiomaBE idioma = (IdiomaBE)lstIdiomasActuales.SelectedItem;
-                Idioma.Eliminar(idioma);
-                LimpiarForm();
+                DialogResult result = MessageBox.Show(ObtenerLeyenda("msgEliminar"), ObtenerLeyenda("msgEliminarTitulo"),
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+                    IdiomaBE idioma = (IdiomaBE)lstIdiomasActuales.SelectedItem;
+                    Idioma.Eliminar(idioma);
+                    LimpiarForm();
 
-                List<IdiomaBE> idiomas = Idioma.ListarTodos();
-                lstIdiomasActuales.DataSource = idiomas;
-                lstIdiomasActuales.SelectedItem = null;
+                    List<IdiomaBE> idiomas = Idioma.ListarTodos();
+                    lstIdiomasActuales.DataSource = idiomas;
+                    lstIdiomasActuales.SelectedItem = null;
+                }
+            }
+            catch
+            {
+                MostrarError();
             }
         }
         #endregion

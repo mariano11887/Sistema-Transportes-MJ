@@ -131,27 +131,34 @@ namespace UI
         {
             if (ValidarGrilla())
             {
-                foreach (DataGridViewRow row in dgvViajes.Rows)
+                try
                 {
-                    GridItem gridItem = row.DataBoundItem as GridItem;
-                    // TODO: Modificar directamente los viajes de la planilla horaria y hacer un Guardar de la planilla.
-                    ViajeBE viaje = gridItem.Viaje;
-                    viaje.Completado = row.Cells["colCompletado"].Value != null && (bool)row.Cells["colCompletado"].Value;
-                    
-                    if(row.Cells["colHoraRealLlegada"].Value != null)
+                    foreach (DataGridViewRow row in dgvViajes.Rows)
                     {
-                        viaje.HoraRealLlegada = new DateTime() + TimeSpan.Parse(row.Cells["colHoraRealLlegada"].Value.ToString());
+                        GridItem gridItem = row.DataBoundItem as GridItem;
+                        // TODO: Modificar directamente los viajes de la planilla horaria y hacer un Guardar de la planilla.
+                        ViajeBE viaje = gridItem.Viaje;
+                        viaje.Completado = row.Cells["colCompletado"].Value != null && (bool)row.Cells["colCompletado"].Value;
+
+                        if (row.Cells["colHoraRealLlegada"].Value != null)
+                        {
+                            viaje.HoraRealLlegada = new DateTime() + TimeSpan.Parse(row.Cells["colHoraRealLlegada"].Value.ToString());
+                        }
+
+                        if (row.Cells["colDensidadPasajeros"].Value != null)
+                        {
+                            viaje.Completitud = completitudes.FirstOrDefault(c => c.Value == row.Cells["colDensidadPasajeros"].Value.ToString()).Key;
+                        }
                     }
 
-                    if(row.Cells["colDensidadPasajeros"].Value != null)
-                    {
-                        viaje.Completitud = completitudes.FirstOrDefault(c => c.Value == row.Cells["colDensidadPasajeros"].Value.ToString()).Key;
-                    }
+                    PlanillaHoraria.GuardarViajes(planillaHoraria);
+
+                    MessageBox.Show(ObtenerLeyenda("msgPlanillaActualizada"));
                 }
-
-                PlanillaHoraria.GuardarViajes(planillaHoraria);
-
-                MessageBox.Show(ObtenerLeyenda("msgPlanillaActualizada"));
+                catch
+                {
+                    MostrarError();
+                }
             }
         }
 

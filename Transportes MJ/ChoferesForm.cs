@@ -36,9 +36,16 @@ namespace UI
             cmbDeLicencia.Items.Add(deLicenciaSi);
             cmbDeLicencia.Items.Add(deLicenciaNo);
 
-            List<VehiculoBE> vehiculos = Vehiculo.ListarTodos();
-            cmbCochePreferidoBusqueda.Items.AddRange(vehiculos.Select(v => v.Patente).ToArray());
-            cmbCochePreferidoDetalle.Items.AddRange(vehiculos.ToArray());
+            try
+            {
+                List<VehiculoBE> vehiculos = Vehiculo.ListarTodos();
+                cmbCochePreferidoBusqueda.Items.AddRange(vehiculos.Select(v => v.Patente).ToArray());
+                cmbCochePreferidoDetalle.Items.AddRange(vehiculos.ToArray());
+            }
+            catch
+            {
+                MostrarError();
+            }
         }
 
         private void TxtDniBusqueda_KeyPress(object sender, KeyPressEventArgs e)
@@ -89,14 +96,21 @@ namespace UI
 
             string patente = cmbCochePreferidoBusqueda.Text;
 
-            List<ChoferBE> choferes = Chofer.Buscar(nombre, dni, enCirculacion, patente);
-            ListViewItem[] items = choferes.Select(c => new ListViewItem
+            try
             {
-                Text = c.Nombre,
-                Tag = c
-            }).ToArray();
+                List<ChoferBE> choferes = Chofer.Buscar(nombre, dni, enCirculacion, patente);
+                ListViewItem[] items = choferes.Select(c => new ListViewItem
+                {
+                    Text = c.Nombre,
+                    Tag = c
+                }).ToArray();
 
-            lstResultadoBusqueda.Items.AddRange(items);
+                lstResultadoBusqueda.Items.AddRange(items);
+            }
+            catch
+            {
+                MostrarError();
+            }
         }
 
         private void BtnDescartar_Click(object sender, EventArgs e)
@@ -130,16 +144,23 @@ namespace UI
                 chofer.Dni = int.Parse(txtDniDetalle.Text);
                 chofer.Nombre = txtNombreDetalle.Text;
 
-                Chofer.Guardar(chofer);
-                MessageBox.Show(ObtenerLeyenda("msgChoferGuardado"));
+                try
+                {
+                    Chofer.Guardar(chofer);
+                    MessageBox.Show(ObtenerLeyenda("msgChoferGuardado"));
 
-                LimpiarDetalles();
-                grpDetalles.Enabled = false;
-                grpLicencias.Enabled = false;
-                btnEditar.Enabled = false;
-                btnCargarLicencia.Enabled = false;
-                btnEliminar.Enabled = false;
-                lstResultadoBusqueda.Items.Clear();
+                    LimpiarDetalles();
+                    grpDetalles.Enabled = false;
+                    grpLicencias.Enabled = false;
+                    btnEditar.Enabled = false;
+                    btnCargarLicencia.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    lstResultadoBusqueda.Items.Clear();
+                }
+                catch
+                {
+                    MostrarError();
+                }
             }
         }
 
@@ -199,17 +220,24 @@ namespace UI
             {
                 ChoferBE chofer = lstResultadoBusqueda.SelectedItems[0].Tag as ChoferBE;
                 chofer.FechaFinLicencia = dtpFechaFinLicencia.Value;
-                Chofer.Guardar(chofer);
+                try
+                {
+                    Chofer.Guardar(chofer);
 
-                MessageBox.Show(ObtenerLeyenda("msgLicenciaGuardada"));
+                    MessageBox.Show(ObtenerLeyenda("msgLicenciaGuardada"));
 
-                LimpiarDetalles();
-                grpDetalles.Enabled = false;
-                grpLicencias.Enabled = false;
-                btnEditar.Enabled = false;
-                btnCargarLicencia.Enabled = false;
-                btnEliminar.Enabled = false;
-                lstResultadoBusqueda.Items.Clear();
+                    LimpiarDetalles();
+                    grpDetalles.Enabled = false;
+                    grpLicencias.Enabled = false;
+                    btnEditar.Enabled = false;
+                    btnCargarLicencia.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    lstResultadoBusqueda.Items.Clear();
+                }
+                catch
+                {
+                    MostrarError();
+                }
             }
         }
 
@@ -217,19 +245,26 @@ namespace UI
         {
             if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
             {
-                ChoferBE chofer = lstResultadoBusqueda.SelectedItems[0].Tag as ChoferBE;
-                Chofer.Borrar(chofer);
+                try
+                {
+                    ChoferBE chofer = lstResultadoBusqueda.SelectedItems[0].Tag as ChoferBE;
+                    Chofer.Borrar(chofer);
 
-                MessageBox.Show(ObtenerLeyenda("msgChoferBorrado"), string.Empty,
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ObtenerLeyenda("msgChoferBorrado"), string.Empty,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                LimpiarDetalles();
-                grpDetalles.Enabled = false;
-                grpLicencias.Enabled = false;
-                btnEditar.Enabled = false;
-                btnCargarLicencia.Enabled = false;
-                btnEliminar.Enabled = false;
-                lstResultadoBusqueda.Items.Clear();
+                    LimpiarDetalles();
+                    grpDetalles.Enabled = false;
+                    grpLicencias.Enabled = false;
+                    btnEditar.Enabled = false;
+                    btnCargarLicencia.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    lstResultadoBusqueda.Items.Clear();
+                }
+                catch
+                {
+                    MostrarError();
+                }
             }
         }
 

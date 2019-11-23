@@ -15,8 +15,15 @@ namespace UI
         {
             Abrir();
 
-            cmbIdioma.Items.AddRange(Idioma.ListarTodos().ToArray());
-            cmbIdioma.SelectedIndex = cmbIdioma.FindStringExact(Sesion.Instancia().UsuarioLogueado.Idioma.ToString());
+            try
+            {
+                cmbIdioma.Items.AddRange(Idioma.ListarTodos().ToArray());
+                cmbIdioma.SelectedIndex = cmbIdioma.FindStringExact(Sesion.Instancia().UsuarioLogueado.Idioma.ToString());
+            }
+            catch
+            {
+                MostrarError();
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -26,17 +33,24 @@ namespace UI
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            UsuarioBE usuarioLogueado = Sesion.Instancia().UsuarioLogueado;
-            IdiomaBE idiomaSeleccionado = (IdiomaBE)cmbIdioma.SelectedItem;
-            if(!usuarioLogueado.Idioma.Equals(idiomaSeleccionado))
+            try
             {
-                usuarioLogueado.Idioma = idiomaSeleccionado;
-                Usuario.Guardar(usuarioLogueado);
+                UsuarioBE usuarioLogueado = Sesion.Instancia().UsuarioLogueado;
+                IdiomaBE idiomaSeleccionado = (IdiomaBE)cmbIdioma.SelectedItem;
+                if (!usuarioLogueado.Idioma.Equals(idiomaSeleccionado))
+                {
+                    usuarioLogueado.Idioma = idiomaSeleccionado;
+                    Usuario.Guardar(usuarioLogueado);
 
-                GestorDeIdioma.Instancia().Notificar();
+                    GestorDeIdioma.Instancia().Notificar();
+                }
+
+                Close();
             }
-
-            Close();
+            catch
+            {
+                MostrarError();
+            }
         }
     }
 }

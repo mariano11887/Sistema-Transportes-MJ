@@ -72,12 +72,19 @@ namespace UI
                 vehiculo.Modelo = txtModelo.Text.Trim();
                 vehiculo.Patente = txtPatenteDetalles.Text.Trim().ToUpper();
 
-                Vehiculo.Guardar(vehiculo);
+                try
+                {
+                    Vehiculo.Guardar(vehiculo);
 
-                MessageBox.Show(ObtenerLeyenda("msgVehiculoGuardado"), string.Empty,
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ResetearFormulario();
-                btnBuscar.PerformClick();
+                    MessageBox.Show(ObtenerLeyenda("msgVehiculoGuardado"), string.Empty,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ResetearFormulario();
+                    btnBuscar.PerformClick();
+                }
+                catch
+                {
+                    MostrarError();
+                }
             }
         }
 
@@ -85,18 +92,25 @@ namespace UI
         {
             lstResultadoBusqueda.Items.Clear();
 
-            int numeroInterno = string.IsNullOrWhiteSpace(txtNumeroDeInternoBusqueda.Text) ? 0 : 
-                int.Parse(txtNumeroDeInternoBusqueda.Text);
-            List<VehiculoBE> vehiculos = Vehiculo.Buscar(txtPatenteBusqueda.Text.Trim(), numeroInterno, 
-                chkEnCirculacionBusqueda.Checked);
-
-            ListViewItem[] items = vehiculos.Select(v => new ListViewItem
+            try
             {
-                Text = string.Format("{0} - {1} {2}. Interno {3}", v.Patente, v.Marca, v.Modelo, v.NumeroInterno),
-                Tag = v
-            }).ToArray();
+                int numeroInterno = string.IsNullOrWhiteSpace(txtNumeroDeInternoBusqueda.Text) ? 0 :
+                    int.Parse(txtNumeroDeInternoBusqueda.Text);
+                List<VehiculoBE> vehiculos = Vehiculo.Buscar(txtPatenteBusqueda.Text.Trim(), numeroInterno,
+                    chkEnCirculacionBusqueda.Checked);
 
-            lstResultadoBusqueda.Items.AddRange(items);
+                ListViewItem[] items = vehiculos.Select(v => new ListViewItem
+                {
+                    Text = string.Format("{0} - {1} {2}. Interno {3}", v.Patente, v.Marca, v.Modelo, v.NumeroInterno),
+                    Tag = v
+                }).ToArray();
+
+                lstResultadoBusqueda.Items.AddRange(items);
+            }
+            catch
+            {
+                MostrarError();
+            }
         }
 
         private void LstResultadoBusqueda_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,13 +152,20 @@ namespace UI
         {
             if (lstResultadoBusqueda.SelectedItems.Count > 0 && lstResultadoBusqueda.SelectedItems[0] != null)
             {
-                VehiculoBE vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as VehiculoBE;
-                Vehiculo.Borrar(vehiculo);
+                try
+                {
+                    VehiculoBE vehiculo = lstResultadoBusqueda.SelectedItems[0].Tag as VehiculoBE;
+                    Vehiculo.Borrar(vehiculo);
 
-                MessageBox.Show(ObtenerLeyenda("msgVehiculoBorrado"), string.Empty,
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ResetearFormulario();
-                btnBuscar.PerformClick();
+                    MessageBox.Show(ObtenerLeyenda("msgVehiculoBorrado"), string.Empty,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ResetearFormulario();
+                    btnBuscar.PerformClick();
+                }
+                catch
+                {
+                    MostrarError();
+                }
             }
         }
 

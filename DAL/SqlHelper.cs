@@ -54,6 +54,7 @@ namespace DAL
             catch (Exception ex)
             {
                 Log.Grabar(ex);
+                if(bd != Bd.Bitacora) throw ex;
                 return null;
             }
         }
@@ -83,6 +84,7 @@ namespace DAL
             catch (Exception ex)
             {
                 Log.Grabar(ex);
+                if (bd != Bd.Bitacora) throw ex;
                 return default;
             }
         }
@@ -110,6 +112,7 @@ namespace DAL
             catch (Exception ex)
             {
                 Log.Grabar(ex);
+                if (bd != Bd.Bitacora) throw ex;
             }
         }
 
@@ -137,6 +140,7 @@ namespace DAL
             catch (Exception ex)
             {
                 Log.Grabar(ex);
+                if (bd != Bd.Bitacora) throw ex;
                 return 0;
             }
         }

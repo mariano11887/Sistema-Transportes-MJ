@@ -23,9 +23,16 @@ namespace UI
         {
             Abrir();
 
-            ActualizarPerfiles();
-            cmbPermisos.DataSource = Permiso.ObtenerPermisosSimples();
-            ResetearFormulario();
+            try
+            {
+                ActualizarPerfiles();
+                cmbPermisos.DataSource = Permiso.ObtenerPermisosSimples();
+                ResetearFormulario();
+            }
+            catch
+            {
+                MostrarError();
+            }
         }
 
         private void LstPerfilesActuales_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,15 +99,22 @@ namespace UI
         {
             if(ValidarDatos())
             {
-                permisoActual.Descripcion = txtDescripcion.Text;
-                permisoActual.Nombre = txtNombre.Text;
-                Permiso.Guardar(permisoActual);
+                try
+                {
+                    permisoActual.Descripcion = txtDescripcion.Text;
+                    permisoActual.Nombre = txtNombre.Text;
+                    Permiso.Guardar(permisoActual);
 
-                MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                ActualizarPerfiles();
-                ResetearFormulario();
+                    ActualizarPerfiles();
+                    ResetearFormulario();
+                }
+                catch
+                {
+                    MostrarError();
+                }
             }
         }
 
@@ -115,14 +129,21 @@ namespace UI
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(ObtenerLeyenda("msgEliminar"), ObtenerLeyenda("msgEliminarTitulo"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if(result == DialogResult.Yes)
+            try
             {
-                PermisoBE permiso = (PermisoBE)lstPerfilesActuales.SelectedItem;
-                Permiso.Borrar(permiso);
-                ActualizarPerfiles();
-                ResetearFormulario();
+                DialogResult result = MessageBox.Show(ObtenerLeyenda("msgEliminar"), ObtenerLeyenda("msgEliminarTitulo"),
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+                    PermisoBE permiso = (PermisoBE)lstPerfilesActuales.SelectedItem;
+                    Permiso.Borrar(permiso);
+                    ActualizarPerfiles();
+                    ResetearFormulario();
+                }
+            }
+            catch
+            {
+                MostrarError();
             }
         }
         #endregion

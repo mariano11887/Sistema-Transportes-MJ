@@ -18,22 +18,29 @@ namespace UI
 
         private void BtnCrearBackup_Click(object sender, EventArgs e)
         {
-            sfdCrearBackup.ShowDialog();
-            string filePath = sfdCrearBackup.FileName;
-            if (string.IsNullOrWhiteSpace(filePath))
+            try
             {
-                //MessageBox.Show(ObtenerLeyenda("msgUbicacionVaciaCrear"), ObtenerLeyenda("msgUbicacionVaciaCrearTitulo"),
-                //    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                sfdCrearBackup.ShowDialog();
+                string filePath = sfdCrearBackup.FileName;
+                if (string.IsNullOrWhiteSpace(filePath))
+                {
+                    //MessageBox.Show(ObtenerLeyenda("msgUbicacionVaciaCrear"), ObtenerLeyenda("msgUbicacionVaciaCrearTitulo"),
+                    //    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (DigitoVerificador.ChequearDVs())
+                {
+                    Backup.HacerBackup(sfdCrearBackup.FileName);
+                    MessageBox.Show(ObtenerLeyenda("msgBackupCreado"), ObtenerLeyenda("msgBackupCreadoTitulo"),
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(ObtenerLeyenda("msgPruebaDVMal"), "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else if (DigitoVerificador.ChequearDVs())
+            catch
             {
-                Backup.HacerBackup(sfdCrearBackup.FileName);
-                MessageBox.Show(ObtenerLeyenda("msgBackupCreado"), ObtenerLeyenda("msgBackupCreadoTitulo"),
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(ObtenerLeyenda("msgPruebaDVMal"), "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MostrarError();
             }
         }
 
@@ -45,23 +52,30 @@ namespace UI
 
         private void btnRestaurarBackup_Click(object sender, EventArgs e)
         {
-            if(txtUbicacionRestaurar.Text.EndsWith(".bak"))
+            try
             {
-                DialogResult result = MessageBox.Show(ObtenerLeyenda("msgConfirmacionRestaurar"), ObtenerLeyenda("msgConfirmacionRestaurarTitulo"),
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
+                if (txtUbicacionRestaurar.Text.EndsWith(".bak"))
                 {
-                    Backup.RestaurarBackup(txtUbicacionRestaurar.Text);
-                    MessageBox.Show(ObtenerLeyenda("msgRestauracionCompleta"), ObtenerLeyenda("msgRestauracionCompletaTitulo"),
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Se desloguea al usuario del sistema
-                    ((MainForm)MdiParent).CerrarSesion();
+                    DialogResult result = MessageBox.Show(ObtenerLeyenda("msgConfirmacionRestaurar"), ObtenerLeyenda("msgConfirmacionRestaurarTitulo"),
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        Backup.RestaurarBackup(txtUbicacionRestaurar.Text);
+                        MessageBox.Show(ObtenerLeyenda("msgRestauracionCompleta"), ObtenerLeyenda("msgRestauracionCompletaTitulo"),
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Se desloguea al usuario del sistema
+                        ((MainForm)MdiParent).CerrarSesion();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(ObtenerLeyenda("msgArchivoBackupInvalido"), ObtenerLeyenda("msgArchivoBackupInvalidoTitulo"),
+                        MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show(ObtenerLeyenda("msgArchivoBackupInvalido"), ObtenerLeyenda("msgArchivoBackupInvalidoTitulo"),
-                    MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MostrarError();
             }
         }
     }
