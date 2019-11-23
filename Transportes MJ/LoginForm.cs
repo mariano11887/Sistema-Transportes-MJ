@@ -1,12 +1,5 @@
 ﻿using BL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -27,12 +20,11 @@ namespace UI
             //btnAceptar.PerformClick();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
             if (ValidarDatos())
             {
-                Usuario usuario = new Usuario();
-                if (usuario.Login(txtNombreDeUsuario.Text.Trim(), txtContrasenia.Text.Trim()))
+                if (Usuario.Login(txtNombreDeUsuario.Text.Trim(), txtContrasenia.Text.Trim()))
                 {
                     Close();
                 }
@@ -56,7 +48,7 @@ namespace UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnAceptar_Click(this, new EventArgs());
+                BtnAceptar_Click(this, new EventArgs());
             }
         }
         #endregion

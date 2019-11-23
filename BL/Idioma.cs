@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,140 +10,41 @@ namespace BL
 {
     public class Idioma
     {
-        #region Constructores
-        public Idioma() { }
-
-        public Idioma(int Id)
-        {
-            IdiomaDAL idiomaDAL = IdiomaDAL.Obtener(Id);
-            ConvertirDesdeDAL(idiomaDAL);
-        }
-        #endregion
-
-        #region Propiedades
-        private int _id;
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        private string _nombre;
-        public string Nombre
-        {
-            get { return _nombre; }
-            set { _nombre = value; }
-        }
-
-        private bool _editable;
-        public bool Editable
-        {
-            get { return _editable; }
-            set { _editable = value; }
-        }
-
-        private List<Leyenda> _leyendas;
-        public List<Leyenda> Leyendas
-        {
-            get
-            {
-                if(_leyendas == null)
-                {
-                    _leyendas = Leyenda.ObtenerTodas(this);
-                }
-                return _leyendas;
-            }
-            set { _leyendas = value; }
-        }
-        #endregion
-
         #region Métodos públicos
-        public void Guardar()
+        public static void Guardar(IdiomaBE idioma)
         {
             // Primero el idioma en sí
-            IdiomaDAL idiomaDAL = new IdiomaDAL()
-            {
-                IdiomaId = Id,
-                Editable = Editable,
-                Nombre = Nombre
-            };
-            idiomaDAL.Guardar();
-            Id = idiomaDAL.IdiomaId;
+            IdiomaDAL.Guardar(idioma);
 
             // Ahora las leyendas
-            LeyendaDAL leyendaDAL = new LeyendaDAL();
-            leyendaDAL.IdiomaId = Id;
-            foreach(Leyenda leyenda in Leyendas)
+            LeyendaDAL leyendaDAL = new LeyendaDAL(idioma.Id);
+            foreach(LeyendaBE leyenda in idioma.Leyendas)
             {
-                leyendaDAL.NombreControl = leyenda.NombreControl;
-                leyendaDAL.NombreForm = leyenda.NombreForm;
-                leyendaDAL.Texto = leyenda.Texto;
-                leyendaDAL.Guardar();
+                leyendaDAL.Guardar(leyenda);
             }
 
             // Registro en la bitácora
-            BitacoraDAL bitacora = new BitacoraDAL()
-            {
-                Detalle = "Se guardó el idioma con el id " + Id,
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacora.Guardar();
+            Bitacora.Loguear("Se guardó el idioma con el id " + idioma.Id);
         }
 
-        public static List<Idioma> ListarTodos()
+        public static List<IdiomaBE> ListarTodos()
         {
-            List<Idioma> idiomas = new List<Idioma>();
-            List<IdiomaDAL> idiomasDAL = IdiomaDAL.ObtenerTodos();
-            foreach(IdiomaDAL idiomaDAL in idiomasDAL)
-            {
-                Idioma idioma = new Idioma();
-                idioma.ConvertirDesdeDAL(idiomaDAL);
-                idiomas.Add(idioma);
-            }
-            return idiomas;
+            return IdiomaDAL.ObtenerTodos();
         }
 
-        public void Eliminar()
+        public static void Eliminar(IdiomaBE idioma)
         {
             // Los usuarios que tengan este idioma asignado pasarán a tener Español (id 1)
-            Usuario.PonerIdiomaDefault(this);
+            Usuario.PonerIdiomaDefault(idioma);
 
             // Eliminar las leyendas de este idioa
-            LeyendaDAL.EliminarPorIdioma(Id);
+            LeyendaDAL.EliminarPorIdioma(idioma.Id);
 
             // Ahora sí elimino el idioma
-            IdiomaDAL.Borrar(Id);
+            IdiomaDAL.Borrar(idioma.Id);
 
             // Registro en la bitácora
-            BitacoraDAL bitacora = new BitacoraDAL()
-            {
-                Detalle = "Se eliminó el idioma " + Nombre,
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacora.Guardar();
-        }
-
-        public override string ToString()
-        {
-            return Nombre;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if(obj is Idioma)
-            {
-                return Id == ((Idioma)obj).Id;
-            }
-            return false;
-        }
-        #endregion
-
-        #region Métodos privados
-        private void ConvertirDesdeDAL(IdiomaDAL IdiomaDAL)
-        {
-            Id = IdiomaDAL.IdiomaId;
-            Nombre = IdiomaDAL.Nombre;
-            Editable = IdiomaDAL.Editable;
+            Bitacora.Loguear("Se eliminó el idioma " + idioma.Nombre);
         }
         #endregion
     }

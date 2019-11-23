@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,14 +24,14 @@ namespace UI
             RefrescarListaUsuarios();
 
             // Completo el árbol de permisos
-            List<Permiso> permisos = Permiso.ObtenerPerfiles();
-            foreach(Permiso permiso in permisos)
+            List<PermisoBE> permisos = Permiso.ObtenerPerfiles();
+            foreach(PermisoBE permiso in permisos)
             {
                 AgregarAlArbol(permiso, null);
             }
 
             // Completo el dropdown de idiomas
-            List<Idioma> idiomas = Idioma.ListarTodos();
+            List<IdiomaBE> idiomas = Idioma.ListarTodos();
             if(idiomas.Count > 0)
             {
                 cmbIdioma.Items.AddRange(idiomas.ToArray());
@@ -63,7 +64,7 @@ namespace UI
             }
             else
             {
-                Usuario usuario = (Usuario)lstUsuariosActuales.SelectedItem;
+                UsuarioBE usuario = (UsuarioBE)lstUsuariosActuales.SelectedItem;
                 txtNombre.Text = usuario.Nombre;
                 cmbIdioma.SelectedIndex = cmbIdioma.FindStringExact(usuario.Idioma.ToString());
                 txtNombreUsuario.Text = usuario.NombreDeUsuario;
@@ -134,21 +135,21 @@ namespace UI
             else
             {
                 // Todo OK, guardo
-                Usuario usuario;
+                UsuarioBE usuario;
                 if (lstUsuariosActuales.SelectedItem == null)
                 {
-                    usuario = new Usuario();
+                    usuario = new UsuarioBE();
                 }
                 else
                 {
-                    usuario = (Usuario)lstUsuariosActuales.SelectedItem;
+                    usuario = (UsuarioBE)lstUsuariosActuales.SelectedItem;
                 }
                 usuario.Nombre = txtNombre.Text;
-                usuario.Idioma = (Idioma)cmbIdioma.SelectedItem;
+                usuario.Idioma = (IdiomaBE)cmbIdioma.SelectedItem;
                 usuario.NombreDeUsuario = txtNombreUsuario.Text;
                 usuario.Contrasenia = txtContrasenia.Text;
                 usuario.Perfil = ObtenerPermisosTildados();
-                usuario.Guardar();
+                Usuario.Guardar(usuario);
 
                 MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -176,8 +177,8 @@ namespace UI
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if(result == DialogResult.Yes)
             {
-                Usuario usuario = (Usuario)lstUsuariosActuales.SelectedItem;
-                usuario.Eliminar();
+                UsuarioBE usuario = (UsuarioBE)lstUsuariosActuales.SelectedItem;
+                Usuario.Eliminar(usuario);
 
                 MessageBox.Show(ObtenerLeyenda("msgEliminado"), ObtenerLeyenda("msgEliminadoTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -199,22 +200,22 @@ namespace UI
         private void RefrescarListaUsuarios()
         {
             lstUsuariosActuales.Items.Clear();
-            List<Usuario> usuarios = Usuario.ObtenerTodos();
-            foreach (Usuario usuario in usuarios)
+            List<UsuarioBE> usuarios = Usuario.ObtenerTodos();
+            foreach (UsuarioBE usuario in usuarios)
             {
                 lstUsuariosActuales.Items.Add(usuario);
             }
             _ultimoUsuarioSeleccionado = -1;
         }
 
-        private void AgregarAlArbol(Permiso permiso, TreeNode nodoPadre)
+        private void AgregarAlArbol(PermisoBE permiso, TreeNode nodoPadre)
         {
             TreeNode nodo = new TreeNode(permiso.ToString())
             {
                 Tag = permiso
             };
-            List<Permiso> permisosHijos = permiso.ObtenerPermisosHijos();
-            foreach (Permiso p in permisosHijos)
+            List<PermisoBE> permisosHijos = permiso.DevolverPerfil();
+            foreach (PermisoBE p in permisosHijos)
             {
                 AgregarAlArbol(p, nodo);
             }
@@ -258,19 +259,19 @@ namespace UI
             return result == DialogResult.Yes;
         }
 
-        private List<Permiso> ObtenerPermisosTildados()
+        private List<PermisoBE> ObtenerPermisosTildados()
         {
             return ObtenerPermisosTildados(trvPermisos.Nodes);
         }
 
-        private List<Permiso> ObtenerPermisosTildados(TreeNodeCollection nodosDondeBuscar)
+        private List<PermisoBE> ObtenerPermisosTildados(TreeNodeCollection nodosDondeBuscar)
         {
-            List<Permiso> permisos = new List<Permiso>();
+            List<PermisoBE> permisos = new List<PermisoBE>();
             foreach(TreeNode nodo in nodosDondeBuscar)
             {
                 if(nodo.Checked)
                 {
-                    permisos.Add((Permiso)nodo.Tag);
+                    permisos.Add((PermisoBE)nodo.Tag);
                 }
                 else if(nodo.Nodes.Count > 0)
                 {
@@ -280,14 +281,14 @@ namespace UI
             return permisos.GroupBy(p => p.Id).Select(g => g.First()).ToList();
         }
 
-        private void TildarPermisosUsuario(Usuario usuario, TreeNodeCollection nodosABuscar)
+        private void TildarPermisosUsuario(UsuarioBE usuario, TreeNodeCollection nodosABuscar)
         {
             foreach (TreeNode nodo in nodosABuscar)
             {
                 if (!nodo.Checked)
                 {
-                    Permiso permiso = (Permiso)nodo.Tag;
-                    if (usuario.Perfil.Contains(permiso, new Permiso.Comparador()))
+                    PermisoBE permiso = (PermisoBE)nodo.Tag;
+                    if (usuario.Perfil.Contains(permiso, new PermisoBE.Comparador()))
                     {
                         _editando = true;
                         nodo.Checked = true;

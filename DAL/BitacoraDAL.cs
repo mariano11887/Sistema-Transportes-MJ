@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,49 +11,20 @@ namespace DAL
 {
     public class BitacoraDAL
     {
-        #region Constructores
-        public BitacoraDAL()
-        {
-            _fechaHora = DateTime.Now;
-        }
-        #endregion
-
-        #region Propiedades
-        private DateTime _fechaHora;
-        public DateTime FechaHora
-        {
-            get { return _fechaHora; }
-        }
-
-        private int _usuarioId;
-        public int UsuarioId
-        {
-            get { return _usuarioId; }
-            set { _usuarioId = value; }
-        }
-
-        private string _detalle;
-        public string Detalle
-        {
-            get { return _detalle; }
-            set { _detalle = value; }
-        }
-        #endregion
-
         #region Métodos
-        public void Guardar()
+        public static void Guardar(BitacoraBE bitacora)
         {
             string query = "INSERT INTO bitacora (fecha_hora, usuario_id, detalle) VALUES (@fechaHora, @usuarioId, @detalle);";
             SqlParameter[] parameters = new SqlParameter[3]
             {
-                new SqlParameter("@fechaHora", _fechaHora),
-                new SqlParameter("@usuarioId", _usuarioId),
-                new SqlParameter("@detalle", _detalle)
+                new SqlParameter("@fechaHora", bitacora.FechaHora),
+                new SqlParameter("@usuarioId", bitacora.Usuario.Id),
+                new SqlParameter("@detalle", bitacora.Detalle)
             };
             SqlHelper.Ejecutar(query, parameters, SqlHelper.Bd.Bitacora);
         }
 
-        public static List<BitacoraDAL> Buscar(DateTime fechaInicio, DateTime fechaFin, int usuarioId, string texto)
+        public static List<BitacoraBE> Buscar(DateTime fechaInicio, DateTime fechaFin, int usuarioId, string texto)
         {
             string query = "SELECT fecha_hora, usuario_id, detalle FROM bitacora WHERE fecha_hora BETWEEN @fechaInicio AND @fechaFin";
             List<SqlParameter> paramList = new List<SqlParameter> {
@@ -70,18 +42,18 @@ namespace DAL
                 paramList.Add(new SqlParameter("@detalle", "%" + texto + "%"));
             }
             DataTable table = SqlHelper.Obtener(query, paramList.ToArray(), SqlHelper.Bd.Bitacora);
-            List<BitacoraDAL> bitacorasDAL = new List<BitacoraDAL>();
+            List<BitacoraBE> bitacoras = new List<BitacoraBE>();
             foreach(DataRow row in table.Rows)
             {
-                BitacoraDAL bitacoraDAL = new BitacoraDAL
+                BitacoraBE bitacora = new BitacoraBE
                 {
-                    _fechaHora = DateTime.Parse(row["fecha_hora"].ToString()),
-                    UsuarioId = int.Parse(row["usuario_id"].ToString()),
+                    FechaHora = DateTime.Parse(row["fecha_hora"].ToString()),
+                    Usuario = UsuarioDAL.Obtener(int.Parse(row["usuario_id"].ToString())),
                     Detalle = row["detalle"].ToString()
                 };
-                bitacorasDAL.Add(bitacoraDAL);
+                bitacoras.Add(bitacora);
             }
-            return bitacorasDAL;
+            return bitacoras;
         }
         #endregion
     }

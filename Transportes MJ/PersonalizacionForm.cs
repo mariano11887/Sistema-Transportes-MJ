@@ -1,13 +1,6 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace UI
 {
@@ -26,19 +19,19 @@ namespace UI
             cmbIdioma.SelectedIndex = cmbIdioma.FindStringExact(Sesion.Instancia().UsuarioLogueado.Idioma.ToString());
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            Usuario usuarioLogueado = Sesion.Instancia().UsuarioLogueado;
-            Idioma idiomaSeleccionado = (Idioma)cmbIdioma.SelectedItem;
+            UsuarioBE usuarioLogueado = Sesion.Instancia().UsuarioLogueado;
+            IdiomaBE idiomaSeleccionado = (IdiomaBE)cmbIdioma.SelectedItem;
             if(!usuarioLogueado.Idioma.Equals(idiomaSeleccionado))
             {
                 usuarioLogueado.Idioma = idiomaSeleccionado;
-                usuarioLogueado.Guardar();
+                Usuario.Guardar(usuarioLogueado);
 
                 GestorDeIdioma.Instancia().Notificar();
             }

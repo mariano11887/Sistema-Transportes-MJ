@@ -1,17 +1,14 @@
-﻿using BL;
-using Logger;
-using System;
+﻿using BE;
+using BL;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
 {
     public class FormGeneral : Form, IObservadorIdioma
     {
-        private List<Leyenda> _leyendas;
+        private List<LeyendaBE> _leyendas;
 
         #region Métodos públicos
         public void Abrir()
@@ -26,14 +23,14 @@ namespace UI
 
         public void ActualizarLeyendas()
         {
-            Idioma idioma = Sesion.Instancia().UsuarioLogueado.Idioma;
+            IdiomaBE idioma = Sesion.Instancia().UsuarioLogueado.Idioma;
             _leyendas = idioma.Leyendas.Where(l => l.NombreForm == Name).ToList();
             AsignarLeyenda(this);
         }
 
         public string ObtenerLeyenda(string Clave)
         {
-            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Clave);
+            LeyendaBE leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Clave);
             return leyenda != null ? leyenda.Texto : "";
         }
 
@@ -55,7 +52,7 @@ namespace UI
 
         private void AsignarLeyenda(Control Control)
         {
-            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Control.Name);
+            LeyendaBE leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Control.Name);
             if (leyenda != null)
             {
                 Control.Text = leyenda.Texto;
@@ -85,7 +82,7 @@ namespace UI
 
         private void AsignarLeyenda(ToolStripMenuItem Item)
         {
-            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Item.Name);
+            LeyendaBE leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == Item.Name);
             if (leyenda != null)
             {
                 Item.Text = leyenda.Texto;
@@ -98,7 +95,7 @@ namespace UI
 
         private void AsignarLeyenda(DataGridViewColumn columna)
         {
-            Leyenda leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == columna.Name);
+            LeyendaBE leyenda = _leyendas.FirstOrDefault(l => l.NombreControl == columna.Name);
             if (leyenda != null)
             {
                 columna.HeaderText = leyenda.Texto;

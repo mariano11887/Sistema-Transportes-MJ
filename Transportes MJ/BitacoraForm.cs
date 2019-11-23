@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,10 +46,10 @@ namespace UI
 
             DateTime fechaInicio = dtpFechaInicio.Value.Date;
             DateTime fechaFin = dtpFechaFin.Value.Date.AddDays(1); // Agrego un día para que lo incluya en la búsqueda
-            Usuario usuario = cmbUsuario.SelectedItem as Usuario;
+            UsuarioBE usuario = cmbUsuario.SelectedItem as UsuarioBE;
             string parteTexto = txtParteDelTexto.Text.Trim();
-            List<Bitacora> bitacoras = Bitacora.Buscar(fechaInicio, fechaFin, usuario, parteTexto);
-            foreach(Bitacora bitacora in bitacoras)
+            List<BitacoraBE> bitacoras = Bitacora.Buscar(fechaInicio, fechaFin, usuario, parteTexto);
+            foreach(BitacoraBE bitacora in bitacoras)
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgvRegistros);

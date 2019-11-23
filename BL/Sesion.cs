@@ -1,9 +1,6 @@
-﻿using DAL;
-using System;
+﻿using BE;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
@@ -13,11 +10,16 @@ namespace BL
 
         private static Sesion _instancia;
 
-        private Usuario _usuarioLogueado;
-        public Usuario UsuarioLogueado
+        private UsuarioBE _usuarioLogueado;
+        public UsuarioBE UsuarioLogueado
         {
             get { return _usuarioLogueado; }
-            set { _usuarioLogueado = value; }
+            set 
+            { 
+                _usuarioLogueado = value;
+                _permisos = new HashSet<string>();
+                CompletarPermisos(_usuarioLogueado.Perfil);
+            }
         }
 
         private HashSet<string> _permisos;
@@ -31,12 +33,13 @@ namespace BL
             return _instancia;
         }
 
-        public void EstablecerPermisos(List<Permiso> permisos)
+        private void CompletarPermisos(List<PermisoBE> permisos)
         {
-            _permisos = new HashSet<string>();
-            foreach (Permiso p in permisos)
+            foreach (PermisoBE p in permisos)
             {
-                _permisos.UnionWith(p.DevolverPerfil().Select(x => x.Nombre));
+                List<PermisoBE> permisosHijos = p.DevolverPerfil();
+                _permisos.UnionWith(permisosHijos.Select(x => x.Nombre));
+                CompletarPermisos(permisosHijos);
             }
         }
 
@@ -49,12 +52,7 @@ namespace BL
         {
             if (_usuarioLogueado != null)
             {
-                BitacoraDAL bitacora = new BitacoraDAL()
-                {
-                    UsuarioId = _usuarioLogueado.Id,
-                    Detalle = "El usuario cerró sesión"
-                };
-                bitacora.Guardar();
+                Bitacora.Loguear("El usuario cerró sesión");
 
                 _usuarioLogueado = null;
                 _permisos = null;

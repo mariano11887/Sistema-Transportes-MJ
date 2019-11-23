@@ -42,7 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlertaInsuficienciaBE.cs" />
+    <Compile Include="BitacoraBE.cs" />
+    <Compile Include="IdiomaBE.cs" />
+    <Compile Include="LeyendaBE.cs" />
+    <Compile Include="PermisoBE.cs" />
+    <Compile Include="PermisoCompuestoBE.cs" />
+    <Compile Include="PermisoSimpleBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBE.cs" />
+    <Compile Include="UsuarioHistorialBE.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

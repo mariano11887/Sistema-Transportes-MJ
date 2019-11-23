@@ -1,12 +1,8 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -27,18 +23,18 @@ namespace UI
         {
             Abrir();
 
-            List<Idioma> idiomas = Idioma.ListarTodos();
+            List<IdiomaBE> idiomas = Idioma.ListarTodos();
             lstIdiomasActuales.DataSource = idiomas;
             lstIdiomasActuales.SelectedItem = null;
 
-            Idioma idiomaEspaniol = idiomas.SingleOrDefault(i => i.Id == 1);
+            IdiomaBE idiomaEspaniol = idiomas.SingleOrDefault(i => i.Id == 1);
             if (idiomaEspaniol != null)
             {
                 LlenarGrillaLeyendasEspaniol(idiomaEspaniol.Leyendas);
             }
         }
 
-        private void lstIdiomasActuales_SelectedIndexChanged(object sender, EventArgs e)
+        private void LstIdiomasActuales_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (_inhibir)
             {
@@ -54,11 +50,11 @@ namespace UI
                     btnEditar.Enabled = false;
                     btnEliminar.Enabled = false;
                     txtNombre.Text = "";
-                    LlenarTextoIdioma(new List<Leyenda>());
+                    LlenarTextoIdioma(new List<LeyendaBE>());
                 }
                 else
                 {
-                    Idioma idiomaSeleccionado = (Idioma)lstIdiomasActuales.SelectedItem;
+                    IdiomaBE idiomaSeleccionado = (IdiomaBE)lstIdiomasActuales.SelectedItem;
                     btnEditar.Enabled = idiomaSeleccionado.Editable;
                     btnEliminar.Enabled = idiomaSeleccionado.Editable;
                     txtNombre.Text = idiomaSeleccionado.Nombre;
@@ -72,7 +68,7 @@ namespace UI
             }
         }
 
-        private void btnCrearNuevo_Click(object sender, EventArgs e)
+        private void BtnCrearNuevo_Click(object sender, EventArgs e)
         {
             lstIdiomasActuales.SelectedItem = null;
             _editando = true;
@@ -87,7 +83,7 @@ namespace UI
             btnDescartar.Enabled = true;
         }
 
-        private void btnDescartar_Click(object sender, EventArgs e)
+        private void BtnDescartar_Click(object sender, EventArgs e)
         {
             if(LimpiarForm())
             {
@@ -95,48 +91,50 @@ namespace UI
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
             if (ValidarDatos())
             {
                 CompletarLeyendasFaltantes();
-                Idioma idioma;
+                IdiomaBE idioma;
                 if (lstIdiomasActuales.SelectedItem == null)
                 {
-                    idioma = new Idioma();
+                    idioma = new IdiomaBE();
                 }
                 else
                 {
-                    idioma = (Idioma)lstIdiomasActuales.SelectedItem;
+                    idioma = (IdiomaBE)lstIdiomasActuales.SelectedItem;
                 }
                 idioma.Nombre = txtNombre.Text;
 
                 // Comienzo construyendo las leyendas
-                idioma.Leyendas = new List<Leyenda>();
+                idioma.Leyendas = new List<LeyendaBE>();
                 foreach (DataGridViewRow row in dgvLeyendas.Rows)
                 {
-                    Leyenda leyendaEsp = (Leyenda)row.Tag;
-                    Leyenda leyenda = new Leyenda();
-                    leyenda.NombreControl = leyendaEsp.NombreControl;
-                    leyenda.NombreForm = leyendaEsp.NombreForm;
-                    leyenda.Texto = row.Cells[2].Value.ToString();
+                    LeyendaBE leyendaEsp = (LeyendaBE)row.Tag;
+                    LeyendaBE leyenda = new LeyendaBE
+                    {
+                        NombreControl = leyendaEsp.NombreControl,
+                        NombreForm = leyendaEsp.NombreForm,
+                        Texto = row.Cells[2].Value.ToString()
+                    };
                     idioma.Leyendas.Add(leyenda);
                 }
 
-                idioma.Guardar();
+                Idioma.Guardar(idioma);
 
                 MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _editando = false;
                 LimpiarForm();
 
-                List<Idioma> idiomas = Idioma.ListarTodos();
+                List<IdiomaBE> idiomas = Idioma.ListarTodos();
                 lstIdiomasActuales.DataSource = idiomas;
                 lstIdiomasActuales.SelectedItem = null;
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
             _editando = true;
             txtNombre.Enabled = true;
@@ -145,17 +143,17 @@ namespace UI
             btnDescartar.Enabled = true;
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(ObtenerLeyenda("msgEliminar"), ObtenerLeyenda("msgEliminarTitulo"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
-                Idioma idioma = (Idioma)lstIdiomasActuales.SelectedItem;
-                idioma.Eliminar();
+                IdiomaBE idioma = (IdiomaBE)lstIdiomasActuales.SelectedItem;
+                Idioma.Eliminar(idioma);
                 LimpiarForm();
 
-                List<Idioma> idiomas = Idioma.ListarTodos();
+                List<IdiomaBE> idiomas = Idioma.ListarTodos();
                 lstIdiomasActuales.DataSource = idiomas;
                 lstIdiomasActuales.SelectedItem = null;
             }
@@ -170,9 +168,9 @@ namespace UI
             btnEliminar.Visible = TienePermiso(Permisos.IDIOMAS_BAJA);
         }
 
-        private void LlenarGrillaLeyendasEspaniol(List<Leyenda> leyendas)
+        private void LlenarGrillaLeyendasEspaniol(List<LeyendaBE> leyendas)
         {
-            foreach (Leyenda leyenda in leyendas)
+            foreach (LeyendaBE leyenda in leyendas)
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgvLeyendas);
@@ -183,12 +181,12 @@ namespace UI
             }
         }
 
-        private void LlenarTextoIdioma(List<Leyenda> leyendas)
+        private void LlenarTextoIdioma(List<LeyendaBE> leyendas)
         {
             foreach(DataGridViewRow row in dgvLeyendas.Rows)
             {
-                Leyenda le = (Leyenda)row.Tag; // Leyenda en español
-                Leyenda leyendaIdioma = leyendas.SingleOrDefault(l => l.NombreForm == le.NombreForm && l.NombreControl == le.NombreControl);
+                LeyendaBE le = (LeyendaBE)row.Tag; // Leyenda en español
+                LeyendaBE leyendaIdioma = leyendas.SingleOrDefault(l => l.NombreForm == le.NombreForm && l.NombreControl == le.NombreControl);
                 row.Cells[2].Value = leyendaIdioma != null ? leyendaIdioma.Texto : "";
             }
         }

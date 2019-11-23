@@ -1,10 +1,7 @@
-﻿using System;
+﻿using BE;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -18,40 +15,16 @@ namespace DAL
             NoSeSabe
         }
 
-        #region Propiedades
         private FormaGuardado _formaGuardado = FormaGuardado.NoSeSabe;
+        private readonly int idiomaId;
 
-        private int _idiomaId;
-        public int IdiomaId
+        public LeyendaDAL(int idiomaId)
         {
-            get { return _idiomaId; }
-            set { _idiomaId = value; }
+            this.idiomaId = idiomaId;
         }
-
-        private string _nombreForm;
-        public string NombreForm
-        {
-            get { return _nombreForm; }
-            set { _nombreForm = value; }
-        }
-
-        private string _nombreControl;
-        public string NombreControl
-        {
-            get { return _nombreControl; }
-            set { _nombreControl = value; }
-        }
-
-        private string _texto;
-        public string Texto
-        {
-            get { return _texto; }
-            set { _texto = value; }
-        }
-        #endregion
 
         #region Métodos públicos
-        public static List<LeyendaDAL> Obtener(int IdiomaId)
+        public static List<LeyendaBE> Obtener(int IdiomaId)
         {
             string query = "SELECT nombre_form, nombre_control, texto FROM leyenda WHERE idioma_id = @idiomaId";
             SqlParameter[] parameters =
@@ -59,30 +32,29 @@ namespace DAL
                 new SqlParameter("@idiomaId", IdiomaId)
             };
             DataTable table = SqlHelper.Obtener(query, parameters);
-            List<LeyendaDAL> leyendasDAL = new List<LeyendaDAL>();
+            List<LeyendaBE> leyendas = new List<LeyendaBE>();
             foreach(DataRow row in table.Rows)
             {
-                leyendasDAL.Add(new LeyendaDAL()
+                leyendas.Add(new LeyendaBE()
                 {
-                    IdiomaId = IdiomaId,
                     NombreForm = row["nombre_form"].ToString(),
                     NombreControl = row["nombre_control"].ToString(),
                     Texto = row["texto"].ToString()
                 });
             }
-            return leyendasDAL;
+            return leyendas;
         }
 
-        public void Guardar()
+        public void Guardar(LeyendaBE leyenda)
         {
             DeterminarFormaGuardado();
             if(_formaGuardado == FormaGuardado.Insertar)
             {
-                Insertar();
+                Insertar(leyenda);
             }
             else if (_formaGuardado == FormaGuardado.Actualizar)
             {
-                Actualizar();
+                Actualizar(leyenda);
             }
             else if (_formaGuardado == FormaGuardado.Mixto)
             {
@@ -90,18 +62,18 @@ namespace DAL
                 string query = "SELECT idioma_id FROM leyenda WHERE idioma_id = @idiomaId AND nombre_form = @nombreForm AND nombre_control = @nombreControl";
                 SqlParameter[] parameters =
                 {
-                    new SqlParameter("@idiomaId", IdiomaId),
-                    new SqlParameter("@nombreForm", NombreForm),
-                    new SqlParameter("@nombreControl", NombreControl)
+                    new SqlParameter("@idiomaId", idiomaId),
+                    new SqlParameter("@nombreForm", leyenda.NombreForm),
+                    new SqlParameter("@nombreControl", leyenda.NombreControl)
                 };
                 DataTable table = SqlHelper.Obtener(query, parameters);
                 if(table.Rows.Count == 0)
                 {
-                    Insertar();
+                    Insertar(leyenda);
                 }
                 else
                 {
-                    Actualizar();
+                    Actualizar(leyenda);
                 }
             }
         }
@@ -127,7 +99,7 @@ namespace DAL
                 string query = "SELECT idioma_id, COUNT(*) AS cantidad FROM leyenda WHERE idioma_id IN (1, @idiomaId) GROUP BY idioma_id";
                 SqlParameter[] parameters =
                 {
-                    new SqlParameter("@idiomaId", IdiomaId)
+                    new SqlParameter("@idiomaId", idiomaId)
                 };
                 DataTable table = SqlHelper.Obtener(query, parameters);
                 if (table.Rows.Count == 1)
@@ -150,28 +122,28 @@ namespace DAL
             }
         }
 
-        private void Insertar()
+        private void Insertar(LeyendaBE leyenda)
         {
             string query = "INSERT INTO leyenda (idioma_id, nombre_form, nombre_control, texto) VALUES (@idiomaId, @nombreForm, @nombreControl, @texto)";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@idiomaId", IdiomaId),
-                new SqlParameter("@nombreForm", NombreForm),
-                new SqlParameter("@nombreControl", NombreControl),
-                new SqlParameter("@texto", Texto)
+                new SqlParameter("@idiomaId", idiomaId),
+                new SqlParameter("@nombreForm", leyenda.NombreForm),
+                new SqlParameter("@nombreControl", leyenda.NombreControl),
+                new SqlParameter("@texto", leyenda.Texto)
             };
             SqlHelper.Ejecutar(query, parameters);
         }
 
-        private void Actualizar()
+        private void Actualizar(LeyendaBE leyenda)
         {
             string query = "UPDATE leyenda SET texto = @texto WHERE idioma_id = @idiomaId AND nombre_form = @nombreForm AND nombre_control = @nombreControl";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@idiomaId", IdiomaId),
-                new SqlParameter("@nombreForm", NombreForm),
-                new SqlParameter("@nombreControl", NombreControl),
-                new SqlParameter("@texto", Texto)
+                new SqlParameter("@idiomaId", idiomaId),
+                new SqlParameter("@nombreForm", leyenda.NombreForm),
+                new SqlParameter("@nombreControl", leyenda.NombreControl),
+                new SqlParameter("@texto", leyenda.Texto)
             };
             SqlHelper.Ejecutar(query, parameters);
         }

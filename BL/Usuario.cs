@@ -1,123 +1,26 @@
-﻿using DAL;
+﻿using BE;
+using DAL;
 using Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
     public class Usuario
     {
-        #region Constructores
-        public Usuario() { }
-
-        public Usuario(int id)
-        {
-            UsuarioDAL usuarioDAL = new UsuarioDAL()
-            {
-                UsuarioId = id
-            };
-            usuarioDAL.Obtener(false);
-            ConvertirDesdeDAL(usuarioDAL);
-        }
-        #endregion
-
-        #region Propiedades
-        private int _id;
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        private string _nombreDeUsuario;
-        public string NombreDeUsuario
-        {
-            get { return _nombreDeUsuario; }
-            set { _nombreDeUsuario = value; }
-        }
-
-        private string _contrasenia;
-        public string Contrasenia
-        {
-            get { return _contrasenia; }
-            set { _contrasenia = value; }
-        }
-
-        private string _nombre;
-        public string Nombre
-        {
-            get { return _nombre; }
-            set { _nombre = value; }
-        }
-
-        private List<Permiso> _perfil;
-        public List<Permiso> Perfil
-        {
-            get
-            {
-                if(_perfil == null)
-                {
-                    _perfil = new List<Permiso>();
-                    PermisoDAL permisoDAL = new PermisoDAL();
-                    List<PermisoDAL> permisosDAL = permisoDAL.ObtenerPorUsuario(Id);
-                    foreach(PermisoDAL pDAL in permisosDAL)
-                    {
-                        _perfil.Add(Permiso.ConvertirDesdeDAL(pDAL));
-                    }
-                }
-                return _perfil;
-            }
-            set { _perfil = value; }
-        }
-
-        private int _idiomaId;
-        private Idioma _idioma;
-        public Idioma Idioma
-        {
-            get
-            {
-                if(_idioma == null)
-                {
-                    _idioma = new Idioma(_idiomaId);
-                }
-                return _idioma;
-            }
-            set { _idioma = value; }
-        }
-        #endregion
-
         #region Métodos públicos
-        public override string ToString()
-        {
-            return Nombre;
-        }
-
-        public bool Login(string nombreDeUsuario, string contrasenia)
+        public static bool Login(string nombreDeUsuario, string contrasenia)
         {
             try
             {
-                UsuarioDAL usuarioDAL = new UsuarioDAL()
+                UsuarioBE usuario = UsuarioDAL.Obtener(nombreDeUsuario, Encriptador.Encriptar(contrasenia));
+                if (usuario != null)
                 {
-                    NombreDeUsuario = nombreDeUsuario,
-                    Contrasenia = Encriptador.Encriptar(contrasenia)
-                };
-                usuarioDAL.Obtener();
-                if (usuarioDAL.UsuarioId > 0)
-                {
-                    ConvertirDesdeDAL(usuarioDAL);
-                    Sesion.Instancia().UsuarioLogueado = this;
-                    Sesion.Instancia().EstablecerPermisos(Perfil);
+                    Sesion.Instancia().UsuarioLogueado = usuario;
                     if(Sesion.Instancia().TienePermiso(Permisos.LOGIN))
                     {
-                        BitacoraDAL bitacora = new BitacoraDAL()
-                        {
-                            UsuarioId = Sesion.Instancia().UsuarioLogueado.Id,
-                            Detalle = "El usuario se logueó al sistema"
-                        };
-                        bitacora.Guardar();
+                        Bitacora.Loguear("El usuario se logueó al sistema");
                         return true;
                     }
                     return false;
@@ -134,101 +37,58 @@ namespace BL
             }
         }
 
-        public static void PonerIdiomaDefault(Idioma idiomaAQuitar)
+        public static void PonerIdiomaDefault(IdiomaBE idiomaAQuitar)
         {
             UsuarioDAL.PonerIdiomaDefault(idiomaAQuitar.Id);
         }
 
-        public static List<Usuario> ObtenerTodos()
+        public static List<UsuarioBE> ObtenerTodos()
         {
-            List<UsuarioDAL> usuariosDAL = UsuarioDAL.ObtenerTodos();
-            List<Usuario> usuarios = new List<Usuario>();
-            foreach(UsuarioDAL usuarioDAL in usuariosDAL)
-            {
-                Usuario usuario = new Usuario();
-                usuario.ConvertirDesdeDAL(usuarioDAL);
-                usuarios.Add(usuario);
-            }
-            return usuarios;
+            return UsuarioDAL.ObtenerTodos();
         }
 
-        public void Guardar()
+        public static void Guardar(UsuarioBE usuario)
         {
-            if(!string.IsNullOrEmpty(Contrasenia))
+            if(!string.IsNullOrEmpty(usuario.Contrasenia))
             {
-                Contrasenia = Encriptador.Encriptar(Contrasenia);
+                usuario.Contrasenia = Encriptador.Encriptar(usuario.Contrasenia);
             }
 
             // Guardo el usuario
-            UsuarioDAL usuarioDAL = new UsuarioDAL()
-            {
-                UsuarioId = Id,
-                Nombre = Nombre,
-                NombreDeUsuario = NombreDeUsuario,
-                Contrasenia = Contrasenia,
-                IdiomaId = Idioma.Id,
-                Habilitado = true
-            };
-            
-            List<int> permisosId = new List<int>();
-            foreach(Permiso permiso in Perfil)
-            {
-                permisosId.Add(permiso.Id);
-            }
-            usuarioDAL.PermisosId = permisosId;
-            usuarioDAL.Guardar();
-            Id = usuarioDAL.UsuarioId;
+            UsuarioDAL.Guardar(usuario);
 
-            GuardarHistorial(true);
+            GuardarHistorial(usuario, true);
 
             // Registro en bitácora
-            BitacoraDAL bitacoraDAL = new BitacoraDAL()
-            {
-                Detalle = "Usuario " + NombreDeUsuario + " guardado",
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacoraDAL.Guardar();
+            Bitacora.Loguear("Usuario " + usuario.NombreDeUsuario + " guardado");
         }
 
-        public void Eliminar()
+        public static void Eliminar(UsuarioBE usuario)
         {
-            UsuarioDAL.Eliminar(Id);
+            UsuarioDAL.Eliminar(usuario.Id);
 
-            GuardarHistorial(false);
+            GuardarHistorial(usuario, false);
 
             // Registro en bitácora
-            BitacoraDAL bitacoraDAL = new BitacoraDAL()
-            {
-                Detalle = "Usuario " + NombreDeUsuario + " eliminado",
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacoraDAL.Guardar();
+            Bitacora.Loguear("Usuario " + usuario.NombreDeUsuario + " eliminado");
         }
         #endregion
 
         #region Métodos privados
-        private void ConvertirDesdeDAL(UsuarioDAL usuarioDAL)
+        private static void GuardarHistorial(UsuarioBE usuario, bool habilitado)
         {
-            _id = usuarioDAL.UsuarioId;
-            _nombreDeUsuario = usuarioDAL.NombreDeUsuario;
-            _nombre = usuarioDAL.Nombre;
-            _idiomaId = usuarioDAL.IdiomaId;
-        }
-
-        private void GuardarHistorial(bool habilitado)
-        {
-            UsuarioHistorialDAL usuarioHistorialDAL = new UsuarioHistorialDAL
+            UsuarioHistorialBE usuarioHistorial = new UsuarioHistorialBE
             {
-                Contrasenia = Contrasenia ?? "",
+                Contrasenia = usuario.Contrasenia ?? "",
                 Fecha = DateTime.Now,
-                Idioma = Idioma.Nombre,
-                IdUsuario = Id,
-                Nombre = Nombre,
-                NombreDeUsuario = NombreDeUsuario,
-                Permisos = string.Join(", ", Perfil.Select(p => p.Nombre).ToList()),
+                Idioma = usuario.Idioma.Nombre,
+                IdUsuario = usuario.Id,
+                Nombre = usuario.Nombre,
+                NombreUsuario = usuario.NombreDeUsuario,
+                Permisos = string.Join(", ", usuario.Perfil.Select(p => p.Nombre).ToList()),
                 Habilitado = habilitado
             };
-            usuarioHistorialDAL.Guardar();
+            UsuarioHistorialDAL.Guardar(usuarioHistorial);
         }
         #endregion
     }

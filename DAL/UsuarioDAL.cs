@@ -1,186 +1,96 @@
-﻿using Logger;
-using System;
+﻿using BE;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
     public class UsuarioDAL
     {
-        #region Propiedades
-        private int _usuarioId;
-        public int UsuarioId
-        {
-            get { return _usuarioId; }
-            set { _usuarioId = value; }
-        }
-
-        private string _nombre;
-        public string Nombre
-        {
-            get { return _nombre; }
-            set { _nombre = value; }
-        }
-
-        private string _nombreDeUsuario;
-        public string NombreDeUsuario
-        {
-            get { return _nombreDeUsuario; }
-            set { _nombreDeUsuario = value; }
-        }
-
-        private string _contrasenia;
-        public string Contrasenia
-        {
-            get { return _contrasenia; }
-            set { _contrasenia = value; }
-        }
-
-        private int _idiomaId;
-        public int IdiomaId
-        {
-            get { return _idiomaId; }
-            set { _idiomaId = value; }
-        }
-
-        private List<int> _permisosId;
-        public List<int> PermisosId
-        {
-            set { _permisosId = value; }
-        }
-
-        private bool _habilitado;
-        public bool Habilitado
-        {
-            get { return _habilitado; }
-            set { _habilitado = value; }
-        }
-        #endregion
-
         #region Métodos públicos
-        public void Guardar()
+        public static UsuarioBE Obtener(int id)
+        {
+            string query = "SELECT id, nombre, idioma_id, nombre_usuario FROM usuario WHERE id = @id";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@id", id)
+            };
+            DataTable table = SqlHelper.Obtener(query, parameters);
+            if (table != null && table.Rows.Count > 0)
+            {
+                return new UsuarioBE
+                {
+                    Id = int.Parse(table.Rows[0]["id"].ToString()),
+                    Nombre = table.Rows[0]["nombre"].ToString(),
+                    Idioma = IdiomaDAL.Obtener(int.Parse(table.Rows[0]["idioma_id"].ToString())),
+                    NombreDeUsuario = table.Rows[0]["nombre_usuario"].ToString(),
+                    Perfil = PermisoDAL.ObtenerPorUsuario(id)
+                };
+            }
+
+            return null;
+        }
+
+        public static void Guardar(UsuarioBE usuario)
         {
             string query;
             SqlParameter[] parameters;
-            if (UsuarioId > 0)
+            if (usuario.Id > 0)
             {
-                Actualizar();
+                Actualizar(usuario);
 
                 // Borro los permisos que tenga el usuario
                 query = "DELETE FROM usuario_permiso WHERE usuario_id = @usuarioId";
                 parameters = new SqlParameter[]
                 {
-                    new SqlParameter("@usuarioId", UsuarioId)
+                    new SqlParameter("@usuarioId", usuario.Id)
                 };
                 SqlHelper.Ejecutar(query, parameters);
             }
             else
             {
-                Insertar();
+                Insertar(usuario);
             }
 
             // Inserto los permisos
             query = "INSERT INTO usuario_permiso (usuario_id, permiso_id) VALUES (@usuarioId, @permisoId)";
-            foreach (int permisoId in _permisosId)
+            foreach (int permisoId in usuario.Perfil.Select(p => p.Id))
             {
                 parameters = new SqlParameter[]
                 {
-                    new SqlParameter("@usuarioId", UsuarioId),
+                    new SqlParameter("@usuarioId", usuario.Id),
                     new SqlParameter("@permisoId", permisoId)
                 };
                 SqlHelper.Ejecutar(query, parameters);
             }
         }
 
-        public void Obtener()
+        public static UsuarioBE Obtener(string nombreDeUsuario, string contrasenia)
         {
-            Obtener(true);
-        }
-
-        public void Obtener(bool soloHabilitados)
-        {
-            try
+            string query = "SELECT TOP 1 id, nombre, idioma_id, nombre_usuario FROM usuario " +
+                "WHERE habilitado = 1 AND nombre_usuario = @nombreDeUsuario AND contrasenia = @contrasenia";
+            SqlParameter[] parameters = new SqlParameter[]
             {
-                StringBuilder sb = new StringBuilder();
-                sb.Append("SELECT TOP 1 * FROM usuario WHERE 1 = 1");
-                if (soloHabilitados)
-                {
-                    sb.Append(" AND habilitado = 1");
-                }
+                new SqlParameter("@nombreDeUsuario", nombreDeUsuario),
+                new SqlParameter("@contrasenia", contrasenia)
+            };
 
-                List<SqlParameter> parameters = new List<SqlParameter>();
-
-                if (_usuarioId > 0)
-                {
-                    sb.Append(" AND id = @usuarioId");
-                    parameters.Add(new SqlParameter
-                    {
-                        ParameterName = "@usuarioId",
-                        Value = _usuarioId
-                    });
-                }
-                else
-                {
-                    if (!string.IsNullOrWhiteSpace(_nombre))
-                    {
-                        sb.Append(" AND nombre LIKE @nombre");
-                        parameters.Add(new SqlParameter
-                        {
-                            ParameterName = "@nombre",
-                            Value = "%" + _nombre + "%"
-                        });
-                    }
-                    if (!string.IsNullOrWhiteSpace(_nombreDeUsuario))
-                    {
-                        sb.Append(" AND nombre_usuario = @nombreUsuario");
-                        parameters.Add(new SqlParameter
-                        {
-                            ParameterName = "@nombreUsuario",
-                            Value = _nombreDeUsuario
-                        });
-                    }
-                    if (!string.IsNullOrWhiteSpace(_contrasenia))
-                    {
-                        sb.Append(" AND contrasenia = @contrasenia");
-                        parameters.Add(new SqlParameter
-                        {
-                            ParameterName = "@contrasenia",
-                            Value = _contrasenia
-                        });
-                    }
-                    if (_idiomaId > 0)
-                    {
-                        sb.Append(" AND idioma_id = @idioma_id");
-                        parameters.Add(new SqlParameter
-                        {
-                            ParameterName = "@idioma_id",
-                            Value = _idiomaId
-                        });
-                    }
-                }
-                sb.Append(";");
-
-                string query = sb.ToString();
-                SqlParameter[] paramsArray = parameters.ToArray();
-                DataTable table = SqlHelper.Obtener(query, paramsArray);
-                if (table != null && table.Rows.Count > 0)
-                {
-                    _usuarioId = int.Parse(table.Rows[0]["id"].ToString());
-                    _nombre = table.Rows[0]["nombre"].ToString();
-                    _idiomaId = int.Parse(table.Rows[0]["idioma_id"].ToString());
-                    _nombreDeUsuario = table.Rows[0]["nombre_usuario"].ToString();
-                    _contrasenia = table.Rows[0]["contrasenia"].ToString();
-                    _habilitado = bool.Parse(table.Rows[0]["habilitado"].ToString());
-                }
-            }
-            catch (Exception ex)
+            DataTable table = SqlHelper.Obtener(query, parameters);
+            if (table != null && table.Rows.Count > 0)
             {
-                Log.Grabar(ex);
+                int id = int.Parse(table.Rows[0]["id"].ToString());
+                return new UsuarioBE
+                {
+                    Id = id,
+                    Nombre = table.Rows[0]["nombre"].ToString(),
+                    Idioma = IdiomaDAL.Obtener(int.Parse(table.Rows[0]["idioma_id"].ToString())),
+                    NombreDeUsuario = table.Rows[0]["nombre_usuario"].ToString(),
+                    Perfil = PermisoDAL.ObtenerPorUsuario(id)
+                };
             }
+
+            return null;
         }
 
         public static void PonerIdiomaDefault(int idiomaIdAQuitar)
@@ -193,26 +103,26 @@ namespace DAL
             SqlHelper.Ejecutar(query, parameters);
         }
 
-        public static List<UsuarioDAL> ObtenerTodos()
+        public static List<UsuarioBE> ObtenerTodos()
         {
-            string query = "SELECT id, nombre, idioma_id, nombre_usuario, contrasenia FROM usuario WHERE habilitado = 1";
+            string query = "SELECT id, nombre, idioma_id, nombre_usuario FROM usuario WHERE habilitado = 1";
             SqlParameter[] parameters = { };
             DataTable table = SqlHelper.Obtener(query, parameters);
-            List<UsuarioDAL> usuariosDAL = new List<UsuarioDAL>();
+            List<UsuarioBE> usuarios = new List<UsuarioBE>();
             foreach (DataRow row in table.Rows)
             {
-                UsuarioDAL usuarioDAL = new UsuarioDAL()
+                int id = int.Parse(row["id"].ToString());
+                UsuarioBE usuario = new UsuarioBE()
                 {
-                    UsuarioId = int.Parse(row["id"].ToString()),
+                    Id = id,
                     Nombre = row["nombre"].ToString(),
-                    IdiomaId = int.Parse(row["idioma_id"].ToString()),
+                    Idioma = IdiomaDAL.Obtener(int.Parse(row["idioma_id"].ToString())),
                     NombreDeUsuario = row["nombre_usuario"].ToString(),
-                    Contrasenia = row["contrasenia"].ToString(),
-                    Habilitado = true
+                    Perfil = PermisoDAL.ObtenerPorUsuario(id)
                 };
-                usuariosDAL.Add(usuarioDAL);
+                usuarios.Add(usuario);
             }
-            return usuariosDAL;
+            return usuarios;
         }
 
         public static void Eliminar(int usuarioId)
@@ -235,38 +145,38 @@ namespace DAL
         #endregion
 
         #region Métodos privados
-        private void Insertar()
+        private static void Insertar(UsuarioBE usuario)
         {
             string query = "INSERT INTO usuario (nombre, idioma_id, nombre_usuario, contrasenia) OUTPUT INSERTED.id VALUES (@nombre, @idiomaId, @nombreUsuario, @contrasenia)";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@nombre", Nombre),
-                new SqlParameter("@idiomaId", IdiomaId),
-                new SqlParameter("@nombreUsuario", NombreDeUsuario),
-                new SqlParameter("@contrasenia", Contrasenia)
+                new SqlParameter("@nombre", usuario.Nombre),
+                new SqlParameter("@idiomaId", usuario.Idioma.Id),
+                new SqlParameter("@nombreUsuario", usuario.NombreDeUsuario),
+                new SqlParameter("@contrasenia", usuario.Contrasenia)
             };
-            UsuarioId = SqlHelper.Insertar(query, parameters);
+            usuario.Id = SqlHelper.Insertar(query, parameters);
         }
 
-        private void Actualizar()
+        private static void Actualizar(UsuarioBE usuario)
         {
             string query = "UPDATE usuario SET nombre = @nombre, idioma_id = @idiomaId, nombre_usuario = @nombreUsuario";
             SqlParameter[] parameters;
-            if (!string.IsNullOrEmpty(Contrasenia))
+            if (!string.IsNullOrEmpty(usuario.Contrasenia))
             {
                 query += ", contrasenia = @contrasenia";
                 parameters = new SqlParameter[5];
-                parameters[4] = new SqlParameter("@contrasenia", Contrasenia);
+                parameters[4] = new SqlParameter("@contrasenia", usuario.Contrasenia);
             }
             else
             {
                 parameters = new SqlParameter[4];
             }
             query += " WHERE id = @id";
-            parameters[0] = new SqlParameter("@nombre", Nombre);
-            parameters[1] = new SqlParameter("@idiomaId", IdiomaId);
-            parameters[2] = new SqlParameter("@nombreUsuario", NombreDeUsuario);
-            parameters[3] = new SqlParameter("@id", UsuarioId);
+            parameters[0] = new SqlParameter("@nombre", usuario.Nombre);
+            parameters[1] = new SqlParameter("@idiomaId", usuario.Idioma.Id);
+            parameters[2] = new SqlParameter("@nombreUsuario", usuario.NombreDeUsuario);
+            parameters[3] = new SqlParameter("@id", usuario.Id);
 
             SqlHelper.Ejecutar(query, parameters);
         }

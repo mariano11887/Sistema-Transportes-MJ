@@ -107,24 +107,14 @@ namespace BL
             };
             vehiculoDAL.Guardar();
 
-            BitacoraDAL bitacoraDAL = new BitacoraDAL
-            {
-                Detalle = "Se guardó el vehículo con Id " + vehiculoDAL.VehiculoId,
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacoraDAL.Guardar();
+            Bitacora.Loguear("Se guardó el vehículo con Id " + vehiculoDAL.VehiculoId);
         }
 
         public void Borrar()
         {
             VehiculoDAL.Borrar(Id);
 
-            BitacoraDAL bitacoraDAL = new BitacoraDAL
-            {
-                Detalle = "Se borró vehículo con Id " + Id,
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacoraDAL.Guardar();
+            Bitacora.Loguear("Se borró vehículo con Id " + Id);
         }
 
         private Terminal ObtenerUltimoEstacionamiento()

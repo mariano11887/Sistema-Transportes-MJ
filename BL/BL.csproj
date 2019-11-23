@@ -57,11 +57,8 @@
     <Compile Include="Encriptador.cs" />
     <Compile Include="GeneradorDePlanillas.cs" />
     <Compile Include="Idioma.cs" />
-    <Compile Include="Leyenda.cs" />
     <Compile Include="Permiso.cs" />
-    <Compile Include="PermisoCompuesto.cs" />
     <Compile Include="Permisos.cs" />
-    <Compile Include="PermisoSimple.cs" />
     <Compile Include="PlanillaHoraria.cs" />
     <Compile Include="Recorrido.cs" />
     <Compile Include="Sesion.cs" />

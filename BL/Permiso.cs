@@ -1,102 +1,44 @@
-﻿using DAL;
-using System;
+﻿using BE;
+using DAL;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
-    public abstract class Permiso
+    public class Permiso
     {
-        #region Propiedades
-        protected int _id;
-        public int Id
-        {
-            get { return _id; }
-        }
-
-        protected string _nombre;
-        public string Nombre
-        {
-            get { return _nombre; }
-            set { _nombre = value; }
-        }
-
-        protected string _descripcion;
-        public string Descripcion
-        {
-            get { return _descripcion; }
-            set { _descripcion = value; }
-        }
-        #endregion
-
         #region Métodos
-        public abstract void Guardar();
-
-        public abstract void Borrar();
-
-        public abstract List<Permiso> DevolverPerfil();
-
-        public abstract List<Permiso> ObtenerPermisosHijos();
-
-        public abstract void AgregarPermisoHijo(Permiso permiso);
-
-        public abstract void QuitarPermisoHijo(Permiso permiso);
-
-        public static List<Permiso> ObtenerPerfiles()
+        public static List<PermisoBE> ObtenerPerfiles()
         {
-            List<PermisoDAL> perfilesDAL = PermisoDAL.ObtenerPerfiles();
-            return perfilesDAL.Select(dal => ConvertirDesdeDAL(dal)).ToList();
+            return PermisoDAL.ObtenerPerfiles();
         }
 
-        public static List<Permiso> ObtenerPermisosSimples()
+        public static List<PermisoBE> ObtenerPermisosSimples()
         {
-            List<PermisoDAL> permisosDAL = PermisoDAL.ObtenerPermisos();
-            return permisosDAL.Select(dal => ConvertirDesdeDAL(dal)).ToList();
+            return PermisoDAL.ObtenerPermisos();
         }
 
-        public override string ToString()
+        public static void Guardar(PermisoBE permiso)
         {
-            return _nombre;
+            PermisoDAL.Guardar(permiso, true, true);
+
+            // Guardo la bitácora
+            string mensajeBitacora = permiso.Id > 0 ? "Se actualizó el permiso con Id " + permiso.Id : 
+                "Se creó un nuevo permiso. Nombre: " + permiso.Nombre;
+            Bitacora.Loguear(mensajeBitacora);
         }
 
-        public static Permiso ConvertirDesdeDAL(PermisoDAL permisoDAL)
+        public static void Borrar(PermisoBE permiso)
         {
-            Permiso permiso;
-            if (permisoDAL.PermisosHijosIds.Count == 0)
-            {
-                permiso = new PermisoSimple();
-            }
-            else
-            {
-                permiso = new PermisoCompuesto();
-            }
+            PermisoDAL.Guardar(permiso, false, false);
 
-            permiso._id = permisoDAL.PermisoId;
-            permiso.Nombre = permisoDAL.Nombre;
-            permiso.Descripcion = permisoDAL.Descripcion;
-
-            return permiso;
+            // Guardo la bitácora
+            Bitacora.Loguear("Se eliminó el permiso con Id " + permiso.Id);
         }
 
-        public static Permiso NuevoPerfil()
+        public static PermisoBE NuevoPerfil()
         {
-            return new PermisoCompuesto();
+            return new PermisoCompuestoBE();
         }
         #endregion
-
-        public class Comparador : IEqualityComparer<Permiso>
-        {
-            public bool Equals(Permiso x, Permiso y)
-            {
-                return x.Id == y.Id;
-            }
-
-            public int GetHashCode(Permiso obj)
-            {
-                return obj.GetHashCode();
-            }
-        }
     }
 }

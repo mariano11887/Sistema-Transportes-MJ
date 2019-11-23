@@ -56,7 +56,7 @@
             this.lstIdiomasActuales.Name = "lstIdiomasActuales";
             this.lstIdiomasActuales.Size = new System.Drawing.Size(90, 108);
             this.lstIdiomasActuales.TabIndex = 0;
-            this.lstIdiomasActuales.SelectedIndexChanged += new System.EventHandler(this.lstIdiomasActuales_SelectedIndexChanged);
+            this.lstIdiomasActuales.SelectedIndexChanged += new System.EventHandler(this.LstIdiomasActuales_SelectedIndexChanged);
             // 
             // grpLeyendas
             // 
@@ -110,7 +110,7 @@
             this.btnCrearNuevo.TabIndex = 1;
             this.btnCrearNuevo.Text = "Crear nuevo";
             this.btnCrearNuevo.UseVisualStyleBackColor = true;
-            this.btnCrearNuevo.Click += new System.EventHandler(this.btnCrearNuevo_Click);
+            this.btnCrearNuevo.Click += new System.EventHandler(this.BtnCrearNuevo_Click);
             // 
             // lblIdiomasActuales
             // 
@@ -143,7 +143,7 @@
             this.btnDescartar.TabIndex = 3;
             this.btnDescartar.Text = "Descartar";
             this.btnDescartar.UseVisualStyleBackColor = true;
-            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
+            this.btnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click);
             // 
             // btnGuardar
             // 
@@ -153,7 +153,7 @@
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // txtNombre
             // 
@@ -181,7 +181,7 @@
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -192,7 +192,7 @@
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // IdiomasForm
             // 

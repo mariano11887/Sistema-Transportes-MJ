@@ -119,24 +119,14 @@ namespace BL
             };
             choferDAL.Guardar();
 
-            BitacoraDAL bitacoraDAL = new BitacoraDAL
-            {
-                Detalle = "Se guardó el chofer con Id " + choferDAL.Id,
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacoraDAL.Guardar();
+            Bitacora.Loguear("Se guardó el chofer con Id " + choferDAL.Id);
         }
 
         public void Borrar()
         {
             ChoferDAL.Borrar(Id);
 
-            BitacoraDAL bitacoraDAL = new BitacoraDAL
-            {
-                Detalle = "Se borró el chofer con Id " + Id,
-                UsuarioId = Sesion.Instancia().UsuarioLogueado.Id
-            };
-            bitacoraDAL.Guardar();
+            Bitacora.Loguear("Se borró el chofer con Id " + Id);
         }
     }
 }

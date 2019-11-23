@@ -1,4 +1,5 @@
-﻿using BL;
+﻿using BE;
+using BL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,8 +10,8 @@ namespace UI
 {
     public partial class PerfilesForm : FormGeneral
     {
-        private List<Permiso> todosLosPerfiles = new List<Permiso>();
-        private Permiso permisoActual;
+        private List<PermisoBE> todosLosPerfiles = new List<PermisoBE>();
+        private PermisoBE permisoActual;
 
         public PerfilesForm()
         {
@@ -34,7 +35,7 @@ namespace UI
 
             if (lstPerfilesActuales.SelectedItem != null)
             {
-                permisoActual = (Permiso)lstPerfilesActuales.SelectedItem;
+                permisoActual = (PermisoBE)lstPerfilesActuales.SelectedItem;
                 btnEditar.Enabled = true;
                 btnEliminar.Enabled = true;
                 txtNombre.Text = permisoActual.Nombre;
@@ -58,7 +59,7 @@ namespace UI
 
         private void BtnAgregarFamilia_Click(object sender, EventArgs e)
         {
-            Permiso familiaSeleccionada = (Permiso)cmbFamilias.SelectedItem;
+            PermisoBE familiaSeleccionada = (PermisoBE)cmbFamilias.SelectedItem;
             permisoActual.AgregarPermisoHijo(familiaSeleccionada);
 
             RefrescarArbol();
@@ -66,7 +67,7 @@ namespace UI
 
         private void BtnAgregarPermiso_Click(object sender, EventArgs e)
         {
-            Permiso permisoSeleccionado = (Permiso)cmbPermisos.SelectedItem;
+            PermisoBE permisoSeleccionado = (PermisoBE)cmbPermisos.SelectedItem;
             permisoActual.AgregarPermisoHijo(permisoSeleccionado);
 
             RefrescarArbol();
@@ -81,7 +82,7 @@ namespace UI
 
         private void BtnQuitar_Click(object sender, EventArgs e)
         {
-            Permiso permisoSeleccionado = (Permiso)trvPermisosAsignados.SelectedNode.Tag;
+            PermisoBE permisoSeleccionado = (PermisoBE)trvPermisosAsignados.SelectedNode.Tag;
             permisoActual.QuitarPermisoHijo(permisoSeleccionado);
 
             RefrescarArbol();
@@ -93,7 +94,7 @@ namespace UI
             {
                 permisoActual.Descripcion = txtDescripcion.Text;
                 permisoActual.Nombre = txtNombre.Text;
-                permisoActual.Guardar();
+                Permiso.Guardar(permisoActual);
 
                 MessageBox.Show(ObtenerLeyenda("msgGuardado"), ObtenerLeyenda("msgGuardadoTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -118,8 +119,8 @@ namespace UI
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if(result == DialogResult.Yes)
             {
-                Permiso permiso = (Permiso)lstPerfilesActuales.SelectedItem;
-                permiso.Borrar();
+                PermisoBE permiso = (PermisoBE)lstPerfilesActuales.SelectedItem;
+                Permiso.Borrar(permiso);
                 ActualizarPerfiles();
                 ResetearFormulario();
             }
@@ -127,14 +128,14 @@ namespace UI
         #endregion
 
         #region Métodos
-        private void AgregarAlArbol(Permiso permiso, TreeNode nodoPadre, int nivel)
+        private void AgregarAlArbol(PermisoBE permiso, TreeNode nodoPadre, int nivel)
         {
             TreeNode nodo = new TreeNode(permiso.ToString())
             {
                 Tag = permiso
             };
-            List<Permiso> permisosHijos = permiso.ObtenerPermisosHijos();
-            foreach (Permiso p in permisosHijos)
+            List<PermisoBE> permisosHijos = permiso.DevolverPerfil();
+            foreach (PermisoBE p in permisosHijos)
             {
                 // Pongo este nivel como método de seguridad contra los permisos anidados de manera cíclica
                 if (nivel < 10)
@@ -170,7 +171,7 @@ namespace UI
         {
             if(string.IsNullOrWhiteSpace(txtNombre.Text) || 
                 string.IsNullOrWhiteSpace(txtDescripcion.Text) ||
-                permisoActual.ObtenerPermisosHijos().Count == 0)
+                permisoActual.DevolverPerfil().Count == 0)
             {
                 MessageBox.Show(ObtenerLeyenda("msgDatosIncompletos"), ObtenerLeyenda("msgDatosIncompletosTitulo"),
                     MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -204,7 +205,7 @@ namespace UI
             trvPermisosAsignados.Nodes.Clear();
             if (permisoActual != null)
             {
-                foreach (Permiso permiso in permisoActual.ObtenerPermisosHijos())
+                foreach (PermisoBE permiso in permisoActual.DevolverPerfil())
                 {
                     AgregarAlArbol(permiso, null, 1);
                 }

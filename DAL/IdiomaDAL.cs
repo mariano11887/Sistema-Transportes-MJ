@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,58 +11,38 @@ namespace DAL
 {
     public class IdiomaDAL
     {
-        #region Propiedades
-        private int _idiomaId;
-        public int IdiomaId
-        {
-            get { return _idiomaId; }
-            set { _idiomaId = value; }
-        }
-
-        private string _nombre;
-        public string Nombre
-        {
-            get { return _nombre; }
-            set { _nombre = value; }
-        }
-
-        private bool _editable;
-        public bool Editable
-        {
-            get { return _editable; }
-            set { _editable = value; }
-        }
-        #endregion
-
         #region Métodos públicos
-        public void Guardar()
+        public static void Guardar(IdiomaBE idioma)
         {
-            if(IdiomaId > 0)
+            if(idioma.Id > 0)
             {
-                Actualizar();
+                Actualizar(idioma);
             }
             else
             {
-                Insertar();
+                Insertar(idioma);
             }
         }
 
-        public static IdiomaDAL Obtener(int Id)
+        public static IdiomaBE Obtener(int id)
         {
             string query = "SELECT id, nombre, editable FROM idioma WHERE id = @id";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@id", Id)
+                new SqlParameter("@id", id)
             };
             DataTable table = SqlHelper.Obtener(query, parameters);
-            IdiomaDAL idiomaDAL = new IdiomaDAL();
             if(table.Rows.Count > 0)
             {
-                idiomaDAL.IdiomaId = int.Parse(table.Rows[0]["id"].ToString());
-                idiomaDAL.Nombre = table.Rows[0]["nombre"].ToString();
-                idiomaDAL.Editable = bool.Parse(table.Rows[0]["editable"].ToString());
+                return new IdiomaBE()
+                {
+                    Id = int.Parse(table.Rows[0]["id"].ToString()),
+                    Nombre = table.Rows[0]["nombre"].ToString(),
+                    Editable = bool.Parse(table.Rows[0]["editable"].ToString()),
+                    Leyendas = LeyendaDAL.Obtener(id)
+                };
             }
-            return idiomaDAL;
+            return null;
         }
 
         public static void Borrar(int id)
@@ -74,44 +55,46 @@ namespace DAL
             SqlHelper.Ejecutar(query, parameters);
         }
 
-        public static List<IdiomaDAL> ObtenerTodos()
+        public static List<IdiomaBE> ObtenerTodos()
         {
             string query = "SELECT id, nombre, editable FROM idioma";
             SqlParameter[] parameters = new SqlParameter[0];
             DataTable table = SqlHelper.Obtener(query, parameters);
-            List<IdiomaDAL> idiomasDAL = new List<IdiomaDAL>();
+            List<IdiomaBE> idiomas = new List<IdiomaBE>();
             foreach(DataRow row in table.Rows)
             {
-                IdiomaDAL idiomaDAL = new IdiomaDAL
+                int id = int.Parse(row["id"].ToString());
+                IdiomaBE idiomaDAL = new IdiomaBE
                 {
-                    IdiomaId = int.Parse(row["id"].ToString()),
+                    Id = id,
                     Nombre = row["nombre"].ToString(),
-                    Editable = bool.Parse(row["editable"].ToString())
+                    Editable = bool.Parse(row["editable"].ToString()),
+                    Leyendas = LeyendaDAL.Obtener(id)
                 };
-                idiomasDAL.Add(idiomaDAL);
+                idiomas.Add(idiomaDAL);
             }
-            return idiomasDAL;
+            return idiomas;
         }
         #endregion
 
         #region Métodos privados
-        private void Insertar()
+        private static void Insertar(IdiomaBE idioma)
         {
             string query = "INSERT INTO idioma (nombre) OUTPUT INSERTED.id VALUES (@nombre)";
             SqlParameter[] parameters = new SqlParameter[1]
             {
-                new SqlParameter("@nombre", Nombre)
+                new SqlParameter("@nombre", idioma.Nombre)
             };
-            IdiomaId = SqlHelper.Insertar(query, parameters);
+            idioma.Id = SqlHelper.Insertar(query, parameters);
         }
 
-        private void Actualizar()
+        private static void Actualizar(IdiomaBE idioma)
         {
             string query = "UPDATE idioma SET nombre = @nombre WHERE id = @id AND editable = 1";
             SqlParameter[] parameters = new SqlParameter[2]
             {
-                new SqlParameter("@nombre", Nombre),
-                new SqlParameter("@id", IdiomaId)
+                new SqlParameter("@nombre", idioma.Nombre),
+                new SqlParameter("@id", idioma.Id)
             };
             SqlHelper.Ejecutar(query, parameters);
         }
