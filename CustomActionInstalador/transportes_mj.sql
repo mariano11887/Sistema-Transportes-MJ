@@ -1,6 +1,6 @@
 ﻿USE [master]
 GO
-/****** Object:  Database [transportes_mj]    Script Date: 18/11/2019 14:52:25 ******/
+/****** Object:  Database [transportes_mj]    Script Date: 23/11/2019 18:20:00 ******/
 IF EXISTS(select * from sys.databases where name='transportes_mj')
 DROP DATABASE [transportes_mj]
 GO
@@ -73,7 +73,7 @@ EXEC sys.sp_db_vardecimal_storage_format N'transportes_mj', N'ON'
 GO
 USE [transportes_mj]
 GO
-/****** Object:  Table [dbo].[alerta_insuficiencia]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[alerta_insuficiencia]    Script Date: 23/11/2019 18:20:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -89,7 +89,7 @@ CREATE TABLE [dbo].[alerta_insuficiencia](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[alerta_usuario]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[alerta_usuario]    Script Date: 23/11/2019 18:20:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -104,7 +104,7 @@ CREATE TABLE [dbo].[alerta_usuario](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[chofer]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[chofer]    Script Date: 23/11/2019 18:20:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -122,7 +122,7 @@ CREATE TABLE [dbo].[chofer](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[coche]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[coche]    Script Date: 23/11/2019 18:20:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -144,7 +144,7 @@ CREATE TABLE [dbo].[coche](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[completitud_viaje]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[completitud_viaje]    Script Date: 23/11/2019 18:20:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -158,7 +158,7 @@ CREATE TABLE [dbo].[completitud_viaje](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[digito_verificador]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[digito_verificador]    Script Date: 23/11/2019 18:20:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -172,7 +172,7 @@ CREATE TABLE [dbo].[digito_verificador](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[idioma]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[idioma]    Script Date: 23/11/2019 18:20:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -187,7 +187,7 @@ CREATE TABLE [dbo].[idioma](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[leyenda]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[leyenda]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -205,7 +205,7 @@ CREATE TABLE [dbo].[leyenda](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[permiso]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[permiso]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -221,7 +221,7 @@ CREATE TABLE [dbo].[permiso](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[permiso_permiso]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[permiso_permiso]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -236,7 +236,7 @@ CREATE TABLE [dbo].[permiso_permiso](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[planilla_horaria]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[planilla_horaria]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -254,7 +254,7 @@ CREATE TABLE [dbo].[planilla_horaria](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[recorrido]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[recorrido]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -271,7 +271,7 @@ CREATE TABLE [dbo].[recorrido](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[terminal]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[terminal]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -288,7 +288,7 @@ CREATE TABLE [dbo].[terminal](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[usuario]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[usuario]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -306,7 +306,7 @@ CREATE TABLE [dbo].[usuario](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[usuario_historial]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[usuario_historial]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -327,7 +327,7 @@ CREATE TABLE [dbo].[usuario_historial](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[usuario_permiso]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[usuario_permiso]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -342,7 +342,7 @@ CREATE TABLE [dbo].[usuario_permiso](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[viaje]    Script Date: 18/11/2019 14:52:26 ******/
+/****** Object:  Table [dbo].[viaje]    Script Date: 23/11/2019 18:20:01 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -371,11 +371,23 @@ INSERT [dbo].[alerta_insuficiencia] ([id], [fecha], [choferes_faltantes], [coche
 GO
 INSERT [dbo].[alerta_insuficiencia] ([id], [fecha], [choferes_faltantes], [coches_faltantes]) VALUES (3, CAST(N'2019-10-29T20:32:13.763' AS DateTime), 62, 0)
 GO
+INSERT [dbo].[alerta_insuficiencia] ([id], [fecha], [choferes_faltantes], [coches_faltantes]) VALUES (4, CAST(N'2019-11-23T16:21:14.023' AS DateTime), 62, 0)
+GO
+INSERT [dbo].[alerta_insuficiencia] ([id], [fecha], [choferes_faltantes], [coches_faltantes]) VALUES (5, CAST(N'2019-11-23T16:29:11.420' AS DateTime), 62, 0)
+GO
+INSERT [dbo].[alerta_insuficiencia] ([id], [fecha], [choferes_faltantes], [coches_faltantes]) VALUES (6, CAST(N'2019-11-23T16:32:39.787' AS DateTime), 62, 0)
+GO
 SET IDENTITY_INSERT [dbo].[alerta_insuficiencia] OFF
 GO
 INSERT [dbo].[alerta_usuario] ([alerta_id], [usuario_id]) VALUES (2, 1)
 GO
 INSERT [dbo].[alerta_usuario] ([alerta_id], [usuario_id]) VALUES (3, 1)
+GO
+INSERT [dbo].[alerta_usuario] ([alerta_id], [usuario_id]) VALUES (4, 1)
+GO
+INSERT [dbo].[alerta_usuario] ([alerta_id], [usuario_id]) VALUES (5, 1)
+GO
+INSERT [dbo].[alerta_usuario] ([alerta_id], [usuario_id]) VALUES (6, 1)
 GO
 SET IDENTITY_INSERT [dbo].[chofer] ON 
 GO
@@ -387,7 +399,7 @@ INSERT [dbo].[chofer] ([id], [nombre], [dni], [coche_preferido_id], [fecha_fin_l
 GO
 INSERT [dbo].[chofer] ([id], [nombre], [dni], [coche_preferido_id], [fecha_fin_licencia], [habilitado]) VALUES (4, N'Jan Pascual', 24015964, NULL, NULL, 1)
 GO
-INSERT [dbo].[chofer] ([id], [nombre], [dni], [coche_preferido_id], [fecha_fin_licencia], [habilitado]) VALUES (5, N'Alfredo Manuel Bautista Mejía', 21849089, NULL, NULL, 1)
+INSERT [dbo].[chofer] ([id], [nombre], [dni], [coche_preferido_id], [fecha_fin_licencia], [habilitado]) VALUES (5, N'Alfredo Manuel Bautista Mejía', 21849089, 112, NULL, 1)
 GO
 INSERT [dbo].[chofer] ([id], [nombre], [dni], [coche_preferido_id], [fecha_fin_licencia], [habilitado]) VALUES (6, N'Alejandro Bautista Vázquez', 31657894, NULL, NULL, 1)
 GO
@@ -495,7 +507,7 @@ INSERT [dbo].[coche] ([id], [patente], [marca], [modelo], [fecha_adquisicion], [
 GO
 INSERT [dbo].[coche] ([id], [patente], [marca], [modelo], [fecha_adquisicion], [anio_fabricacion], [numero_interno], [capacidad], [en_circulacion], [habilitado]) VALUES (5, N'ABC127', N'Mercedes Benz', N'Heracross', CAST(N'2018-05-16' AS Date), 2017, 7, 40, 1, 1)
 GO
-INSERT [dbo].[coche] ([id], [patente], [marca], [modelo], [fecha_adquisicion], [anio_fabricacion], [numero_interno], [capacidad], [en_circulacion], [habilitado]) VALUES (6, N'ABC128', N'Mercedes Benz', N'Mewtwo', CAST(N'2018-05-16' AS Date), 2017, 8, 40, 1, 1)
+INSERT [dbo].[coche] ([id], [patente], [marca], [modelo], [fecha_adquisicion], [anio_fabricacion], [numero_interno], [capacidad], [en_circulacion], [habilitado]) VALUES (6, N'ABC128', N'Mercedes Benz', N'Mewtwo', CAST(N'2018-05-16' AS Date), 2017, 8, 41, 1, 1)
 GO
 INSERT [dbo].[coche] ([id], [patente], [marca], [modelo], [fecha_adquisicion], [anio_fabricacion], [numero_interno], [capacidad], [en_circulacion], [habilitado]) VALUES (7, N'ABC129', N'Mercedes Benz', N'Heracross', CAST(N'2018-05-16' AS Date), 2017, 9, 40, 1, 1)
 GO
@@ -737,9 +749,9 @@ INSERT [dbo].[completitud_viaje] ([id], [descripcion]) VALUES (2, N'Moderado')
 GO
 INSERT [dbo].[completitud_viaje] ([id], [descripcion]) VALUES (3, N'Mayormente vacío')
 GO
-INSERT [dbo].[digito_verificador] ([tabla], [dvv]) VALUES (N'planilla_horaria', CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[digito_verificador] ([tabla], [dvv]) VALUES (N'planilla_horaria', CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[digito_verificador] ([tabla], [dvv]) VALUES (N'viaje', CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[digito_verificador] ([tabla], [dvv]) VALUES (N'viaje', CAST(6 AS Numeric(1, 0)))
 GO
 SET IDENTITY_INSERT [dbo].[idioma] ON 
 GO
@@ -1008,6 +1020,10 @@ GO
 INSERT [dbo].[leyenda] ([idioma_id], [nombre_form], [nombre_control], [texto]) VALUES (1, N'MainForm', N'msgAlertaInsuficiencia', N'Durante la última generación de planillas horarias, no se pudo aplicar la frecuencia recomendada debido a falta de recursos.')
 GO
 INSERT [dbo].[leyenda] ([idioma_id], [nombre_form], [nombre_control], [texto]) VALUES (1, N'MainForm', N'msgChoferesFaltantes', N'Choferes faltantes: {0}')
+GO
+INSERT [dbo].[leyenda] ([idioma_id], [nombre_form], [nombre_control], [texto]) VALUES (1, N'MainForm', N'msgErrorBD', N'No se pudo conectar a la base de datos. Contacte al administrador del sistema')
+GO
+INSERT [dbo].[leyenda] ([idioma_id], [nombre_form], [nombre_control], [texto]) VALUES (1, N'MainForm', N'msgErrorBDTitulo', N'Error')
 GO
 INSERT [dbo].[leyenda] ([idioma_id], [nombre_form], [nombre_control], [texto]) VALUES (1, N'MainForm', N'msgPruebaDVMal', N'La base de datos no pasó la prueba de integridad. Contacte al administrador del sistema.')
 GO
@@ -2111,6 +2127,8 @@ INSERT [dbo].[permiso] ([id], [nombre], [descripcion], [habilitado]) VALUES (44,
 GO
 INSERT [dbo].[permiso] ([id], [nombre], [descripcion], [habilitado]) VALUES (45, N'Ver control de cambios', N'Ver el historial de cambios de los usuarios del sistema', 1)
 GO
+INSERT [dbo].[permiso] ([id], [nombre], [descripcion], [habilitado]) VALUES (46, N'Pruebaaa', N'Para probar', 0)
+GO
 SET IDENTITY_INSERT [dbo].[permiso] OFF
 GO
 INSERT [dbo].[permiso_permiso] ([permiso_padre_id], [permiso_hijo_id]) VALUES (2, 3)
@@ -2247,423 +2265,207 @@ INSERT [dbo].[permiso_permiso] ([permiso_padre_id], [permiso_hijo_id]) VALUES (4
 GO
 INSERT [dbo].[permiso_permiso] ([permiso_padre_id], [permiso_hijo_id]) VALUES (44, 43)
 GO
+INSERT [dbo].[permiso_permiso] ([permiso_padre_id], [permiso_hijo_id]) VALUES (46, 2)
+GO
+INSERT [dbo].[permiso_permiso] ([permiso_padre_id], [permiso_hijo_id]) VALUES (46, 3)
+GO
+INSERT [dbo].[permiso_permiso] ([permiso_padre_id], [permiso_hijo_id]) VALUES (46, 27)
+GO
+INSERT [dbo].[permiso_permiso] ([permiso_padre_id], [permiso_hijo_id]) VALUES (46, 36)
+GO
 SET IDENTITY_INSERT [dbo].[planilla_horaria] ON 
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (723, 1, 4, 1, CAST(N'2019-10-30' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (979, 1, 4, 1, CAST(N'2019-11-24' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (724, 2, 4, 1, CAST(N'2019-10-30' AS Date), CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (980, 2, 4, 1, CAST(N'2019-11-24' AS Date), CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (725, 3, 5, 1, CAST(N'2019-10-30' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (981, 3, 5, 1, CAST(N'2019-11-24' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (726, 4, 5, 1, CAST(N'2019-10-30' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (982, 4, 5, 1, CAST(N'2019-11-24' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (727, 5, 6, 1, CAST(N'2019-10-30' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (983, 5, 6, 1, CAST(N'2019-11-24' AS Date), CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (728, 6, 6, 1, CAST(N'2019-10-30' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (984, 6, 6, 1, CAST(N'2019-11-24' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (729, 7, 7, 1, CAST(N'2019-10-30' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (985, 7, 7, 1, CAST(N'2019-11-24' AS Date), CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (730, 8, 7, 1, CAST(N'2019-10-30' AS Date), CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (986, 8, 7, 1, CAST(N'2019-11-24' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (731, 9, 8, 1, CAST(N'2019-10-30' AS Date), CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (987, 9, 8, 1, CAST(N'2019-11-24' AS Date), CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (732, 10, 8, 1, CAST(N'2019-10-30' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (988, 10, 8, 1, CAST(N'2019-11-24' AS Date), CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (733, 11, 9, 1, CAST(N'2019-10-30' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (989, 11, 9, 1, CAST(N'2019-11-24' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (734, 12, 9, 1, CAST(N'2019-10-30' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (990, 12, 9, 1, CAST(N'2019-11-24' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (735, 13, 10, 2, CAST(N'2019-10-30' AS Date), CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (991, 13, 10, 2, CAST(N'2019-11-24' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (736, 14, 10, 2, CAST(N'2019-10-30' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (992, 14, 10, 2, CAST(N'2019-11-24' AS Date), CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (737, 15, 11, 2, CAST(N'2019-10-30' AS Date), CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (993, 15, 11, 2, CAST(N'2019-11-24' AS Date), CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (738, 16, 11, 2, CAST(N'2019-10-30' AS Date), CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (994, 16, 11, 2, CAST(N'2019-11-24' AS Date), CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (739, 17, 12, 2, CAST(N'2019-10-30' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (995, 17, 12, 2, CAST(N'2019-11-24' AS Date), CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (740, 18, 12, 2, CAST(N'2019-10-30' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (996, 18, 12, 2, CAST(N'2019-11-24' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (741, 19, 13, 2, CAST(N'2019-10-30' AS Date), CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (997, 19, 13, 2, CAST(N'2019-11-24' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (742, 20, 13, 2, CAST(N'2019-10-30' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (998, 20, 13, 2, CAST(N'2019-11-24' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (743, 21, 14, 2, CAST(N'2019-10-30' AS Date), CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (999, 21, 14, 2, CAST(N'2019-11-24' AS Date), CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (744, 22, 14, 2, CAST(N'2019-10-30' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1000, 22, 14, 2, CAST(N'2019-11-24' AS Date), CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (745, 23, 15, 2, CAST(N'2019-10-30' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1001, 23, 15, 2, CAST(N'2019-11-24' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (746, 24, 15, 2, CAST(N'2019-10-30' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1002, 24, 15, 2, CAST(N'2019-11-24' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (747, 25, 1, 3, CAST(N'2019-10-30' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1003, 25, 1, 3, CAST(N'2019-11-24' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (748, 26, 1, 3, CAST(N'2019-10-30' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1004, 26, 1, 3, CAST(N'2019-11-24' AS Date), CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (749, 27, 16, 3, CAST(N'2019-10-30' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1005, 27, 16, 3, CAST(N'2019-11-24' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (750, 28, 16, 3, CAST(N'2019-10-30' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1006, 28, 16, 3, CAST(N'2019-11-24' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (751, 29, 2, 3, CAST(N'2019-10-30' AS Date), CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1007, 29, 2, 3, CAST(N'2019-11-24' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (752, 30, 2, 3, CAST(N'2019-10-30' AS Date), CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1008, 30, 2, 3, CAST(N'2019-11-24' AS Date), CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (753, 31, 17, 3, CAST(N'2019-10-30' AS Date), CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1009, 31, 17, 3, CAST(N'2019-11-24' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (754, 32, 17, 3, CAST(N'2019-10-30' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1010, 32, 17, 3, CAST(N'2019-11-24' AS Date), CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (755, 33, 3, 3, CAST(N'2019-10-30' AS Date), CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1011, 33, 3, 3, CAST(N'2019-11-24' AS Date), CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (756, 34, 3, 3, CAST(N'2019-10-30' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1012, 34, 3, 3, CAST(N'2019-11-24' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (757, 35, 18, 3, CAST(N'2019-10-30' AS Date), CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1013, 35, 18, 3, CAST(N'2019-11-24' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (758, 36, 18, 3, CAST(N'2019-10-30' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1014, 36, 18, 3, CAST(N'2019-11-24' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (759, 37, 19, 4, CAST(N'2019-10-30' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1015, 37, 19, 4, CAST(N'2019-11-24' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (760, 38, 19, 4, CAST(N'2019-10-30' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1016, 38, 19, 4, CAST(N'2019-11-24' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (761, 39, 20, 4, CAST(N'2019-10-30' AS Date), CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1017, 39, 20, 4, CAST(N'2019-11-24' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (762, 40, 20, 4, CAST(N'2019-10-30' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1018, 40, 20, 4, CAST(N'2019-11-24' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (763, 41, 21, 4, CAST(N'2019-10-30' AS Date), CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1019, 41, 21, 4, CAST(N'2019-11-24' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (764, 42, 21, 4, CAST(N'2019-10-30' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1020, 42, 21, 4, CAST(N'2019-11-24' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (765, 43, 22, 4, CAST(N'2019-10-30' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1021, 43, 22, 4, CAST(N'2019-11-24' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (766, 44, 22, 4, CAST(N'2019-10-30' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1022, 44, 22, 4, CAST(N'2019-11-24' AS Date), CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (767, 45, 23, 4, CAST(N'2019-10-30' AS Date), CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1023, 45, 23, 4, CAST(N'2019-11-24' AS Date), CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (768, 46, 23, 4, CAST(N'2019-10-30' AS Date), CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1024, 46, 23, 4, CAST(N'2019-11-24' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (769, 47, 24, 4, CAST(N'2019-10-30' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1025, 47, 24, 4, CAST(N'2019-11-24' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (770, 48, 24, 4, CAST(N'2019-10-30' AS Date), CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1026, 48, 24, 4, CAST(N'2019-11-24' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (771, 1, 5, 1, CAST(N'2019-10-31' AS Date), CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1027, 1, 5, 1, CAST(N'2019-11-25' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (772, 2, 5, 1, CAST(N'2019-10-31' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1028, 2, 5, 1, CAST(N'2019-11-25' AS Date), CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (773, 3, 4, 1, CAST(N'2019-10-31' AS Date), CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1029, 3, 4, 1, CAST(N'2019-11-25' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (774, 4, 4, 1, CAST(N'2019-10-31' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1030, 4, 4, 1, CAST(N'2019-11-25' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (775, 5, 7, 1, CAST(N'2019-10-31' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1031, 5, 7, 1, CAST(N'2019-11-25' AS Date), CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (776, 6, 7, 1, CAST(N'2019-10-31' AS Date), CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1032, 6, 7, 1, CAST(N'2019-11-25' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (777, 7, 6, 1, CAST(N'2019-10-31' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1033, 7, 6, 1, CAST(N'2019-11-25' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (778, 8, 6, 1, CAST(N'2019-10-31' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1034, 8, 6, 1, CAST(N'2019-11-25' AS Date), CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (779, 9, 9, 1, CAST(N'2019-10-31' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1035, 9, 9, 1, CAST(N'2019-11-25' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (780, 10, 9, 1, CAST(N'2019-10-31' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1036, 10, 9, 1, CAST(N'2019-11-25' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (781, 11, 8, 1, CAST(N'2019-10-31' AS Date), CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1037, 11, 8, 1, CAST(N'2019-11-25' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (782, 12, 8, 1, CAST(N'2019-10-31' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1038, 12, 8, 1, CAST(N'2019-11-25' AS Date), CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (783, 13, 11, 2, CAST(N'2019-10-31' AS Date), CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1039, 13, 11, 2, CAST(N'2019-11-25' AS Date), CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (784, 14, 11, 2, CAST(N'2019-10-31' AS Date), CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1040, 14, 11, 2, CAST(N'2019-11-25' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (785, 15, 10, 2, CAST(N'2019-10-31' AS Date), CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1041, 15, 10, 2, CAST(N'2019-11-25' AS Date), CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (786, 16, 10, 2, CAST(N'2019-10-31' AS Date), CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1042, 16, 10, 2, CAST(N'2019-11-25' AS Date), CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (787, 17, 13, 2, CAST(N'2019-10-31' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1043, 17, 13, 2, CAST(N'2019-11-25' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (788, 18, 13, 2, CAST(N'2019-10-31' AS Date), CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1044, 18, 13, 2, CAST(N'2019-11-25' AS Date), CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (789, 19, 12, 2, CAST(N'2019-10-31' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1045, 19, 12, 2, CAST(N'2019-11-25' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (790, 20, 12, 2, CAST(N'2019-10-31' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1046, 20, 12, 2, CAST(N'2019-11-25' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (791, 21, 15, 2, CAST(N'2019-10-31' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1047, 21, 15, 2, CAST(N'2019-11-25' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (792, 22, 15, 2, CAST(N'2019-10-31' AS Date), CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1048, 22, 15, 2, CAST(N'2019-11-25' AS Date), CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (793, 23, 14, 2, CAST(N'2019-10-31' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1049, 23, 14, 2, CAST(N'2019-11-25' AS Date), CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (794, 24, 14, 2, CAST(N'2019-10-31' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1050, 24, 14, 2, CAST(N'2019-11-25' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (795, 25, 16, 3, CAST(N'2019-10-31' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1051, 25, 16, 3, CAST(N'2019-11-25' AS Date), CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (796, 26, 16, 3, CAST(N'2019-10-31' AS Date), CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1052, 26, 16, 3, CAST(N'2019-11-25' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (797, 27, 1, 3, CAST(N'2019-10-31' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1053, 27, 1, 3, CAST(N'2019-11-25' AS Date), CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (798, 28, 1, 3, CAST(N'2019-10-31' AS Date), CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1054, 28, 1, 3, CAST(N'2019-11-25' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (799, 29, 17, 3, CAST(N'2019-10-31' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1055, 29, 17, 3, CAST(N'2019-11-25' AS Date), CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (800, 30, 17, 3, CAST(N'2019-10-31' AS Date), CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1056, 30, 17, 3, CAST(N'2019-11-25' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (801, 31, 2, 3, CAST(N'2019-10-31' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1057, 31, 2, 3, CAST(N'2019-11-25' AS Date), CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (802, 32, 2, 3, CAST(N'2019-10-31' AS Date), CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1058, 32, 2, 3, CAST(N'2019-11-25' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (803, 33, 18, 3, CAST(N'2019-10-31' AS Date), CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1059, 33, 18, 3, CAST(N'2019-11-25' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (804, 34, 18, 3, CAST(N'2019-10-31' AS Date), CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1060, 34, 18, 3, CAST(N'2019-11-25' AS Date), CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (805, 35, 3, 3, CAST(N'2019-10-31' AS Date), CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1061, 35, 3, 3, CAST(N'2019-11-25' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (806, 36, 3, 3, CAST(N'2019-10-31' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1062, 36, 3, 3, CAST(N'2019-11-25' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (807, 37, 20, 4, CAST(N'2019-10-31' AS Date), CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1063, 37, 20, 4, CAST(N'2019-11-25' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (808, 38, 20, 4, CAST(N'2019-10-31' AS Date), CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1064, 38, 20, 4, CAST(N'2019-11-25' AS Date), CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (809, 39, 19, 4, CAST(N'2019-10-31' AS Date), CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1065, 39, 19, 4, CAST(N'2019-11-25' AS Date), CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (810, 40, 19, 4, CAST(N'2019-10-31' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1066, 40, 19, 4, CAST(N'2019-11-25' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (811, 41, 22, 4, CAST(N'2019-10-31' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1067, 41, 22, 4, CAST(N'2019-11-25' AS Date), CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (812, 42, 22, 4, CAST(N'2019-10-31' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1068, 42, 22, 4, CAST(N'2019-11-25' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (813, 43, 21, 4, CAST(N'2019-10-31' AS Date), CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1069, 43, 21, 4, CAST(N'2019-11-25' AS Date), CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (814, 44, 21, 4, CAST(N'2019-10-31' AS Date), CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1070, 44, 21, 4, CAST(N'2019-11-25' AS Date), CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (815, 45, 24, 4, CAST(N'2019-10-31' AS Date), CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1071, 45, 24, 4, CAST(N'2019-11-25' AS Date), CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (816, 46, 24, 4, CAST(N'2019-10-31' AS Date), CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1072, 46, 24, 4, CAST(N'2019-11-25' AS Date), CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (817, 47, 23, 4, CAST(N'2019-10-31' AS Date), CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1073, 47, 23, 4, CAST(N'2019-11-25' AS Date), CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (818, 48, 23, 4, CAST(N'2019-10-31' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (819, 1, 5, 1, CAST(N'2019-11-01' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (820, 2, 5, 1, CAST(N'2019-11-01' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (821, 3, 4, 1, CAST(N'2019-11-01' AS Date), CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (822, 4, 4, 1, CAST(N'2019-11-01' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (823, 5, 7, 1, CAST(N'2019-11-01' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (824, 6, 7, 1, CAST(N'2019-11-01' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (825, 7, 6, 1, CAST(N'2019-11-01' AS Date), CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (826, 8, 6, 1, CAST(N'2019-11-01' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (827, 9, 9, 1, CAST(N'2019-11-01' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (828, 10, 9, 1, CAST(N'2019-11-01' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (829, 11, 8, 1, CAST(N'2019-11-01' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (830, 12, 8, 1, CAST(N'2019-11-01' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (831, 13, 11, 2, CAST(N'2019-11-01' AS Date), CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (832, 14, 11, 2, CAST(N'2019-11-01' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (833, 15, 10, 2, CAST(N'2019-11-01' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (834, 16, 10, 2, CAST(N'2019-11-01' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (835, 17, 13, 2, CAST(N'2019-11-01' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (836, 18, 13, 2, CAST(N'2019-11-01' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (837, 19, 12, 2, CAST(N'2019-11-01' AS Date), CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (838, 20, 12, 2, CAST(N'2019-11-01' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (839, 21, 15, 2, CAST(N'2019-11-01' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (840, 22, 15, 2, CAST(N'2019-11-01' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (841, 23, 14, 2, CAST(N'2019-11-01' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (842, 24, 14, 2, CAST(N'2019-11-01' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (843, 25, 16, 3, CAST(N'2019-11-01' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (844, 26, 16, 3, CAST(N'2019-11-01' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (845, 27, 1, 3, CAST(N'2019-11-01' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (846, 28, 1, 3, CAST(N'2019-11-01' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (847, 29, 17, 3, CAST(N'2019-11-01' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (848, 30, 17, 3, CAST(N'2019-11-01' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (849, 31, 2, 3, CAST(N'2019-11-01' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (850, 32, 2, 3, CAST(N'2019-11-01' AS Date), CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (851, 33, 18, 3, CAST(N'2019-11-01' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (852, 34, 18, 3, CAST(N'2019-11-01' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (853, 35, 3, 3, CAST(N'2019-11-01' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (854, 36, 3, 3, CAST(N'2019-11-01' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (855, 37, 20, 4, CAST(N'2019-11-01' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (856, 38, 20, 4, CAST(N'2019-11-01' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (857, 39, 19, 4, CAST(N'2019-11-01' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (858, 40, 19, 4, CAST(N'2019-11-01' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (859, 41, 22, 4, CAST(N'2019-11-01' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (860, 42, 22, 4, CAST(N'2019-11-01' AS Date), CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (861, 43, 21, 4, CAST(N'2019-11-01' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (862, 44, 21, 4, CAST(N'2019-11-01' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (863, 45, 24, 4, CAST(N'2019-11-01' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (864, 46, 24, 4, CAST(N'2019-11-01' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (865, 47, 23, 4, CAST(N'2019-11-01' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (866, 48, 23, 4, CAST(N'2019-11-01' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (867, 1, 5, 1, CAST(N'2019-11-04' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (868, 2, 5, 1, CAST(N'2019-11-04' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (869, 3, 4, 1, CAST(N'2019-11-04' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (870, 4, 4, 1, CAST(N'2019-11-04' AS Date), CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (871, 5, 7, 1, CAST(N'2019-11-04' AS Date), CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (872, 6, 7, 1, CAST(N'2019-11-04' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (873, 7, 6, 1, CAST(N'2019-11-04' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (874, 8, 6, 1, CAST(N'2019-11-04' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (875, 9, 11, 2, CAST(N'2019-11-04' AS Date), CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (876, 10, 11, 2, CAST(N'2019-11-04' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (877, 11, 8, 2, CAST(N'2019-11-04' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (878, 12, 8, 2, CAST(N'2019-11-04' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (879, 13, 13, 2, CAST(N'2019-11-04' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (880, 14, 13, 2, CAST(N'2019-11-04' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (881, 15, 10, 2, CAST(N'2019-11-04' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (882, 16, 10, 2, CAST(N'2019-11-04' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (883, 17, 16, 3, CAST(N'2019-11-04' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (884, 18, 16, 3, CAST(N'2019-11-04' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (885, 19, 1, 3, CAST(N'2019-11-04' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (886, 20, 1, 3, CAST(N'2019-11-04' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (887, 21, 17, 3, CAST(N'2019-11-04' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (888, 22, 17, 3, CAST(N'2019-11-04' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (889, 23, 2, 3, CAST(N'2019-11-04' AS Date), CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (890, 24, 2, 3, CAST(N'2019-11-04' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (891, 25, 9, 4, CAST(N'2019-11-04' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (892, 26, 9, 4, CAST(N'2019-11-04' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (893, 27, 3, 4, CAST(N'2019-11-04' AS Date), CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (894, 28, 3, 4, CAST(N'2019-11-04' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (895, 29, 20, 4, CAST(N'2019-11-04' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (896, 30, 20, 4, CAST(N'2019-11-04' AS Date), CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (897, 31, 19, 4, CAST(N'2019-11-04' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (898, 32, 19, 4, CAST(N'2019-11-04' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (899, 1, 5, 1, CAST(N'2019-11-06' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (900, 2, 5, 1, CAST(N'2019-11-06' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (901, 3, 4, 1, CAST(N'2019-11-06' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (902, 4, 4, 1, CAST(N'2019-11-06' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (903, 5, 7, 1, CAST(N'2019-11-06' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (904, 6, 7, 1, CAST(N'2019-11-06' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (905, 7, 6, 1, CAST(N'2019-11-06' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (906, 8, 6, 1, CAST(N'2019-11-06' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (907, 9, 11, 2, CAST(N'2019-11-06' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (908, 10, 11, 2, CAST(N'2019-11-06' AS Date), CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (909, 11, 8, 2, CAST(N'2019-11-06' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (910, 12, 8, 2, CAST(N'2019-11-06' AS Date), CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (911, 13, 13, 2, CAST(N'2019-11-06' AS Date), CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (912, 14, 13, 2, CAST(N'2019-11-06' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (913, 15, 10, 2, CAST(N'2019-11-06' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (914, 16, 10, 2, CAST(N'2019-11-06' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (915, 17, 16, 3, CAST(N'2019-11-06' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (916, 18, 16, 3, CAST(N'2019-11-06' AS Date), CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (917, 19, 1, 3, CAST(N'2019-11-06' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (918, 20, 1, 3, CAST(N'2019-11-06' AS Date), CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (919, 21, 17, 3, CAST(N'2019-11-06' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (920, 22, 17, 3, CAST(N'2019-11-06' AS Date), CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (921, 23, 2, 3, CAST(N'2019-11-06' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (922, 24, 2, 3, CAST(N'2019-11-06' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (923, 25, 9, 4, CAST(N'2019-11-06' AS Date), CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (924, 26, 9, 4, CAST(N'2019-11-06' AS Date), CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (925, 27, 3, 4, CAST(N'2019-11-06' AS Date), CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (926, 28, 3, 4, CAST(N'2019-11-06' AS Date), CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (927, 29, 20, 4, CAST(N'2019-11-06' AS Date), CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (928, 30, 20, 4, CAST(N'2019-11-06' AS Date), CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (929, 31, 19, 4, CAST(N'2019-11-06' AS Date), CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (930, 32, 19, 4, CAST(N'2019-11-06' AS Date), CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[planilla_horaria] ([id], [chofer_id], [coche_id], [recorrido_id], [fecha], [dvh]) VALUES (1074, 48, 23, 4, CAST(N'2019-11-25' AS Date), CAST(6 AS Numeric(1, 0)))
 GO
 SET IDENTITY_INSERT [dbo].[planilla_horaria] OFF
 GO
@@ -2749,6 +2551,10 @@ INSERT [dbo].[usuario_historial] ([id], [fecha], [id_usuario], [nombre], [idioma
 GO
 INSERT [dbo].[usuario_historial] ([id], [fecha], [id_usuario], [nombre], [idioma], [nombre_usuario], [contrasenia], [permisos], [habilitado]) VALUES (20, CAST(N'2019-11-10T12:33:37.953' AS DateTime), 1, N'Administrador', N'Español', N'admin', N'', N'Admin del sistema, Admin del negocio', 1)
 GO
+INSERT [dbo].[usuario_historial] ([id], [fecha], [id_usuario], [nombre], [idioma], [nombre_usuario], [contrasenia], [permisos], [habilitado]) VALUES (21, CAST(N'2019-11-22T23:51:36.787' AS DateTime), 1, N'Administrador', N'English', N'admin', N'1Yti+jA6nZUOGXSjbT6lKFP20hgOX/2x3VpEJAAoUs0=', N'Admin del sistema, Admin del negocio', 1)
+GO
+INSERT [dbo].[usuario_historial] ([id], [fecha], [id_usuario], [nombre], [idioma], [nombre_usuario], [contrasenia], [permisos], [habilitado]) VALUES (22, CAST(N'2019-11-22T23:51:42.087' AS DateTime), 1, N'Administrador', N'Español', N'admin', N'g4aHAIyVWSNuS4HeenoRNMhsEPRDatZJZQyZEzP94qg=', N'Admin del sistema, Admin del negocio', 1)
+GO
 SET IDENTITY_INSERT [dbo].[usuario_historial] OFF
 GO
 INSERT [dbo].[usuario_permiso] ([usuario_id], [permiso_id]) VALUES (1, 2)
@@ -2763,3093 +2569,1445 @@ INSERT [dbo].[usuario_permiso] ([usuario_id], [permiso_id]) VALUES (9, 2)
 GO
 SET IDENTITY_INSERT [dbo].[viaje] ON 
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3938, 723, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5842, 979, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3939, 723, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5843, 979, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3940, 723, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5844, 979, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3941, 723, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5845, 979, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3942, 723, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5846, 979, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3943, 723, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5847, 979, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3944, 723, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5848, 979, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3945, 723, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5849, 979, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3946, 724, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5850, 980, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3947, 724, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5851, 980, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3948, 724, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5852, 980, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3949, 724, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5853, 980, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3950, 724, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5854, 980, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3951, 724, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5855, 980, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3952, 724, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5856, 980, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3953, 725, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5857, 981, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3954, 725, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5858, 981, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3955, 725, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5859, 981, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3956, 725, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5860, 981, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3957, 725, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5861, 981, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3958, 725, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5862, 981, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3959, 725, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5863, 981, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3960, 725, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5864, 981, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3961, 726, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5865, 982, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3962, 726, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5866, 982, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3963, 726, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5867, 982, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3964, 726, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5868, 982, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3965, 726, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5869, 982, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3966, 726, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5870, 982, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3967, 726, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5871, 982, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3968, 727, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5872, 983, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3969, 727, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5873, 983, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3970, 727, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5874, 983, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3971, 727, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5875, 983, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3972, 727, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5876, 983, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3973, 727, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5877, 983, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3974, 727, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5878, 983, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3975, 727, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5879, 983, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3976, 728, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5880, 984, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3977, 728, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5881, 984, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3978, 728, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5882, 984, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3979, 728, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5883, 984, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3980, 728, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5884, 984, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3981, 728, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5885, 984, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3982, 728, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5886, 984, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3983, 729, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5887, 985, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3984, 729, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5888, 985, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3985, 729, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5889, 985, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3986, 729, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5890, 985, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3987, 729, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5891, 985, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3988, 729, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5892, 985, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3989, 729, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5893, 985, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3990, 729, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5894, 985, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3991, 730, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5895, 986, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3992, 730, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5896, 986, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3993, 730, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5897, 986, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3994, 730, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5898, 986, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3995, 730, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5899, 986, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3996, 730, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5900, 986, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3997, 730, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5901, 986, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3998, 731, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5902, 987, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (3999, 731, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5903, 987, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4000, 731, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5904, 987, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4001, 731, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5905, 987, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4002, 731, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5906, 987, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4003, 731, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5907, 987, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4004, 731, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5908, 987, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4005, 732, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5909, 988, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4006, 732, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5910, 988, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4007, 732, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5911, 988, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4008, 732, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5912, 988, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4009, 732, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5913, 988, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4010, 732, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5914, 988, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4011, 732, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5915, 988, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4012, 732, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5916, 988, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4013, 733, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5917, 989, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4014, 733, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5918, 989, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4015, 733, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5919, 989, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4016, 733, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5920, 989, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4017, 733, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5921, 989, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4018, 733, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5922, 989, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4019, 733, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5923, 989, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4020, 734, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5924, 990, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4021, 734, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5925, 990, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4022, 734, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5926, 990, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4023, 734, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5927, 990, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4024, 734, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5928, 990, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4025, 734, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5929, 990, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4026, 734, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5930, 990, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4027, 734, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5931, 990, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4028, 735, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5932, 991, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4029, 735, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5933, 991, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4030, 735, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5934, 991, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4031, 735, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5935, 991, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4032, 735, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5936, 991, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4033, 735, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5937, 991, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4034, 735, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5938, 991, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4035, 735, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5939, 991, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4036, 736, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5940, 992, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4037, 736, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5941, 992, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4038, 736, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5942, 992, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4039, 736, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5943, 992, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4040, 736, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5944, 992, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4041, 736, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5945, 992, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4042, 736, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5946, 992, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4043, 737, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5947, 993, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4044, 737, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5948, 993, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4045, 737, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5949, 993, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4046, 737, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5950, 993, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4047, 737, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5951, 993, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4048, 737, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5952, 993, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4049, 737, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5953, 993, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4050, 737, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5954, 993, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4051, 738, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5955, 994, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4052, 738, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5956, 994, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4053, 738, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5957, 994, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4054, 738, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5958, 994, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4055, 738, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5959, 994, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4056, 738, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5960, 994, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4057, 738, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5961, 994, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4058, 739, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5962, 995, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4059, 739, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5963, 995, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4060, 739, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5964, 995, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4061, 739, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5965, 995, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4062, 739, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5966, 995, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4063, 739, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5967, 995, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4064, 739, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5968, 995, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4065, 739, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5969, 995, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4066, 740, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5970, 996, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4067, 740, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5971, 996, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4068, 740, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5972, 996, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4069, 740, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5973, 996, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4070, 740, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5974, 996, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4071, 740, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5975, 996, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4072, 740, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5976, 996, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4073, 741, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5977, 997, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4074, 741, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5978, 997, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4075, 741, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5979, 997, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4076, 741, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5980, 997, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4077, 741, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5981, 997, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4078, 741, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5982, 997, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4079, 741, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5983, 997, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4080, 741, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5984, 997, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4081, 742, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5985, 998, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4082, 742, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5986, 998, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4083, 742, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5987, 998, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4084, 742, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5988, 998, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4085, 742, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5989, 998, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4086, 742, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5990, 998, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4087, 742, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5991, 998, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4088, 743, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5992, 999, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4089, 743, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5993, 999, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4090, 743, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5994, 999, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4091, 743, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5995, 999, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4092, 743, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5996, 999, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4093, 743, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5997, 999, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4094, 743, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5998, 999, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4095, 744, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5999, 1000, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4096, 744, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6000, 1000, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4097, 744, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6001, 1000, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4098, 744, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6002, 1000, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4099, 744, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6003, 1000, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4100, 744, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6004, 1000, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4101, 744, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6005, 1000, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4102, 744, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6006, 1000, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4103, 745, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6007, 1001, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4104, 745, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6008, 1001, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4105, 745, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6009, 1001, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4106, 745, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6010, 1001, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4107, 745, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6011, 1001, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4108, 745, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6012, 1001, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4109, 745, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6013, 1001, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4110, 746, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6014, 1002, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4111, 746, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6015, 1002, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4112, 746, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6016, 1002, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4113, 746, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6017, 1002, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4114, 746, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6018, 1002, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4115, 746, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6019, 1002, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4116, 746, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6020, 1002, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4117, 746, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6021, 1002, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4118, 747, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6022, 1003, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4119, 747, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6023, 1003, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4120, 747, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6024, 1003, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4121, 747, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6025, 1003, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4122, 747, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6026, 1003, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4123, 747, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6027, 1003, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4124, 747, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6028, 1003, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4125, 747, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6029, 1003, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4126, 748, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6030, 1004, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4127, 748, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6031, 1004, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4128, 748, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6032, 1004, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4129, 748, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6033, 1004, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4130, 748, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6034, 1004, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4131, 748, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6035, 1004, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4132, 748, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6036, 1004, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4133, 749, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6037, 1005, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4134, 749, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6038, 1005, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4135, 749, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6039, 1005, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4136, 749, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6040, 1005, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4137, 749, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6041, 1005, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4138, 749, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6042, 1005, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4139, 749, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6043, 1005, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4140, 749, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6044, 1005, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4141, 750, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6045, 1006, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4142, 750, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6046, 1006, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4143, 750, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6047, 1006, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4144, 750, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6048, 1006, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4145, 750, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6049, 1006, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4146, 750, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6050, 1006, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4147, 750, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6051, 1006, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4148, 751, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6052, 1007, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4149, 751, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6053, 1007, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4150, 751, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6054, 1007, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4151, 751, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6055, 1007, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4152, 751, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6056, 1007, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4153, 751, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6057, 1007, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4154, 751, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6058, 1007, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4155, 751, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6059, 1007, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4156, 752, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6060, 1008, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4157, 752, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6061, 1008, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4158, 752, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6062, 1008, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4159, 752, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6063, 1008, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4160, 752, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6064, 1008, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4161, 752, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6065, 1008, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4162, 752, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6066, 1008, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4163, 753, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6067, 1009, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4164, 753, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6068, 1009, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4165, 753, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6069, 1009, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4166, 753, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6070, 1009, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4167, 753, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6071, 1009, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4168, 753, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6072, 1009, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4169, 753, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6073, 1009, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4170, 753, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6074, 1009, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4171, 754, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6075, 1010, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4172, 754, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6076, 1010, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4173, 754, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6077, 1010, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4174, 754, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6078, 1010, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4175, 754, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6079, 1010, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4176, 754, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6080, 1010, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4177, 754, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6081, 1010, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4178, 755, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6082, 1011, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4179, 755, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6083, 1011, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4180, 755, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6084, 1011, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4181, 755, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6085, 1011, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4182, 755, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6086, 1011, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4183, 755, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6087, 1011, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4184, 755, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6088, 1011, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4185, 756, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6089, 1012, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4186, 756, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6090, 1012, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4187, 756, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6091, 1012, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4188, 756, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6092, 1012, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4189, 756, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6093, 1012, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4190, 756, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6094, 1012, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4191, 756, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6095, 1012, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4192, 756, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6096, 1012, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4193, 757, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6097, 1013, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4194, 757, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6098, 1013, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4195, 757, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6099, 1013, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4196, 757, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6100, 1013, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4197, 757, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6101, 1013, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4198, 757, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6102, 1013, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4199, 757, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6103, 1013, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4200, 758, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6104, 1014, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4201, 758, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6105, 1014, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4202, 758, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6106, 1014, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4203, 758, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6107, 1014, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4204, 758, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6108, 1014, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4205, 758, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6109, 1014, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4206, 758, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6110, 1014, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4207, 758, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6111, 1014, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4208, 759, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6112, 1015, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4209, 759, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6113, 1015, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4210, 759, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6114, 1015, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4211, 759, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6115, 1015, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4212, 759, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6116, 1015, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4213, 759, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6117, 1015, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4214, 759, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6118, 1015, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4215, 759, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6119, 1015, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4216, 760, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6120, 1016, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4217, 760, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6121, 1016, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4218, 760, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6122, 1016, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4219, 760, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6123, 1016, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4220, 760, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6124, 1016, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4221, 760, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6125, 1016, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4222, 760, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6126, 1016, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4223, 761, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6127, 1017, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4224, 761, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6128, 1017, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4225, 761, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6129, 1017, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4226, 761, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6130, 1017, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4227, 761, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6131, 1017, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4228, 761, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6132, 1017, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4229, 761, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6133, 1017, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4230, 761, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6134, 1017, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4231, 762, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6135, 1018, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4232, 762, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6136, 1018, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4233, 762, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6137, 1018, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4234, 762, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6138, 1018, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4235, 762, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6139, 1018, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4236, 762, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6140, 1018, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4237, 762, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6141, 1018, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4238, 763, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6142, 1019, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4239, 763, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6143, 1019, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4240, 763, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6144, 1019, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4241, 763, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6145, 1019, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4242, 763, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6146, 1019, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4243, 763, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6147, 1019, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4244, 763, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6148, 1019, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4245, 763, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6149, 1019, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4246, 764, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6150, 1020, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4247, 764, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6151, 1020, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4248, 764, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6152, 1020, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4249, 764, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6153, 1020, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4250, 764, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6154, 1020, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4251, 764, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6155, 1020, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4252, 764, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6156, 1020, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4253, 765, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6157, 1021, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), CAST(N'05:28:00' AS Time), 1, 2, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4254, 765, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6158, 1021, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), CAST(N'07:00:00' AS Time), 1, 1, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4255, 765, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6159, 1021, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, 0, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4256, 765, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6160, 1021, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, 0, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4257, 765, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6161, 1021, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, 0, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4258, 765, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6162, 1021, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, 0, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4259, 765, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6163, 1021, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, 0, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4260, 765, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6164, 1021, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, 0, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4261, 766, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6165, 1022, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4262, 766, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6166, 1022, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4263, 766, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6167, 1022, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4264, 766, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6168, 1022, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4265, 766, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6169, 1022, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4266, 766, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6170, 1022, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4267, 766, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6171, 1022, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4268, 767, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6172, 1023, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4269, 767, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6173, 1023, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4270, 767, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6174, 1023, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4271, 767, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6175, 1023, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4272, 767, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6176, 1023, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4273, 767, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6177, 1023, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4274, 767, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6178, 1023, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4275, 768, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6179, 1024, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4276, 768, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6180, 1024, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4277, 768, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6181, 1024, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4278, 768, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6182, 1024, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4279, 768, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6183, 1024, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4280, 768, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6184, 1024, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4281, 768, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6185, 1024, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4282, 768, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6186, 1024, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4283, 769, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6187, 1025, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4284, 769, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6188, 1025, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4285, 769, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6189, 1025, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4286, 769, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6190, 1025, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4287, 769, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6191, 1025, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4288, 769, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6192, 1025, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4289, 769, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6193, 1025, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4290, 770, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6194, 1026, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4291, 770, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6195, 1026, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4292, 770, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6196, 1026, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4293, 770, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6197, 1026, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4294, 770, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6198, 1026, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4295, 770, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6199, 1026, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4296, 770, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6200, 1026, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4297, 770, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6201, 1026, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4298, 771, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6202, 1027, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4299, 771, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6203, 1027, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4300, 771, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6204, 1027, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4301, 771, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6205, 1027, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4302, 771, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6206, 1027, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4303, 771, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6207, 1027, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4304, 771, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6208, 1027, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4305, 771, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6209, 1027, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4306, 772, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6210, 1028, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4307, 772, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6211, 1028, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4308, 772, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6212, 1028, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4309, 772, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6213, 1028, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4310, 772, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6214, 1028, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4311, 772, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6215, 1028, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4312, 772, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6216, 1028, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4313, 773, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6217, 1029, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4314, 773, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6218, 1029, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4315, 773, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6219, 1029, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4316, 773, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6220, 1029, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4317, 773, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6221, 1029, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4318, 773, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6222, 1029, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4319, 773, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6223, 1029, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4320, 773, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6224, 1029, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4321, 774, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6225, 1030, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4322, 774, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6226, 1030, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4323, 774, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6227, 1030, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4324, 774, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6228, 1030, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4325, 774, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6229, 1030, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4326, 774, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6230, 1030, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4327, 774, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6231, 1030, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4328, 775, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6232, 1031, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4329, 775, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6233, 1031, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4330, 775, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6234, 1031, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4331, 775, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6235, 1031, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4332, 775, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6236, 1031, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4333, 775, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6237, 1031, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4334, 775, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6238, 1031, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4335, 775, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6239, 1031, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4336, 776, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6240, 1032, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4337, 776, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6241, 1032, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4338, 776, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6242, 1032, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4339, 776, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6243, 1032, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4340, 776, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6244, 1032, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4341, 776, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6245, 1032, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4342, 776, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6246, 1032, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4343, 777, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6247, 1033, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4344, 777, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6248, 1033, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4345, 777, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6249, 1033, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4346, 777, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6250, 1033, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4347, 777, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6251, 1033, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4348, 777, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6252, 1033, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4349, 777, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6253, 1033, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4350, 777, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6254, 1033, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4351, 778, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6255, 1034, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4352, 778, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6256, 1034, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4353, 778, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6257, 1034, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4354, 778, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6258, 1034, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4355, 778, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6259, 1034, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4356, 778, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6260, 1034, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4357, 778, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6261, 1034, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4358, 779, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6262, 1035, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4359, 779, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6263, 1035, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4360, 779, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6264, 1035, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4361, 779, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6265, 1035, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4362, 779, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6266, 1035, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4363, 779, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6267, 1035, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4364, 779, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6268, 1035, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4365, 780, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6269, 1036, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4366, 780, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6270, 1036, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4367, 780, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6271, 1036, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4368, 780, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6272, 1036, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4369, 780, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6273, 1036, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4370, 780, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6274, 1036, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4371, 780, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6275, 1036, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4372, 780, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6276, 1036, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4373, 781, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6277, 1037, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4374, 781, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6278, 1037, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4375, 781, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6279, 1037, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4376, 781, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6280, 1037, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4377, 781, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6281, 1037, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4378, 781, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6282, 1037, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4379, 781, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6283, 1037, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4380, 782, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6284, 1038, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4381, 782, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6285, 1038, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4382, 782, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6286, 1038, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4383, 782, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6287, 1038, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4384, 782, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6288, 1038, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4385, 782, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6289, 1038, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4386, 782, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6290, 1038, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4387, 782, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6291, 1038, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4388, 783, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6292, 1039, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4389, 783, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6293, 1039, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4390, 783, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6294, 1039, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4391, 783, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6295, 1039, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4392, 783, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6296, 1039, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4393, 783, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6297, 1039, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4394, 783, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6298, 1039, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4395, 783, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6299, 1039, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4396, 784, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6300, 1040, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4397, 784, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6301, 1040, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4398, 784, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6302, 1040, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4399, 784, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6303, 1040, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4400, 784, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6304, 1040, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4401, 784, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6305, 1040, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4402, 784, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6306, 1040, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4403, 785, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6307, 1041, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4404, 785, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6308, 1041, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4405, 785, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6309, 1041, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4406, 785, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6310, 1041, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4407, 785, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6311, 1041, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4408, 785, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6312, 1041, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4409, 785, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6313, 1041, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4410, 785, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6314, 1041, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4411, 786, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6315, 1042, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4412, 786, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6316, 1042, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4413, 786, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6317, 1042, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4414, 786, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6318, 1042, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4415, 786, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6319, 1042, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4416, 786, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6320, 1042, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4417, 786, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6321, 1042, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4418, 787, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6322, 1043, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4419, 787, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6323, 1043, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4420, 787, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6324, 1043, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4421, 787, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6325, 1043, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4422, 787, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6326, 1043, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4423, 787, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6327, 1043, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4424, 787, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6328, 1043, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4425, 787, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6329, 1043, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4426, 788, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6330, 1044, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4427, 788, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6331, 1044, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4428, 788, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6332, 1044, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4429, 788, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6333, 1044, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4430, 788, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6334, 1044, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4431, 788, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6335, 1044, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4432, 788, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6336, 1044, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4433, 789, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6337, 1045, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4434, 789, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6338, 1045, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4435, 789, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6339, 1045, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4436, 789, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6340, 1045, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4437, 789, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6341, 1045, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4438, 789, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6342, 1045, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4439, 789, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6343, 1045, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4440, 789, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6344, 1045, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4441, 790, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6345, 1046, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4442, 790, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6346, 1046, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4443, 790, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6347, 1046, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4444, 790, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6348, 1046, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4445, 790, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6349, 1046, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4446, 790, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6350, 1046, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4447, 790, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6351, 1046, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4448, 791, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6352, 1047, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4449, 791, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6353, 1047, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4450, 791, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6354, 1047, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4451, 791, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6355, 1047, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4452, 791, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6356, 1047, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4453, 791, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6357, 1047, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4454, 791, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6358, 1047, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4455, 792, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6359, 1048, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4456, 792, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6360, 1048, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4457, 792, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6361, 1048, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4458, 792, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6362, 1048, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4459, 792, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6363, 1048, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4460, 792, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6364, 1048, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4461, 792, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6365, 1048, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4462, 792, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6366, 1048, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4463, 793, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6367, 1049, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4464, 793, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6368, 1049, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4465, 793, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6369, 1049, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4466, 793, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6370, 1049, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4467, 793, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6371, 1049, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4468, 793, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6372, 1049, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4469, 793, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6373, 1049, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4470, 794, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6374, 1050, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4471, 794, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6375, 1050, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4472, 794, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6376, 1050, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4473, 794, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6377, 1050, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4474, 794, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6378, 1050, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4475, 794, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6379, 1050, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4476, 794, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6380, 1050, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4477, 794, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6381, 1050, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4478, 795, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6382, 1051, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4479, 795, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6383, 1051, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4480, 795, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6384, 1051, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4481, 795, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6385, 1051, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4482, 795, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6386, 1051, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4483, 795, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6387, 1051, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4484, 795, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6388, 1051, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4485, 795, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6389, 1051, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4486, 796, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6390, 1052, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4487, 796, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6391, 1052, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4488, 796, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6392, 1052, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4489, 796, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6393, 1052, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4490, 796, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6394, 1052, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4491, 796, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6395, 1052, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4492, 796, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6396, 1052, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4493, 797, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6397, 1053, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4494, 797, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6398, 1053, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4495, 797, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6399, 1053, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4496, 797, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6400, 1053, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4497, 797, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6401, 1053, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4498, 797, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6402, 1053, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4499, 797, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6403, 1053, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4500, 797, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6404, 1053, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4501, 798, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6405, 1054, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4502, 798, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6406, 1054, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4503, 798, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6407, 1054, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4504, 798, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6408, 1054, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4505, 798, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6409, 1054, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4506, 798, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6410, 1054, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4507, 798, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6411, 1054, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4508, 799, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6412, 1055, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4509, 799, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6413, 1055, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4510, 799, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6414, 1055, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4511, 799, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6415, 1055, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4512, 799, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6416, 1055, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4513, 799, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6417, 1055, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4514, 799, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6418, 1055, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4515, 799, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6419, 1055, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4516, 800, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6420, 1056, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4517, 800, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6421, 1056, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4518, 800, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6422, 1056, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4519, 800, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6423, 1056, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4520, 800, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6424, 1056, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4521, 800, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6425, 1056, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4522, 800, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6426, 1056, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4523, 801, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6427, 1057, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4524, 801, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6428, 1057, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4525, 801, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6429, 1057, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4526, 801, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6430, 1057, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4527, 801, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6431, 1057, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4528, 801, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6432, 1057, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4529, 801, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6433, 1057, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4530, 801, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6434, 1057, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4531, 802, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6435, 1058, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4532, 802, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6436, 1058, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4533, 802, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6437, 1058, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4534, 802, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6438, 1058, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4535, 802, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6439, 1058, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4536, 802, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6440, 1058, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4537, 802, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6441, 1058, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4538, 803, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6442, 1059, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4539, 803, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6443, 1059, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4540, 803, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6444, 1059, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4541, 803, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6445, 1059, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4542, 803, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6446, 1059, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4543, 803, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6447, 1059, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4544, 803, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6448, 1059, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4545, 804, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6449, 1060, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4546, 804, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6450, 1060, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4547, 804, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6451, 1060, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4548, 804, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6452, 1060, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4549, 804, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6453, 1060, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4550, 804, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6454, 1060, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4551, 804, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6455, 1060, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4552, 804, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6456, 1060, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4553, 805, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6457, 1061, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4554, 805, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6458, 1061, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4555, 805, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6459, 1061, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4556, 805, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6460, 1061, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4557, 805, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6461, 1061, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4558, 805, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6462, 1061, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4559, 805, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6463, 1061, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4560, 806, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6464, 1062, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4561, 806, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6465, 1062, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4562, 806, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6466, 1062, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4563, 806, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6467, 1062, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4564, 806, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6468, 1062, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4565, 806, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6469, 1062, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4566, 806, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6470, 1062, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4567, 806, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6471, 1062, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4568, 807, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6472, 1063, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4569, 807, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6473, 1063, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4570, 807, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6474, 1063, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4571, 807, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6475, 1063, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4572, 807, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6476, 1063, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4573, 807, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6477, 1063, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4574, 807, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6478, 1063, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4575, 807, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6479, 1063, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4576, 808, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6480, 1064, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4577, 808, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6481, 1064, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4578, 808, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6482, 1064, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4579, 808, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6483, 1064, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4580, 808, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6484, 1064, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4581, 808, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6485, 1064, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4582, 808, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6486, 1064, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4583, 809, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6487, 1065, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4584, 809, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6488, 1065, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4585, 809, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6489, 1065, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4586, 809, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6490, 1065, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4587, 809, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6491, 1065, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4588, 809, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6492, 1065, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4589, 809, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6493, 1065, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4590, 809, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6494, 1065, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4591, 810, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6495, 1066, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4592, 810, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6496, 1066, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4593, 810, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6497, 1066, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4594, 810, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6498, 1066, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4595, 810, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6499, 1066, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4596, 810, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6500, 1066, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4597, 810, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6501, 1066, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4598, 811, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6502, 1067, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4599, 811, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6503, 1067, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4600, 811, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6504, 1067, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4601, 811, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6505, 1067, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4602, 811, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6506, 1067, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4603, 811, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6507, 1067, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4604, 811, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6508, 1067, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4605, 811, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6509, 1067, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4606, 812, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6510, 1068, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4607, 812, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6511, 1068, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4608, 812, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6512, 1068, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4609, 812, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6513, 1068, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4610, 812, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6514, 1068, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4611, 812, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6515, 1068, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4612, 812, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6516, 1068, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4613, 813, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6517, 1069, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4614, 813, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6518, 1069, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4615, 813, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6519, 1069, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4616, 813, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6520, 1069, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4617, 813, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6521, 1069, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4618, 813, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6522, 1069, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4619, 813, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6523, 1069, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4620, 813, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6524, 1069, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4621, 814, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6525, 1070, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4622, 814, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6526, 1070, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4623, 814, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6527, 1070, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4624, 814, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6528, 1070, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4625, 814, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6529, 1070, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4626, 814, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6530, 1070, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4627, 814, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6531, 1070, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4628, 815, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6532, 1071, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4629, 815, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6533, 1071, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4630, 815, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6534, 1071, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4631, 815, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6535, 1071, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4632, 815, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6536, 1071, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4633, 815, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6537, 1071, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4634, 815, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6538, 1071, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4635, 816, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6539, 1072, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4636, 816, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6540, 1072, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4637, 816, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6541, 1072, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4638, 816, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6542, 1072, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4639, 816, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6543, 1072, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4640, 816, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6544, 1072, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4641, 816, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6545, 1072, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4642, 816, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6546, 1072, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4643, 817, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6547, 1073, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4644, 817, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6548, 1073, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4645, 817, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6549, 1073, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4646, 817, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6550, 1073, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4647, 817, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6551, 1073, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4648, 817, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6552, 1073, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4649, 817, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6553, 1073, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4650, 818, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6554, 1074, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4651, 818, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6555, 1074, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4652, 818, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6556, 1074, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4653, 818, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6557, 1074, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4654, 818, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6558, 1074, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4655, 818, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6559, 1074, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4656, 818, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6560, 1074, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
 GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4657, 818, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4658, 819, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4659, 819, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4660, 819, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4661, 819, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4662, 819, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4663, 819, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4664, 819, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4665, 819, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4666, 820, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4667, 820, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4668, 820, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4669, 820, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4670, 820, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4671, 820, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4672, 820, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4673, 821, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4674, 821, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4675, 821, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4676, 821, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4677, 821, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4678, 821, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4679, 821, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4680, 821, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4681, 822, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4682, 822, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4683, 822, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4684, 822, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4685, 822, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4686, 822, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4687, 822, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4688, 823, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4689, 823, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4690, 823, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4691, 823, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4692, 823, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4693, 823, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4694, 823, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4695, 823, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4696, 824, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4697, 824, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4698, 824, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4699, 824, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4700, 824, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4701, 824, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4702, 824, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4703, 825, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4704, 825, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4705, 825, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4706, 825, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4707, 825, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4708, 825, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4709, 825, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4710, 825, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4711, 826, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4712, 826, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4713, 826, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4714, 826, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4715, 826, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4716, 826, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4717, 826, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4718, 827, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4719, 827, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4720, 827, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4721, 827, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4722, 827, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4723, 827, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4724, 827, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4725, 828, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4726, 828, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4727, 828, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4728, 828, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4729, 828, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4730, 828, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4731, 828, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4732, 828, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4733, 829, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4734, 829, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4735, 829, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4736, 829, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4737, 829, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4738, 829, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4739, 829, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4740, 830, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4741, 830, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4742, 830, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4743, 830, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4744, 830, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4745, 830, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4746, 830, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4747, 830, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4748, 831, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4749, 831, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4750, 831, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4751, 831, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4752, 831, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4753, 831, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4754, 831, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4755, 831, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4756, 832, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4757, 832, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4758, 832, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4759, 832, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4760, 832, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4761, 832, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4762, 832, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4763, 833, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4764, 833, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4765, 833, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4766, 833, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4767, 833, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4768, 833, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4769, 833, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4770, 833, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4771, 834, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4772, 834, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4773, 834, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4774, 834, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4775, 834, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4776, 834, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4777, 834, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4778, 835, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4779, 835, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4780, 835, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4781, 835, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4782, 835, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4783, 835, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4784, 835, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4785, 835, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4786, 836, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4787, 836, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4788, 836, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4789, 836, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4790, 836, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4791, 836, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4792, 836, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4793, 837, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4794, 837, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4795, 837, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4796, 837, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4797, 837, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4798, 837, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4799, 837, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4800, 837, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4801, 838, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4802, 838, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4803, 838, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4804, 838, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4805, 838, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4806, 838, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4807, 838, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4808, 839, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4809, 839, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4810, 839, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4811, 839, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4812, 839, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4813, 839, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4814, 839, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4815, 840, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4816, 840, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4817, 840, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4818, 840, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4819, 840, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4820, 840, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4821, 840, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4822, 840, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4823, 841, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4824, 841, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4825, 841, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4826, 841, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4827, 841, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4828, 841, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4829, 841, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4830, 842, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4831, 842, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4832, 842, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4833, 842, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4834, 842, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4835, 842, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4836, 842, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4837, 842, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4838, 843, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4839, 843, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4840, 843, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4841, 843, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4842, 843, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4843, 843, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4844, 843, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4845, 843, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4846, 844, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4847, 844, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4848, 844, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4849, 844, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4850, 844, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4851, 844, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4852, 844, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4853, 845, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4854, 845, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4855, 845, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4856, 845, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4857, 845, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4858, 845, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4859, 845, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4860, 845, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4861, 846, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4862, 846, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4863, 846, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4864, 846, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4865, 846, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4866, 846, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4867, 846, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4868, 847, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4869, 847, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4870, 847, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4871, 847, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4872, 847, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4873, 847, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4874, 847, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4875, 847, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4876, 848, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4877, 848, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4878, 848, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4879, 848, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4880, 848, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4881, 848, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4882, 848, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4883, 849, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4884, 849, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4885, 849, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4886, 849, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4887, 849, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4888, 849, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4889, 849, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4890, 849, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4891, 850, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4892, 850, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4893, 850, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4894, 850, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4895, 850, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4896, 850, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4897, 850, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4898, 851, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4899, 851, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4900, 851, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4901, 851, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4902, 851, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4903, 851, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4904, 851, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4905, 852, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4906, 852, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4907, 852, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4908, 852, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4909, 852, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4910, 852, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4911, 852, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4912, 852, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4913, 853, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4914, 853, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4915, 853, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4916, 853, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4917, 853, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4918, 853, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4919, 853, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4920, 854, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4921, 854, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4922, 854, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4923, 854, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4924, 854, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4925, 854, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4926, 854, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4927, 854, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4928, 855, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4929, 855, 0, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4930, 855, 1, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4931, 855, 0, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4932, 855, 1, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4933, 855, 0, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4934, 855, 1, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4935, 855, 0, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4936, 856, 1, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4937, 856, 0, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4938, 856, 1, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4939, 856, 0, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4940, 856, 1, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4941, 856, 0, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4942, 856, 1, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4943, 857, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4944, 857, 1, CAST(N'05:21:00' AS Time), CAST(N'06:21:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4945, 857, 0, CAST(N'06:42:00' AS Time), CAST(N'07:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4946, 857, 1, CAST(N'08:03:00' AS Time), CAST(N'09:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4947, 857, 0, CAST(N'09:24:00' AS Time), CAST(N'10:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4948, 857, 1, CAST(N'10:45:00' AS Time), CAST(N'11:45:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4949, 857, 0, CAST(N'12:06:00' AS Time), CAST(N'13:06:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4950, 857, 1, CAST(N'13:27:00' AS Time), CAST(N'14:27:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4951, 858, 0, CAST(N'14:48:00' AS Time), CAST(N'15:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4952, 858, 1, CAST(N'16:09:00' AS Time), CAST(N'17:09:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4953, 858, 0, CAST(N'17:30:00' AS Time), CAST(N'18:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4954, 858, 1, CAST(N'18:51:00' AS Time), CAST(N'19:51:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4955, 858, 0, CAST(N'20:12:00' AS Time), CAST(N'21:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4956, 858, 1, CAST(N'21:33:00' AS Time), CAST(N'22:33:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4957, 858, 0, CAST(N'22:54:00' AS Time), CAST(N'23:54:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4958, 859, 1, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4959, 859, 0, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4960, 859, 1, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4961, 859, 0, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4962, 859, 1, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4963, 859, 0, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4964, 859, 1, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4965, 859, 0, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4966, 860, 1, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4967, 860, 0, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4968, 860, 1, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4969, 860, 0, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4970, 860, 1, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4971, 860, 0, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4972, 860, 1, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4973, 861, 0, CAST(N'04:27:00' AS Time), CAST(N'05:27:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4974, 861, 1, CAST(N'05:48:00' AS Time), CAST(N'06:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4975, 861, 0, CAST(N'07:09:00' AS Time), CAST(N'08:09:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4976, 861, 1, CAST(N'08:30:00' AS Time), CAST(N'09:30:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4977, 861, 0, CAST(N'09:51:00' AS Time), CAST(N'10:51:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4978, 861, 1, CAST(N'11:12:00' AS Time), CAST(N'12:12:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4979, 861, 0, CAST(N'12:33:00' AS Time), CAST(N'13:33:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4980, 861, 1, CAST(N'13:54:00' AS Time), CAST(N'14:54:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4981, 862, 0, CAST(N'15:15:00' AS Time), CAST(N'16:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4982, 862, 1, CAST(N'16:36:00' AS Time), CAST(N'17:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4983, 862, 0, CAST(N'17:57:00' AS Time), CAST(N'18:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4984, 862, 1, CAST(N'19:18:00' AS Time), CAST(N'20:18:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4985, 862, 0, CAST(N'20:39:00' AS Time), CAST(N'21:39:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4986, 862, 1, CAST(N'22:00:00' AS Time), CAST(N'23:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4987, 862, 0, CAST(N'23:21:00' AS Time), CAST(N'00:21:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4988, 863, 1, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4989, 863, 0, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4990, 863, 1, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4991, 863, 0, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4992, 863, 1, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4993, 863, 0, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4994, 863, 1, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4995, 864, 0, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4996, 864, 1, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4997, 864, 0, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4998, 864, 1, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (4999, 864, 0, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5000, 864, 1, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5001, 864, 0, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5002, 864, 1, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5003, 865, 0, CAST(N'04:54:00' AS Time), CAST(N'05:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5004, 865, 1, CAST(N'06:15:00' AS Time), CAST(N'07:15:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5005, 865, 0, CAST(N'07:36:00' AS Time), CAST(N'08:36:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5006, 865, 1, CAST(N'08:57:00' AS Time), CAST(N'09:57:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5007, 865, 0, CAST(N'10:18:00' AS Time), CAST(N'11:18:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5008, 865, 1, CAST(N'11:39:00' AS Time), CAST(N'12:39:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5009, 865, 0, CAST(N'13:00:00' AS Time), CAST(N'14:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5010, 866, 1, CAST(N'14:21:00' AS Time), CAST(N'15:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5011, 866, 0, CAST(N'15:42:00' AS Time), CAST(N'16:42:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5012, 866, 1, CAST(N'17:03:00' AS Time), CAST(N'18:03:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5013, 866, 0, CAST(N'18:24:00' AS Time), CAST(N'19:24:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5014, 866, 1, CAST(N'19:45:00' AS Time), CAST(N'20:45:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5015, 866, 0, CAST(N'21:06:00' AS Time), CAST(N'22:06:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5016, 866, 1, CAST(N'22:27:00' AS Time), CAST(N'23:27:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5017, 866, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5018, 867, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5019, 867, 0, CAST(N'05:20:00' AS Time), CAST(N'06:20:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5020, 867, 1, CAST(N'06:40:00' AS Time), CAST(N'07:40:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5021, 867, 0, CAST(N'08:00:00' AS Time), CAST(N'09:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5022, 867, 1, CAST(N'09:20:00' AS Time), CAST(N'10:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5023, 867, 0, CAST(N'10:40:00' AS Time), CAST(N'11:40:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5024, 867, 1, CAST(N'12:00:00' AS Time), CAST(N'13:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5025, 867, 0, CAST(N'13:20:00' AS Time), CAST(N'14:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5026, 868, 1, CAST(N'14:40:00' AS Time), CAST(N'15:40:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5027, 868, 0, CAST(N'16:00:00' AS Time), CAST(N'17:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5028, 868, 1, CAST(N'17:20:00' AS Time), CAST(N'18:20:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5029, 868, 0, CAST(N'18:40:00' AS Time), CAST(N'19:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5030, 868, 1, CAST(N'20:00:00' AS Time), CAST(N'21:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5031, 868, 0, CAST(N'21:20:00' AS Time), CAST(N'22:20:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5032, 868, 1, CAST(N'22:40:00' AS Time), CAST(N'14:04:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5033, 868, 0, CAST(N'22:40:00' AS Time), CAST(N'14:04:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5034, 868, 1, CAST(N'23:20:00' AS Time), CAST(N'14:44:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5035, 868, 0, CAST(N'23:20:00' AS Time), CAST(N'14:44:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5036, 869, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), CAST(N'05:21:00' AS Time), 1, 2, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5037, 869, 1, CAST(N'05:20:00' AS Time), CAST(N'06:20:00' AS Time), CAST(N'06:20:00' AS Time), 1, 3, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5038, 869, 0, CAST(N'06:40:00' AS Time), CAST(N'07:40:00' AS Time), CAST(N'07:50:00' AS Time), 1, 2, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5039, 869, 1, CAST(N'08:00:00' AS Time), CAST(N'09:00:00' AS Time), CAST(N'08:56:00' AS Time), 1, 3, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5040, 869, 0, CAST(N'09:20:00' AS Time), CAST(N'10:20:00' AS Time), CAST(N'10:22:00' AS Time), 1, 2, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5041, 869, 1, CAST(N'10:40:00' AS Time), CAST(N'11:40:00' AS Time), CAST(N'11:40:00' AS Time), 1, 1, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5042, 869, 0, CAST(N'12:00:00' AS Time), CAST(N'13:00:00' AS Time), CAST(N'13:02:00' AS Time), 1, 1, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5043, 869, 1, CAST(N'13:20:00' AS Time), CAST(N'14:20:00' AS Time), CAST(N'14:22:00' AS Time), 1, 3, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5044, 870, 0, CAST(N'14:40:00' AS Time), CAST(N'15:40:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5045, 870, 1, CAST(N'16:00:00' AS Time), CAST(N'17:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5046, 870, 0, CAST(N'17:20:00' AS Time), CAST(N'18:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5047, 870, 1, CAST(N'18:40:00' AS Time), CAST(N'19:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5048, 870, 0, CAST(N'20:00:00' AS Time), CAST(N'21:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5049, 870, 1, CAST(N'21:20:00' AS Time), CAST(N'22:20:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5050, 871, 1, CAST(N'04:40:00' AS Time), CAST(N'05:40:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5051, 871, 0, CAST(N'06:00:00' AS Time), CAST(N'07:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5052, 871, 1, CAST(N'07:20:00' AS Time), CAST(N'08:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5053, 871, 0, CAST(N'08:40:00' AS Time), CAST(N'09:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5054, 871, 1, CAST(N'10:00:00' AS Time), CAST(N'11:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5055, 871, 0, CAST(N'11:20:00' AS Time), CAST(N'12:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5056, 871, 1, CAST(N'12:40:00' AS Time), CAST(N'13:40:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5057, 872, 0, CAST(N'14:00:00' AS Time), CAST(N'15:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5058, 872, 1, CAST(N'15:20:00' AS Time), CAST(N'16:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5059, 872, 0, CAST(N'16:40:00' AS Time), CAST(N'17:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5060, 872, 1, CAST(N'18:00:00' AS Time), CAST(N'19:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5061, 872, 0, CAST(N'19:20:00' AS Time), CAST(N'20:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5062, 872, 1, CAST(N'20:40:00' AS Time), CAST(N'21:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5063, 872, 0, CAST(N'22:00:00' AS Time), CAST(N'13:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5064, 873, 0, CAST(N'04:40:00' AS Time), CAST(N'05:40:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5065, 873, 1, CAST(N'06:00:00' AS Time), CAST(N'07:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5066, 873, 0, CAST(N'07:20:00' AS Time), CAST(N'08:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5067, 873, 1, CAST(N'08:40:00' AS Time), CAST(N'09:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5068, 873, 0, CAST(N'10:00:00' AS Time), CAST(N'11:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5069, 873, 1, CAST(N'11:20:00' AS Time), CAST(N'12:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5070, 873, 0, CAST(N'12:40:00' AS Time), CAST(N'13:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5071, 874, 1, CAST(N'14:00:00' AS Time), CAST(N'15:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5072, 874, 0, CAST(N'15:20:00' AS Time), CAST(N'16:20:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5073, 874, 1, CAST(N'16:40:00' AS Time), CAST(N'17:40:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5074, 874, 0, CAST(N'18:00:00' AS Time), CAST(N'19:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5075, 874, 1, CAST(N'19:20:00' AS Time), CAST(N'20:20:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5076, 874, 0, CAST(N'20:40:00' AS Time), CAST(N'21:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5077, 874, 1, CAST(N'22:00:00' AS Time), CAST(N'13:24:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5078, 875, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5079, 875, 0, CAST(N'05:20:00' AS Time), CAST(N'06:20:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5080, 875, 1, CAST(N'06:40:00' AS Time), CAST(N'07:40:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5081, 875, 0, CAST(N'08:00:00' AS Time), CAST(N'09:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5082, 875, 1, CAST(N'09:20:00' AS Time), CAST(N'10:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5083, 875, 0, CAST(N'10:40:00' AS Time), CAST(N'11:40:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5084, 875, 1, CAST(N'12:00:00' AS Time), CAST(N'13:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5085, 875, 0, CAST(N'13:20:00' AS Time), CAST(N'14:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5086, 876, 1, CAST(N'14:40:00' AS Time), CAST(N'15:40:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5087, 876, 0, CAST(N'16:00:00' AS Time), CAST(N'17:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5088, 876, 1, CAST(N'17:20:00' AS Time), CAST(N'18:20:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5089, 876, 0, CAST(N'18:40:00' AS Time), CAST(N'19:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5090, 876, 1, CAST(N'20:00:00' AS Time), CAST(N'21:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5091, 876, 0, CAST(N'21:20:00' AS Time), CAST(N'22:20:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5092, 876, 1, CAST(N'22:40:00' AS Time), CAST(N'14:04:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5093, 876, 0, CAST(N'22:40:00' AS Time), CAST(N'14:04:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5094, 876, 1, CAST(N'23:20:00' AS Time), CAST(N'14:44:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5095, 876, 0, CAST(N'23:20:00' AS Time), CAST(N'14:44:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5096, 877, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5097, 877, 1, CAST(N'05:20:00' AS Time), CAST(N'06:20:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5098, 877, 0, CAST(N'06:40:00' AS Time), CAST(N'07:40:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5099, 877, 1, CAST(N'08:00:00' AS Time), CAST(N'09:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5100, 877, 0, CAST(N'09:20:00' AS Time), CAST(N'10:20:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5101, 877, 1, CAST(N'10:40:00' AS Time), CAST(N'11:40:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5102, 877, 0, CAST(N'12:00:00' AS Time), CAST(N'13:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5103, 877, 1, CAST(N'13:20:00' AS Time), CAST(N'14:20:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5104, 878, 0, CAST(N'14:40:00' AS Time), CAST(N'15:40:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5105, 878, 1, CAST(N'16:00:00' AS Time), CAST(N'17:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5106, 878, 0, CAST(N'17:20:00' AS Time), CAST(N'18:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5107, 878, 1, CAST(N'18:40:00' AS Time), CAST(N'19:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5108, 878, 0, CAST(N'20:00:00' AS Time), CAST(N'21:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5109, 878, 1, CAST(N'21:20:00' AS Time), CAST(N'22:20:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5110, 879, 1, CAST(N'04:40:00' AS Time), CAST(N'05:40:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5111, 879, 0, CAST(N'06:00:00' AS Time), CAST(N'07:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5112, 879, 1, CAST(N'07:20:00' AS Time), CAST(N'08:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5113, 879, 0, CAST(N'08:40:00' AS Time), CAST(N'09:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5114, 879, 1, CAST(N'10:00:00' AS Time), CAST(N'11:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5115, 879, 0, CAST(N'11:20:00' AS Time), CAST(N'12:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5116, 879, 1, CAST(N'12:40:00' AS Time), CAST(N'13:40:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5117, 880, 0, CAST(N'14:00:00' AS Time), CAST(N'15:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5118, 880, 1, CAST(N'15:20:00' AS Time), CAST(N'16:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5119, 880, 0, CAST(N'16:40:00' AS Time), CAST(N'17:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5120, 880, 1, CAST(N'18:00:00' AS Time), CAST(N'19:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5121, 880, 0, CAST(N'19:20:00' AS Time), CAST(N'20:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5122, 880, 1, CAST(N'20:40:00' AS Time), CAST(N'21:40:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5123, 880, 0, CAST(N'22:00:00' AS Time), CAST(N'13:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5124, 881, 0, CAST(N'04:40:00' AS Time), CAST(N'05:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5125, 881, 1, CAST(N'06:00:00' AS Time), CAST(N'07:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5126, 881, 0, CAST(N'07:20:00' AS Time), CAST(N'08:20:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5127, 881, 1, CAST(N'08:40:00' AS Time), CAST(N'09:40:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5128, 881, 0, CAST(N'10:00:00' AS Time), CAST(N'11:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5129, 881, 1, CAST(N'11:20:00' AS Time), CAST(N'12:20:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5130, 881, 0, CAST(N'12:40:00' AS Time), CAST(N'13:40:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5131, 882, 1, CAST(N'14:00:00' AS Time), CAST(N'15:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5132, 882, 0, CAST(N'15:20:00' AS Time), CAST(N'16:20:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5133, 882, 1, CAST(N'16:40:00' AS Time), CAST(N'17:40:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5134, 882, 0, CAST(N'18:00:00' AS Time), CAST(N'19:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5135, 882, 1, CAST(N'19:20:00' AS Time), CAST(N'20:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5136, 882, 0, CAST(N'20:40:00' AS Time), CAST(N'21:40:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5137, 882, 1, CAST(N'22:00:00' AS Time), CAST(N'13:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5138, 883, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5139, 883, 0, CAST(N'05:20:00' AS Time), CAST(N'06:20:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5140, 883, 1, CAST(N'06:40:00' AS Time), CAST(N'07:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5141, 883, 0, CAST(N'08:00:00' AS Time), CAST(N'09:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5142, 883, 1, CAST(N'09:20:00' AS Time), CAST(N'10:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5143, 883, 0, CAST(N'10:40:00' AS Time), CAST(N'11:40:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5144, 883, 1, CAST(N'12:00:00' AS Time), CAST(N'13:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5145, 883, 0, CAST(N'13:20:00' AS Time), CAST(N'14:20:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5146, 884, 1, CAST(N'14:40:00' AS Time), CAST(N'15:40:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5147, 884, 0, CAST(N'16:00:00' AS Time), CAST(N'17:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5148, 884, 1, CAST(N'17:20:00' AS Time), CAST(N'18:20:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5149, 884, 0, CAST(N'18:40:00' AS Time), CAST(N'19:40:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5150, 884, 1, CAST(N'20:00:00' AS Time), CAST(N'21:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5151, 884, 0, CAST(N'21:20:00' AS Time), CAST(N'22:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5152, 884, 1, CAST(N'22:40:00' AS Time), CAST(N'14:04:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5153, 884, 0, CAST(N'22:40:00' AS Time), CAST(N'14:04:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5154, 884, 1, CAST(N'23:20:00' AS Time), CAST(N'14:44:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5155, 884, 0, CAST(N'23:20:00' AS Time), CAST(N'14:44:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5156, 885, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5157, 885, 1, CAST(N'05:20:00' AS Time), CAST(N'06:20:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5158, 885, 0, CAST(N'06:40:00' AS Time), CAST(N'07:40:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5159, 885, 1, CAST(N'08:00:00' AS Time), CAST(N'09:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5160, 885, 0, CAST(N'09:20:00' AS Time), CAST(N'10:20:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5161, 885, 1, CAST(N'10:40:00' AS Time), CAST(N'11:40:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5162, 885, 0, CAST(N'12:00:00' AS Time), CAST(N'13:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5163, 885, 1, CAST(N'13:20:00' AS Time), CAST(N'14:20:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5164, 886, 0, CAST(N'14:40:00' AS Time), CAST(N'15:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5165, 886, 1, CAST(N'16:00:00' AS Time), CAST(N'17:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5166, 886, 0, CAST(N'17:20:00' AS Time), CAST(N'18:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5167, 886, 1, CAST(N'18:40:00' AS Time), CAST(N'19:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5168, 886, 0, CAST(N'20:00:00' AS Time), CAST(N'21:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5169, 886, 1, CAST(N'21:20:00' AS Time), CAST(N'22:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5170, 887, 1, CAST(N'04:40:00' AS Time), CAST(N'05:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5171, 887, 0, CAST(N'06:00:00' AS Time), CAST(N'07:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5172, 887, 1, CAST(N'07:20:00' AS Time), CAST(N'08:20:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5173, 887, 0, CAST(N'08:40:00' AS Time), CAST(N'09:40:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5174, 887, 1, CAST(N'10:00:00' AS Time), CAST(N'11:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5175, 887, 0, CAST(N'11:20:00' AS Time), CAST(N'12:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5176, 887, 1, CAST(N'12:40:00' AS Time), CAST(N'13:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5177, 888, 0, CAST(N'14:00:00' AS Time), CAST(N'15:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5178, 888, 1, CAST(N'15:20:00' AS Time), CAST(N'16:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5179, 888, 0, CAST(N'16:40:00' AS Time), CAST(N'17:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5180, 888, 1, CAST(N'18:00:00' AS Time), CAST(N'19:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5181, 888, 0, CAST(N'19:20:00' AS Time), CAST(N'20:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5182, 888, 1, CAST(N'20:40:00' AS Time), CAST(N'21:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5183, 888, 0, CAST(N'22:00:00' AS Time), CAST(N'13:24:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5184, 889, 0, CAST(N'04:40:00' AS Time), CAST(N'05:40:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5185, 889, 1, CAST(N'06:00:00' AS Time), CAST(N'07:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5186, 889, 0, CAST(N'07:20:00' AS Time), CAST(N'08:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5187, 889, 1, CAST(N'08:40:00' AS Time), CAST(N'09:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5188, 889, 0, CAST(N'10:00:00' AS Time), CAST(N'11:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5189, 889, 1, CAST(N'11:20:00' AS Time), CAST(N'12:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5190, 889, 0, CAST(N'12:40:00' AS Time), CAST(N'13:40:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5191, 890, 1, CAST(N'14:00:00' AS Time), CAST(N'15:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5192, 890, 0, CAST(N'15:20:00' AS Time), CAST(N'16:20:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5193, 890, 1, CAST(N'16:40:00' AS Time), CAST(N'17:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5194, 890, 0, CAST(N'18:00:00' AS Time), CAST(N'19:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5195, 890, 1, CAST(N'19:20:00' AS Time), CAST(N'20:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5196, 890, 0, CAST(N'20:40:00' AS Time), CAST(N'21:40:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5197, 890, 1, CAST(N'22:00:00' AS Time), CAST(N'13:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5198, 891, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5199, 891, 0, CAST(N'05:20:00' AS Time), CAST(N'06:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5200, 891, 1, CAST(N'06:40:00' AS Time), CAST(N'07:40:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5201, 891, 0, CAST(N'08:00:00' AS Time), CAST(N'09:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5202, 891, 1, CAST(N'09:20:00' AS Time), CAST(N'10:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5203, 891, 0, CAST(N'10:40:00' AS Time), CAST(N'11:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5204, 891, 1, CAST(N'12:00:00' AS Time), CAST(N'13:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5205, 891, 0, CAST(N'13:20:00' AS Time), CAST(N'14:20:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5206, 892, 1, CAST(N'14:40:00' AS Time), CAST(N'15:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5207, 892, 0, CAST(N'16:00:00' AS Time), CAST(N'17:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5208, 892, 1, CAST(N'17:20:00' AS Time), CAST(N'18:20:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5209, 892, 0, CAST(N'18:40:00' AS Time), CAST(N'19:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5210, 892, 1, CAST(N'20:00:00' AS Time), CAST(N'21:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5211, 892, 0, CAST(N'21:20:00' AS Time), CAST(N'22:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5212, 892, 1, CAST(N'22:40:00' AS Time), CAST(N'14:04:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5213, 892, 0, CAST(N'22:40:00' AS Time), CAST(N'14:04:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5214, 892, 1, CAST(N'23:20:00' AS Time), CAST(N'14:44:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5215, 892, 0, CAST(N'23:20:00' AS Time), CAST(N'14:44:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5216, 893, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5217, 893, 1, CAST(N'05:20:00' AS Time), CAST(N'06:20:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5218, 893, 0, CAST(N'06:40:00' AS Time), CAST(N'07:40:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5219, 893, 1, CAST(N'08:00:00' AS Time), CAST(N'09:00:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5220, 893, 0, CAST(N'09:20:00' AS Time), CAST(N'10:20:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5221, 893, 1, CAST(N'10:40:00' AS Time), CAST(N'11:40:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5222, 893, 0, CAST(N'12:00:00' AS Time), CAST(N'13:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5223, 893, 1, CAST(N'13:20:00' AS Time), CAST(N'14:20:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5224, 894, 0, CAST(N'14:40:00' AS Time), CAST(N'15:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5225, 894, 1, CAST(N'16:00:00' AS Time), CAST(N'17:00:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5226, 894, 0, CAST(N'17:20:00' AS Time), CAST(N'18:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5227, 894, 1, CAST(N'18:40:00' AS Time), CAST(N'19:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5228, 894, 0, CAST(N'20:00:00' AS Time), CAST(N'21:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5229, 894, 1, CAST(N'21:20:00' AS Time), CAST(N'22:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5230, 895, 1, CAST(N'04:40:00' AS Time), CAST(N'05:40:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5231, 895, 0, CAST(N'06:00:00' AS Time), CAST(N'07:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5232, 895, 1, CAST(N'07:20:00' AS Time), CAST(N'08:20:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5233, 895, 0, CAST(N'08:40:00' AS Time), CAST(N'09:40:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5234, 895, 1, CAST(N'10:00:00' AS Time), CAST(N'11:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5235, 895, 0, CAST(N'11:20:00' AS Time), CAST(N'12:20:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5236, 895, 1, CAST(N'12:40:00' AS Time), CAST(N'13:40:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5237, 896, 0, CAST(N'14:00:00' AS Time), CAST(N'15:00:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5238, 896, 1, CAST(N'15:20:00' AS Time), CAST(N'16:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5239, 896, 0, CAST(N'16:40:00' AS Time), CAST(N'17:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5240, 896, 1, CAST(N'18:00:00' AS Time), CAST(N'19:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5241, 896, 0, CAST(N'19:20:00' AS Time), CAST(N'20:20:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5242, 896, 1, CAST(N'20:40:00' AS Time), CAST(N'21:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5243, 896, 0, CAST(N'22:00:00' AS Time), CAST(N'13:24:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5244, 897, 0, CAST(N'04:40:00' AS Time), CAST(N'05:40:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5245, 897, 1, CAST(N'06:00:00' AS Time), CAST(N'07:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5246, 897, 0, CAST(N'07:20:00' AS Time), CAST(N'08:20:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5247, 897, 1, CAST(N'08:40:00' AS Time), CAST(N'09:40:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5248, 897, 0, CAST(N'10:00:00' AS Time), CAST(N'11:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5249, 897, 1, CAST(N'11:20:00' AS Time), CAST(N'12:20:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5250, 897, 0, CAST(N'12:40:00' AS Time), CAST(N'13:40:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5251, 898, 1, CAST(N'14:00:00' AS Time), CAST(N'15:00:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5252, 898, 0, CAST(N'15:20:00' AS Time), CAST(N'16:20:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5253, 898, 1, CAST(N'16:40:00' AS Time), CAST(N'17:40:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5254, 898, 0, CAST(N'18:00:00' AS Time), CAST(N'19:00:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5255, 898, 1, CAST(N'19:20:00' AS Time), CAST(N'20:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5256, 898, 0, CAST(N'20:40:00' AS Time), CAST(N'21:40:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5257, 898, 1, CAST(N'22:00:00' AS Time), CAST(N'13:24:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5258, 899, 1, CAST(N'04:00:00' AS Time), CAST(N'05:01:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5259, 899, 0, CAST(N'05:28:00' AS Time), CAST(N'06:29:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5260, 899, 1, CAST(N'06:55:00' AS Time), CAST(N'07:55:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5261, 899, 0, CAST(N'08:21:00' AS Time), CAST(N'09:21:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5262, 899, 1, CAST(N'09:49:00' AS Time), CAST(N'10:49:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5263, 899, 0, CAST(N'11:16:00' AS Time), CAST(N'12:16:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5264, 899, 1, CAST(N'12:42:00' AS Time), CAST(N'13:42:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5265, 900, 0, CAST(N'14:08:00' AS Time), CAST(N'15:08:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5266, 900, 1, CAST(N'15:34:00' AS Time), CAST(N'16:34:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5267, 900, 0, CAST(N'17:00:00' AS Time), CAST(N'18:00:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5268, 900, 1, CAST(N'18:26:00' AS Time), CAST(N'19:26:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5269, 900, 0, CAST(N'19:52:00' AS Time), CAST(N'20:52:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5270, 900, 1, CAST(N'21:18:00' AS Time), CAST(N'22:18:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5271, 900, 0, CAST(N'22:44:00' AS Time), CAST(N'14:08:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5272, 900, 1, CAST(N'23:27:00' AS Time), CAST(N'14:51:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5273, 900, 0, CAST(N'23:27:00' AS Time), CAST(N'14:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5274, 901, 0, CAST(N'04:00:00' AS Time), CAST(N'05:01:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5275, 901, 1, CAST(N'05:28:00' AS Time), CAST(N'06:29:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5276, 901, 0, CAST(N'06:55:00' AS Time), CAST(N'07:55:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5277, 901, 1, CAST(N'08:21:00' AS Time), CAST(N'09:21:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5278, 901, 0, CAST(N'09:49:00' AS Time), CAST(N'10:49:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5279, 901, 1, CAST(N'11:16:00' AS Time), CAST(N'12:16:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5280, 901, 0, CAST(N'12:42:00' AS Time), CAST(N'13:42:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5281, 902, 1, CAST(N'14:08:00' AS Time), CAST(N'15:08:00' AS Time), NULL, 0, 2, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5282, 902, 0, CAST(N'15:34:00' AS Time), CAST(N'16:34:00' AS Time), NULL, 0, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5283, 902, 1, CAST(N'17:00:00' AS Time), CAST(N'18:00:00' AS Time), NULL, 0, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5284, 902, 0, CAST(N'18:26:00' AS Time), CAST(N'19:26:00' AS Time), NULL, 0, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5285, 902, 1, CAST(N'19:52:00' AS Time), CAST(N'20:52:00' AS Time), NULL, 0, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5286, 902, 0, CAST(N'21:18:00' AS Time), CAST(N'22:18:00' AS Time), NULL, 0, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5287, 902, 1, CAST(N'22:44:00' AS Time), CAST(N'14:08:00' AS Time), NULL, 0, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5288, 903, 1, CAST(N'04:44:00' AS Time), CAST(N'05:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5289, 903, 0, CAST(N'06:12:00' AS Time), CAST(N'07:12:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5290, 903, 1, CAST(N'07:38:00' AS Time), CAST(N'08:38:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5291, 903, 0, CAST(N'09:05:00' AS Time), CAST(N'10:05:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5292, 903, 1, CAST(N'10:33:00' AS Time), CAST(N'11:33:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5293, 903, 0, CAST(N'11:59:00' AS Time), CAST(N'12:59:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5294, 903, 1, CAST(N'13:25:00' AS Time), CAST(N'14:25:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5295, 904, 0, CAST(N'14:51:00' AS Time), CAST(N'15:51:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5296, 904, 1, CAST(N'16:17:00' AS Time), CAST(N'17:17:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5297, 904, 0, CAST(N'17:43:00' AS Time), CAST(N'18:43:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5298, 904, 1, CAST(N'19:09:00' AS Time), CAST(N'20:09:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5299, 904, 0, CAST(N'20:35:00' AS Time), CAST(N'21:35:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5300, 904, 1, CAST(N'22:01:00' AS Time), CAST(N'13:25:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5301, 904, 0, CAST(N'22:01:00' AS Time), CAST(N'13:25:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5302, 905, 0, CAST(N'04:44:00' AS Time), CAST(N'05:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5303, 905, 1, CAST(N'06:12:00' AS Time), CAST(N'07:12:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5304, 905, 0, CAST(N'07:38:00' AS Time), CAST(N'08:38:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5305, 905, 1, CAST(N'09:05:00' AS Time), CAST(N'10:05:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5306, 905, 0, CAST(N'10:33:00' AS Time), CAST(N'11:33:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5307, 905, 1, CAST(N'11:59:00' AS Time), CAST(N'12:59:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5308, 905, 0, CAST(N'13:25:00' AS Time), CAST(N'14:25:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5309, 906, 1, CAST(N'14:51:00' AS Time), CAST(N'15:51:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5310, 906, 0, CAST(N'16:17:00' AS Time), CAST(N'17:17:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5311, 906, 1, CAST(N'17:43:00' AS Time), CAST(N'18:43:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5312, 906, 0, CAST(N'19:09:00' AS Time), CAST(N'20:09:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5313, 906, 1, CAST(N'20:35:00' AS Time), CAST(N'21:35:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5314, 907, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5315, 907, 0, CAST(N'05:26:00' AS Time), CAST(N'06:26:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5316, 907, 1, CAST(N'06:52:00' AS Time), CAST(N'07:52:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5317, 907, 0, CAST(N'08:18:00' AS Time), CAST(N'09:18:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5318, 907, 1, CAST(N'09:44:00' AS Time), CAST(N'10:44:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5319, 907, 0, CAST(N'11:10:00' AS Time), CAST(N'12:10:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5320, 907, 1, CAST(N'12:36:00' AS Time), CAST(N'13:36:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5321, 908, 0, CAST(N'14:02:00' AS Time), CAST(N'15:02:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5322, 908, 1, CAST(N'15:28:00' AS Time), CAST(N'16:28:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5323, 908, 0, CAST(N'16:54:00' AS Time), CAST(N'17:54:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5324, 908, 1, CAST(N'18:20:00' AS Time), CAST(N'19:20:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5325, 908, 0, CAST(N'19:46:00' AS Time), CAST(N'20:46:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5326, 908, 1, CAST(N'21:12:00' AS Time), CAST(N'22:12:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5327, 908, 0, CAST(N'22:38:00' AS Time), CAST(N'14:02:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5328, 908, 1, CAST(N'23:21:00' AS Time), CAST(N'14:45:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5329, 908, 0, CAST(N'23:21:00' AS Time), CAST(N'14:45:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5330, 909, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5331, 909, 1, CAST(N'05:26:00' AS Time), CAST(N'06:26:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5332, 909, 0, CAST(N'06:52:00' AS Time), CAST(N'07:52:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5333, 909, 1, CAST(N'08:18:00' AS Time), CAST(N'09:18:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5334, 909, 0, CAST(N'09:44:00' AS Time), CAST(N'10:44:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5335, 909, 1, CAST(N'11:10:00' AS Time), CAST(N'12:10:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5336, 909, 0, CAST(N'12:36:00' AS Time), CAST(N'13:36:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5337, 910, 1, CAST(N'14:02:00' AS Time), CAST(N'15:02:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5338, 910, 0, CAST(N'15:28:00' AS Time), CAST(N'16:28:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5339, 910, 1, CAST(N'16:54:00' AS Time), CAST(N'17:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5340, 910, 0, CAST(N'18:20:00' AS Time), CAST(N'19:20:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5341, 910, 1, CAST(N'19:46:00' AS Time), CAST(N'20:46:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5342, 910, 0, CAST(N'21:12:00' AS Time), CAST(N'22:12:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5343, 910, 1, CAST(N'22:38:00' AS Time), CAST(N'14:02:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5344, 911, 1, CAST(N'04:43:00' AS Time), CAST(N'05:43:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5345, 911, 0, CAST(N'06:09:00' AS Time), CAST(N'07:09:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5346, 911, 1, CAST(N'07:35:00' AS Time), CAST(N'08:35:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5347, 911, 0, CAST(N'09:01:00' AS Time), CAST(N'10:01:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5348, 911, 1, CAST(N'10:27:00' AS Time), CAST(N'11:27:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5349, 911, 0, CAST(N'11:53:00' AS Time), CAST(N'12:53:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5350, 911, 1, CAST(N'13:19:00' AS Time), CAST(N'14:19:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5351, 912, 0, CAST(N'14:45:00' AS Time), CAST(N'15:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5352, 912, 1, CAST(N'16:11:00' AS Time), CAST(N'17:11:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5353, 912, 0, CAST(N'17:37:00' AS Time), CAST(N'18:37:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5354, 912, 1, CAST(N'19:03:00' AS Time), CAST(N'20:03:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5355, 912, 0, CAST(N'20:29:00' AS Time), CAST(N'21:29:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5356, 912, 1, CAST(N'21:55:00' AS Time), CAST(N'22:55:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5357, 913, 0, CAST(N'04:43:00' AS Time), CAST(N'05:43:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5358, 913, 1, CAST(N'06:09:00' AS Time), CAST(N'07:09:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5359, 913, 0, CAST(N'07:35:00' AS Time), CAST(N'08:35:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5360, 913, 1, CAST(N'09:01:00' AS Time), CAST(N'10:01:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5361, 913, 0, CAST(N'10:27:00' AS Time), CAST(N'11:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5362, 913, 1, CAST(N'11:53:00' AS Time), CAST(N'12:53:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5363, 913, 0, CAST(N'13:19:00' AS Time), CAST(N'14:19:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5364, 914, 1, CAST(N'14:45:00' AS Time), CAST(N'15:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5365, 914, 0, CAST(N'16:11:00' AS Time), CAST(N'17:11:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5366, 914, 1, CAST(N'17:37:00' AS Time), CAST(N'18:37:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5367, 914, 0, CAST(N'19:03:00' AS Time), CAST(N'20:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5368, 914, 1, CAST(N'20:29:00' AS Time), CAST(N'21:29:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5369, 914, 0, CAST(N'21:55:00' AS Time), CAST(N'22:55:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5370, 915, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5371, 915, 0, CAST(N'05:26:00' AS Time), CAST(N'06:26:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5372, 915, 1, CAST(N'06:52:00' AS Time), CAST(N'07:52:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5373, 915, 0, CAST(N'08:18:00' AS Time), CAST(N'09:18:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5374, 915, 1, CAST(N'09:44:00' AS Time), CAST(N'10:44:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5375, 915, 0, CAST(N'11:10:00' AS Time), CAST(N'12:10:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5376, 915, 1, CAST(N'12:36:00' AS Time), CAST(N'13:36:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5377, 916, 0, CAST(N'14:02:00' AS Time), CAST(N'15:02:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5378, 916, 1, CAST(N'15:28:00' AS Time), CAST(N'16:28:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5379, 916, 0, CAST(N'16:54:00' AS Time), CAST(N'17:54:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5380, 916, 1, CAST(N'18:20:00' AS Time), CAST(N'19:20:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5381, 916, 0, CAST(N'19:46:00' AS Time), CAST(N'20:46:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5382, 916, 1, CAST(N'21:12:00' AS Time), CAST(N'22:12:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5383, 916, 0, CAST(N'22:38:00' AS Time), CAST(N'14:02:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5384, 916, 1, CAST(N'23:21:00' AS Time), CAST(N'14:45:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5385, 916, 0, CAST(N'23:21:00' AS Time), CAST(N'14:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5386, 917, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5387, 917, 1, CAST(N'05:26:00' AS Time), CAST(N'06:26:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5388, 917, 0, CAST(N'06:52:00' AS Time), CAST(N'07:52:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5389, 917, 1, CAST(N'08:18:00' AS Time), CAST(N'09:18:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5390, 917, 0, CAST(N'09:44:00' AS Time), CAST(N'10:44:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5391, 917, 1, CAST(N'11:10:00' AS Time), CAST(N'12:10:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5392, 917, 0, CAST(N'12:36:00' AS Time), CAST(N'13:36:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5393, 918, 1, CAST(N'14:02:00' AS Time), CAST(N'15:02:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5394, 918, 0, CAST(N'15:28:00' AS Time), CAST(N'16:28:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5395, 918, 1, CAST(N'16:54:00' AS Time), CAST(N'17:54:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5396, 918, 0, CAST(N'18:20:00' AS Time), CAST(N'19:20:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5397, 918, 1, CAST(N'19:46:00' AS Time), CAST(N'20:46:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5398, 918, 0, CAST(N'21:12:00' AS Time), CAST(N'22:12:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5399, 918, 1, CAST(N'22:38:00' AS Time), CAST(N'14:02:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5400, 919, 1, CAST(N'04:43:00' AS Time), CAST(N'05:43:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5401, 919, 0, CAST(N'06:09:00' AS Time), CAST(N'07:09:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5402, 919, 1, CAST(N'07:35:00' AS Time), CAST(N'08:35:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5403, 919, 0, CAST(N'09:01:00' AS Time), CAST(N'10:01:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5404, 919, 1, CAST(N'10:27:00' AS Time), CAST(N'11:27:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5405, 919, 0, CAST(N'11:53:00' AS Time), CAST(N'12:53:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5406, 919, 1, CAST(N'13:19:00' AS Time), CAST(N'14:19:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5407, 920, 0, CAST(N'14:45:00' AS Time), CAST(N'15:45:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5408, 920, 1, CAST(N'16:11:00' AS Time), CAST(N'17:11:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5409, 920, 0, CAST(N'17:37:00' AS Time), CAST(N'18:37:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5410, 920, 1, CAST(N'19:03:00' AS Time), CAST(N'20:03:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5411, 920, 0, CAST(N'20:29:00' AS Time), CAST(N'21:29:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5412, 920, 1, CAST(N'21:55:00' AS Time), CAST(N'22:55:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5413, 921, 0, CAST(N'04:43:00' AS Time), CAST(N'05:43:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5414, 921, 1, CAST(N'06:09:00' AS Time), CAST(N'07:09:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5415, 921, 0, CAST(N'07:35:00' AS Time), CAST(N'08:35:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5416, 921, 1, CAST(N'09:01:00' AS Time), CAST(N'10:01:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5417, 921, 0, CAST(N'10:27:00' AS Time), CAST(N'11:27:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5418, 921, 1, CAST(N'11:53:00' AS Time), CAST(N'12:53:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5419, 921, 0, CAST(N'13:19:00' AS Time), CAST(N'14:19:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5420, 922, 1, CAST(N'14:45:00' AS Time), CAST(N'15:45:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5421, 922, 0, CAST(N'16:11:00' AS Time), CAST(N'17:11:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5422, 922, 1, CAST(N'17:37:00' AS Time), CAST(N'18:37:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5423, 922, 0, CAST(N'19:03:00' AS Time), CAST(N'20:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5424, 922, 1, CAST(N'20:29:00' AS Time), CAST(N'21:29:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5425, 922, 0, CAST(N'21:55:00' AS Time), CAST(N'22:55:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5426, 923, 1, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5427, 923, 0, CAST(N'05:26:00' AS Time), CAST(N'06:26:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5428, 923, 1, CAST(N'06:52:00' AS Time), CAST(N'07:52:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5429, 923, 0, CAST(N'08:18:00' AS Time), CAST(N'09:18:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5430, 923, 1, CAST(N'09:44:00' AS Time), CAST(N'10:44:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5431, 923, 0, CAST(N'11:10:00' AS Time), CAST(N'12:10:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5432, 923, 1, CAST(N'12:36:00' AS Time), CAST(N'13:36:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5433, 924, 0, CAST(N'14:02:00' AS Time), CAST(N'15:02:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5434, 924, 1, CAST(N'15:28:00' AS Time), CAST(N'16:28:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5435, 924, 0, CAST(N'16:54:00' AS Time), CAST(N'17:54:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5436, 924, 1, CAST(N'18:20:00' AS Time), CAST(N'19:20:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5437, 924, 0, CAST(N'19:46:00' AS Time), CAST(N'20:46:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5438, 924, 1, CAST(N'21:12:00' AS Time), CAST(N'22:12:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5439, 924, 0, CAST(N'22:38:00' AS Time), CAST(N'14:02:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5440, 924, 1, CAST(N'23:21:00' AS Time), CAST(N'14:45:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5441, 924, 0, CAST(N'23:21:00' AS Time), CAST(N'14:45:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5442, 925, 0, CAST(N'04:00:00' AS Time), CAST(N'05:00:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5443, 925, 1, CAST(N'05:26:00' AS Time), CAST(N'06:26:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5444, 925, 0, CAST(N'06:52:00' AS Time), CAST(N'07:52:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5445, 925, 1, CAST(N'08:18:00' AS Time), CAST(N'09:18:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5446, 925, 0, CAST(N'09:44:00' AS Time), CAST(N'10:44:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5447, 925, 1, CAST(N'11:10:00' AS Time), CAST(N'12:10:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5448, 925, 0, CAST(N'12:36:00' AS Time), CAST(N'13:36:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5449, 926, 1, CAST(N'14:02:00' AS Time), CAST(N'15:02:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5450, 926, 0, CAST(N'15:28:00' AS Time), CAST(N'16:28:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5451, 926, 1, CAST(N'16:54:00' AS Time), CAST(N'17:54:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5452, 926, 0, CAST(N'18:20:00' AS Time), CAST(N'19:20:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5453, 926, 1, CAST(N'19:46:00' AS Time), CAST(N'20:46:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5454, 926, 0, CAST(N'21:12:00' AS Time), CAST(N'22:12:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5455, 926, 1, CAST(N'22:38:00' AS Time), CAST(N'14:02:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5456, 927, 1, CAST(N'04:43:00' AS Time), CAST(N'05:43:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5457, 927, 0, CAST(N'06:09:00' AS Time), CAST(N'07:09:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5458, 927, 1, CAST(N'07:35:00' AS Time), CAST(N'08:35:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5459, 927, 0, CAST(N'09:01:00' AS Time), CAST(N'10:01:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5460, 927, 1, CAST(N'10:27:00' AS Time), CAST(N'11:27:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5461, 927, 0, CAST(N'11:53:00' AS Time), CAST(N'12:53:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5462, 927, 1, CAST(N'13:19:00' AS Time), CAST(N'14:19:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5463, 928, 0, CAST(N'14:45:00' AS Time), CAST(N'15:45:00' AS Time), NULL, NULL, NULL, CAST(1 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5464, 928, 1, CAST(N'16:11:00' AS Time), CAST(N'17:11:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5465, 928, 0, CAST(N'17:37:00' AS Time), CAST(N'18:37:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5466, 928, 1, CAST(N'19:03:00' AS Time), CAST(N'20:03:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5467, 928, 0, CAST(N'20:29:00' AS Time), CAST(N'21:29:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5468, 928, 1, CAST(N'21:55:00' AS Time), CAST(N'22:55:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5469, 929, 0, CAST(N'04:43:00' AS Time), CAST(N'05:43:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5470, 929, 1, CAST(N'06:09:00' AS Time), CAST(N'07:09:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5471, 929, 0, CAST(N'07:35:00' AS Time), CAST(N'08:35:00' AS Time), NULL, NULL, NULL, CAST(6 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5472, 929, 1, CAST(N'09:01:00' AS Time), CAST(N'10:01:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5473, 929, 0, CAST(N'10:27:00' AS Time), CAST(N'11:27:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5474, 929, 1, CAST(N'11:53:00' AS Time), CAST(N'12:53:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5475, 929, 0, CAST(N'13:19:00' AS Time), CAST(N'14:19:00' AS Time), NULL, NULL, NULL, CAST(4 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5476, 930, 1, CAST(N'14:45:00' AS Time), CAST(N'15:45:00' AS Time), NULL, NULL, NULL, CAST(7 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5477, 930, 0, CAST(N'16:11:00' AS Time), CAST(N'17:11:00' AS Time), NULL, NULL, NULL, CAST(9 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5478, 930, 1, CAST(N'17:37:00' AS Time), CAST(N'18:37:00' AS Time), NULL, NULL, NULL, CAST(8 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5479, 930, 0, CAST(N'19:03:00' AS Time), CAST(N'20:03:00' AS Time), NULL, NULL, NULL, CAST(0 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5480, 930, 1, CAST(N'20:29:00' AS Time), CAST(N'21:29:00' AS Time), NULL, NULL, NULL, CAST(5 AS Numeric(1, 0)))
-GO
-INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (5481, 930, 0, CAST(N'21:55:00' AS Time), CAST(N'22:55:00' AS Time), NULL, NULL, NULL, CAST(3 AS Numeric(1, 0)))
+INSERT [dbo].[viaje] ([id], [planilla_horaria_id], [es_ida], [hora_salida], [hora_estimada_llegada], [hora_real_llegada], [completado], [completitud_id], [dvh]) VALUES (6561, 1074, 0, CAST(N'23:48:00' AS Time), CAST(N'00:48:00' AS Time), NULL, NULL, NULL, CAST(2 AS Numeric(1, 0)))
 GO
 SET IDENTITY_INSERT [dbo].[viaje] OFF
 GO

@@ -1,6 +1,6 @@
 ﻿USE [master]
 GO
-/****** Object:  Database [transportes_mj_bitacora]    Script Date: 18/11/2019 14:55:55 ******/
+/****** Object:  Database [transportes_mj_bitacora]    Script Date: 23/11/2019 18:22:20 ******/
 IF EXISTS(select * from sys.databases where name='transportes_mj_bitacora')
 DROP DATABASE [transportes_mj_bitacora]
 GO
@@ -73,7 +73,7 @@ EXEC sys.sp_db_vardecimal_storage_format N'transportes_mj_bitacora', N'ON'
 GO
 USE [transportes_mj_bitacora]
 GO
-/****** Object:  Table [dbo].[bitacora]    Script Date: 18/11/2019 14:55:56 ******/
+/****** Object:  Table [dbo].[bitacora]    Script Date: 23/11/2019 18:22:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2104,6 +2104,142 @@ GO
 INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1006, CAST(N'2019-11-16T14:48:50.477' AS DateTime), 1, N'El usuario cerró sesión')
 GO
 INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1007, CAST(N'2019-11-17T14:45:02.237' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1008, CAST(N'2019-11-20T22:03:43.070' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1009, CAST(N'2019-11-20T22:03:44.830' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1010, CAST(N'2019-11-22T23:15:06.867' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1011, CAST(N'2019-11-22T23:15:19.653' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1012, CAST(N'2019-11-22T23:19:33.827' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1013, CAST(N'2019-11-22T23:19:35.930' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1014, CAST(N'2019-11-22T23:28:15.130' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1015, CAST(N'2019-11-22T23:28:22.163' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1016, CAST(N'2019-11-22T23:48:12.600' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1017, CAST(N'2019-11-22T23:49:37.743' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1018, CAST(N'2019-11-22T23:51:13.440' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1019, CAST(N'2019-11-22T23:51:36.793' AS DateTime), 1, N'Usuario admin guardado')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1020, CAST(N'2019-11-22T23:51:42.090' AS DateTime), 1, N'Usuario admin guardado')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1021, CAST(N'2019-11-23T00:04:18.800' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1022, CAST(N'2019-11-23T00:05:01.640' AS DateTime), 1, N'Usuario admin guardado')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1023, CAST(N'2019-11-23T00:05:12.517' AS DateTime), 1, N'Usuario admin guardado')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1024, CAST(N'2019-11-23T00:05:35.397' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1025, CAST(N'2019-11-23T00:11:17.820' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1026, CAST(N'2019-11-23T00:11:22.807' AS DateTime), 1, N'Usuario admin guardado')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1027, CAST(N'2019-11-23T00:11:33.137' AS DateTime), 1, N'Usuario admin guardado')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1028, CAST(N'2019-11-23T00:11:52.687' AS DateTime), 1, N'Se realizó un backup de la base de datos')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1029, CAST(N'2019-11-23T00:12:20.337' AS DateTime), 1, N'Usuario admin guardado')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1030, CAST(N'2019-11-23T00:13:04.093' AS DateTime), 1, N'Se restauró un backup de la base de datos')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1031, CAST(N'2019-11-23T00:13:06.383' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1032, CAST(N'2019-11-23T00:13:41.670' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1033, CAST(N'2019-11-23T00:14:04.010' AS DateTime), 1, N'Se realizó un backup de la base de datos')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1034, CAST(N'2019-11-23T00:14:27.970' AS DateTime), 1, N'Usuario admin guardado')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1035, CAST(N'2019-11-23T00:15:11.540' AS DateTime), 1, N'Se restauró un backup de la base de datos')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1036, CAST(N'2019-11-23T00:15:13.510' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1037, CAST(N'2019-11-23T00:15:20.690' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1038, CAST(N'2019-11-23T00:16:19.790' AS DateTime), 1, N'Se actualizó el permiso con Id 46')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1039, CAST(N'2019-11-23T00:16:32.077' AS DateTime), 1, N'Se actualizó el permiso con Id 46')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1040, CAST(N'2019-11-23T00:16:38.070' AS DateTime), 1, N'Se eliminó el permiso con Id 46')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1041, CAST(N'2019-11-23T00:18:22.270' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1042, CAST(N'2019-11-23T15:57:19.843' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1043, CAST(N'2019-11-23T15:57:52.250' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1044, CAST(N'2019-11-23T15:58:17.217' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1045, CAST(N'2019-11-23T16:19:33.027' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1046, CAST(N'2019-11-23T16:19:56.747' AS DateTime), 1, N'Se guardó el vehículo con Id 6')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1047, CAST(N'2019-11-23T16:20:49.950' AS DateTime), 1, N'Se guardó el chofer con Id 5')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1048, CAST(N'2019-11-23T16:21:14.027' AS DateTime), 1, N'Se generó una alerta de insuficiencia. Choferes faltantes: 62. Vehículos faltantes. 0')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1049, CAST(N'2019-11-23T16:21:18.783' AS DateTime), 1, N'Se generaron las planillas para el día 24/11/2019 00:00:00')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1050, CAST(N'2019-11-23T16:22:16.227' AS DateTime), 1, N'Se actualizaron los viajes de la planilla N° 947')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1051, CAST(N'2019-11-23T16:23:59.053' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1052, CAST(N'2019-11-23T16:24:08.917' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1053, CAST(N'2019-11-23T16:24:27.317' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1054, CAST(N'2019-11-23T16:29:05.697' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1055, CAST(N'2019-11-23T16:29:11.423' AS DateTime), 1, N'Se generó una alerta de insuficiencia. Choferes faltantes: 62. Vehículos faltantes. 0')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1056, CAST(N'2019-11-23T16:29:15.823' AS DateTime), 1, N'Se generaron las planillas para el día 24/11/2019 00:00:00')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1057, CAST(N'2019-11-23T16:29:46.547' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1058, CAST(N'2019-11-23T16:30:22.113' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1059, CAST(N'2019-11-23T16:30:41.347' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1060, CAST(N'2019-11-23T16:30:44.927' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1061, CAST(N'2019-11-23T16:31:18.373' AS DateTime), 1, N'Se actualizaron los viajes de la planilla N° 1021')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1062, CAST(N'2019-11-23T16:31:24.170' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1063, CAST(N'2019-11-23T16:31:33.787' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1064, CAST(N'2019-11-23T16:32:12.127' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1065, CAST(N'2019-11-23T16:32:34.097' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1066, CAST(N'2019-11-23T16:32:39.790' AS DateTime), 1, N'Se generó una alerta de insuficiencia. Choferes faltantes: 62. Vehículos faltantes. 0')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1067, CAST(N'2019-11-23T16:32:40.680' AS DateTime), 1, N'Se generaron las planillas para el día 25/11/2019 00:00:00')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1068, CAST(N'2019-11-23T16:33:23.937' AS DateTime), 1, N'El usuario cerró sesión')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1069, CAST(N'2019-11-23T17:12:10.380' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1070, CAST(N'2019-11-23T17:17:33.240' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1071, CAST(N'2019-11-23T17:21:37.540' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1072, CAST(N'2019-11-23T17:34:52.183' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1073, CAST(N'2019-11-23T17:41:06.703' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1074, CAST(N'2019-11-23T18:13:05.120' AS DateTime), 1, N'El usuario se logueó al sistema')
+GO
+INSERT [dbo].[bitacora] ([id], [fecha_hora], [usuario_id], [detalle]) VALUES (1075, CAST(N'2019-11-23T18:13:56.390' AS DateTime), 1, N'El usuario cerró sesión')
 GO
 SET IDENTITY_INSERT [dbo].[bitacora] OFF
 GO
