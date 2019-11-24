@@ -65,11 +65,6 @@ namespace DAL
             }
         }
 
-        public static PermisoBE ObtenerPorId(int id)
-        {
-            return ObtenerPermiso(id, 1);
-        }
-
         public static List<PermisoBE> ObtenerPorUsuario(int usuarioId)
         {
             string query = "SELECT p.id " +
