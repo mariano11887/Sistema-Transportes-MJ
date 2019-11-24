@@ -135,8 +135,7 @@ namespace DAL
                 Vehiculo = VehiculoDAL.Obtener(int.Parse(r["coche_id"].ToString())),
                 Fecha = DateTime.Parse(r["fecha"].ToString()),
                 Id = int.Parse(r["id"].ToString()),
-                Recorrido = RecorridoDAL.Obtener(int.Parse(r["recorrido_id"].ToString())),
-                Viajes = ViajeDAL.ObtenerPorPlanillaHoraria(int.Parse(r["id"].ToString()))
+                Recorrido = RecorridoDAL.Obtener(int.Parse(r["recorrido_id"].ToString()))
             }).ToList();
         }
     }
