@@ -136,7 +136,6 @@ namespace UI
                     foreach (DataGridViewRow row in dgvViajes.Rows)
                     {
                         GridItem gridItem = row.DataBoundItem as GridItem;
-                        // TODO: Modificar directamente los viajes de la planilla horaria y hacer un Guardar de la planilla.
                         ViajeBE viaje = gridItem.Viaje;
                         viaje.Completado = row.Cells["colCompletado"].Value != null && (bool)row.Cells["colCompletado"].Value;
 
