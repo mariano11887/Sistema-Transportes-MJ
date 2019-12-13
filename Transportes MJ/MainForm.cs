@@ -231,7 +231,14 @@ namespace UI
         {
             if (e.KeyCode.ToString() == "F1")
             {
-                System.Diagnostics.Process.Start(Application.StartupPath + @"\Ayuda.chm");
+                try
+                {
+                    System.Diagnostics.Process.Start(Application.StartupPath + @"\Ayuda.chm");
+                }
+                catch (Exception ex)
+                {
+                    Log.Grabar(ex);
+                }
             }
         }
         #endregion
